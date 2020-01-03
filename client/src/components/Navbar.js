@@ -20,18 +20,18 @@ class Navbar extends React.Component {
       return (
         <nav>
           <Link to='/login'>
-            <item
+            <button
               id='login'
               name='login'
               active={location.pathname === '/login'}
-            />
+            >login</button>
           </Link>
           <Link to='/register'>
-            <item
+            <button
               id='register'
               name='register'
               active={location.pathname === '/register'}
-            />
+            >register</button>
           </Link>
         </nav>
       )
