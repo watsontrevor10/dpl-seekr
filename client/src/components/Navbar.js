@@ -27,11 +27,11 @@ class Navbar extends React.Component {
             />
           </Link>
           <Link to='/register'>
-            <item
+            <button
               id='register'
               name='register'
               active={location.pathname === '/register'}
-            />
+            >Register</button>
           </Link>
         </nav>
       )
