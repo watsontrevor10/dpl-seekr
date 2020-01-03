@@ -31,7 +31,7 @@ class Navbar extends React.Component {
               id='register'
               name='register'
               active={location.pathname === '/register'}
-            >register</button>
+            >Register</button>
           </Link>
         </nav>
       )
