@@ -1,5 +1,6 @@
 class Api::ApplicationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_app, only: [:show, :update, :destroy]
 
   def index
     render json: current_user.applications
@@ -10,10 +11,10 @@ class Api::ApplicationsController < ApplicationController
   end
 
   def create
-    application = current_user.application.new(application_params)
+    application = Application.new(app_params)
 
     if application.save
-      render json: application
+      render json: application 
     else
       render json: application.errors, status: 422
     end
@@ -34,11 +35,11 @@ class Api::ApplicationsController < ApplicationController
   
   private
 
-  def set_application
+  def set_app
     @application = current_user.application.find(params[:id])
   end
 
-  def application_params 
-    params.require(:application).permit(:date, :follow_up_date, :notes, :status)
+  def app_params 
+    params.require(:application).permit(:date, :follow_up_date, :notes, :status, :job_title, :company_name)
   end
 end
