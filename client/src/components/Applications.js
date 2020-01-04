@@ -5,8 +5,10 @@ import ApplicationForm from '../components/ApplicationForm'
 
 
 const Applications = (props) => {
+  // State for looping through users applications
   const [ apps, setApps ] = useState([])
   
+  // axios call to get all user applications
   useEffect( () => {
     axios.get('/api/applications')
       .then( res => {
@@ -14,19 +16,23 @@ const Applications = (props) => {
       })
   }, [])
 
+  // Rendering the loop of the applications
   const renderApps = () => {
     return apps.map( app => (
       <div key={app.id}>
         <li >
-          {app.company_name}
+          {app.company_name} 
+          <br/>
           {app.job_title}
         </li>
       </div>
     ))
   }
 
+  // Passing this function into ApplicationForm as a prop
   const addApp = (app) => setApps([ ...apps, app, ]);
   
+  // Applications Index component
   return (
     <div>
       Applications

@@ -1,5 +1,6 @@
 import { useState, } from "react";
 
+// custom hook to simplify state in form components with many input fields
 export const useFormInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
 

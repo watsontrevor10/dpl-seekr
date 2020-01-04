@@ -3,9 +3,11 @@ import axios from 'axios'
 import useFormInput from '../hooks/useFormInput'
 
 const ApplicationForm = (props) => {
+  // State for fields in the form, using a custom hook (useFormInput) to simplify state a bit
   const company = useFormInput('')
   const job = useFormInput('')
 
+  // submit function, axios post call.  Need to add each field name to the post request
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('/api/applications', { company_name: company.value, job_title: job.value, })
@@ -14,6 +16,7 @@ const ApplicationForm = (props) => {
       })
   };
 
+  // Form component
   return (
     <div>
       <form onSubmit={handleSubmit}>
