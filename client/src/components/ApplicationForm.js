@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
+import useFormInput from '../hooks/useFormInput'
 
 const ApplicationForm = (props) => {
-  const [ company, setCompany ] = useState(' ')
-  const [ job, setJob ] = useState(' ')
+  const company = useFormInput('')
+  const job = useFormInput('')
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    debugger
-    axios.post("/api/applications", { company, job, })
-      .then(res => {
+    axios.post('/api/applications', { company_name: company.value, job_title: job.value, })
+    .then(res => {
         props.add(res.data);
       })
   };
 
   return (
     <div>
-      <form onSubmti={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         Company Name: <br/>
-        <input type="text" name="company_name" onChange={(e) => setCompany(e.target.value)} value={company} /><br/>
+        <input type="text" name="company_name" {...company} /><br/>
         Job Title: <br/>
-        <input type="text" name="job_title" onChange={(e) => setJob(e.target.value)} value={job} /><br/>
-        <button>Submit</button>
+        <input type="text" name="job_title" {...job} /><br/>
+        <input type="submit" value="Submit" />
       </form>
     </div>
   )

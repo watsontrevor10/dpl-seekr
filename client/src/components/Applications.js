@@ -14,16 +14,18 @@ const Applications = (props) => {
       })
   }, [])
 
-  const renderApps = (props) => {
+  const renderApps = () => {
     return apps.map( app => (
-      <div>
-        <li key={app.id}>
+      <div key={app.id}>
+        <li >
           {app.company_name}
           {app.job_title}
         </li>
       </div>
     ))
   }
+
+  const addApp = (app) => setApps([ ...apps, app, ]);
   
   return (
     <div>
@@ -31,7 +33,7 @@ const Applications = (props) => {
       <ul>
         { renderApps() }
       </ul>
-      <ApplicationForm />
+      <ApplicationForm add={addApp} />
     </div>
   )
 }

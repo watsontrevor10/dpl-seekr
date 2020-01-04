@@ -11,7 +11,7 @@ class Api::ApplicationsController < ApplicationController
   end
 
   def create
-    application = Application.new(app_params)
+    application = current_user.applications.new(application_params)
 
     if application.save
       render json: application 
@@ -39,7 +39,7 @@ class Api::ApplicationsController < ApplicationController
     @application = current_user.application.find(params[:id])
   end
 
-  def app_params 
-    params.require(:application).permit(:date, :follow_up_date, :notes, :status, :job_title, :company_name)
+  def application_params 
+    params.require(:application).permit(:date_applied, :follow_up_date, :notes, :status, :job_title, :company_name)
   end
 end

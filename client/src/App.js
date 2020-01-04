@@ -13,7 +13,7 @@ const App = () => (
   <>
     <Navbar />
     <FetchUser>
-      <segment>
+      <div>
         <Switch>
           <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path='/applications' component={Applications} />
@@ -21,7 +21,7 @@ const App = () => (
           <Route exact path="/register" component={Register} />
           <Route component={NoMatch} />
         </Switch>
-      </segment>
+      </div>
     </FetchUser>
   </>
 )
