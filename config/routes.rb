@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   namespace :api do
-    resources :applications do
+    resources :jobs do
       resources :interviews
-    end
-
-    resources :interviews do
-      resources :todos
+      resources :notes
+      resources :tasks
+      resources :contacts
     end
   end
+    
 end

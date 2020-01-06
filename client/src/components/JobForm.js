@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import useFormInput from '../hooks/useFormInput'
 
-const ApplicationForm = (props) => {
+const JobForm = (props) => {
   // State for fields in the form, using a custom hook (useFormInput) to simplify state a bit
   const company = useFormInput('')
   const job = useFormInput('')
@@ -10,7 +10,7 @@ const ApplicationForm = (props) => {
   // submit function, axios post call.  Need to add each field name to the post request
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('/api/applications', { company_name: company.value, job_title: job.value, })
+    axios.post('/api/jobs', { company_name: company.value, job_title: job.value, })
     .then(res => {
         props.add(res.data);
       })
@@ -30,4 +30,4 @@ const ApplicationForm = (props) => {
   )
 }
 
-export default ApplicationForm
+export default JobForm

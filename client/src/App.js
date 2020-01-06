@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './components/Home';
-import Applications from './components/Applications'
+import Jobs from './components/Jobs'
 import NoMatch from './components/NoMatch';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
@@ -16,7 +16,7 @@ const App = () => (
       <div>
         <Switch>
           <ProtectedRoute exact path="/" component={Home} />
-          <ProtectedRoute exact path='/applications' component={Applications} />
+          <ProtectedRoute exact path='/jobs' component={Jobs} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route component={NoMatch} />

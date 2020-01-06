@@ -1,6 +1,6 @@
 import React, {useState, } from 'react'
 
-const ApplicationView = () => {
+const JobView = () => {
 
   return (
     <div>
@@ -9,4 +9,4 @@ const ApplicationView = () => {
   )
 }
 
-export default ApplicationView
+export default JobView
