@@ -10,47 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_03_222710) do
+ActiveRecord::Schema.define(version: 2020_01_06_220920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "applications", force: :cascade do |t|
-    t.date "date_applied"
-    t.date "follow_up_date"
-    t.text "notes"
-    t.string "status"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "company_name"
-    t.string "job_title"
-    t.index ["user_id"], name: "index_applications_on_user_id"
-  end
-
-  create_table "interviews", force: :cascade do |t|
-    t.date "date"
-    t.time "time"
-    t.boolean "thank_you"
-    t.boolean "follow_up"
-    t.text "notes"
-    t.string "type"
-    t.bigint "application_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["application_id"], name: "index_interviews_on_application_id"
-  end
-
-  create_table "todos", force: :cascade do |t|
-    t.date "due_date"
-    t.date "completed_date"
-    t.string "subject"
-    t.text "notes"
-    t.bigint "interview_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["interview_id"], name: "index_todos_on_interview_id"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -82,7 +45,4 @@ ActiveRecord::Schema.define(version: 2020_01_03_222710) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "applications", "users"
-  add_foreign_key "interviews", "applications"
-  add_foreign_key "todos", "interviews"
 end
