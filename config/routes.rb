@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     resources :applications do
       resources :interviews
     end
+
     resources :interviews do
       resources :todos
     end
   end
-
 end
