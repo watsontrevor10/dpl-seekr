@@ -4,7 +4,7 @@ class Api::ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :update, :destroy]
 
   def index
-    render json: @job.contacts.all 
+    render json: @job.contacts
   end
 
   def show
@@ -13,7 +13,7 @@ class Api::ContactsController < ApplicationController
 
   def create
    contact = @job.contacts.new(contact_params)
-   
+
       if contact.save 
         render json: @contact
       else 
