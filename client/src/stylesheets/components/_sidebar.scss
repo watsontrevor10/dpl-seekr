@@ -1,0 +1,12 @@
+
+.main-sidebar-container {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 200px;
+  background-color: blue;
+}
