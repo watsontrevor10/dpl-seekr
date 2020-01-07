@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import JobForm from '../components/JobForm'
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import JobForm from '../components/JobForm';
+import {Link} from 'react-router-dom';
 
 
 const Jobs = (props) => {
@@ -25,14 +25,14 @@ const Jobs = (props) => {
   const renderJobs = () => {
     return jobs.map( job => (
       <div key={job.id}>
-        <li >
+        <Link to={`/job/${job.id}`}>
           {job.company_name} 
           <br/>
           {job.job_title}
           <br />
           {job.status}
           <br />
-        </li>
+        </Link>
       </div>
     ))
   }
