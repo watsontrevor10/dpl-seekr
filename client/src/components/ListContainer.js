@@ -8,11 +8,21 @@ const ListContainer = () => {
       <div className="main-homeNav-container">
         <HomeNav/>
         <div className="list-container">
-          <List name="Wishlist" />
-          <List name="Applied" className="list-component-container"/>
-          <List name="Interviewed" className="list-component-container" />
-          <List name="Offer" className="list-component-container"/>
-          <List name="Rejected" className="list-component-container"/>
+          <div>
+            <List name="Wishlist" />
+          </div>
+          <div> 
+            <List name="Applied" className="list-component-container"/>
+          </div>
+          <div>
+           <List name="Interviewed" className="list-component-container" />
+          </div>
+          <div>
+            <List name="Offer" className="list-component-container"/>
+          </div>
+          <div>
+            <List name="Rejected" className="list-component-container"/>
+          </div>
         </div>
       </div>
     </>
