@@ -24,6 +24,9 @@ const Jobs = (props) => {
           {job.company_name} 
           <br/>
           {job.job_title}
+          <br/>
+          {job.status}
+          <br/>
         </li>
       </div>
     ))
