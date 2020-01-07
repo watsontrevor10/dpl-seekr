@@ -7,6 +7,7 @@ import JobForm from '../components/JobForm'
 const Jobs = (props) => {
   // State for looping through users jobs
   const [ jobs, setJobs ] = useState([])
+  const [ toggleForm, setToggleForm] = useState(false)
   
   // axios call to get all user jobs
   useEffect( () => {
@@ -16,6 +17,10 @@ const Jobs = (props) => {
       })
   }, [])
 
+  const toggle = () => {
+    setToggleForm(!toggleForm);
+  }
+
   // Rendering the loop of the jobs
   const renderJobs = () => {
     return jobs.map( job => (
@@ -24,6 +29,9 @@ const Jobs = (props) => {
           {job.company_name} 
           <br/>
           {job.job_title}
+          <br />
+          {job.status}
+          <br />
         </li>
       </div>
     ))
@@ -39,7 +47,8 @@ const Jobs = (props) => {
       <ul>
         { renderJobs() }
       </ul>
-      <JobForm add={addJob} />
+      <button onClick={toggle}>Form</button>
+      { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
     </div>
   )
 }
