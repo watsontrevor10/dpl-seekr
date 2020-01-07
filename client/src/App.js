@@ -10,6 +10,7 @@ import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Switch, Route, } from 'react-router-dom';
 import "./stylesheets/App.scss";
+import JobView from './components/JobView';
 
 const App = () => (
   <>
@@ -20,6 +21,7 @@ const App = () => (
           <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path='/jobs' component={Jobs} />
           <ProtectedRoute exact path="/jobs/:job_id/new_note" component={NotesForm} />
+          <ProtectedRoute exact path="/jobs/:id" component={JobView} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route component={NoMatch} />
