@@ -11,6 +11,13 @@ const Contacts = (props) => {
       })
   }, [])
 
+  const handleRemove = (id) => {
+      axios.delete(`/api/jobs/${props.match.params.job_id}/contacts/${id}`)
+        .then( res => {
+          setContacts(contacts.filter( c => c.id !== id))
+        })
+    }
+
   const renderContacts = (props) => {
     return contacts.map( contact => (
       <div key={contact.id}>
@@ -27,7 +34,11 @@ const Contacts = (props) => {
           <br/>
           Description: {contact.description}
           <br />
+          <button>Edit</button>
+          <button onClick={() => handleRemove(contact.id)}>Delete</button>
         </li>
+
+        <button>Add</button>
       </div>
     ))
   }
