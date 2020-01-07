@@ -23,7 +23,7 @@ const App = () => (
           <ProtectedRoute exact path='/jobs' component={Jobs} />
           <ProtectedRoute exact path="/jobs/:job_id/new_note" component={NotesForm} />
           <ProtectedRoute exact path="/jobs/:id" component={JobViewForm} />
-          <ProtectedRoute exact path="/job/:id" component={Modal} />
+          <ProtectedRoute exact path="/job/:id" component={ Modal} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route component={NoMatch} />

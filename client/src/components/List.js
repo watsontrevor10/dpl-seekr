@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 import Jobs from "./Jobs"; 
 import JobForm from "./JobForm";
 import axios from 'axios'
+
 
 const List = (props) => {
 
@@ -26,6 +28,10 @@ const List = (props) => {
       return jobs.map( job => {
         if ( name === job.status ) {
         return (
+        <Link 
+          to={`/job/${job.id}`}
+          jobs={job.company_name}
+        >
         <div key={job.id}>
           <li >
             {job.company_name} 
@@ -36,6 +42,7 @@ const List = (props) => {
             <br />
           </li>
         </div>
+        </Link>
         )}
         return (
           <></>
