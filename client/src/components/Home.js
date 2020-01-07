@@ -1,8 +1,13 @@
 import React from 'react';
+import ListContainer from "./ListContainer"; 
+import Jobs from "./Jobs";
 
 
 const Home = () => (
-  <h1>Devise Auth App</h1>
+  <>
+    <ListContainer />
+    <Jobs />
+  </>
 )
 
 export default Home;
