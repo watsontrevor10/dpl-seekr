@@ -26,7 +26,7 @@ class Register extends React.Component {
 
     return (
       <segment>
-        <h1>Register</h1>
+        <h1>Sign Up</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             label="Email"
