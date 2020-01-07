@@ -1,4 +1,4 @@
-class Api::InterviewsController < jobController
+class Api::InterviewsController < ApplicationController
   before_action :set_job
   before_action :set_interview, only: [:show, :update, :destroy]
 
