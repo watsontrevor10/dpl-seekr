@@ -17,7 +17,7 @@ const NotesForm = (props) => {
 
   // Form component
   return (
-    <div>
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         Note <br/>
         <input 

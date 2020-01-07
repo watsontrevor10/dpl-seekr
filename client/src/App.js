@@ -9,6 +9,7 @@ import Register from './components/Register';
 import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Switch, Route, } from 'react-router-dom';
+import "./stylesheets/App.scss";
 
 const App = () => (
   <>
