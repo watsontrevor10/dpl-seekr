@@ -41,7 +41,7 @@ const JobForm = (props) => {
 }
 
 const jobStatus = [
-  { key: "a", text: "WishList", value: "WishList", },
+  { key: "a", text: "Wishlist", value: "Wishlist", },
   { key: "b", text: "Applied", value: "Applied", },
   { key: "c", text: "Interviewed", value: "Interviewed", },
   { key: "d", text: "Offer", value: "Offer", },
