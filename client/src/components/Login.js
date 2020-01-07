@@ -19,9 +19,12 @@ class Login extends React.Component {
     const { email, password, } = this.state;
 
     return (
-      <segment>
+      <segment className="login-main-container">
         <h1>Login</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form 
+          className="login-form-container"
+          onSubmit={this.handleSubmit}
+          >
           <input
             label="Email"
             autoFocus
