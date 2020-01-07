@@ -19,9 +19,12 @@ class Login extends React.Component {
     const { email, password, } = this.state;
 
     return (
-      <segment>
+      <segment className="login-main-container">
         <h1>Login</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form 
+          className="login-form-container"
+          onSubmit={this.handleSubmit}
+          >
           <input
             label="Email"
             autoFocus
@@ -41,7 +44,7 @@ class Login extends React.Component {
             onChange={this.handleChange}
           />
           <segment textAlign='center' basic>
-            <button primary type='submit'>Submit</button>
+            <button primary type='submit'>Continue</button>
           </segment>
         </form>
       </segment>

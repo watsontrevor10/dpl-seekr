@@ -21,6 +21,7 @@ class Navbar extends React.Component {
         <nav>
           <Link to='/login'>
             <button
+              className='nav-login-btn'
               id='login'
               name='login'
               active={location.pathname === '/login'}
@@ -31,7 +32,7 @@ class Navbar extends React.Component {
               id='register'
               name='register'
               active={location.pathname === '/register'}
-            >Register</button>
+            >sign up</button>
           </Link>
         </nav>
       )
