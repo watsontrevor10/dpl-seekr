@@ -7,10 +7,10 @@ import Sidebar from "./Sidebar";
 const Home = () => (
   <>
   <div className="main-home-container">
-    <div>
+    <div className="main-sidebar-container">
       <Sidebar />
     </div>
-    <div>
+    <div className="main-listContainer">
       <ListContainer />
     </div>
     {/* <div>

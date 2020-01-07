@@ -2,5 +2,9 @@
   height: 100vh;
   display: flex;
   flex-direction: row;
+}
 
+.main-listContainer {
+  flex: 1;
+  height: 80rem;
 }

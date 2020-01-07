@@ -1,7 +1,10 @@
 
-.main-listContainer {
+.list-container {
   display: flex;
   position: relative;
   flex-grow: 1;
-  background-color: red;
+  background-color: rgb(223, 206, 255);
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 100%;
 }
