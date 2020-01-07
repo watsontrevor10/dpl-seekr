@@ -1,9 +1,9 @@
 class Api::InterviewsController < ApplicationController
-  before_action :set_application
+  before_action :set_job
   before_action :set_interview, only: [:show, :update, :destroy]
 
   def index
-    render json: @application.interviews
+    render json: @job.interviews
   end
 
   def show
@@ -11,7 +11,7 @@ class Api::InterviewsController < ApplicationController
   end
 
   def create
-    interview = @application.interviews.new(interview_params)
+    interview = @job.interviews.new(interview_params)
 
     if interview.save
       render json: interview
@@ -37,16 +37,16 @@ class Api::InterviewsController < ApplicationController
 
   private
 
-    def set_application
-      @application = current_user.applications.find(params[:application_id])
+    def set_job
+      @job = current_user.jobs.find(params[:job_id])
     end
 
     def set_interview
-      @interview = @application.interviews.find(params[:id])
+      @interview = @job.interviews.find(params[:id])
     end
 
     def interview_params
-      params.require(:interview).permit(:date, :time, :thank_you, :follow_up, :notes, :type)
+      params.require(:interview).permit(:date, :follow_up, :description, :type)
     end
 
 end
