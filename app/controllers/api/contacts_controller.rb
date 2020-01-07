@@ -8,13 +8,13 @@ class Api::ContactsController < ApplicationController
   end
 
   def show
-
+    render json: @contact
   end
 
   def create
-
-   @contact = @job.contacts.new(contact_params)
-      if @job.save 
+   contact = @job.contacts.new(contact_params)
+   
+      if contact.save 
         render json: @contact
       else 
         render json: @contact.errors 
