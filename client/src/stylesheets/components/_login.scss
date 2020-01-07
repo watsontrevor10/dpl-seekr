@@ -1,4 +1,7 @@
 //// LOGIN MAIN ///////////////
+* {
+  box-sizing: border-box;
+}
 
 .login-main-container {
   display: flex;
@@ -6,6 +9,11 @@
   justify-content: center;
   flex-grow: 1;
   flex-direction: column;
+  margin: 10rem 0;
+
+  h1 {
+    font-family: sans-serif;
+  }
 }
 
 .login-form-container {
@@ -13,4 +21,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  input {
+    margin: 10px;
+    box-sizing: inherit;
+  }
+
+  
 }
+
