@@ -1,8 +1,23 @@
 import React from 'react';
+import ListContainer from "./ListContainer"; 
+import Jobs from "./Jobs";
+import Sidebar from "./Sidebar"; 
 
 
 const Home = () => (
-  <h1>Devise Auth App</h1>
+  <>
+  <div className="main-home-container">
+    <div className="main-sidebar-container">
+      <Sidebar />
+    </div>
+    <div className="main-listContainer">
+      <ListContainer />
+    </div>
+    {/* <div>
+      <Jobs />
+    </div> */}
+     </div>
+  </>
 )
 
 export default Home;
