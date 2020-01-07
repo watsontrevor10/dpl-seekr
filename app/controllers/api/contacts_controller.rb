@@ -15,9 +15,9 @@ class Api::ContactsController < ApplicationController
    contact = @job.contacts.new(contact_params)
 
       if contact.save 
-        render json: @contact
+        render json: contact
       else 
-        render json: @contact.errors 
+        render json: contact.errors 
       end 
   end
 
