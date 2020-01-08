@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import useFormInput from '../hooks/useFormInput'
 import axios from 'axios'
 
-const JobView = (props) => {
+const JobViewForm = (props) => {
 
   const [job, setJob] = useState([])
 
@@ -59,4 +59,4 @@ const JobView = (props) => {
   )
 }
 
-export default JobView
+export default JobViewForm
