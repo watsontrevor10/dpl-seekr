@@ -27,7 +27,7 @@ const JobForm = (props) => {
         Job Title: <br/>
         <input type="text" name="job_title" {...job} /><br/>
         <select name="status" {...status}>
-          { jobSearch.map(j => (   
+          { jobStatus.map(j => (   
             <option value={j.value}>
               {j.value}
             </option>

@@ -21,6 +21,10 @@ const Contacts = (props) => {
         })
     }
 
+  const handleEdit = (id) => {
+    
+  }
+
   const toggle = () => {
     setToggleForm(!toggleForm)
   }
@@ -29,7 +33,6 @@ const Contacts = (props) => {
 
   const renderContacts = (props) => {
     return contacts.map( contact => (
-
       <>
         <div key={contact.id}>
           <li >
@@ -45,7 +48,7 @@ const Contacts = (props) => {
             <br/>
             Description: {contact.description}
             <br />
-            <button>Edit</button>
+            <button onClickt={() => handleEdit(contact.id)}>Edit</button>
             <button onClick={() => handleRemove(contact.id)}>Delete</button>
           </li>
           <br />

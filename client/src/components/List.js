@@ -63,14 +63,15 @@ const List = (props) => {
 
   return(
     <>
-      <h1 className="list-component-container">{props.name}</h1>
-      <div onClick={showModal}>
-        { renderJobs(props.name) }
-        <button onClick={toggle}>Form</button>
-        { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
-        { openModal ? <Modal show={openModal} /> : null}
+      <div>
+        <h1 className="list-component-container">{props.name}</h1>
+        <div onClick={showModal}>
+          { renderJobs(props.name) }
+          <button onClick={toggle}>Form</button>
+          { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
+          { openModal ? <Modal show={openModal} /> : null}
+        </div>
       </div>
-    </div>
     </>
   )
 }
