@@ -1,5 +1,5 @@
 :root {
-  --color-5: rgb(95, 27, 230);
+  --color-5: rgb(255, 255, 255);
 }
 .main-sidebar-container {
   display: flex;
@@ -14,5 +14,9 @@
 }
 
 .sidebar {
+  padding: 3rem;
 
+  h1 {
+    margin: 0.5rem 0;
+  }
 }

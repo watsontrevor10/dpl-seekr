@@ -1,3 +1,7 @@
+:root {
+  --color-card-text: black;
+}
+
 .list-component-container {
   display: flex;
   flex-direction: column;
@@ -5,9 +9,15 @@
   align-items: center;
   justify-content: flex-start;
   height: 100%;
-  width: 15rem;
+  width: 18rem;
 
-  h1 { margin: 5px 5px 15px 5px; }
+  h1 { 
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 0.7rem;
+  }
 
   button {
     width: 95%;
@@ -29,5 +39,15 @@
   li {
     width: 100%;
     padding: 10px;
+  }
+
+  li {
+    color: var(--color-card-text);
+  }
+  li:visited {
+    color: var(--color-card-text);
+  }
+  ul {
+    padding: 0.3rem 2rem;
   }
 }

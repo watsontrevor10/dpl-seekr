@@ -37,12 +37,9 @@ const List = (props) => {
           className="job-card"
           key={job.id}>
           <li >
-            {job.company_name} 
-            <br/>
-            {job.job_title}
-            <br />
-            {job.status}
-            <br />
+            <ul>{job.company_name}</ul>
+            <ul>{job.job_title}</ul>
+            <ul>{job.status}</ul>
           </li>
         </div>
         </Link>

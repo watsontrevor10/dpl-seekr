@@ -7,6 +7,7 @@ const ListContainer = () => {
     <>
       <div className="main-homeNav-container">
         <HomeNav/>
+        </div>
         <div className="list-container">
           <div className="list">
             <List name="Wishlist" />
@@ -24,7 +25,7 @@ const ListContainer = () => {
             <List name="Rejected" className="list-component-container"/>
           </div>
         </div>
-      </div>
+      
     </>
   )
 }
