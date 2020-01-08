@@ -10,7 +10,10 @@ const ContactForm = (props) => {
   const position = useFormInput('')
   const department = useFormInput('')
   const description = useFormInput('')
-  const [ contact, setContact ] = useState(props.contactProp)
+  const [ contact, setContact ] = useState(props.contactProp ? 
+    props.contactProp 
+    : null
+  )
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -33,7 +36,8 @@ const ContactForm = (props) => {
     e.preventDefault()
   }
 
-if (contact !== []) {
+if (contact) {
+  // Edit Form
   return (
     <div>
       <form onSubmit={handleUpdate}>
@@ -44,17 +48,54 @@ if (contact !== []) {
           placeholder={contact.first_name}
           {...contact.first_name} 
         />
-        <input type='text' name='last_name' label='Last Name' placeholder='Last Name' {...last_name} />
-        <input type='text' name='phone' label='Phone' placeholder='Phone' {...phone} />
-        <input type='text' name='email' label='Email' placeholder='Email' {...email} />
-        <input type='text' name='position' label='position' placeholder='position' {...position} />
-        <input type='text' name='department' label='department' placeholder='department' {...department} />
-        <input type='text' name='description' label='description' placeholder='description' {...description} />
+        <input 
+          type='text' 
+          name='last_name' 
+          label='Last Name' 
+          placeholder={contact.last_name} 
+          {...contact.last_name} 
+        />
+      <input 
+        type='text' 
+        name='phone' 
+        label='Phone' 
+        placeholder={contact.phone} 
+        {...contact.phone} 
+      />
+        <input 
+          type='text' 
+          name='email' 
+          label='Email' 
+          placeholder={contact.email} 
+          {...contact.email} 
+        />
+        <input 
+          type='text' 
+          name='position' 
+          label='position' 
+          placeholder={contact.position} 
+          {...contact.position} 
+        />
+        <input 
+          type='text' 
+          name='department' 
+          label='department' 
+          placeholder={contact.department} 
+          {...contact.department} 
+        />
+        <input 
+          type='text' 
+          name='description' 
+          label='description' 
+          placeholder={contact.description} 
+          {...contact.description} 
+        />
         <input type='submit' name='Submit' />
       </form>  
     </div>
   )
 } else {
+  // Add Form
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -62,15 +103,51 @@ if (contact !== []) {
           type='text' 
           name='first_name' 
           label='First Name' 
-          placeholder={contact.first_name} 
+          placeholder='First Name'
           {...first_name} 
         />
-        <input type='text' name='last_name' label='Last Name' placeholder={contact.last_name} {...last_name} />
-        <input type='text' name='phone' label='Phone' placeholder='Phone' {...phone} />
-        <input type='text' name='email' label='Email' placeholder='Email' {...email} />
-        <input type='text' name='position' label='position' placeholder='position' {...position} />
-        <input type='text' name='department' label='department' placeholder='department' {...department} />
-        <input type='text' name='description' label='description' placeholder='description' {...description} />
+        <input 
+          type='text' 
+          name='last_name' 
+          label='Last Name' 
+          placeholder='Last Name' 
+          {...last_name} 
+        />
+        <input 
+          type='text' 
+          name='phone' 
+          label='Phone' 
+          placeholder='Phone' 
+          {...phone} 
+        />
+        <input 
+          type='text' 
+          name='email' 
+          label='Email' 
+          placeholder='Email' 
+          {...email} 
+        />
+        <input 
+          type='text' 
+          name='position' 
+          label='position' 
+          placeholder='position' 
+          {...position} 
+        />
+        <input 
+          type='text' 
+          name='department' 
+          label='department' 
+          placeholder='department' 
+          {...department} 
+        />
+        <input 
+          type='text' 
+          name='description' 
+          label='description' 
+          placeholder='description' 
+          {...description} 
+        />
         <input type='submit' name='Submit' />
       </form>  
     </div>
