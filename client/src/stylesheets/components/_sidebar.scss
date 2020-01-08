@@ -1,4 +1,6 @@
-
+:root {
+  --color-5: rgb(255, 255, 255);
+}
 .main-sidebar-container {
   display: flex;
   align-items: flex-start;
@@ -8,5 +10,13 @@
   flex-direction: column;
   box-sizing: border-box;
   width: 200px;
-  background-color: #9871ff;
+  background-color: var(--color-5);
+}
+
+.sidebar {
+  padding: 3rem;
+
+  h1 {
+    margin: 0.5rem 0;
+  }
 }

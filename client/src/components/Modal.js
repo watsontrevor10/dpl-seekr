@@ -6,9 +6,15 @@ const Modal = (props) => {
  
   return (
     <>
-      <div>
+      <div 
+        className="main-modal-container"
+        style={{
+          transform: props.show ? "translateY(0)" : "translateY(-100vh)",
+          opacity: props.show ? "1" : "0"
+        }}
+      >
         <Link to={`/jobs/${props.id}`}>
-          <h3>Link</h3>
+          <h3>Info Form</h3>
         </Link>
       </div>
     </>

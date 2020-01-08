@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   return(
     <>
-    <div >
+    <div className="sidebar">
       <h1>sidebar</h1>
       <div>DPL log</div>
       <div>username</div>
