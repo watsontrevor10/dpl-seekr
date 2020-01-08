@@ -1,5 +1,7 @@
 :root {
-  --color-card-text: black;
+  --color-card-text1: rgb(255, 255, 255);
+  --color-card-text2: rgb(186, 186, 186);
+  --color-card-back: #7a31b4
 }
 
 .list-component-container {
@@ -33,21 +35,26 @@
   list-style: none;
   display: flex;
   margin: 10px 0;
-  background-color: #d8eaff;
+  background-color: var(--color-card-back);
   border-radius: 5px;
+
 
   li {
     width: 100%;
     padding: 10px;
-  }
-
-  li {
     color: var(--color-card-text);
   }
   li:visited {
     color: var(--color-card-text);
   }
-  ul {
+  ul.card-title {
     padding: 0.3rem 2rem;
+    font-size: 1.3rem;
+    color: var(--color-card-text1)
+  }
+
+  ul.card-meta {
+    padding: 0.3rem 2rem;
+    color: var(--color-card-text2)
   }
 }
