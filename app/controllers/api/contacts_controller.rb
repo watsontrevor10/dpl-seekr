@@ -4,20 +4,20 @@ class Api::ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :update, :destroy]
 
   def index
-    render json: @job.contacts.all 
+    render json: @job.contacts
   end
 
   def show
-
+    render json: @contact
   end
 
   def create
+   contact = @job.contacts.new(contact_params)
 
-   @contact = @job.contacts.new(contact_params)
-      if @job.save 
-        render json: @contact
+      if contact.save 
+        render json: contact
       else 
-        render json: @contact.errors 
+        render json: contact.errors 
       end 
   end
 
