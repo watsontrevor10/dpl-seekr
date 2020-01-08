@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const Contacts = (props) => {
   const [ contacts, setContacts ] = useState([])
+  const [ editContact, setEditContact ] = useState([])
   const [ toggleForm, setToggleForm ] = useState(false)
   const { job_id } =  props.match.params 
 
@@ -21,18 +22,20 @@ const Contacts = (props) => {
         })
     }
 
-  const handleEdit = (id) => {
-    
-  }
-
   const toggle = () => {
     setToggleForm(!toggleForm)
+  }
+
+  const handleEdit = (id) => { 
+    setEditContact(contacts.filter( f => f.id === id))
+    toggle()
   }
 
   const addContact = (contact) => setContacts([ ...contacts, contact, ]);
 
   const renderContacts = (props) => {
     return contacts.map( contact => (
+
       <>
         <div key={contact.id}>
           <li >
@@ -48,7 +51,7 @@ const Contacts = (props) => {
             <br/>
             Description: {contact.description}
             <br />
-            <button onClickt={() => handleEdit(contact.id)}>Edit</button>
+            <button onClick={() => handleEdit(contact.id)}>Edit</button>
             <button onClick={() => handleRemove(contact.id)}>Delete</button>
           </li>
           <br />
@@ -62,7 +65,13 @@ const Contacts = (props) => {
       <button onClick={() => toggle() }>
         { toggleForm ? "Cancel" : "Add" }
       </button>
-      { toggleForm ? <ContactForm toggle={toggle} add={addContact} job={job_id} /> : "" }
+      { toggleForm ? <ContactForm 
+        toggle={toggle} 
+        add={addContact} 
+        job={job_id} 
+        contactProp={editContact} 
+        /> : "" 
+      }
       <br/>
       <hr/>
       { renderContacts() }
