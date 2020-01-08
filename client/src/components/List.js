@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom'
-import Jobs from "./Jobs"; 
+import Modal from "./Modal"
 import JobForm from "./JobForm";
 import axios from 'axios'
 
@@ -10,6 +10,7 @@ const List = (props) => {
     // State for looping through users jobs
     const [ jobs, setJobs ] = useState([])
     const [ toggleForm, setToggleForm] = useState(false)
+    const [ openModal, setOpenModal ] = useState(false)
     // const [ specificJob, setSepecificJob] = useState([]);
     
     // axios call to get all user jobs
@@ -24,32 +25,37 @@ const List = (props) => {
       setToggleForm(!toggleForm);
     }
 
+    const showModal = () => {
+      setOpenModal(!openModal);
+    }
+
     const renderJobs = (name) => {
       return jobs.map( job => {
         if ( name === job.status ) {
         return (
-        <Link 
-          to={`/job/${job.id}`}
-          style={{ textDecoration: 'none' }}
-          jobs={job.company_name}
+        <div
+          // to={`/job/${job.id}`}
+          company={job.company_name}
+          title={job.job_title}
+          status={job.status}
         >
-        <div 
-          className="job-card"
-          key={job.id}>
-          <li >
-            <ul className="card-title">{job.job_title}</ul>
-            <ul className="card-meta">{job.company_name}</ul>
-            <ul className="card-meta">{job.status}</ul>
-          </li>
+          <div key={job.id}>
+            <li >
+              {job.company_name} 
+              <br/>
+              {job.job_title}
+              <br />
+              {job.status}
+              <br />
+            </li>
+          </div>
         </div>
-        </Link>
         )}
         return (
           <></>
         )
-        })
+      })
     }
-
     
   
     // Passing this function into JobForm as a prop
@@ -57,12 +63,12 @@ const List = (props) => {
 
   return(
     <>
-    <div className="list-component-container">
-      <h1>{props.name}</h1>
-      <button onClick={toggle}>Form</button>
-        { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
-      <div className="render-jobs">
+      <h1 className="list-component-container">{props.name}</h1>
+      <div onClick={showModal}>
         { renderJobs(props.name) }
+        <button onClick={toggle}>Form</button>
+        { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
+        { openModal ? <Modal show={openModal} /> : null}
       </div>
     </div>
     </>
