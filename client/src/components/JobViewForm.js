@@ -16,7 +16,7 @@ const JobViewForm = (props) => {
   const status = useFormInput('')
 
   useEffect(() => {
-    axios.get(`/api/jobs/${props.match.params.id}`)
+    axios.get(`/api/jobs/${props.id}`)
       .then(res => {
         setJob(res.data)
       })
@@ -47,7 +47,11 @@ const JobViewForm = (props) => {
         <input type="number" name="Salary" {...salary} value={job.salary} />
         <br />
         Status:
-        <select name="Status" {...status} value={job.status} />
+        <select name="status" {...status} value={job.status}>
+          <option value={job.status}>
+
+          </option>
+        </select>
         <br />
         Job URL:
         <input type="url" name="Job URL" {...jobURL} value={job.job_url} />
@@ -58,5 +62,13 @@ const JobViewForm = (props) => {
     </>
   )
 }
+
+const jobStatus = [
+  { key: "a", text: "Wishlist", value: "Wishlist", },
+  { key: "b", text: "Applied", value: "Applied", },
+  { key: "c", text: "Interviewed", value: "Interviewed", },
+  { key: "d", text: "Offer", value: "Offer", },
+  { key: "e", text: "Rejected", value: "Rejected", }
+];
 
 export default JobViewForm

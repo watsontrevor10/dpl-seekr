@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import Modal from "./Modal"
 import JobForm from "./JobForm";
 import axios from 'axios'
-
+import JobCard from "./JobCard"; 
 
 const List = (props) => {
 
@@ -25,32 +25,29 @@ const List = (props) => {
       setToggleForm(!toggleForm);
     }
 
-    const showModal = () => {
-      setOpenModal(!openModal);
+
+    const deleteJob = (id) => {
+      axios.delete(`/api/jobs/${id}`)
+      .then(res => {
+        setJobs(jobs.filter(j => j.id !== id))
+      })
     }
 
     const renderJobs = (name) => {
       return jobs.map( job => {
         if ( name === job.status ) {
-        return (
-        <div
-          // to={`/job/${job.id}`}
-          className="job-card"
-          company={job.company_name}
-          title={job.job_title}
-          status={job.status}
-        >
-          <div key={job.id}>
-            <li >
-              {job.company_name} 
-              <br/>
-              {job.job_title}
-              <br />
-              {job.status}
-              <br />
-            </li>
-          </div>
-        </div>
+          return (
+          <>
+            <div
+            // to={`/job/${job.id}`}
+            className="job-card"
+            company={job.company_name}
+            title={job.job_title}
+            status={job.status}
+            >
+              <JobCard deleteJob={deleteJob} {...job}/>
+            </div>
+          </>
         )}
         return (
           <></>
@@ -64,15 +61,12 @@ const List = (props) => {
 
   return (
     <>
-      <div>
-        <h1 className="list-component-container">{props.name}</h1>
-        <div onClick={showModal}>
-          { renderJobs(props.name) }
-          <button onClick={toggle}>Form</button>
-          { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
-          { openModal ? <Modal show={openModal} /> : null}
-        </div>
-      </div>
+    <div>
+      <h1 className="list-component-container">{props.name}</h1>
+        <button onClick={toggle}>Form</button>
+        { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
+        { renderJobs(props.name) }
+    </div>
     </>
   )
 }
