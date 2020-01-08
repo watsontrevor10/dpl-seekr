@@ -35,6 +35,7 @@ const List = (props) => {
         return (
         <div
           // to={`/job/${job.id}`}
+          className="job-card"
           company={job.company_name}
           title={job.job_title}
           status={job.status}
@@ -61,7 +62,7 @@ const List = (props) => {
     // Passing this function into JobForm as a prop
     const addJob = (job) => setJobs([ ...jobs, job, ]);
 
-  return(
+  return (
     <>
       <div>
         <h1 className="list-component-container">{props.name}</h1>
