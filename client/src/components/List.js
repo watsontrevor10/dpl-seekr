@@ -30,9 +30,12 @@ const List = (props) => {
         return (
         <Link 
           to={`/job/${job.id}`}
+          style={{ textDecoration: 'none' }}
           jobs={job.company_name}
         >
-        <div key={job.id}>
+        <div 
+          className="job-card"
+          key={job.id}>
           <li >
             {job.company_name} 
             <br/>
@@ -57,12 +60,14 @@ const List = (props) => {
 
   return(
     <>
-      <h1 className="list-component-container">{props.name}</h1>
-      <div>
-        { renderJobs(props.name) }
-        <button onClick={toggle}>Form</button>
+    <div className="list-component-container">
+      <h1>{props.name}</h1>
+      <button onClick={toggle}>Form</button>
         { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
+      <div className="render-jobs">
+        { renderJobs(props.name) }
       </div>
+    </div>
     </>
   )
 }

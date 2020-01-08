@@ -5,4 +5,29 @@
   align-items: center;
   justify-content: flex-start;
   height: 100%;
+  width: 15rem;
+
+  h1 { margin: 5px 5px 15px 5px; }
+
+  button {
+    width: 95%;
+    padding: 0.5rem;
+    border-color: #e2e2e2;
+  }
+  .render-jobs {
+    width: 95%;
+  }
+}
+
+.job-card {
+  list-style: none;
+  display: flex;
+  margin: 10px 0;
+  background-color: #d8eaff;
+  border-radius: 5px;
+
+  li {
+    width: 100%;
+    padding: 10px;
+  }
 }
