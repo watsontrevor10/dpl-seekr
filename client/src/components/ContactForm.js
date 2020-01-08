@@ -10,6 +10,7 @@ const ContactForm = (props) => {
   const position = useFormInput('')
   const department = useFormInput('')
   const description = useFormInput('')
+  const [contact, setContact ] = useState(props.contactProp)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -27,11 +28,17 @@ const ContactForm = (props) => {
         props.toggle()
       })
   }
-
+if (contact !== []) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type='text' name='first_name' label='First Name' placeholder='First Name' {...first_name} />
+        <input 
+          type='text' 
+          name='first_name' 
+          label='First Name' 
+          placeholder='First Name' 
+          {...first_name} 
+        />
         <input type='text' name='last_name' label='Last Name' placeholder='Last Name' {...last_name} />
         <input type='text' name='phone' label='Phone' placeholder='Phone' {...phone} />
         <input type='text' name='email' label='Email' placeholder='Email' {...email} />
@@ -42,6 +49,28 @@ const ContactForm = (props) => {
       </form>  
     </div>
   )
+} else {
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input 
+          type='text' 
+          name='first_name' 
+          label='First Name' 
+          placeholder={contact.first_name} 
+          {...first_name} 
+        />
+        <input type='text' name='last_name' label='Last Name' placeholder={contact.last_name} {...last_name} />
+        <input type='text' name='phone' label='Phone' placeholder='Phone' {...phone} />
+        <input type='text' name='email' label='Email' placeholder='Email' {...email} />
+        <input type='text' name='position' label='position' placeholder='position' {...position} />
+        <input type='text' name='department' label='department' placeholder='department' {...department} />
+        <input type='text' name='description' label='description' placeholder='description' {...description} />
+        <input type='submit' name='Submit' />
+      </form>  
+    </div>
+  )
+  }
 }
 
 export default ContactForm
