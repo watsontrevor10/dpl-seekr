@@ -54,7 +54,7 @@ const List = (props) => {
         return (
           <></>
         )
-        })
+      })
     }
     
   
@@ -68,7 +68,7 @@ const List = (props) => {
         { renderJobs(props.name) }
         <button onClick={toggle}>Form</button>
         { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
-        { openModal ? <Modal openModal={openModal} /> : null}
+        { openModal ? <Modal show={openModal} /> : null}
       </div>
     </>
   )
