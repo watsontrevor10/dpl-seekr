@@ -10,7 +10,7 @@ const ContactForm = (props) => {
   const position = useFormInput('')
   const department = useFormInput('')
   const description = useFormInput('')
-  const [contact, setContact ] = useState(props.contactProp)
+  const [ contact, setContact ] = useState(props.contactProp)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -28,16 +28,21 @@ const ContactForm = (props) => {
         props.toggle()
       })
   }
+
+  const handleUpdate = (e) => {
+    e.preventDefault()
+  }
+
 if (contact !== []) {
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleUpdate}>
         <input 
           type='text' 
           name='first_name' 
           label='First Name' 
-          placeholder='First Name' 
-          {...first_name} 
+          placeholder={contact.first_name}
+          {...contact.first_name} 
         />
         <input type='text' name='last_name' label='Last Name' placeholder='Last Name' {...last_name} />
         <input type='text' name='phone' label='Phone' placeholder='Phone' {...phone} />
