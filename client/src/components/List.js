@@ -33,22 +33,23 @@ const List = (props) => {
     return jobs.map(job => {
       if (name === job.status) {
         return (
-          <div
-            // to={`/job/${job.id}`}
-            company={job.company_name}
-            title={job.job_title}
-            status={job.status}
-          >
-            <div key={job.id}>
-              <li >
-                {job.company_name}
-                <br />
-                {job.job_title}
-                <br />
-                {job.status}
-                <br />
-              </li>
-            </div>
+        <div
+          // to={`/job/${job.id}`}
+          className="job-card"
+          company={job.company_name}
+          title={job.job_title}
+          status={job.status}
+        >
+          <div key={job.id}>
+            <li >
+              {job.company_name} 
+              <br/>
+              {job.job_title}
+              <br />
+              {job.status}
+              <br />
+            </li>
+          </div>
           </div>
         )
       }
@@ -64,14 +65,14 @@ const List = (props) => {
 
   return (
     <>
-      <div>
-        <h1 className="list-component-container">{props.name}</h1>
-        <div onClick={showModal}>
-          {renderJobs(props.name)}
-          <button onClick={toggle}>Form</button>
-          {toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null}
-          {openModal ? <Modal show={openModal} /> : null}
-        </div>
+    <div>
+      <h1 className="list-component-container">{props.name}</h1>
+      <div onClick={showModal}>
+        { renderJobs(props.name) }
+        <button onClick={toggle}>Form</button>
+        { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
+        { openModal ? <Modal show={openModal} /> : null}
+      </div>
       </div>
     </>
   )
