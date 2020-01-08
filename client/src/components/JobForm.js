@@ -40,12 +40,12 @@ const JobForm = (props) => {
   )
 }
 
-const jobSearch = [
-  { key:'a', name:'Wishlist', value:'Wishlist'},
-  { key:'b', name:'Applied', value:'Applied'},
-  { key:'c', name:'Interview', value:'Wishlist'},
-  { key:'d', name:'Offer', value:'Offer'},
-  { key:'e', name:'Rejected', value:'Rejected'},
-]
+const jobStatus = [
+  { key: "a", text: "Wishlist", value: "Wishlist", },
+  { key: "b", text: "Applied", value: "Applied", },
+  { key: "c", text: "Interviewed", value: "Interviewed", },
+  { key: "d", text: "Offer", value: "Offer", },
+  { key: "e", text: "Rejected", value: "Rejected", }
+];
 
 export default JobForm

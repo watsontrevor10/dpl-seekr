@@ -20,33 +20,35 @@ class Login extends React.Component {
 
     return (
       <segment className="login-main-container">
+        <div className="login-container">
         <h1>Login</h1>
-        <form 
-          className="login-form-container"
-          onSubmit={this.handleSubmit}
-          >
-          <input
-            label="Email"
-            autoFocus
-            required
-            name='email'
-            value={email}
-            placeholder='Email'
-            onChange={this.handleChange}
-          />
-          <input 
-            label="Password"
-            required
-            name='password'
-            value={password}
-            placeholder='Password'
-            type='password'
-            onChange={this.handleChange}
-          />
-          <segment textAlign='center' basic>
-            <button primary type='submit'>Continue</button>
-          </segment>
-        </form>
+          <form 
+            className="login-form-container"
+            onSubmit={this.handleSubmit}
+            >
+            <input
+              label="Email"
+              autoFocus
+              required
+              name='email'
+              value={email}
+              placeholder='Email'
+              onChange={this.handleChange}
+            />
+            <input 
+              label="Password"
+              required
+              name='password'
+              value={password}
+              placeholder='Password'
+              type='password'
+              onChange={this.handleChange}
+            />
+            <segment textAlign='center' basic>
+              <button primary type='submit'>Continue</button>
+            </segment>
+          </form>
+        </div>
       </segment>
     )
   }
