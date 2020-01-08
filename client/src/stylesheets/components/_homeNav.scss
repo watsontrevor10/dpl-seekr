@@ -1,5 +1,7 @@
 .main-homeNav-container{
-  flex-direction: row;
-  flex: 1;
-  height: 80rem;
+  padding: 1rem;
+
+  h1 {
+    font-size: 1.2rem;
+  }
 }

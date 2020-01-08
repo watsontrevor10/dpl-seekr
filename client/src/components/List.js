@@ -70,6 +70,7 @@ const List = (props) => {
         { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
         { openModal ? <Modal show={openModal} /> : null}
       </div>
+    </div>
     </>
   )
 }
