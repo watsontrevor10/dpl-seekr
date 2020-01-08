@@ -2,55 +2,44 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import JobForm from '../components/JobForm';
 import { Link } from 'react-router-dom';
+import Modal from "./Modal"
 
 
 const JobCard = (props) => {
   // State for looping through users jobs
-  const [ jobs, setJobs ] = useState([])
-  const [ toggleForm, setToggleForm] = useState(false)
+  const [ openModal, setOpenModal ] = useState(false)
   
   // axios call to get all user jobs
-  useEffect( () => {
-    axios.get('/api/jobs')
-      .then( res => {
-        setJobs(res.data);
-      })
-  }, [])
 
-  const toggle = () => {
-    setToggleForm(!toggleForm);
+
+  const show = () => {
+    setOpenModal(true);
+  }
+  const hide = () => {
+    
+    setOpenModal(!openModal);
   }
 
-  // Rendering the loop of the jobs
-  // const renderJobs = () => {
-  //   return jobs.map( job => (
-  //     <Link to={`/job/${job.id}`}>
-  //       <div key={job.id}>
-  //           <div>
-  //           {job.company_name} 
-  //           <br/>
-  //           {job.job_title}
-  //           <br />
-  //           {job.status}
-  //           <br />
-  //           </div>
-  //       </div>
-  //     </Link>
-  //   ))
-  // }
+  const renderJob = () => {
+      
+      return <div key={props.id}>
+        <ul onClick={show}>
+          <li className="card-title">{props.job_title}</li>
+          <li className="card-meta">{props.company_name}</li>
+          <li className="card-meta">{props.status}</li>
+        </ul>
+        <button onClick={() => props.deleteJob(props.id)}>Delete</button>
+      </div>
+  }
 
-  // Passing this function into JobForm as a prop
-  const addJob = (job) => setJobs([ ...jobs, job, ]);
   
   // jobs Index component
   return (
     <div>
-      Jobs
       <ul>
-        { renderJobs() }
+        { renderJob() }
       </ul>
-      <button onClick={toggle}>Form</button>
-      { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
+      { openModal ? <Modal id={props.id} hide={hide} show={openModal} /> : null}
     </div>
   )
 }

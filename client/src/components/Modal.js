@@ -1,11 +1,13 @@
 import React from 'react';
 import JobViewForm from './JobViewForm';
-import {Link} from 'react-router-dom'
+import Backdrop from './Backdrop';
 
 const Modal = (props) => {
+  
  
   return (
     <>
+    <Backdrop show={props.show} hide={props.hide} />
       <div 
         className="main-modal-container"
         style={{
@@ -13,9 +15,7 @@ const Modal = (props) => {
           opacity: props.show ? "1" : "0"
         }}
       >
-        <Link to={`/jobs/${props.id}`}>
-          <h3>Info Form</h3>
-        </Link>
+        <JobViewForm id={props.id}/>
       </div>
     </>
   )
