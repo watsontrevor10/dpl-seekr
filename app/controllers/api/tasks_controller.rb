@@ -1,6 +1,6 @@
-class Api::tasksController < ApplicationController
+class Api::TasksController < ApplicationController
   before_action :set_job
-  before_action :set_task, :only[:update, :destroy]
+  before_action :set_task, only: [:update, :destroy]
   
   def index
     render json: @job.tasks.all
@@ -29,11 +29,11 @@ class Api::tasksController < ApplicationController
   
   private
     def set_job
-      @job = job.find(params[:job_id])
+      @job = Job.find(params[:job_id])
     end
   
     def set_task
-      @task = task.find(params[:id])
+      @task = Task.find(params[:id])
     end
   
     def task_params

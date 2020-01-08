@@ -9,7 +9,9 @@ import Register from './components/Register';
 import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Switch, Route, } from 'react-router-dom';
+import Tasks from './components/Tasks';
 import "./stylesheets/App.scss";
+
 
 const App = () => (
   <>
@@ -20,6 +22,7 @@ const App = () => (
           <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path='/jobs' component={Jobs} />
           <ProtectedRoute exact path="/jobs/:job_id/new_note" component={NotesForm} />
+          <ProtectedRoute exact path="/jobs/:job_id/tasks" component={Tasks} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route component={NoMatch} />
