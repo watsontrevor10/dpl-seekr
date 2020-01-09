@@ -59,7 +59,7 @@ const List = (props) => {
     // Passing this function into JobForm as a prop
     const addJob = (job) => setJobs([ ...jobs, job, ]);
 
-  return(
+  return (
     <>
     <div>
       <h1 className="list-component-container">{props.name}</h1>
