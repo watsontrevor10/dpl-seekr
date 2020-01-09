@@ -9,11 +9,10 @@ const Contacts = (props) => {
   const [ editContact, setEditContact ] = useState(null)
   // State for toggling ContactForm add/edit form
   const [ toggleForm, setToggleForm ] = useState(false)
-  // Destructuring for brevity
-  const { job_id } =  props.match.params 
+ 
 
   useEffect( () => {
-    axios.get(`/api/jobs/${job_id}/contacts`)
+    axios.get(`/api/jobs/${props.id}/contacts`)
     .then( res => {
         setContacts(res.data);
       })
@@ -21,7 +20,7 @@ const Contacts = (props) => {
 
   // function for removing contacts
   const handleRemove = (id) => {
-      axios.delete(`/api/jobs/${job_id}/contacts/${id}`)
+      axios.delete(`/api/jobs/${props.id}/contacts/${id}`)
         .then( res => {
           setContacts(contacts.filter( c => c.id !== id))
         })
@@ -44,7 +43,7 @@ const Contacts = (props) => {
 
   // re-renders component after ContactForm has updated an existing contact
   const handleUpdate = () => {
-    axios.get(`/api/jobs/${job_id}/contacts`)
+    axios.get(`/api/jobs/${props.id}/contacts`)
     .then( res => {
         setContacts(res.data);
       })
@@ -53,6 +52,7 @@ const Contacts = (props) => {
   // adds new contact to state after form submission
   const addContact = (contact) => setContacts([ ...contacts, contact, ]);
 
+  // render all contacts
   const renderContacts = (props) => {
     return contacts.map( (contact, index) => (
       <>
@@ -71,6 +71,7 @@ const Contacts = (props) => {
             Description: {contact.description}
             <br />
             <button onClick={() => handleEdit(index)}>Edit</button>
+            <br />
             <button onClick={() => handleRemove(contact.id)}>Delete</button>
           </li>
           <br />
@@ -88,13 +89,16 @@ const Contacts = (props) => {
         <ContactForm 
           toggle={toggle} 
           add={addContact} 
-          job={job_id} 
+          job={props.id} 
           contactProp={editContact} 
           update={handleUpdate}
         /> : "" 
       }
       <br/>
       <hr/>
+      <br/>
+      <br/>
+      <br/>
       { renderContacts() }
     </div>
   )
