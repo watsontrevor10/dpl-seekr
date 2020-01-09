@@ -5,10 +5,9 @@ const Sidebar = () => {
   return(
     <>
     <div className="sidebar">
-      <h1>sidebar</h1>
-      <div>DPL log</div>
-      <div>username</div>
+      <h1>DPL Logo</h1>
       <div>home</div>
+      <div>username</div>
     </div>
     </>
   );

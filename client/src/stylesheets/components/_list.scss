@@ -4,7 +4,13 @@
   --color-card-back: #7a31b4
 }
 
+
 .list-component-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-header {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -16,22 +22,20 @@
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
-  padding: 0.7rem;
+  padding: 1.7rem;
 
-  // h1 { 
-  //   font-size: 1rem;
-  //   text-transform: uppercase;
-  //   font-weight: 400;
-  //   letter-spacing: 1px;
-  //   padding: 0.7rem;
-  // }
-
-  button {
-    width: 95%;
-    padding: 0.5rem;
-    border-color: #e2e2e2;
-  }
   .render-jobs {
     width: 95%;
   }
+}
+
+.new-job-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+  padding: 0.7rem;
+  padding: 0.5rem;
+  border-style: none;
+  background-color: var(--color-card-text1);
 }
