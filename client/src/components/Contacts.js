@@ -12,7 +12,6 @@ const Contacts = (props) => {
   // Destructuring for brevity
   const { job_id } =  props.match.params 
 
-
   useEffect( () => {
     axios.get(`/api/jobs/${job_id}/contacts`)
     .then( res => {
@@ -20,6 +19,7 @@ const Contacts = (props) => {
       })
   }, [])
 
+  // function for removing contacts
   const handleRemove = (id) => {
       axios.delete(`/api/jobs/${job_id}/contacts/${id}`)
         .then( res => {
@@ -27,7 +27,7 @@ const Contacts = (props) => {
         })
     }
 
-    // toggles add/edit versions of ContactForm and resets setEditContact state
+  // toggles add/edit versions of ContactForm and resets setEditContact state
   const toggle = () => {
     setToggleForm(!toggleForm)
 
@@ -36,11 +36,21 @@ const Contacts = (props) => {
     }
   }
 
+  // finds a contact by index from contacts to be passed down to ContactForm and toggles form on
   const handleEdit = (contactIndex) => { 
     setEditContact(contacts[contactIndex]);
     toggle()
   }
 
+  // re-renders component after ContactForm has updated an existing contact
+  const handleUpdate = () => {
+    axios.get(`/api/jobs/${job_id}/contacts`)
+    .then( res => {
+        setContacts(res.data);
+      })
+  }
+
+  // adds new contact to state after form submission
   const addContact = (contact) => setContacts([ ...contacts, contact, ]);
 
   const renderContacts = (props) => {
@@ -80,6 +90,7 @@ const Contacts = (props) => {
           add={addContact} 
           job={job_id} 
           contactProp={editContact} 
+          update={handleUpdate}
         /> : "" 
       }
       <br/>
