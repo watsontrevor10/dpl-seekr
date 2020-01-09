@@ -7,11 +7,20 @@ const Tasks = (props) => {
   const [tasks, setTasks] = useState([]);
 
   useEffect( () => {
-    axios.get(`/api/jobs/${props.match.params.job_id}/tasks/`)
+    axios.get(`/api/jobs/${props.id}/tasks/`)
     .then(res=>{
         setTasks(res.data)
       })
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newTask = { due_date: due_date.value, subject: subject.value, completed_date: completed_date.value}
+    debugger
+    axios.post(`/api/jobs/${props.id}/tasks/`, newTask)
+      .then(res => {
+      })
+  };
 
   return(
     <>

@@ -5,6 +5,7 @@ import Jobs from './components/Jobs';
 import Modal from './components/Modal';
 import NoMatch from './components/NoMatch';
 import Navbar from './components/Navbar';
+import Notes from './components/Notes'
 import NotesForm from './components/NotesForm';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -24,6 +25,7 @@ const App = () => (
         <Switch>
           <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path='/jobs' component={Jobs} />
+          <ProtectedRoute exact path='/jobs/:job_id/notes' component={Notes} />
           <ProtectedRoute exact path="/jobs/:job_id/new_note" component={NotesForm} />
           <ProtectedRoute exact path="/jobs/:job_id/contacts" component={Contacts} />
           <ProtectedRoute exact path="/jobs/:job_id/tasks" component={Tasks} />
