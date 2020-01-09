@@ -43,7 +43,7 @@ const List = (props) => {
           return (
           <>
             <div
-            // to={`/job/${job.id}`}
+            key={job.id}
             className="job-card"
             company={job.company_name}
             title={job.job_title}
