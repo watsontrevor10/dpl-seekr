@@ -8,14 +8,14 @@ const Interviews = props => {
   const [interviews, setInterviews] = useState([]);
 
 useEffect(() => {
-  axios.get(`/api/jobs/${props.match.params.job_id}/interviews`)
+  axios.get(`/api/jobs/${props.id}/interviews`)
     .then(res => {
       setInterviews(res.data)
     })
 }, []);
 
 function submit() {
-  axios.post(`/api/jobs/${props.match.params.job_id}/interviews`,
+  axios.post(`/api/jobs/${props.id}/interviews`,
     { subject, date, follow_up, description, interview_type, })
     .then(res => {
       setInterviews([...interviews, res.data])
@@ -42,14 +42,17 @@ return (
         Submit
         </button>
     </form>
+    <br />
+    <br />
+    <div>
+      {interviews.map((interview, i) => (
 
-    {interviews.map((interview, i) => (
+        <h2 key={i}>
+          {interview.subject}
+        </h2>
 
-      <h2 key={i}>
-        {interview.subject}
-      </h2>
-
-    ))}
+      ))}
+    </div>
   </>
 )
 };

@@ -20,14 +20,14 @@ const ContactForm = (props) => {
   // handle submission of new contacts
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post(`/api/jobs/${props.job}/contacts`, 
-      { first_name: first_name.value, 
-        last_name: last_name.value,
-        phone: phone.value,
-        email: email.value,
-        position: position.value,
-        department: department.value,
-        description: description.value,
+    axios.post(`/api/jobs/${props.id}/contacts`, 
+      { first_name: first_name.values.first_name, 
+        last_name: last_name.values.last_name,
+        phone: phone.values.phone,
+        email: email.values.email,
+        position: position.values.email,
+        department: department.values.department,
+        description: description.values.description,
       })
         .then( res => {
           props.add(res.data)
@@ -40,13 +40,13 @@ const ContactForm = (props) => {
     e.preventDefault()
     axios.patch(`/api/jobs/${props.job}/contacts/${contact.id}`, 
     {
-      first_name: first_name.value,
-      last_name: last_name.value,
-      phone: phone.value,
-      email: email.value,
-      position: position.value,
-      department: department.value, 
-      description: description.value,
+      first_name: first_name.values.first_name, 
+      last_name: last_name.values.last_name,
+      phone: phone.values.phone,
+      email: email.values.email,
+      position: position.values.email,
+      department: department.values.department,
+      description: description.values.description,
     })
       .then( res => {
         setContact(res.data)
@@ -66,6 +66,7 @@ if (contact) {
           label='First Name' 
           placeholder={contact.first_name}
           {...first_name} 
+          onChange={first_name.handleChange}
         />
         <input 
           type='text' 
@@ -73,6 +74,7 @@ if (contact) {
           label='Last Name' 
           placeholder={contact.last_name} 
           {...last_name} 
+          onChange={last_name.handleChange}
         />
       <input 
         type='text' 
@@ -80,6 +82,7 @@ if (contact) {
         label='Phone' 
         placeholder={contact.phone} 
         {...phone} 
+        onChange={phone.handleChange}
       />
         <input 
           type='text' 
@@ -87,6 +90,7 @@ if (contact) {
           label='Email' 
           placeholder={contact.email} 
           {...email} 
+          onChange={email.handleChange}
         />
         <input 
           type='text' 
@@ -94,6 +98,7 @@ if (contact) {
           label='position' 
           placeholder={contact.position} 
           {...position} 
+          onChange={position.handleChange}
         />
         <input 
           type='text' 
@@ -101,6 +106,7 @@ if (contact) {
           label='department' 
           placeholder={contact.department} 
           {...department} 
+          onChange={department.handleChange}
         />
         <input 
           type='text' 
@@ -108,6 +114,7 @@ if (contact) {
           label='description' 
           placeholder={contact.description} 
           {...description} 
+          onChange={description.handleChange}
         />
         <input type='submit' name='Update' />
       </form>  
@@ -124,6 +131,7 @@ if (contact) {
           label='First Name' 
           placeholder='First Name'
           {...first_name} 
+          onChange={first_name.handleChange}
         />
         <input 
           type='text' 
@@ -131,6 +139,7 @@ if (contact) {
           label='Last Name' 
           placeholder='Last Name' 
           {...last_name} 
+          onChange={last_name.handleChange}
         />
         <input 
           type='text' 
@@ -138,6 +147,7 @@ if (contact) {
           label='Phone' 
           placeholder='Phone' 
           {...phone} 
+          onChange={phone.handleChange}
         />
         <input 
           type='text' 
@@ -145,6 +155,7 @@ if (contact) {
           label='Email' 
           placeholder='Email' 
           {...email} 
+          onChange={email.handleChange}
         />
         <input 
           type='text' 
@@ -152,6 +163,7 @@ if (contact) {
           label='position' 
           placeholder='position' 
           {...position} 
+          onChange={position.handleChange}
         />
         <input 
           type='text' 
@@ -159,6 +171,7 @@ if (contact) {
           label='department' 
           placeholder='department' 
           {...department} 
+          onChange={department.handleChange}
         />
         <input 
           type='text' 
@@ -166,6 +179,7 @@ if (contact) {
           label='description' 
           placeholder='description' 
           {...description} 
+          onChange={description.handleChange}
         />
         <input type='submit' name='Submit' />
       </form>  
