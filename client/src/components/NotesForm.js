@@ -12,7 +12,7 @@ const NotesForm = (props) => {
   // submit form and toggle NotesForm off
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`/api/jobs/${props.job_id}/notes`, { body: body.value, })
+    axios.post(`/api/jobs/${props.id}/notes`, { body: body.values.body, })
     .then(res => {
         props.add(res.data);
         props.toggle()
@@ -22,9 +22,9 @@ const NotesForm = (props) => {
   // function for updating existing records
   const handleUpdate = (e) => {
     e.preventDefault()
-    axios.patch(`/api/jobs/${props.job_id}/notes/${note.id}`, 
+    axios.patch(`/api/jobs/${props.id}/notes/${note.id}`, 
     {
-      body: body.value,
+      body: body.values.body,
     })
       .then( res => {
         setNote(res.data)
@@ -45,6 +45,7 @@ const NotesForm = (props) => {
             name="body" 
             placeholder={note.body}
             {...body} 
+            onChange={body.handleChange}
           />
           <input type="submit" value='Save' />
         </form>
@@ -57,7 +58,9 @@ const NotesForm = (props) => {
             <input 
               type="textarea" 
               name="body" 
-              {...body} />
+              {...body}
+              onChange={body.handleChange}
+              />
             <input type="submit" value="Save" />
           </form>
         </div>
