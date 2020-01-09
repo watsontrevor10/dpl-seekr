@@ -12,14 +12,19 @@
   justify-content: flex-start;
   height: 100%;
   width: 18rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 0.7rem;
 
-  h1 { 
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;
-    padding: 0.7rem;
-  }
+  // h1 { 
+  //   font-size: 1rem;
+  //   text-transform: uppercase;
+  //   font-weight: 400;
+  //   letter-spacing: 1px;
+  //   padding: 0.7rem;
+  // }
 
   button {
     width: 95%;
@@ -28,33 +33,5 @@
   }
   .render-jobs {
     width: 95%;
-  }
-}
-
-.job-card {
-  list-style: none;
-  display: flex;
-  margin: 10px 0;
-  background-color: var(--color-card-back);
-  border-radius: 5px;
-
-
-  li {
-    width: 100%;
-    padding: 10px;
-    color: var(--color-card-text);
-  }
-  li:visited {
-    color: var(--color-card-text);
-  }
-  ul.card-title {
-    padding: 0.3rem 2rem;
-    font-size: 1.3rem;
-    color: var(--color-card-text1)
-  }
-
-  ul.card-meta {
-    padding: 0.3rem 2rem;
-    color: var(--color-card-text2)
   }
 }

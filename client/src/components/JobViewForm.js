@@ -7,27 +7,44 @@ const JobViewForm = (props) => {
   const [job, setJob] = useState([])
 
   const company = useFormInput('')
+  const status = useFormInput('')
+  const jobTitle = useFormInput('')
+
   const dateApplied = useFormInput('')
   const description = useFormInput('')
-  const jobTitle = useFormInput('')
   const jobURL = useFormInput('')
   const location = useFormInput('')
   const salary = useFormInput('')
-  const status = useFormInput('')
 
   useEffect(() => {
-    axios.get(`/api/jobs/${props.match.params.id}`)
+    axios.get(`/api/jobs/${props.id}`)
       .then(res => {
         setJob(res.data)
       })
   }, [])
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+      if (props.id) {
+        props.editJob({ 
+          company_name: company.value, 
+          job_title: job.value, 
+          date_applied: dateApplied.value, 
+          status: status.value,
+          salary: salary.value, 
+          location: location.value,
+          description: description.value,
+          job_url: jobURL.value,
+        }, props.id);
+      }
+  };
 
   return (
     <>
       <div>
         <h1> Job View Page </h1>
       </div>
-      <form>
+      <form onSubmit={handleSubmit}>
         Company:
         <input type="text" name="Company" {...company} value={job.company_name} />
         <br />
@@ -47,16 +64,28 @@ const JobViewForm = (props) => {
         <input type="number" name="Salary" {...salary} value={job.salary} />
         <br />
         Status:
-        <select name="Status" {...status} value={job.status} />
+        <select name="status" {...status} value={job.status}>
+          <option value={job.status}>
+
+          </option>
+        </select>
         <br />
         Job URL:
         <input type="url" name="Job URL" {...jobURL} value={job.job_url} />
         <br />
         {/* COLOR <input type="text" name="Description"/> */}
-        <button> save </button>
+        <button type="submit" value="Submit"> save </button>
       </form>
     </>
   )
 }
+
+const jobStatus = [
+  { key: "a", text: "Wishlist", value: "Wishlist", },
+  { key: "b", text: "Applied", value: "Applied", },
+  { key: "c", text: "Interviewed", value: "Interviewed", },
+  { key: "d", text: "Offer", value: "Offer", },
+  { key: "e", text: "Rejected", value: "Rejected", }
+];
 
 export default JobViewForm

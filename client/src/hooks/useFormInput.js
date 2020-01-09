@@ -4,9 +4,15 @@ import { useState, } from "react";
 export const useFormInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
 
+  const handleChange = (e) => {
+    e.persist();
+    setValue(values => ({...values, [e.target.name]: e.target.value}))
+  }
+
   return {
     value,
     onChange: (e) => setValue(e.target.value),
+    handleChange
   };
 };
 
