@@ -7,6 +7,7 @@ const Notes = (props) => {
   const [ toggleForm, setToggleForm ] = useState(false)
   const { job_id } =  props.match.params
 
+  // initial get request
   useEffect( () => {
     axios.get(`/api/jobs/${job_id}/notes`)
       .then( res => {
@@ -14,6 +15,7 @@ const Notes = (props) => {
       })
   }, [])
 
+  // delete note function
   const handleRemove = (id) => {
     axios.delete(`/api/jobs/${job_id}/notes/${id}`)
       .then( res => {
@@ -21,18 +23,23 @@ const Notes = (props) => {
       })
   }
 
+  // toggle NotesForm on/off
   const toggle = () => {
     setToggleForm(!toggleForm)
   }
 
+  // adds new record to state upon NotesForm submission
   const addNote = (note) => setNotes([ ...notes, note, ]);
 
+  // render all notes
   const renderNotes = () => {
     return (
       notes.map( (note) => (
         <>
           {note.body}
-          <button onClick={() => handleRemove(note.id)}>Delete</button>
+          <button onClick={() => handleRemove(note.id)}>
+            Delete
+          </button>
           <br/>
         </>
       ))

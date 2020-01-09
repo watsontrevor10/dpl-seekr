@@ -5,6 +5,7 @@ import useFormInput from '../hooks/useFormInput'
 const NotesForm = (props) => {
   const body = useFormInput('')
 
+  // submit form and toggle NotesForm off
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(`/api/jobs/${props.job_id}/notes`, { body: body.value, })

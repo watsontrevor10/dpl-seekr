@@ -53,6 +53,7 @@ const Contacts = (props) => {
   // adds new contact to state after form submission
   const addContact = (contact) => setContacts([ ...contacts, contact, ]);
 
+  // render all contacts
   const renderContacts = (props) => {
     return contacts.map( (contact, index) => (
       <>
