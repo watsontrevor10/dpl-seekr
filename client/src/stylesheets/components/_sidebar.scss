@@ -7,8 +7,16 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+.sidebar-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 550px) {
   .sidebar { 
     display: none;
+  }
+
+  .sidebar-mobile {
+    display: show;
   }
 }

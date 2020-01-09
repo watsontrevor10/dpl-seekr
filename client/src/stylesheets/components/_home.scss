@@ -23,11 +23,14 @@
 
 .main-listContainer {
   flex: 1;
-  height: 80rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
   .main-sidebar-container {
+    display: none;
+  }
+
+  .mobile-menu-container {
     display: show;
     display: flex;
     position: fixed;
@@ -35,12 +38,13 @@
     width: 40px;
     height: 40px;
     z-index: 20;
-    left: 20px;
-    top: 22%;
+    left: 2.6rem;
+    top: 85%;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
     box-shadow: rgba(25, 4, 69, 0.05) 0px 4px 10px;
     border: 1px solid rgba(25, 4, 69, 0.1);
   }
+ 
 }
