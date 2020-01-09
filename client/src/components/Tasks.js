@@ -10,7 +10,7 @@ const Tasks = (props) => {
   const completed_date = useFormInput()
 
   useEffect( () => {
-    axios.get(`/api/jobs/${props.match.params.job_id}/tasks/`)
+    axios.get(`/api/jobs/${props.id}/tasks/`)
     .then(res=>{
         setTasks(res.data)
       })
@@ -20,7 +20,7 @@ const Tasks = (props) => {
     e.preventDefault();
     const newTask = { due_date: due_date.value, subject: subject.value, completed_date: completed_date.value}
     debugger
-    axios.post(`/api/jobs/${props.match.params.job_id}/tasks/`, newTask)
+    axios.post(`/api/jobs/${props.id}/tasks/`, newTask)
       .then(res => {
       })
   };

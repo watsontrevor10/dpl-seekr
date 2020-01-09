@@ -10,11 +10,12 @@ const Modal = (props) => {
     <>
     <Backdrop show={props.show} hide={props.hide} />
     <Tabs className="main-modal-container">
-      <TabList>
-        <Tab>Job Info</Tab>
-        <Tab>Tasks</Tab>
-        <Tab>Notes</Tab>
-        <Tab>Contact</Tab>
+      <TabList className="tab-list">
+        <Tab className="tab">Job Info</Tab>
+        <Tab className="tab">Interviews</Tab>
+        <Tab className="tab">Tasks</Tab>
+        <Tab className="tab">Notes</Tab>
+        <Tab className="tab">Contact</Tab>
       </TabList>
       <TabPanel>
         <div 
@@ -26,6 +27,9 @@ const Modal = (props) => {
           <JobViewForm id={props.id} editJob={props.editJob}/>
         </div>
        
+      </TabPanel>
+      <TabPanel>
+        <h1>Interviews</h1>
       </TabPanel>
       <TabPanel>
         <Task id={props.id} />
