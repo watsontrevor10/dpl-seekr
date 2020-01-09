@@ -35,8 +35,8 @@ const List = (props) => {
 
     const editJob = (data, id) => {
       debugger
-      axios.put(`/api/jobs/${id}`)
-      .then(res => {
+      axios.put(`/api/jobs/${id}`, data)
+      .then(res => { 
         const newJobs = jobs.map(job => {
           if (job.id === id)
             return data
