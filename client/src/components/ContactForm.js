@@ -3,17 +3,17 @@ import axios from 'axios'
 import useFormInput from '../hooks/useFormInput'
 
 const ContactForm = (props) => {
-  const first_name = useFormInput('')
-  const last_name = useFormInput('')
-  const phone = useFormInput('')
-  const email = useFormInput('')
-  const position = useFormInput('')
-  const department = useFormInput('')
-  const description = useFormInput('')
   const [ contact, setContact ] = useState(props.contactProp ? 
     props.contactProp 
     : null
   )
+  const first_name = useFormInput(contact ? contact.first_name : '')
+  const last_name = useFormInput(contact ? contact.last_name : '')
+  const phone = useFormInput(contact ? contact.phone : '')
+  const email = useFormInput(contact ? contact.email : '')
+  const position = useFormInput(contact ? contact.position : '')
+  const department = useFormInput(contact ? contact.department : '')
+  const description = useFormInput(contact ? contact.description : '')
 
   const handleSubmit = (e) => {
     e.preventDefault()
