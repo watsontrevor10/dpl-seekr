@@ -21,7 +21,7 @@ const Contacts = (props) => {
   }, [])
 
   const handleRemove = (id) => {
-      axios.delete(`/api/jobs/${props.match.params.job_id}/contacts/${id}`)
+      axios.delete(`/api/jobs/${job_id}/contacts/${id}`)
         .then( res => {
           setContacts(contacts.filter( c => c.id !== id))
         })
