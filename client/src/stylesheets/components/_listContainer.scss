@@ -18,6 +18,9 @@
     border-width: 1px;
     border-color: var(--color-2);
     background-color: var(--color-1);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
 }
 

@@ -1,21 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import JobViewForm from './JobViewForm';
 import Backdrop from './Backdrop';
 import Task from './Tasks';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const Modal = (props) => {
+  const [tabIndex, setTabIndex] = useState(0)
   
   return (
     <>
     <Backdrop show={props.show} hide={props.hide} />
     <Tabs className="main-modal-container">
       <TabList className="tab-list">
-        <Tab className="tab">Job Info</Tab>
-        <Tab className="tab">Interviews</Tab>
-        <Tab className="tab">Tasks</Tab>
-        <Tab className="tab">Notes</Tab>
-        <Tab className="tab">Contact</Tab>
+        <Tab selectedIndex={tabIndex} onSelect={tabIndex => setTabIndex({ tabIndex })}>Job Info</Tab>
+        <Tab selectedIndex={tabIndex} onSelect={tabIndex => setTabIndex({ tabIndex })}>Interviews</Tab>
+        <Tab selectedIndex={tabIndex} onSelect={tabIndex => setTabIndex({ tabIndex })}>Tasks</Tab>
+        <Tab selectedIndex={tabIndex} onSelect={tabIndex => setTabIndex({ tabIndex })}>Notes</Tab>
+        <Tab selectedIndex={tabIndex} onSelect={tabIndex => setTabIndex({ tabIndex })}>Contact</Tab>
       </TabList>
       <TabPanel>
         <div 

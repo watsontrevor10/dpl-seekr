@@ -1,10 +1,16 @@
+:root {
+  --color-card-text1: rgb(255, 255, 255);
+  --color-modal-shadow: rgb(186, 186, 186);
+  --color-main-theme: rgb(107, 43, 210);
+}
+
 .main-modal-container {
   position: fixed;
   z-index: 500;
-  background-color: white;
+  background-color: #fff;
   width: 70%;
   height: 70%;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-modal-shadow);
   box-shadow: 2px 1px 20px 0px #787878;
   padding: 16px;
   left: 15%;
@@ -22,11 +28,18 @@
     justify-content: space-around;
     margin-bottom: 1rem;
     padding: 10px;
-    background-color: rgb(107, 43, 210);
+    background-color: var(--color-main-theme);
+    font-weight: 100;
+    letter-spacing: 2px;
   }
 
-  .tab {
+  .react-tabs__tab{
     color: #fff;
+  }
+
+  .react-tabs__tab--selected {
+    color: #a8b8ff;
+    border-bottom:2px solid #a8b8ff;
   }
   
   @media (min-width: 500px) {

@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-
 import useFormInput from '../hooks/useFormInput'
 
 const NotesForm = (props) => {
@@ -11,7 +10,6 @@ const NotesForm = (props) => {
     axios.post(`/api/jobs/${props.job_id}/notes`, { body: body.value, })
     .then(res => {
         props.add(res.data);
-
       })
   };
 

@@ -11,7 +11,7 @@ const JobForm = (props) => {
   // submit function, axios post call.  Need to add each field name to the post request
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('/api/jobs', { company_name: company.value, job_title: job.value, status: status.value })
+    axios.post('/api/jobs', { company_name: company.values.company_name, job_title: job.values.job_title, status: status.values.status })
     .then(res => {
         props.add(res.data);
         props.toggle();
@@ -23,10 +23,10 @@ const JobForm = (props) => {
     <div>
       <form onSubmit={handleSubmit}>
         Company Name: <br/>
-        <input type="text" name="company_name" {...company} /><br/>
+        <input type="text" name="company_name" {...company} onChange={company.handleChange} /><br/>
         Job Title: <br/>
-        <input type="text" name="job_title" {...job} /><br/>
-        <select name="status" {...status}>
+        <input type="text" name="job_title" {...job} onChange={job.handleChange}/><br/>
+        <select name="status" {...status} onChange={status.handleChange} >
           { jobStatus.map(j => (   
             <option value={j.value}>
               {j.value}
