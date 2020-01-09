@@ -25,8 +25,10 @@ const JobCard = (props) => {
       return <div key={props.id} className="card-content">
         <ul onClick={show}>
           <li className="card-title">{props.job_title}</li>
-          <li className="card-meta">{props.company_name}</li>
-          <li className="card-meta">{props.status}</li>
+          <div className="container-card-meta">
+            <li className="card-meta">{props.company_name}</li>
+            <li className="card-meta">{props.status}</li>
+          </div>
         </ul>
         <button onClick={() => props.deleteJob(props.id)}>Delete</button>
       </div>
@@ -35,12 +37,12 @@ const JobCard = (props) => {
   
   // jobs Index component
   return (
-    <div>
+    <>
       <ul>
         { renderJob() }
       </ul>
       { openModal ? <Modal editJob={props.editJob} id={props.id} hide={hide} show={openModal} /> : null}
-    </div>
+    </>
   )
 }
 
