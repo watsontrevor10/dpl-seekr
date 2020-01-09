@@ -4,6 +4,7 @@ import NotesForm from './NotesForm'
 
 const Notes = (props) => {
   const [ notes, setNotes ] = useState([])
+  const [ toggleForm, setToggleForm ] = useState(false)
   const { job_id } =  props.match.params
 
   useEffect( () => {
@@ -18,6 +19,10 @@ const Notes = (props) => {
       .then( res => {
         setNotes(notes.filter( n => n.id !== id))
       })
+  }
+
+  const toggle = () => {
+    setToggleForm(!toggleForm)
   }
 
   const addNote = (note) => setNotes([ ...notes, note, ]);
@@ -36,7 +41,21 @@ const Notes = (props) => {
 
   return (
     <div>
-      <NotesForm job_id={job_id} add={addNote} />
+      { toggleForm ? 
+        <NotesForm 
+          job_id={job_id} 
+          add={addNote} 
+          toggle={toggle} 
+        />  
+        : ""
+      }
+      <br/>
+      <button onClick={ () => toggle() }>
+        {toggleForm ? 
+          'Cancel' 
+          : 'Add'
+        }
+      </button>
       <br/>
       { renderNotes() }
     </div>

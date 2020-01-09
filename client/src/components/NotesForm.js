@@ -10,6 +10,7 @@ const NotesForm = (props) => {
     axios.post(`/api/jobs/${props.job_id}/notes`, { body: body.value, })
     .then(res => {
         props.add(res.data);
+        props.toggle()
       })
   };
 
