@@ -1,0 +1,41 @@
+:root {
+  --color-card-text1: rgb(255, 255, 255);
+  --color-card-text2: rgb(186, 186, 186);
+  --color-card-back: #7a31b4
+}
+
+.job-card {
+  list-style: none;
+  display: flex;
+  background-color: var(--color-card-back);
+  border-radius: 5px;
+  width: 100%;
+  padding: 15px;
+
+  // div {
+  //   width: inherit;
+  // }
+
+  ul {
+    list-style: none;
+    width: 100%;
+    color: var(--color-card-text);
+  }
+  li:visited {
+    color: var(--color-card-text);
+  }
+  li.card-title {
+    padding: 0.3rem 2rem;
+    font-size: 1.3rem;
+    color: var(--color-card-text1)
+  }
+
+  li.card-meta {
+    padding: 0.3rem 2rem;
+    color: var(--color-card-text2)
+  }
+
+  button {
+    z-index: 2;
+  }
+}

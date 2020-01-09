@@ -15,8 +15,21 @@
   animation-duration: 0.6s;
   animation-timing-function: ease-in-out;
   }
+
+  .tab-list {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    padding: 10px;
+    background-color: rgb(107, 43, 210);
+  }
+
+  .tab {
+    color: #fff;
+  }
   
-  @media (min-width: 600px) {
+  @media (min-width: 500px) {
     .main-modal-container {
       width: 56rem;
       left: calc(50% - 28rem);

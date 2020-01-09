@@ -7,11 +7,11 @@ class Api::TasksController < ApplicationController
   end
 
   def create
-    @task = @job.tasks.new(task_params)
-    if @task.save
-      render json: @task
+    task = @job.tasks.new(task_params)
+    if task.save
+      render json: task
     else
-      render json: @task.errors
+      render json: task.errors
     end
   end
   
