@@ -89,7 +89,7 @@ const Contacts = (props) => {
         <ContactForm 
           toggle={toggle} 
           add={addContact} 
-          job={props.id} 
+          id={props.id} 
           contactProp={editContact} 
           update={handleUpdate}
         /> : "" 
