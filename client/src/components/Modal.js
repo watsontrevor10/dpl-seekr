@@ -2,6 +2,11 @@ import React, {useState} from 'react';
 import JobViewForm from './JobViewForm';
 import Backdrop from './Backdrop';
 import Task from './Tasks';
+import Interviews from "./Interviews"; 
+import Contact from "./Contacts";
+import ContactForm from "./ContactForm"; 
+import Notes from "./Notes";
+import NotesForm from "./NotesForm"; 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const Modal = (props) => {
@@ -30,16 +35,18 @@ const Modal = (props) => {
        
       </TabPanel>
       <TabPanel>
-        <h1>Interviews</h1>
+        <Interviews id={props.id}/>
       </TabPanel>
       <TabPanel>
         <Task id={props.id} />
       </TabPanel>
       <TabPanel>
-        <h1>Notes</h1>
+        {/* <NotesForm id={props.id}/> */}
+        {/* <Notes id={props.id}/> */}
       </TabPanel>
       <TabPanel>
-        <h1>Contact</h1>
+        {/* <ContactForm id={props.id}/> */}
+        <Contact id={props.id}/>
       </TabPanel>
     </Tabs>
     </>
