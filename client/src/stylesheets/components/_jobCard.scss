@@ -7,15 +7,18 @@
 .job-card {
   list-style: none;
   display: flex;
-  margin: 10px 0;
   background-color: var(--color-card-back);
   border-radius: 5px;
+  width: 100%;
+  padding: 15px;
 
+  div {
+    width: inherit;
+  }
 
   ul {
     list-style: none;
     width: 100%;
-    padding: 10px;
     color: var(--color-card-text);
   }
   li:visited {
@@ -30,5 +33,9 @@
   li.card-meta {
     padding: 0.3rem 2rem;
     color: var(--color-card-text2)
+  }
+
+  button {
+    z-index: 2;
   }
 }
