@@ -46,7 +46,7 @@ class Api::InterviewsController < ApplicationController
     end
 
     def interview_params
-      params.require(:interview).permit(:date, :follow_up, :description, :type)
+      params.require(:interview).permit(:date, :follow_up, :description, :interview_type, :subject)
     end
 
 end
