@@ -1,16 +1,12 @@
 :root {
   --color-1: #faf9f9;
-  --color-grey-light-2: #f4f2f2;
-  --color-grey-light-3: #f0eeee;
-  --color-grey-light-4: #ccc;
-
+  --color-2:  #cdc5ff;
 }
 
 .list-container {
   display: flex;
   position: relative;
   flex-grow: 1;
-  background-color: var(--color-1);
   align-items: flex-start;
   justify-content: space-between;
   padding: 10px;
@@ -18,5 +14,9 @@
 
   .list {
     height: inherit;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--color-2);
+    background-color: var(--color-1);
   }
 }
