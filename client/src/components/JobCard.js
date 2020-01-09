@@ -39,7 +39,7 @@ const JobCard = (props) => {
       <ul>
         { renderJob() }
       </ul>
-      { openModal ? <Modal id={props.id} hide={hide} show={openModal} /> : null}
+      { openModal ? <Modal editJob={props.editJob} id={props.id} hide={hide} show={openModal} /> : null}
     </div>
   )
 }

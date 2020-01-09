@@ -7,13 +7,14 @@ const JobViewForm = (props) => {
   const [job, setJob] = useState([])
 
   const company = useFormInput('')
+  const status = useFormInput('')
+  const jobTitle = useFormInput('')
+
   const dateApplied = useFormInput('')
   const description = useFormInput('')
-  const jobTitle = useFormInput('')
   const jobURL = useFormInput('')
   const location = useFormInput('')
   const salary = useFormInput('')
-  const status = useFormInput('')
 
   useEffect(() => {
     axios.get(`/api/jobs/${props.id}`)
@@ -22,12 +23,28 @@ const JobViewForm = (props) => {
       })
   }, [])
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+      if (props.id) {
+        props.editJob({ 
+          company_name: company.value, 
+          job_title: job.value, 
+          date_applied: dateApplied.value, 
+          status: status.value,
+          salary: salary.value, 
+          location: location.value,
+          description: description.value,
+          job_url: jobURL.value,
+        }, props.id);
+      }
+  };
+
   return (
     <>
       <div>
         <h1> Job View Page </h1>
       </div>
-      <form>
+      <form onSubmit={handleSubmit}>
         Company:
         <input type="text" name="Company" {...company} value={job.company_name} />
         <br />
@@ -57,7 +74,7 @@ const JobViewForm = (props) => {
         <input type="url" name="Job URL" {...jobURL} value={job.job_url} />
         <br />
         {/* COLOR <input type="text" name="Description"/> */}
-        <button> save </button>
+        <button type="submit" value="Submit"> save </button>
       </form>
     </>
   )
