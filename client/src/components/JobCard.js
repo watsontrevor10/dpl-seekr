@@ -30,7 +30,7 @@ const JobCard = (props) => {
             <li className="card-meta">{props.status}</li>
           </div>
         </ul>
-        <button onClick={() => props.deleteJob(props.id)}>Delete</button>
+        <button className="job-card-delete" onClick={() => props.deleteJob(props.id)}>Delete</button>
       </div>
   }
 

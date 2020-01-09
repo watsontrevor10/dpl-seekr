@@ -17,6 +17,7 @@
   // }
   div.card-content {
     width: 100%;
+    display: flex;
   }
 
   ul {
@@ -42,15 +43,18 @@
     color: var(--color-card-text2)
   }
 
-  button {
+  button.job-card-delete {
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: flex-end;
     border-style: none;
     padding: 0.3rem;
-    margin: 0.6rem;
-    position: absolute;
-    top: 13rem;
-    right: rem;
-    left: 15%;
+    margin: 1rem 1.2rem;
+    // top: 13rem;
+    // right: rem;
+    // left: 15%;
     color: var(--color-card-text1);
     background-color: inherit;
   }
