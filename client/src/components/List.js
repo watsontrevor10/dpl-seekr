@@ -34,7 +34,6 @@ const List = (props) => {
     }
 
     const editJob = (data, id) => {
-      debugger
       axios.put(`/api/jobs/${id}`)
       .then(res => {
         const newJobs = jobs.map(job => {
@@ -73,9 +72,9 @@ const List = (props) => {
 
   return (
     <>
-    <div>
-      <h1 className="list-component-container">{props.name}</h1>
-        <button onClick={toggle}>Form</button>
+    <div className="list-component-container">
+      <h1 className="list-header">{props.name}</h1>
+        <button className="new-job-btn" onClick={toggle}>Add Job</button>
         { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null }
         { renderJobs(props.name) }
     </div>
