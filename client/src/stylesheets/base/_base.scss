@@ -1,3 +1,6 @@
+:root {
+  --main-font-family: sans-serif;
+}
 
 $border: (
   radius: 0.25em,
@@ -5,11 +8,21 @@ $border: (
 );
 
 $color: (
-  blue: #2491eb,
   gray-light: #f8f8f8,
   gray-medium: #e0e0e0,
   gray-dark: #444444,
   white: #ffffff
+);
+
+$font: (
+  face-primary: "Open Sans",
+  weight-light: 300
+);
+
+$transition: (
+  easing: ease-out,
+  speed-slow: 250ms,
+  speed-fast: 125ms
 );
 
 * {
@@ -18,15 +31,11 @@ $color: (
   box-sizing: border-box;
   font-family: var(--main-font-family);
   &:hover {
-    border-color: map-get($color, gray-dark);
+    border-color: none;
   }
 
   &:focus {
-    border-color: map-get($color, blue);
-    outline: map-get($border, thickness) solid map-get($color, blue);
+    outline: lightblue;
   }
 }
 
-:root {
-  --main-font-family: sans-serif;
-}
