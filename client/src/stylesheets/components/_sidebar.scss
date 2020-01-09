@@ -1,22 +1,14 @@
-:root {
-  --color-5: rgb(255, 255, 255);
-}
-.main-sidebar-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-direction: column;
-  box-sizing: border-box;
-  width: 200px;
-  background-color: var(--color-5);
-}
 
 .sidebar {
   padding: 3rem;
 
   h1 {
     margin: 0.5rem 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar { 
+    display: none;
   }
 }
