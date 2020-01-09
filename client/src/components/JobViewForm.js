@@ -21,7 +21,7 @@ const JobViewForm = (props) => {
       .then(res => {
         setJob(res.data)
       })
-  }, [])
+  }, []) 
 
   const handleSubmit = (e) => {
     e.preventDefault();

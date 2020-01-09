@@ -47,7 +47,7 @@ return (
 
       <h2 key={i}>
         {interview.subject}
-      </h2>
+      </h2> 
 
     ))}
   </>
