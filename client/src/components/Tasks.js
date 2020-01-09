@@ -11,7 +11,7 @@ const Tasks = (props) => {
   useEffect( () => {
     axios.get(`/api/jobs/${props.match.params.job_id}/tasks/`)
     .then(res=>{
-        setTasks(res.data)
+        setTasks(res.data) 
       })
   }, []);
 
