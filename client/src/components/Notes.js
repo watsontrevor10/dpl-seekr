@@ -13,18 +13,26 @@ const Notes = (props) => {
       })
   }, [])
 
+  const handleRemove = (id) => {
+    axios.delete(`/api/jobs/${job_id}/notes/${id}`)
+      .then( res => {
+        setNotes(notes.filter( n => n.id !== id))
+      })
+  }
+
+  const addNote = (note) => setNotes([ ...notes, note, ]);
+
   const renderNotes = () => {
     return (
       notes.map( (note) => (
         <>
           {note.body}
+          <button onClick={() => handleRemove(note.id)}>Delete</button>
           <br/>
         </>
       ))
     )
   }
-
-  const addNote = (note) => setNotes([ ...notes, note, ]);
 
   return (
     <div>
