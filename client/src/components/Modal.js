@@ -15,7 +15,7 @@ const Modal = (props) => {
           opacity: props.show ? "1" : "0"
         }}
       >
-        <JobViewForm id={props.id}/>
+        <JobViewForm id={props.id} editJob={props.editJob}/>
       </div>
     </>
   )
