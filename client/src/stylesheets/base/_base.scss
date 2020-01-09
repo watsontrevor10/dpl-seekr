@@ -1,9 +1,32 @@
+
+$border: (
+  radius: 0.25em,
+  thickness: 1px
+);
+
+$color: (
+  blue: #2491eb,
+  gray-light: #f8f8f8,
+  gray-medium: #e0e0e0,
+  gray-dark: #444444,
+  white: #ffffff
+);
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--main-font-family);
+  &:hover {
+    border-color: map-get($color, gray-dark);
+  }
+
+  &:focus {
+    border-color: map-get($color, blue);
+    outline: map-get($border, thickness) solid map-get($color, blue);
+  }
 }
+
 :root {
   --main-font-family: sans-serif;
 }
