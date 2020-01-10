@@ -173,7 +173,7 @@ if (contact) {
         <input type='submit' name='Submit' />
       </form>  
     </div>
-  )
+  )}
   }
 }
 

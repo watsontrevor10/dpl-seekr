@@ -30,12 +30,12 @@ const Modal = (props) => {
             opacity: props.show ? "1" : "0"
           }}
         > */}
-          <JobViewForm id={props.id} editJob={props.editJob}/>
+          <JobViewForm job={props.job} handleUpdate={props.handleUpdate}/>
         {/* </div> */}
        
       </TabPanel>
       <TabPanel style={{display:"flex"}}>
-        <Interviews id={props.id}/>
+        <Interviews id={props.job.id}/>
       </TabPanel>
       <TabPanel>
         <Task id={props.job.id} />
@@ -46,7 +46,7 @@ const Modal = (props) => {
       </TabPanel>
       <TabPanel style={{display:"flex", flexDirection: "column"}} className="contacts-container" >
         {/* <ContactForm id={props.id}/> */}
-        <Contacts id={props.id}/>
+        <Contacts id={props.job.id}/>
       </TabPanel>
     </Tabs>
     </>
