@@ -39,7 +39,7 @@ const NotesForm = (props) => {
     return (
       <div className="form-container">
         <form onSubmit={handleUpdate}>
-        Note <br/> 
+        Note  
           <input 
             type="textarea" 
             name="body" 
