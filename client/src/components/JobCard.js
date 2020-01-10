@@ -22,15 +22,15 @@ const JobCard = (props) => {
 
   const renderJob = () => {
       
-      return <div key={props.id} className="card-content">
+      return <div key={props.job.id} className="card-content">
         <ul onClick={show}>
-          <li className="card-title">{props.job_title}</li>
+          <li className="card-title">{props.job.job_title}</li>
           <div className="container-card-meta">
-            <li className="card-meta">{props.company_name}</li>
-            <li className="card-meta">{props.status}</li>
+            <li className="card-meta">{props.job.company_name}</li>
+            <li className="card-meta">{props.job.status}</li>
           </div>
         </ul>
-        <button className="job-card-delete" onClick={() => props.deleteJob(props.id)}>Delete</button>
+        <button className="job-card-delete" onClick={() => props.deleteJob(props.job.id)}>Delete</button>
       </div>
   }
 
@@ -41,7 +41,7 @@ const JobCard = (props) => {
       <ul>
         { renderJob() }
       </ul>
-      { openModal ? <Modal editJob={props.editJob} id={props.id} hide={hide} show={openModal} /> : null}
+      { openModal ? <Modal handleUpdate={props.handleUpdate} job={props.job} hide={hide} show={openModal} /> : null}
     </>
   )
 }

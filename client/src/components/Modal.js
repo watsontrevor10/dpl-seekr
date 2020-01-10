@@ -30,23 +30,23 @@ const Modal = (props) => {
             opacity: props.show ? "1" : "0"
           }}
         >
-          <JobViewForm id={props.id} editJob={props.editJob}/>
+          <JobViewForm handleUpdate={props.handleUpdate}  job={props.job} />
         </div>
        
       </TabPanel>
       <TabPanel>
-        <Interviews id={props.id}/>
+        <Interviews id={props.job.id}/>
       </TabPanel>
       <TabPanel>
-        <Task id={props.id} />
+        <Task id={props.job.id} />
       </TabPanel>
       <TabPanel>
         {/* <NotesForm id={props.id}/> */}
-        <Notes id={props.id}/>
+        <Notes id={props.job.id}/>
       </TabPanel>
       <TabPanel>
         {/* <ContactForm id={props.id}/> */}
-        <Contact id={props.id}/>
+        <Contact id={props.job.id}/>
       </TabPanel>
     </Tabs>
     </>
