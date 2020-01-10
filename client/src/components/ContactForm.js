@@ -38,7 +38,7 @@ const ContactForm = (props) => {
   // function to update a contact
   const handleUpdate = (e) => {
     e.preventDefault()
-    axios.patch(`/api/jobs/${props.job}/contacts/${contact.id}`, 
+    axios.patch(`/api/jobs/${props.id}/contacts/${contact.id}`, 
     {
       first_name: first_name.values.first_name, 
       last_name: last_name.values.last_name,
