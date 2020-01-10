@@ -9,7 +9,7 @@ class Navbar extends React.Component {
     
     if (user) {
       return (
-        <nav>
+        <nav style={{display: "none"}}>
           <button
             name='logout'
             onClick={ () => handleLogout(this.props.history) }

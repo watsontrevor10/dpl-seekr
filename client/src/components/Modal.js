@@ -42,7 +42,7 @@ const Modal = (props) => {
       </TabPanel>
       <TabPanel>
         {/* <NotesForm id={props.id}/> */}
-        {/* <Notes id={props.id}/> */}
+        <Notes id={props.id}/>
       </TabPanel>
       <TabPanel>
         {/* <ContactForm id={props.id}/> */}
