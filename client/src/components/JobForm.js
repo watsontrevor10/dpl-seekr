@@ -20,7 +20,7 @@ const JobForm = (props) => {
 
   // Form component
   return (
-    <div className="new-job-form">
+    <div className="new-job">
       <form onSubmit={handleSubmit}>
         Company Name: <br/>
         <input type="text" name="company_name" {...company} onChange={company.handleChange} /><br/>
