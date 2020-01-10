@@ -174,7 +174,8 @@ if (contact) {
         <input type='submit' name='Submit' />
       </form>  
     </div>
-  )}
+  )
+  }
 }
 
 export default ContactForm
