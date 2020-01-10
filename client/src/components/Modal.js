@@ -3,7 +3,7 @@ import JobViewForm from './JobViewForm';
 import Backdrop from './Backdrop';
 import Task from './Tasks';
 import Interviews from "./Interviews"; 
-import Contact from "./Contacts";
+import Contacts from "./Contacts";
 import ContactForm from "./ContactForm"; 
 import Notes from "./Notes";
 import NotesForm from "./NotesForm"; 
@@ -24,17 +24,17 @@ const Modal = (props) => {
         <Tab selectedIndex={tabIndex} onSelect={tabIndex => setTabIndex({ tabIndex })}>Contact</Tab>
       </TabList>
       <TabPanel>
-        <div 
+        {/* <div 
           style={{
             transform: props.show ? "translateY(0)" : "translateY(-100vh)",
             opacity: props.show ? "1" : "0"
           }}
-        >
+        > */}
           <JobViewForm id={props.id} editJob={props.editJob}/>
-        </div>
+        {/* </div> */}
        
       </TabPanel>
-      <TabPanel>
+      <TabPanel style={{display:"flex"}}>
         <Interviews id={props.id}/>
       </TabPanel>
       <TabPanel>
@@ -44,9 +44,9 @@ const Modal = (props) => {
         {/* <NotesForm id={props.id}/> */}
         <Notes id={props.id}/>
       </TabPanel>
-      <TabPanel>
+      <TabPanel style={{display:"flex", flexDirection: "column"}} className="contacts-container" >
         {/* <ContactForm id={props.id}/> */}
-        <Contact id={props.id}/>
+        <Contacts id={props.id}/>
       </TabPanel>
     </Tabs>
     </>

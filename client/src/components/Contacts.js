@@ -81,10 +81,13 @@ const Contacts = (props) => {
   }
 
   return (
+    <>
     <div>
       <button onClick={() => toggle() }>
         { toggleForm ? "Cancel" : "Add" }
       </button>
+    </div>
+      <div className="contacts">
       { toggleForm ? 
         <ContactForm 
           toggle={toggle} 
@@ -94,13 +97,9 @@ const Contacts = (props) => {
           update={handleUpdate}
         /> : "" 
       }
-      <br/>
-      <hr/>
-      <br/>
-      <br/>
-      <br/>
       { renderContacts() }
-    </div>
+      </div>
+    </>
   )
 }
 

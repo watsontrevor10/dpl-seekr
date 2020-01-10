@@ -1,0 +1,16 @@
+.contacts-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.contacts {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+  }
+}
