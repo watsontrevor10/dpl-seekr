@@ -3,7 +3,8 @@ import axios from 'axios';
 import JobForm from '../components/JobForm';
 import { Link } from 'react-router-dom';
 import Modal from "./Modal"
-
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 const JobCard = (props) => {
   // State for looping through users jobs
@@ -28,6 +29,7 @@ const JobCard = (props) => {
           <div className="container-card-meta">
             <li className="card-meta">{props.job.company_name}</li>
             <li className="card-meta">{props.job.status}</li>
+            <li className="card-meta"><Moment format="MM/DD/YYYY">{props.job.created_at}</Moment></li>
           </div>
         </ul>
         <button className="job-card-delete" onClick={() => props.deleteJob(props.job.id)}>Delete</button>
