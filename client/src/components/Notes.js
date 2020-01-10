@@ -7,11 +7,11 @@ const Notes = (props) => {
   const [ notes, setNotes ] = useState([])
   const [ toggleForm, setToggleForm ] = useState(false)
   const [ editForm, setEditForm ] = useState(false)
-  const { job_id } =  props.match.params
+
 
   // initial get request
   useEffect( () => {
-    axios.get(`/api/jobs/${job_id}/notes`)
+    axios.get(`/api/jobs/${props.id}/notes`)
       .then( res => {
         setNotes(res.data)
       })
@@ -19,7 +19,7 @@ const Notes = (props) => {
 
   // delete note function
   const handleRemove = (id) => {
-    axios.delete(`/api/jobs/${job_id}/notes/${id}`)
+    axios.delete(`/api/jobs/${props.id}/notes/${id}`)
       .then( res => {
         setNotes(notes.filter( n => n.id !== id))
       })
@@ -43,7 +43,7 @@ const Notes = (props) => {
 
   // after a record has been updated, pulls new records from db
   const handleUpdate = () => {
-    axios.get(`/api/jobs/${job_id}/notes`)
+    axios.get(`/api/jobs/${props.id}/notes`)
     .then( res => {
         setNotes(res.data);
       })
@@ -77,7 +77,7 @@ const Notes = (props) => {
     <div>
       { toggleForm ? 
         <NotesForm 
-          job_id={job_id} 
+          id={props.id} 
           add={addNote} 
           toggle={toggle}
           note={noteEdit}

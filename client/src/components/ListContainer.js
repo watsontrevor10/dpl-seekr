@@ -10,19 +10,19 @@ const ListContainer = () => {
         </div>
         <div className="list-container">
           <div className="list">
-            <List name="Wishlist" />
+            <List name="Wishlist" className="list-component-container" key={1}/>
           </div>
           <div className="list"> 
-            <List name="Applied" className="list-component-container"/>
+            <List name="Applied" className="list-component-container" key={2}/>
           </div>
           <div className="list">
-           <List name="Interviewed" className="list-component-container" />
+           <List name="Interviewed" className="list-component-container"key={3} />
           </div>
           <div className="list">
-            <List name="Offer" className="list-component-container"/>
+            <List name="Offer" className="list-component-container" key={4}/>
           </div>
           <div className="list">
-            <List name="Rejected" className="list-component-container"/>
+            <List name="Rejected" className="list-component-container" key={5}/>
           </div>
         </div>
       
