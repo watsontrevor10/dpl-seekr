@@ -59,33 +59,36 @@ const Contacts = (props) => {
         <div key={contact.id}>
           <li >
             Name: {contact.first_name} {contact.last_name}
-            <br/>
+            <br />
             Phone: {contact.phone}
-            <br/>
+            <br />
             Email: {contact.email}
-            <br/>
+            <br />
             Position: {contact.position}
-            <br/>
+            <br />
             Department: {contact.department}
-            <br/>
+            <br />
             Description: {contact.description}
             <br />
-            <button onClick={() => handleEdit(index)}>Edit</button>
-            <br />
-            <button onClick={() => handleRemove(contact.id)}>Delete</button>
+            <div className="contact-btns">
+              <button onClick={() => handleEdit(index)}>Edit</button>
+              <button onClick={() => handleRemove(contact.id)}>Delete</button>
+            </div>
           </li>
-          <br />
         </div>
       </>
     ))
   }
 
   return (
+    <>
     <div>
       
       <button onClick={() => toggle() }>
         { toggleForm ? "Cancel" : "Add" }
       </button>
+    </div>
+      <div className="contacts">
       { toggleForm ? 
         <ContactForm 
           toggle={toggle} 
@@ -95,8 +98,9 @@ const Contacts = (props) => {
           update={handleUpdate}
         /> : renderContacts()  
       }
-      
-    </div>
+      { renderContacts() }
+      </div>
+    </>
   )
 }
 

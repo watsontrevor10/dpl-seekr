@@ -47,5 +47,8 @@
       width: 56rem;
       left: calc(50% - 28rem);
       height: 70%;
+      display: flex;
+      align-content: center;
+      flex-direction: column;
     }
   }
