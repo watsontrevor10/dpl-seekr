@@ -23,6 +23,7 @@ const Interview = (props) => {
       </> 
     }
       <button onClick={ () => setEdit(!edit)}>Edit</button>
+      <button onClick={ () => props.handleDelete(props.interview.id)}> Delete </button>
     </>
     
   );

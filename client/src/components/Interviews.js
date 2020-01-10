@@ -15,17 +15,25 @@ const Interviews = (props) => {
 
   const handleUpdate = () => {
     axios.get(`/api/jobs/${props.id}/interviews`)
-    .then( res => {
+      .then(res => {
         setInterviews(res.data);
       })
-  }; 
+  };
+
+  const handleDelete = (id) => {
+    axios.delete(`/api/jobs/${props.id}/interviews/${id}`)
+      .then(res => {
+        setInterviews(interviews.filter(interview => interview.id !== id))
+      })
+  }
+
   return (
     <>
       <h1>Interviews</h1>
-      <InterviewForm job_id={props.id} handleUpdate={handleUpdate}/>
-      {interviews.map( interview => (
-        <Interview interview={interview} handleUpdate={handleUpdate}/>
-        ))
+      <InterviewForm job_id={props.id} handleUpdate={handleUpdate} />
+      {interviews.map(interview => (
+        <Interview interview={interview} handleUpdate={handleUpdate} handleDelete={handleDelete} />
+      ))
       }
     </>
   )
