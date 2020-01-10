@@ -24,7 +24,6 @@ const JobViewForm = (props) => {
   }, [] );
 
   function submit() {
-    debugger
     const newJob = { company_name, job_title, status, date_applied, description, job_url, location, salary }
       if (props.job) {
         axios.put(`/api/jobs/${props.job.id}`, newJob)
