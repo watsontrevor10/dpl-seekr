@@ -1,5 +1,6 @@
 :root {
   --main-font-family: sans-serif;
+  --color-main-theme: rgb(107, 43, 210);
 }
 
 $border: (
@@ -39,3 +40,13 @@ $transition: (
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+      opacity: 0;
+      transform: translatey(100px);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}

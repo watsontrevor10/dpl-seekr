@@ -4,5 +4,5 @@ class Job < ApplicationRecord
   has_many :notes, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :interviews, dependent: :destroy
-  has_many :contacts
+  has_many :contacts, dependent: :destroy
 end

@@ -1,0 +1,28 @@
+.contacts-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.contacts {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    flex-direction: column;
+  }
+}
+
+.contact-btns {
+  display: flex;
+  margin: 10px 0;
+
+  button {
+    padding: 5px;
+    margin-right: 5px;
+  }
+}
