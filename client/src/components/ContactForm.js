@@ -175,7 +175,6 @@ if (contact) {
       </form>  
     </div>
   )}
-  }
 }
 
 export default ContactForm
