@@ -38,11 +38,11 @@ const Modal = (props) => {
         <Interviews id={props.id}/>
       </TabPanel>
       <TabPanel>
-        <Task id={props.id} />
+        <Task id={props.job.id} />
       </TabPanel>
       <TabPanel>
         {/* <NotesForm id={props.id}/> */}
-        <Notes id={props.id}/>
+        <Notes id={props.job.id}/>
       </TabPanel>
       <TabPanel style={{display:"flex", flexDirection: "column"}} className="contacts-container" >
         {/* <ContactForm id={props.id}/> */}

@@ -18,7 +18,7 @@ const Tasks = (props) => {
     .then( res => {
         setTasks(res.data);
       })
-  };
+  }; 
 
   return(
     <>

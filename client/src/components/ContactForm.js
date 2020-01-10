@@ -8,113 +8,102 @@ const ContactForm = (props) => {
     props.contactProp 
     : null
   )
-  // state for creating new contacts
-  const first_name = useFormInput(contact ? contact.first_name : '')
-  const last_name = useFormInput(contact ? contact.last_name : '')
-  const phone = useFormInput(contact ? contact.phone : '')
-  const email = useFormInput(contact ? contact.email : '')
-  const position = useFormInput(contact ? contact.position : '')
-  const department = useFormInput(contact ? contact.department : '')
-  const description = useFormInput(contact ? contact.description : '')
+  const { values, setValues, handleChange, handleSubmit } = useFormInput(submit)
+  const { first_name, last_name, phone, email, position, department, description } = values
 
-  // handle submission of new contacts
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    axios.post(`/api/jobs/${props.id}/contacts`, 
-      { first_name: first_name.values.first_name, 
-        last_name: last_name.values.last_name,
-        phone: phone.values.phone,
-        email: email.values.email,
-        position: position.values.email,
-        department: department.values.department,
-        description: description.values.description,
-      })
+  useEffect( () => {
+    if (contact) {
+      setValues({...contact})
+    }
+  }, [])
+
+  function submit(e) {
+    const newContact = { first_name, last_name, phone, email, position, department, description }
+    if (contact) {
+      e.preventDefault()
+      axios.patch(`/api/jobs/${props.id}/contacts/${contact.id}`, newContact)
+        .then( res => {
+          setContact(res.data)
+          props.toggle()
+          props.update()
+        })
+    } else {
+      e.preventDefault()
+      axios.post(`/api/jobs/${props.id}/contacts`, newContact)
         .then( res => {
           props.add(res.data)
+          props.update()
           props.toggle()
         })
-  }
-
-  // function to update a contact
-  const handleUpdate = (e) => {
-    e.preventDefault()
-    axios.patch(`/api/jobs/${props.job}/contacts/${contact.id}`, 
-    {
-      first_name: first_name.values.first_name, 
-      last_name: last_name.values.last_name,
-      phone: phone.values.phone,
-      email: email.values.email,
-      position: position.values.email,
-      department: department.values.department,
-      description: description.values.description,
-    })
-      .then( res => {
-        setContact(res.data)
-        props.toggle()
-        props.update()
-      })
   }
 
 if (contact) {
   // Edit Form
   return (
     <div>
-      <form onSubmit={handleUpdate}>
+      <form onSubmit={submit}>
+        <p>First Name: </p>
         <input 
           type='text' 
           name='first_name' 
           label='First Name' 
-          placeholder={contact.first_name}
+          value={first_name}
           {...first_name} 
-          onChange={first_name.handleChange}
+          onChange={handleChange}
         />
+        <p>Last Name: </p>
         <input 
           type='text' 
           name='last_name' 
           label='Last Name' 
-          placeholder={contact.last_name} 
+          value={last_name} 
           {...last_name} 
-          onChange={last_name.handleChange}
+          onChange={handleChange}
         />
+        <p>Phone: </p>
       <input 
         type='text' 
         name='phone' 
         label='Phone' 
-        placeholder={contact.phone} 
+        value={phone} 
         {...phone} 
-        onChange={phone.handleChange}
+        onChange={handleChange}
       />
+      <p>Email: </p>
         <input 
           type='text' 
           name='email' 
           label='Email' 
-          placeholder={contact.email} 
+          value={contact.email} 
           {...email} 
-          onChange={email.handleChange}
+          onChange={handleChange}
         />
+        <p>Position: </p>
         <input 
           type='text' 
           name='position' 
           label='position' 
-          placeholder={contact.position} 
+          value={contact.position} 
           {...position} 
-          onChange={position.handleChange}
+          onChange={handleChange}
         />
+        <p>Department: </p>
         <input 
           type='text' 
           name='department' 
           label='department' 
-          placeholder={contact.department} 
+          value={contact.department} 
           {...department} 
-          onChange={department.handleChange}
+          onChange={handleChange}
         />
+        <p>Description: </p>
         <input 
           type='text' 
           name='description' 
           label='description' 
-          placeholder={contact.description} 
+          value={contact.description} 
           {...description} 
-          onChange={description.handleChange}
+          onChange={handleChange}
         />
         <input type='submit' name='Update' />
       </form>  
@@ -124,14 +113,14 @@ if (contact) {
   // Add Form
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={submit}>
         <input 
           type='text' 
           name='first_name' 
           label='First Name' 
           placeholder='First Name'
           {...first_name} 
-          onChange={first_name.handleChange}
+          onChange={handleChange}
         />
         <input 
           type='text' 
@@ -139,7 +128,7 @@ if (contact) {
           label='Last Name' 
           placeholder='Last Name' 
           {...last_name} 
-          onChange={last_name.handleChange}
+          onChange={handleChange}
         />
         <input 
           type='text' 
@@ -147,7 +136,7 @@ if (contact) {
           label='Phone' 
           placeholder='Phone' 
           {...phone} 
-          onChange={phone.handleChange}
+          onChange={handleChange}
         />
         <input 
           type='text' 
@@ -155,7 +144,7 @@ if (contact) {
           label='Email' 
           placeholder='Email' 
           {...email} 
-          onChange={email.handleChange}
+          onChange={handleChange}
         />
         <input 
           type='text' 
@@ -163,7 +152,7 @@ if (contact) {
           label='position' 
           placeholder='position' 
           {...position} 
-          onChange={position.handleChange}
+          onChange={handleChange}
         />
         <input 
           type='text' 
@@ -171,7 +160,7 @@ if (contact) {
           label='department' 
           placeholder='department' 
           {...department} 
-          onChange={department.handleChange}
+          onChange={handleChange}
         />
         <input 
           type='text' 
@@ -179,7 +168,7 @@ if (contact) {
           label='description' 
           placeholder='description' 
           {...description} 
-          onChange={description.handleChange}
+          onChange={handleChange}
         />
         <input type='submit' name='Submit' />
       </form>  

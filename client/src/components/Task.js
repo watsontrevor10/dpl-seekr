@@ -9,7 +9,7 @@ const Task = (props) => {
   };
 
   return(
-    <>
+    <> 
     {
       edit ?
       <TaskForm task={props.task} handleUpdate={props.handleUpdate} />
