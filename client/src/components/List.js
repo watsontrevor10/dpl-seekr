@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, } from 'react';
 import NewJobModal from "./NewJobModal";
-import Modal from "./Modal";
-import JobForm from "./JobForm";
-import axios from 'axios'
 import JobCard from "./JobCard";
+
 const List = (props) => {
-    // State for looping through users jobs
-    const [ jobs, setJobs ] = useState([])
-    const [ toggleForm, setToggleForm] = useState(false)
-    const [ openModal, setOpenModal ] = useState(false)
+
+  const [ openModal, setOpenModal ] = useState(false)
 
   const show = () => {
     setOpenModal(true);
@@ -17,34 +12,9 @@ const List = (props) => {
   const hide = () => {
     setOpenModal(!openModal);
   }
-    // const [ specificJob, setSepecificJob] = useState([]);
-    // axios call to get all user jobs
-    useEffect( () => {
-      axios.get('/api/jobs')
-        .then( res => {
-          setJobs(res.data);
-        })
-    }, [])
-    // const toggle = () => {
-    //   // setToggleForm(!toggleForm);
-    //   setOpenModal(true);
-    // }
-    const deleteJob = (id) => {
-      axios.delete(`/api/jobs/${id}`)
-      .then(res => {
-        setJobs(jobs.filter(j => j.id !== id))
-      })
-    }
-
-    const handleUpdate = () => {
-      axios.get(`/api/jobs`)
-      .then( res => {
-          setJobs(res.data);
-        })
-    };
 
     const renderJobs = (name) => {
-      return jobs.map( job => {
+      return props.jobs.map( job => {
         if ( name === job.status ) {
           return (
           <>
@@ -55,7 +25,7 @@ const List = (props) => {
             title={job.job_title}
             status={job.status}
             >
-              <JobCard handleUpdate={handleUpdate} deleteJob={deleteJob} job={job}/>
+              <JobCard handleUpdate={props.handleUpdate} deleteJob={props.deleteJob} job={job}/>
             </div>
           </>
         )}
@@ -64,15 +34,14 @@ const List = (props) => {
         )
       })
     }
-    // Passing this function into JobForm as a prop
-    const addJob = (job) => setJobs([ ...jobs, job, ]);
+  
   return (
     <>
     <div className="list-component-container">
       <h1 className="list-header">{props.name}</h1>
         <button className="new-job-btn" onClick={show}>Add Job</button>
         {/* { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null } */}
-        { openModal ? <NewJobModal add={addJob} hide={hide} show={openModal}/> : null }
+        { openModal ? <NewJobModal add={props.add} hide={hide} show={openModal}/> : null }
         { renderJobs(props.name) }
     </div>
     </>
