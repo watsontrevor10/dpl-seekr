@@ -5,7 +5,7 @@ const Task = (props) => {
   const [edit, setEdit] = useState(false);
 
   return(
-    <>
+    <> 
     {
       edit ?
       <TaskForm task={props.task} handleUpdate={props.handleUpdate} />

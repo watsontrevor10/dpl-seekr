@@ -18,7 +18,7 @@ const Tasks = (props) => {
     .then( res => {
         setTasks(res.data);
       })
-  };
+  }; 
 
   const handleDelete = (id) => {
     axios.delete(`/api/jobs/${props.id}/tasks/${id}`)

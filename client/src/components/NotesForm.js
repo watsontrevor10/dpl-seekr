@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import useFormInput from '../hooks/useFormInput'
 
@@ -7,45 +7,49 @@ const NotesForm = (props) => {
     props.note
     : null
   )
-  const body = useFormInput(note ? note.body : '')
+  const { values, setValues, handleChange } = useFormInput(submit)
+  const {body} = values
+
+  useEffect( () => {
+    if (note) {
+      setValues({...note})
+    }
+  }, [])
 
   // submit form and toggle NotesForm off
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post(`/api/jobs/${props.id}/notes`, { body: body.values.body, })
-    .then(res => {
-        props.add(res.data);
-        props.toggle()
-      })
-  };
-
-  // function for updating existing records
-  const handleUpdate = (e) => {
-    e.preventDefault()
-    axios.patch(`/api/jobs/${props.id}/notes/${note.id}`, 
-    {
-      body: body.values.body,
-    })
+  function submit(e) {
+    const newNote = { body }
+    if (note) {
+      e.preventDefault()
+      axios.patch(`/api/jobs/${props.id}/notes/${note.id}`, newNote)
       .then( res => {
         setNote(res.data)
         props.toggle()
         props.update()
       })
-  }
+    } else {
+      e.preventDefault();
+      axios.post(`/api/jobs/${props.id}/notes`, newNote)
+      .then(res => {
+        props.add(res.data);
+        props.toggle()
+      })
+    } 
+  };
 
   // Form component
   if (note) {
     // edit form
     return (
       <div className="form-container">
-        <form onSubmit={handleUpdate}>
-        Note <br/> 
+        <form onSubmit={submit}>
+        Note  
           <input 
             type="textarea" 
             name="body" 
-            placeholder={note.body}
+            value={body}
             {...body} 
-            onChange={body.handleChange}
+            onChange={handleChange}
           />
           <input type="submit" value='Save' />
         </form>
@@ -54,12 +58,12 @@ const NotesForm = (props) => {
       // add form
       return (
         <div className="form-container">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={submit}>
             <input 
               type="textarea" 
               name="body" 
               {...body}
-              onChange={body.handleChange}
+              onChange={handleChange}
               />
             <input type="submit" value="Save" />
           </form>
