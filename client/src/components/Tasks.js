@@ -13,21 +13,19 @@ const Tasks = (props) => {
       })
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newTask = { due_date: due_date.value, subject: subject.value, completed_date: completed_date.value}
-    debugger
-    axios.post(`/api/jobs/${props.id}/tasks/`, newTask)
-      .then(res => {
+  const handleUpdate = () => {
+    axios.get(`/api/jobs/${props.id}/tasks`)
+    .then( res => {
+        setTasks(res.data);
       })
   };
 
   return(
     <>
       <h1>Tasks</h1>
-      <TaskForm job_id={props.match.params.job_id}/>
-      {tasks.map( task=> (
-        <Task task={task} />
+      <TaskForm job_id={props.id} handleUpdate={handleUpdate}/>
+      {tasks.map( task => (
+        <Task task={task} handleUpdate={handleUpdate}/>
         ))
       }
     </>

@@ -3,25 +3,41 @@ import axios from "axios";
 import useFormInput from '../hooks/useFormInput';
 
 const TaskForm = (props) => {
-  const subject = useFormInput();
-  const due_date = useFormInput();
-  const completed_date = useFormInput()
+  const { values, handleChange, handleSubmit, setValues} = useFormInput(submit);
+  const { subject, due_date, completed_date, } = values
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newTask = { due_date: due_date.value, subject: subject.value, completed_date: completed_date.value}
-    axios.post(`/api/jobs/${props.job_id}/tasks/`, newTask)
-      .then(res => {
-      })
+  useEffect( () => {
+    if (props.task) {
+      setValues({subject: props.task.subject, due_date: props.task.due_date, completed_date: props.task.completed_date})
+    };
+  }, [] );
+
+  function submit(){
+    const newTask = { due_date, subject, completed_date}
+    if (props.task) {
+      axios.put(`/api/jobs/${props.task.job_id}/tasks/${props.task.id}`, newTask)
+        .then(res => {
+          props.handleUpdate();
+          setValues({})
+        })
+      } else {
+        axios.post(`/api/jobs/${props.job_id}/tasks/`, newTask)
+        .then(res => {
+          props.handleUpdate();
+          setValues({})
+        })
+      }
   };
 
   return(
-    <form onSubmit={handleSubmit}>
-      Task: <input type="text" name="subject" {...subject} /> <br />
-      Due Date: <input type="date" name="dueDate" {...due_date} /> <br />
-      Completed Date: <input type="date" name="completedDate" {...completed_date} /> <br />
-      <input type="submit" value="Submit" />
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        Task: <input type="text" name="subject" onChange={handleChange} value={subject} /> <br />
+        Due Date: <input type="date" name="due_date" onChange={handleChange} value={due_date} /> <br />
+        Completed Date: <input type="date" name="completed_date" onChange={handleChange} value={completed_date} /> <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </>
   )
 };
 

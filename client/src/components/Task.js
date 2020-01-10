@@ -12,7 +12,7 @@ const Task = (props) => {
     <>
     {
       edit ?
-      <TaskForm task={props.task} />
+      <TaskForm task={props.task} handleUpdate={props.handleUpdate} />
       :
       <>
         <h2>{props.task.subject}</h2>
