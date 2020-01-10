@@ -20,12 +20,19 @@ const Tasks = (props) => {
       })
   }; 
 
+  const handleDelete = (id) => {
+    axios.delete(`/api/jobs/${props.id}/tasks/${id}`)
+      .then( res => {
+        setTasks(tasks.filter( task => task.id !== id))
+      })
+  };
+
   return(
     <>
       <h1>Tasks</h1>
-      <TaskForm job_id={props.id} handleUpdate={handleUpdate}/>
+      <TaskForm job_id={props.id} handleUpdate={handleUpdate} />
       {tasks.map( task => (
-        <Task task={task} handleUpdate={handleUpdate}/>
+        <Task task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} />
         ))
       }
     </>

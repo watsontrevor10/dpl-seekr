@@ -4,10 +4,6 @@ import TaskForm from './TaskForm';
 const Task = (props) => {
   const [edit, setEdit] = useState(false);
 
-  const handleEdit = (e) => {
-    e.preventDefault();
-  };
-
   return(
     <> 
     {
@@ -21,6 +17,7 @@ const Task = (props) => {
       </> 
     }
       <button onClick={ () => setEdit(!edit)}>Edit</button>
+      <button onClick={ () => props.handleDelete(props.task.id)}>Delete</button>
     </>
     
   );
