@@ -74,7 +74,7 @@ const Notes = (props) => {
   }
 
   return (
-    <div>
+    <>
       { toggleForm ? 
         <NotesForm 
           id={props.id} 
@@ -83,7 +83,7 @@ const Notes = (props) => {
           note={noteEdit}
           update={handleUpdate} 
         />  
-        : ""
+        : renderNotes()
       }
       <button onClick={ () => toggle() }>
         {toggleForm ? 
@@ -91,10 +91,7 @@ const Notes = (props) => {
           : 'Add'
         }
       </button>
-      <br/>
-      { renderNotes() }
-      <br/>
-    </div>
+    </>
   )
 }
 
