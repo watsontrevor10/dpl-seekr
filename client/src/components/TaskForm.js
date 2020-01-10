@@ -12,7 +12,7 @@ const TaskForm = (props) => {
     };
   }, [] );
 
-  function submit(){
+  function submit() {
     const newTask = { due_date, subject, completed_date}
     if (props.task) {
       axios.put(`/api/jobs/${props.task.job_id}/tasks/${props.task.id}`, newTask)

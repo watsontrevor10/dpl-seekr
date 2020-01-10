@@ -14,13 +14,13 @@ const JobForm = (props) => {
     axios.post('/api/jobs', { company_name: company.values.company_name, job_title: job.values.job_title, status: status.values.status })
     .then(res => {
         props.add(res.data);
-        props.toggle();
+        props.hide();
       })
   };
 
   // Form component
   return (
-    <div>
+    <div className="new-job-form">
       <form onSubmit={handleSubmit}>
         Company Name: <br/>
         <input type="text" name="company_name" {...company} onChange={company.handleChange} /><br/>
