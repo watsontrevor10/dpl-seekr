@@ -51,7 +51,6 @@ const Interviews = props => {
             {interview.subject}
           </h2>
         ))}
-        ))}
     </div>
     </>
   )
