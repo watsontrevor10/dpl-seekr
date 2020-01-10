@@ -35,17 +35,14 @@ const List = (props) => {
         setJobs(jobs.filter(j => j.id !== id))
       })
     }
-    const editJob = (data, id) => {
-      debugger
-      axios.put(`/api/jobs/${id}`, data)
-      .then(res => {
-        const newJobs = jobs.map(job => {
-          if (job.id === id)
-            return data
+
+    const handleUpdate = () => {
+      axios.get(`/api/jobs`)
+      .then( res => {
+          setJobs(res.data);
         })
-        setJobs(newJobs)
-      })
-    }
+    };
+
     const renderJobs = (name) => {
       return jobs.map( job => {
         if ( name === job.status ) {
@@ -58,7 +55,7 @@ const List = (props) => {
             title={job.job_title}
             status={job.status}
             >
-              <JobCard deleteJob={deleteJob} editJob={editJob} {...job}/>
+              <JobCard handleUpdate={handleUpdate} deleteJob={deleteJob} job={job}/>
             </div>
           </>
         )}

@@ -35,7 +35,6 @@ const ContactForm = (props) => {
           props.update()
           props.toggle()
         })
-    }
   }
 
 if (contact) {
