@@ -3,14 +3,45 @@
   --color-card-text2: rgb(186, 186, 186);
 }
 
+$blue: #1464dc;
+$green: #00aea2;
+$orange: rgb(215, 75, 0);
+$purple: rgb(95, 58, 229);
+
+$colors: $blue, $green, $orange, $purple;
+
+$key: random( length($colors) );
+$nth: nth( $colors, $key );
+
+$main-card-color: $nth !default;
+
+// @mixin background-card($i) {
+//   background: $i;
+//     &:nth-child(#{$i}) { background: $i; }
+// }
+
+@mixin background-card($c, $y) {
+  background: $c;
+  @for $i from 1 through $y {
+    $k: 3%;
+    $j: $i - 1;
+
+    @if $i == 1 {
+      &:nth-child(#{$i}) { background: $c; }
+    }
+    @else {
+      &:nth-child(#{$i}) { background: darken($c, ($k * $j)); }
+    }
+  }
+}
+
 .job-card {
   list-style: none;
   display: flex;
   align-items: center;
-  background-color: var(--color-main-theme);
   border-radius: 5px;
   margin: 10px;
-
+  @include background-card($main-card-color, 10);
   // div {
   //   width: inherit;
   // }
