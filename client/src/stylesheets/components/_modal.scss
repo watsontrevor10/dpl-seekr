@@ -34,6 +34,13 @@
     letter-spacing: 2px;
   }
 
+  .tab-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .react-tabs__tab{
     color: #fff;
   }

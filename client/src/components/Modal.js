@@ -23,29 +23,19 @@ const Modal = (props) => {
         <Tab selectedIndex={tabIndex} onSelect={tabIndex => setTabIndex({ tabIndex })}>Notes</Tab>
         <Tab selectedIndex={tabIndex} onSelect={tabIndex => setTabIndex({ tabIndex })}>Contact</Tab>
       </TabList>
-      <TabPanel>
-        {/* <div 
-          style={{
-            transform: props.show ? "translateY(0)" : "translateY(-100vh)",
-            opacity: props.show ? "1" : "0"
-          }}
-        > */}
-          <JobViewForm job={props.job} handleUpdate={props.handleUpdate}/>
-        {/* </div> */}
-       
+      <TabPanel className="tab-container">
+        <JobViewForm job={props.job} handleUpdate={props.handleUpdate}/>
       </TabPanel>
-      <TabPanel style={{display:"flex"}}>
+      <TabPanel className="tab-container">
         <Interviews id={props.job.id}/>
       </TabPanel>
-      <TabPanel>
+      <TabPanel className="tab-container">
         <Task id={props.job.id} />
       </TabPanel>
-      <TabPanel>
-        {/* <NotesForm id={props.id}/> */}
+      <TabPanel className="tab-container">
         <Notes id={props.job.id}/>
       </TabPanel>
-      <TabPanel style={{display:"flex", flexDirection: "column"}} className="contacts-container" >
-        {/* <ContactForm id={props.id}/> */}
+      <TabPanel className="tab-container" >
         <Contacts id={props.job.id}/>
       </TabPanel>
     </Tabs>
