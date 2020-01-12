@@ -5,6 +5,7 @@ import Modal from "./Modal";
 import JobForm from "./JobForm";
 import axios from 'axios'
 import JobCard from "./JobCard";
+
 const List = (props) => {
     // State for looping through users jobs
     const [ jobs, setJobs ] = useState([])
@@ -17,18 +18,14 @@ const List = (props) => {
   const hide = () => {
     setOpenModal(!openModal);
   }
-    // const [ specificJob, setSepecificJob] = useState([]);
-    // axios call to get all user jobs
+
     useEffect( () => {
       axios.get('/api/jobs')
         .then( res => {
           setJobs(res.data);
         })
     }, [])
-    // const toggle = () => {
-    //   // setToggleForm(!toggleForm);
-    //   setOpenModal(true);
-    // }
+
     const deleteJob = (id) => {
       axios.delete(`/api/jobs/${id}`)
       .then(res => {
@@ -50,10 +47,10 @@ const List = (props) => {
           <>
             <div
             key={job.id}
-            className="job-card"
             company={job.company_name}
             title={job.job_title}
             status={job.status}
+            className={`job-card ${job.id}`}
             >
               <JobCard handleUpdate={handleUpdate} deleteJob={deleteJob} job={job}/>
             </div>
