@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
 import NewJobModal from "./NewJobModal";
-import Modal from "./Modal";
-import JobForm from "./JobForm";
 import axios from 'axios'
 import JobCard from "./JobCard";
 
 const List = (props) => {
     // State for looping through users jobs
     const [ jobs, setJobs ] = useState([])
-    const [ toggleForm, setToggleForm] = useState(false)
     const [ openModal, setOpenModal ] = useState(false)
 
   const show = () => {
@@ -68,7 +64,6 @@ const List = (props) => {
     <div className="list-component-container">
       <h1 className="list-header">{props.name}</h1>
         <button className="new-job-btn" onClick={show}>Add Job</button>
-        {/* { toggleForm ? <JobForm toggle={toggle} add={addJob} /> : null } */}
         { openModal ? <NewJobModal add={addJob} hide={hide} show={openModal}/> : null }
         { renderJobs(props.name) }
     </div>

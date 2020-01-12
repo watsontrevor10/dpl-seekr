@@ -21,6 +21,7 @@ const JobForm = (props) => {
   // Form component
   return (
     <div className="new-job">
+      <h1>Add a new job</h1>
       <form onSubmit={handleSubmit}>
         Company Name: <br/>
         <input type="text" name="company_name" {...company} onChange={company.handleChange} /><br/>
@@ -28,9 +29,14 @@ const JobForm = (props) => {
         <input type="text" name="job_title" {...job} onChange={job.handleChange}/><br/>
         <select name="status" {...status} onChange={status.handleChange} >
           { jobStatus.map(j => (   
-            <option value={j.value}>
-              {j.value}
-            </option>
+            <>
+              <option value="none" selected disabled hidden> 
+                Select an Option 
+              </option>
+              <option value={j.value}>
+                {j.value}
+              </option>
+            </>
               )) 
           }
         </select>

@@ -9,6 +9,7 @@ const ListContainer = () => {
         <HomeNav/>
         </div>
         <div className="list-container">
+        <h1 className="job-board-heading">Job Board</h1>
           <div className="list">
             <List name="Wishlist" className="list-component-container" key={1}/>
           </div>

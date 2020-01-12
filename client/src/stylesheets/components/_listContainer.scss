@@ -5,10 +5,11 @@
 
 $blue: #3ea5ce;
 $green: #34c291;
-$red-purple: purple;
+$purple: #6917c7;
 $red: #E53B3A;
+$yellow: rgb(235, 178, 32);
 
-$colors: $blue, $green, $red-purple, $red;
+$colors: $blue, $green, $purple, $red;
 
 $key: random( length($colors) );
 $nth: nth( $colors, $key );
@@ -33,6 +34,9 @@ $main-color: $nth !default;
   box-sizing: border-box;
   @include backgrounds($main-color);
 
+  h1.job-board-heading {
+    display: none;
+  }
   .list {
     background-color: var(--color-1);
     display: flex;
@@ -48,8 +52,23 @@ $main-color: $nth !default;
 
   .list-container {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    height: 100%;
+
+    h1.job-board-heading {
+      display: flex;
+      color: #e3d4ff;
+      font-weight: 400;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      margin: 10px;
+      text-transform: uppercase;
+    }
+  }
+
+  .main-homeNav-container {
+    display: none;
   }
 }
 
