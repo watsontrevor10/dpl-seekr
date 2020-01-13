@@ -1,12 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
-const MobileMenu = () => (
-  <>
-    <div className="mobile-menu">
-      Mobile Menu
-    </div>
-  </>
-)
+const MobileMenu = () => {
+
+  const [ showMenu, setShowMenu ] = useState(false)
+
+  const displayMenu = () => {
+    setShowMenu(!showMenu);
+  }
+
+  return (
+    <>
+      <div className="mobile-menu" onClick={displayMenu}>
+      {
+          showMenu
+            ? (
+              <div className="menu">
+                <button> home </button>
+                <button> username </button>
+              </div>
+            )
+            : (
+              null
+            )
+        }
+      </div>
+    </>
+  )
+}
 
 export default MobileMenu;

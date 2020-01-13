@@ -1,22 +1,26 @@
 :root {
   --color-card-text1: rgb(255, 255, 255);
-  --color-card-text2: rgb(186, 186, 186);
+  --color-card-text2: rgb(255, 216, 216);
 }
+
+// $colors1: 
+//   #7a0d9b, 
+//   #cd3a50,
+//   #c79106, 
+//   #189ad2, 
+//   #d25511, 
+//   #4954e6;
 
 .job-card {
   list-style: none;
   display: flex;
   align-items: center;
-  background-color: var(--color-main-theme);
-  border-radius: 5px;
   margin: 10px;
 
-  // div {
-  //   width: inherit;
-  // }
   div.card-content {
     width: 100%;
     display: flex;
+    border-radius: 5px;
   }
 
   ul {
@@ -51,10 +55,16 @@
     border-style: none;
     padding: 0.3rem;
     margin: 1rem 1.2rem;
-    // top: 13rem;
-    // right: rem;
-    // left: 15%;
     color: var(--color-card-text1);
     background-color: inherit;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+  .job-card {
+    ul {
+
+    }
   }
 }

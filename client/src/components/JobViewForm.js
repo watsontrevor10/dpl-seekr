@@ -36,10 +36,10 @@ const JobViewForm = (props) => {
 
   return (
     <>
-      <div>
+      {/* <div>
         <h1> Job View Page </h1>
-      </div>
-      <form onSubmit={handleSubmit}>
+      </div> */}
+      <form onSubmit={handleSubmit} className="jobview-form">
         Company:
         <input type="text" name="company_name" onChange={handleChange} value={company_name} />
         <br />
