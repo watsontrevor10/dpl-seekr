@@ -2,6 +2,7 @@ import React from 'react';
 import ListContainer from "./ListContainer"; 
 import Sidebar from "./Sidebar"; 
 import MobileMenu from "./MobileMenu"
+import Dashboard from './Dashboard';
 
 
 const Home = () => (
@@ -14,7 +15,7 @@ const Home = () => (
         <MobileMenu />
       </div>
       <div className="main-listContainer">
-        <ListContainer />
+        <Dashboard />
       </div>
     </div>
   </>
