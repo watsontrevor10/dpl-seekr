@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import List from "./List"; 
 import HomeNav from "./HomeNav"; 
 import axios from 'axios'
+import Sidebar from './Sidebar';
 
 const ListContainer = () => {
 
@@ -33,6 +34,11 @@ const ListContainer = () => {
     
   return(
     <>
+    <div className="main-home-container">
+
+      <div className="main-sidebar-container">
+        <Sidebar />
+      </div>
       <div className="main-homeNav-container">
         <HomeNav/>
         </div>
@@ -54,6 +60,7 @@ const ListContainer = () => {
             <List name="Rejected" className="list-component-container" key={5} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob}/>
           </div>
         </div>
+    </div>
       
     </>
   )

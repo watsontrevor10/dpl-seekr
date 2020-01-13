@@ -7,7 +7,9 @@ const Sidebar = (props) => {
   return(
     <>
       <div className="sidebar">
-        <h1>DPL Logo</h1>
+        <Link to='/'>
+         <h1>DPL Logo</h1>
+        </Link>
         <div>home</div>
         <div>username</div>
       </div>
