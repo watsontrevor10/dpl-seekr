@@ -59,6 +59,9 @@ const ListContainer = () => {
           <div className="list">
             <List name="Rejected" className="list-component-container" key={5} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob}/>
           </div>
+          <div className="list">
+            <List name="Archived" className="list-component-container" key={6} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob}/>
+          </div>
         </div>
     </div>
       
