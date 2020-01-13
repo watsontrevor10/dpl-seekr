@@ -28,7 +28,6 @@ const JobCard = (props) => {
     setOpenModal(true);
   }
   const hide = () => {
-    
     setOpenModal(!openModal);
   }
 

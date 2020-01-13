@@ -13,7 +13,9 @@ class Navbar extends React.Component {
           <button
             name='logout'
             onClick={ () => handleLogout(this.props.history) }
-          >logout</button>
+          >
+            logout
+          </button>
         </nav>
       )
     } else {
@@ -25,7 +27,9 @@ class Navbar extends React.Component {
               id='login'
               name='login'
               active={location.pathname === '/login'}
-            >login</button>
+            >
+              login
+            </button>
           </Link>
           <Link to='/register'>
             <button
