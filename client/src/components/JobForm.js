@@ -7,11 +7,12 @@ const JobForm = (props) => {
   const company = useFormInput('')
   const job = useFormInput('')
   const status = useFormInput('')
+  const color = useFormInput('')
 
   // submit function, axios post call.  Need to add each field name to the post request
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('/api/jobs', { company_name: company.values.company_name, job_title: job.values.job_title, status: status.values.status })
+    axios.post('/api/jobs', { company_name: company.values.company_name, job_title: job.values.job_title, status: status.values.status, color: color.values.color })
     .then(res => {
         props.add(res.data);
         props.hide();
@@ -40,6 +41,20 @@ const JobForm = (props) => {
               )) 
           }
         </select>
+        <br />
+        <select name="color" {...color} onChange={color.handleChange} >
+          { colors.map(c => (   
+            <>
+              <option value="none" selected disabled hidden> 
+                Select an Option 
+              </option>
+              <option value={c.text}>
+                {c.value}
+              </option>
+            </>
+              )) 
+          }
+        </select>
         <input type="submit" value="Submit" />
       </form>
     </div>
@@ -54,5 +69,23 @@ const jobStatus = [
   { key: "e", text: "Rejected", value: "Rejected", },
   { key: "f", text: "Archived", value: "Archived", }
 ];
+
+const colors = [
+  { key: "a", value: "Purple", text: "#7a0d9b", },
+  { key: "b", value: "Red", text: "#cd3a50", },
+  { key: "c", value: "Gold", text: "#c79106", },
+  { key: "d", value: "Teal", text: "#12a9ba", },
+  { key: "e", value: "Red Orange", text: "#d25511", },
+  { key: "f", value: "Blue", text: "#4954e6", }
+];
+
+// const colors = [
+//   "#7a0d9b", purple
+//   "#cd3a50",pink
+//   "#c79106", orange
+//   "#189ad2", light blue
+//   "#d25511", red orange
+//  " #4954e6" blue 
+// ];
 
 export default JobForm
