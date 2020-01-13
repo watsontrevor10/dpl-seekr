@@ -41,7 +41,7 @@ const List = (props) => {
     <div className="list-component-container">
       <h1 className="list-header">{props.name}</h1>
         <button className="new-job-btn" onClick={show}>Add Job</button>
-        { openModal ? <NewJobModal add={addJob} hide={hide} show={openModal}/> : null }
+        { openModal ? <NewJobModal hide={hide} show={openModal}/> : null }
         { renderJobs(props.name) }
     </div>
     </>
