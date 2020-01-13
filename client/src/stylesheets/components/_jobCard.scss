@@ -3,6 +3,8 @@
   --color-card-text2: rgb(255, 216, 216);
 }
 
+$default-card-color: blue !default;
+
 // $colors1: 
 //   #7a0d9b, 
 //   #cd3a50,
@@ -16,6 +18,8 @@
   display: flex;
   align-items: center;
   margin: 10px;
+  background-color: $default-card-color;
+  border-radius: 7px;
 
   div.card-content {
     width: 100%;
