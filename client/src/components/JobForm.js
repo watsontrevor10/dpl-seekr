@@ -51,7 +51,8 @@ const jobStatus = [
   { key: "b", text: "Applied", value: "Applied", },
   { key: "c", text: "Interviewed", value: "Interviewed", },
   { key: "d", text: "Offer", value: "Offer", },
-  { key: "e", text: "Rejected", value: "Rejected", }
+  { key: "e", text: "Rejected", value: "Rejected", },
+  { key: "f", text: "Archived", value: "Archived", }
 ];
 
 export default JobForm
