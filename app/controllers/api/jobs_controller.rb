@@ -7,7 +7,8 @@ class Api::JobsController < ApplicationController
   end
 
   def tasks_due
-    render json: Job.tasks_due
+    user = current_user.id
+    render json: current_user.jobs.tasks_due(user)
   end
 
   def show
