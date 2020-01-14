@@ -5,12 +5,13 @@
 .main-home-container {
   display: flex;
   flex-direction: row;
+  height: 100vh;
+  flex-grow: 1;
   // font-family: var(--main-font-family);
 }
 
 .main-sidebar-container {
   display: flex;
-  align-items: flex-start;
   justify-content: flex-start;
   flex-grow: 0;
   flex-shrink: 0;
@@ -19,7 +20,6 @@
   width: 200px;
   background-color: var(--color-5);
 }
-
 
 .main-listContainer {
   flex: 1;

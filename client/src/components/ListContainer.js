@@ -3,6 +3,7 @@ import List from "./List";
 import HomeNav from "./HomeNav"; 
 import axios from 'axios'
 import Sidebar from './Sidebar';
+import MobileMenu from './MobileMenu';
 
 const ListContainer = () => {
 
@@ -35,15 +36,18 @@ const ListContainer = () => {
   return(
     <>
     <div className="main-home-container">
-
       <div className="main-sidebar-container">
         <Sidebar />
       </div>
-      <div className="main-homeNav-container">
-        <HomeNav/>
+      <div className="home-container">
+        <div className="main-homeNav-container">
+          <HomeNav/>
         </div>
-        <div className="list-container">
-        <h1 className="job-board-heading">Job Board</h1>
+        <div className="mobile-menu-container">
+          <MobileMenu />
+        </div>
+        <div className="list-container">  
+          <h1 className="job-board-heading">Job Board</h1>
           <div className="list">
             <List name="Wishlist" className="list-component-container" key={1} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob} />
           </div>
@@ -59,7 +63,11 @@ const ListContainer = () => {
           <div className="list">
             <List name="Rejected" className="list-component-container" key={5} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob}/>
           </div>
+          <div className="list">
+            <List name="Archived" className="list-component-container" key={6} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob}/>
+          </div>
         </div>
+      </div>
     </div>
       
     </>

@@ -6,14 +6,14 @@ import Modal from "./Modal"
 import Moment from 'react-moment';
 import 'moment-timezone';
 
-const colors = [
-  "#7a0d9b", 
-  "#cd3a50",
-  "#c79106", 
-  "#189ad2", 
-  "#d25511", 
- " #4954e6"
-];
+// const colors = [
+//   "#7a0d9b", 
+//   "#cd3a50",
+//   "#c79106", 
+//   "#189ad2", 
+//   "#d25511", 
+//  " #4954e6"
+// ];
 
 const JobCard = (props) => {
   // State for looping through users jobs
@@ -21,8 +21,8 @@ const JobCard = (props) => {
   
   // axios call to get all user jobs
 
-  const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    console.log(randomColor);
+  // const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  //   console.log(randomColor);
 
   const show = () => {
     setOpenModal(true);
@@ -34,7 +34,8 @@ const JobCard = (props) => {
   const renderJob = () => {
       
       return <div key={props.job.id} className="card-content" 
-      style={{backgroundColor: `${randomColor}`}}  
+      // style={{backgroundColor: `${randomColor}`}}  
+      style={{backgroundColor: `${props.job.color}`}}
       >
         <ul onClick={show}>
           <li className="card-title">{props.job.job_title}</li>
