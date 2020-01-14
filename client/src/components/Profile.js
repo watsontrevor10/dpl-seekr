@@ -51,7 +51,7 @@ class Profile extends React.Component {
                   {
                     isDragActive ?
                       <p>Drop files here...</p> :
-                      <p>Image Goes Here</p>
+                      <center><p>Image Goes Here (MAX 1.31MB)</p></center>
                   }
                 </div>
               )
@@ -84,7 +84,7 @@ class Profile extends React.Component {
     return (
       <>
         <div width={4}>
-          <img src={user.image || defaultImage} />
+          <img style={profilepic} src={user.image || defaultImage} />
         </div>
         <div width={8}>
           <h1>{user.name}</h1>
@@ -136,6 +136,12 @@ const ConnectedProfile = (props) => (
     }
   </AuthConsumer>
 )
+
+const profilepic = {
+  height: '300px',
+  width: '300px',
+  borderRadius: '150px'
+}
 
 const styles = {
   dropzone: {
