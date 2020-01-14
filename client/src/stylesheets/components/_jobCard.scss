@@ -1,6 +1,15 @@
 :root {
-  --color-card-text1: rgb(255, 255, 255);
-  --color-card-text2: rgb(201, 201, 201);
+  --main-font-family: sans-serif;
+
+  --white: #fff;
+  --gray-1: #faf9f9;
+  --gray-2: #c9c9c9;
+
+  --theme-blue-main: #151E3F;
+  --theme-dark-main: #030027;
+  --theme-gray-main: #96939b;
+  --theme-purple-main: #564256;
+  --theme-yellow-main: #f2f3d9;
 }
 
 $default-card-color: blue !default;
