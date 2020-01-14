@@ -1,0 +1,16 @@
+.main-dashboard-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+
+  .board-link {
+    margin: 5rem;
+    width: 14rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+  }
+}
