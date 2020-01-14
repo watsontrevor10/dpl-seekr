@@ -32,6 +32,7 @@ $main-color: $nth !default;
   height: 100%;
   height: calc(100vh - 65px);
   box-sizing: border-box;
+  overflow: auto;
   @include backgrounds($main-color);
 
   h1.job-board-heading {
