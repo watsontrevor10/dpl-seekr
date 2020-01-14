@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeNav = () => {
   return(
-    <h1>Home Navbar</h1>
+    <h1>JOB BOARD</h1>
   );
 }
 

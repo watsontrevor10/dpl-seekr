@@ -1,26 +1,28 @@
 :root {
   --color-1: #faf9f9;
   --color-2:  #cdc5ff;
+  --color-3: #96939b;
 }
 
-$blue: #3ea5ce;
-$green: #34c291;
-$purple: #6917c7;
-$red: #E53B3A;
-$yellow: rgb(235, 178, 32);
+// $blue: #3ea5ce;
+// $green: #34c291;
+// $color1: #151e3f;
+// $color2: #030027;
+// $color3: #564256;
+// $color4: #96939b;
 
-$colors: $blue, $green, $purple, $red;
+// $colors: $color1, $color2, $color3;
 
-$key: random( length($colors) );
-$nth: nth( $colors, $key );
+// $key: random( length($colors) );
+// $nth: nth( $colors, $key );
 
-$main-color: $nth !default;
+// $main-color: $nth !default;
 
 
-@mixin backgrounds($i) {
-  background: $i;
-    &:nth-child(#{$i}) { background: $i; }
-}
+// @mixin backgrounds($i) {
+//   background: $i;
+//     &:nth-child(#{$i}) { background: $i; }
+// }
 
 .list-container {
   display: flex;
@@ -33,7 +35,7 @@ $main-color: $nth !default;
   height: calc(100vh - 65px);
   box-sizing: border-box;
   overflow: auto;
-  @include backgrounds($main-color);
+  background-color: var(--color-3);
 
   h1.job-board-heading {
     display: none;

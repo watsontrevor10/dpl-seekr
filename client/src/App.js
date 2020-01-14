@@ -28,7 +28,7 @@ const App = () => (
         <Switch>
           <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path='/jobs' component={Jobs} />
-          <ProtectedRoute exact path='/dashboard' component={ListContainer} />
+          <ProtectedRoute exact path='/board' component={ListContainer} />
           <ProtectedRoute exact path='/jobs/:job_id/notes' component={Notes} />
           <ProtectedRoute exact path="/jobs/:job_id/new_note" component={NotesForm} />
           <ProtectedRoute exact path="/jobs/:job_id/contacts" component={Contacts} />
