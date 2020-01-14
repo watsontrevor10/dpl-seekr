@@ -1,9 +1,10 @@
 import React from 'react';
 import { AuthConsumer, } from "../providers/AuthProvider";
+import Dropzone from 'react-dropzone';
 
 
 class Register extends React.Component {
-  state = { email: '', password: '', passwordConfirmation: '', };
+  state = { email: '', password: '', passwordConfirmation: '', name: '', };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -22,12 +23,21 @@ class Register extends React.Component {
   }
 
   render() {
-    const { email, password, passwordConfirmation, } = this.state;
+    const { email, password, passwordConfirmation, name } = this.state;
 
     return (
       <segment>
         <h1>Sign Up</h1>
         <form onSubmit={this.handleSubmit}>
+          <input
+            label="Name"
+            required
+            autoFocus
+            name='name'
+            value={name}
+            placeholder='First Last'
+            onChange={this.handleChange}
+          />
           <input
             label="Email"
             required
@@ -68,7 +78,7 @@ export default class ConnectedRegister extends React.Component {
   render() {
     return (
       <AuthConsumer>
-        { auth => <Register {...this.props} auth={auth} /> }
+        {auth => <Register {...this.props} auth={auth} />}
       </AuthConsumer>
     )
   }

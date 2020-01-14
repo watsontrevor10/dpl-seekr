@@ -13,11 +13,13 @@ gem 'puma', '~> 4.1'
 # gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem "devise_token_auth"
+gem 'cloudinary'
 
 
 group :development, :test do
   # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'
+  gem 'dotenv-rails'
   #faker data
   gem "faker", :git => "https://github.com/stympy/faker.git", :branch => "master"
 
