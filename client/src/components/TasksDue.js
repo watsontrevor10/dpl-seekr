@@ -16,62 +16,45 @@ const TasksDue = () => {
 
   const handleChange = (e) => {
     setDueDate(e.target.value)
-    axios.post('/api/tasks/tasks_due', { due_date: dueDate })
+    axios.post('/api/tasks/tasks_due', { dueDate: dueDate })
       .then(res => {
         setTasks(res.data)
       })
   }
 
 
-const formatDate = () => {
-  new Date(today)
-}
+  const formatDate = () => {
+    new Date(today)
+  }
 
-// const renderTasks = () => {
-//   tasks.map((task) => {
-//     if (task.due_date >= Date() && task.due_date <= (Date() + parseInt(dueDate))) {
-//       debugger
-//       return (
-//         <tr>
-//           <td>{task.subject}</td>
-//           <td>{task.due_date}</td>
-//           <td>{task.company_name}</td>
-//           <td>{task.status}</td>
-//         </tr>
-//       )
-//     }
-//   })
-// }
-
-return (
-  <>
-    <h2>Tasks Due</h2>
-    <br />
-    <select value={dueDate} onChange={handleChange}>
-      <option value='1'>Today</option>
-      <option value='7'>7 Days</option>
-      <option value='14'>14 Days</option>
-      <option value='30'>30 Days</option>
-    </select>
-    <table>
-      <tr>
-        <th>Subject</th>
-        <th>Due Date</th>
-        <th>Company</th>
-        <th>Status</th>
-      </tr>
-      {/* { renderTasks() } */}
-      {tasks.map((task) =>
+  return (
+    <>
+      <h2>Tasks Due</h2>
+      <br />
+      <select value={dueDate} onChange={handleChange}>
+        <option value='1'>Today</option>
+        <option value='7'>7 Days</option>
+        <option value='14'>14 Days</option>
+        <option value='30'>30 Days</option>
+      </select>
+      <table>
         <tr>
-          <td>{task.subject}</td>
-          <td>{task.due_date}</td>
-          <td>{task.company_name}</td>
-          <td>{task.status}</td>
+          <th>Subject</th>
+          <th>Due Date</th>
+          <th>Company</th>
+          <th>Status</th>
         </tr>
-      )}
-    </table>
-  </>
-)
+        {tasks.map((task) =>
+          <tr>
+            <td>{task.subject}</td>
+            <td>{task.due_date}</td>
+            <td>{task.company_name}</td>
+            <td>{task.status}</td>
+          </tr>
+        )}
+      </table>
+    </>
+  )
 }
 
 export default TasksDue
