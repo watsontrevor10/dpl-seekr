@@ -11,6 +11,7 @@ import NotesForm from './components/NotesForm';
 import Login from './components/Login';
 import Register from './components/Register';
 import FetchUser from './components/FetchUser';
+import Profile from './components/Profile';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Switch, Route, } from 'react-router-dom';
 import Tasks from './components/Tasks';
@@ -27,6 +28,7 @@ const App = () => (
       <div>
         <Switch>
           <ProtectedRoute exact path="/" component={Home} />
+          <ProtectedRoute exact path='/profile' component={Profile} />
           <ProtectedRoute exact path='/jobs' component={Jobs} />
           <ProtectedRoute exact path='/dashboard' component={ListContainer} />
           <ProtectedRoute exact path='/jobs/:job_id/notes' component={Notes} />
