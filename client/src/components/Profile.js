@@ -51,7 +51,7 @@ class Profile extends React.Component {
                   {
                     isDragActive ?
                       <p>Drop files here...</p> :
-                      <center><p>Image Goes Here (MAX 1.31MB)</p></center>
+                      <center><p>Image Goes Here (MAX 10 MB)</p></center>
                   }
                 </div>
               )
