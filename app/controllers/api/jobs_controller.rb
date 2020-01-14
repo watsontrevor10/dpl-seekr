@@ -6,6 +6,10 @@ class Api::JobsController < ApplicationController
     render json: current_user.jobs.all
   end
 
+  def tasks_due
+    render json: Job.tasks_due
+  end
+
   def show
     render json: @job
   end

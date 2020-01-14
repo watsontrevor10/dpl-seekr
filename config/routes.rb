@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       resources :tasks
       resources :contacts
     end
+
+    get 'tasks/tasks_due', to: 'jobs#tasks_due'
   end
   
 end
