@@ -8,7 +8,7 @@ class Api::JobsController < ApplicationController
 
   def tasks_due
     user = current_user.id
-    render json: current_user.jobs.tasks_due(user)
+    render json: current_user.jobs.tasks_due(user, params[:due_date])
   end
 
   def show
