@@ -5,8 +5,16 @@
 
 :root {
   --main-font-family: sans-serif;
-  --login-text-color: #fff;
-  --color-gray-light-2: rgb(206, 206, 206);
+
+  --white: #fff;
+  --gray-1: #faf9f9;
+  --gray-2: #c9c9c9;
+
+  --theme-blue-main: #151E3F;
+  --theme-dark-main: #030027;
+  --theme-gray-main: #96939b;
+  --theme-purple-main: #564256;
+  --theme-yellow-main: #f2f3d9;
 }
 
 .login-main-container {
