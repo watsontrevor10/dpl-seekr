@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Link, withRouter, } from 'react-router-dom'
 import TasksDue from './TasksDue'
+import TaskClass from './TaskClass'
 import ListContainer from './ListContainer';
 
 const Dashboard = (props) => {
@@ -31,7 +32,8 @@ const Dashboard = (props) => {
   return (
     <>
       <Link to='dashboard'>Board</Link>
-      <TasksDue />
+      {/* <TasksDue /> */}
+      <TaskClass />
     </>
   )
 }
