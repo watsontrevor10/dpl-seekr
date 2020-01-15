@@ -37,12 +37,9 @@ const JobViewForm = (props) => {
 
   return (
     <>
-      {/* <div>
-        <h1> Job View Page </h1>
-      </div> */}
-      <h2 className="job-title-heading">{props.job.job_title}</h2>
-      <form onSubmit={handleSubmit} className="jobview-form">
-        <div className="all-inputs info">
+      <h2 className="form-heading">{props.job.job_title}</h2>
+      <form onSubmit={handleSubmit} className="jobview-form info">
+        <div className="all-inputs tasks">
           <div className="form-input">
             <h3>Company</h3>
             <input type="text" name="company_name" onChange={handleChange} value={company_name} />

@@ -37,20 +37,35 @@ const InterviewForm = props => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        Interview: <input type="text" name="subject" onChange={handleChange} value={subject} />
-        <br />
-        Date: <input type="date" name="date" onChange={handleChange} value={date} />
-        <br />
-        Description: <textarea name="description" onChange={handleChange} value={description} />
-        <br />
-        Type: <input type="text" name="interview_type" onChange={handleChange} value={interview_type} />
-        <br />
-        Followed Up: <input type="checkbox" name="follow_up" onChange={handleCheckBox} value={follow_up} />
-        <br />
-        <button type="submit">
-          Submit
-        </button>
+      <form onSubmit={handleSubmit} className="jobview-form">
+      <div className="all-inputs info">
+        <div className="form-input">
+          <h3>Interview </h3>
+          <input type="text" name="subject" onChange={handleChange} value={subject} />
+        </div>
+        <div className="form-input">
+          <h3>Date</h3> 
+          <input type="date" name="date" onChange={handleChange} value={date} />
+        </div>
+        <div className="form-input">
+          <h3>Description</h3>
+          <textarea name="description" onChange={handleChange} value={description} />
+        </div>
+        <div className="form-input">
+          <h3>Type</h3>
+          <input type="text" name="interview_type" onChange={handleChange} value={interview_type} />
+        </div>
+        <div className="form-input">
+          <h3>Followed Up</h3>
+          <input type="checkbox" name="follow_up" onChange={handleCheckBox} value={follow_up} />
+        </div>
+      </div>
+      <button 
+        className="jobinfo-save-btn"
+        type="submit"
+      >
+        save
+      </button>
       </form>
     </>
   )

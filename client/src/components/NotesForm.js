@@ -24,7 +24,7 @@ const NotesForm = (props) => {
       axios.patch(`/api/jobs/${props.id}/notes/${note.id}`, newNote)
         .then(res => {
           setNote(res.data)
-          props.toggle()
+          // props.toggle()
           props.update()
         })
     } else {
@@ -32,7 +32,7 @@ const NotesForm = (props) => {
       axios.post(`/api/jobs/${props.id}/notes`, newNote)
         .then(res => {
           props.add(res.data);
-          props.toggle()
+          // props.toggle()
         })
     }
   };
