@@ -5,6 +5,8 @@
   --gray-1: #faf9f9;
   --gray-2: #c9c9c9;
 
+  --blue-2: #878EA5;
+
   --theme-blue-main: #151E3F;
   --theme-dark-main: #030027;
   --theme-gray-main: #96939b;
@@ -45,6 +47,8 @@
   padding: 0.7rem;
   padding: 0.5rem;
   border-style: none;
-  background-color: var(--color-card-text1);
+  border-radius: 5px;
+  background-color: var(--blue-2) ;
+  color: white;
 }
 
