@@ -6,34 +6,34 @@ import TaskForm from './TaskForm';
 const Tasks = (props) => {
   const [tasks, setTasks] = useState([]);
 
-  useEffect( () => {
+  useEffect(() => {
     axios.get(`/api/jobs/${props.id}/tasks/`)
-    .then(res=>{
-        setTasks(res.data) 
+      .then(res => {
+        setTasks(res.data)
       })
   }, []);
 
   const handleUpdate = () => {
     axios.get(`/api/jobs/${props.id}/tasks`)
-    .then( res => {
+      .then(res => {
         setTasks(res.data);
-      })
-  }; 
-
-  const handleDelete = (id) => {
-    axios.delete(`/api/jobs/${props.id}/tasks/${id}`)
-      .then( res => {
-        setTasks(tasks.filter( task => task.id !== id))
       })
   };
 
-  return(
+  const handleDelete = (id) => {
+    axios.delete(`/api/jobs/${props.id}/tasks/${id}`)
+      .then(res => {
+        setTasks(tasks.filter(task => task.id !== id))
+      })
+  };
+
+  return (
     <>
       <h1>Tasks</h1>
       <TaskForm job_id={props.id} handleUpdate={handleUpdate} />
-      {tasks.map( task => (
+      {tasks.map(task => (
         <Task task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} />
-        ))
+      ))
       }
     </>
   )
