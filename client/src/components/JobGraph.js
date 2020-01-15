@@ -30,8 +30,8 @@ class JobGraph extends React.Component {
       <>
         <div>
           <Chart
-            width={'500px'}
-            height={'300px'}
+            width={'610px'}
+            height={'400px'}
             chartType="Bar"
             loader={<div>Loading Chart</div>}
             data={[
@@ -40,6 +40,7 @@ class JobGraph extends React.Component {
             ]}
             options={{
               // Material design options
+              colors: ['#3d1a68'],
               chart: {
                 title: 'Total Applications',
               },
