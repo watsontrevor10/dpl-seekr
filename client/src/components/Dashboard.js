@@ -5,25 +5,31 @@ import UpcomingInt from './UpcomingInt'
 import JobGraph from "./JobGraph"
 import ListContainer from './ListContainer';
 import axios from "axios";
+import HomeNav from "./HomeNav";
 
 const Dashboard = (props) => {
 
 
   return (
     <>
+    {/* <div className="head-dashboard-container"> */}
       <div className="main-dashboard-container">
-        <div className="dashboard-container">
-          <div className="board-link">
-            <Link to="/board">
-              <JobGraph />
-            </Link>
-          </div>
-          <div className="board-link">
-            <TasksDue />
-            <UpcomingInt />
+        <div className="main-homeNav-container">
+          <HomeNav />
+        </div>
+          <div className="dashboard-container">
+            <div className="board-link">
+              <Link to="/board">
+                <JobGraph />
+              </Link>
+            </div>
+            <div className="board-link">
+              <TasksDue />
+              <UpcomingInt />
+            </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </>
   )
 }
