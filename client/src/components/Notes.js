@@ -5,7 +5,7 @@ import NotesForm from './NotesForm'
 const Notes = (props) => {
   const [noteEdit, setNoteEdit] = useState(null)
   const [notes, setNotes] = useState([])
-  // const [toggleForm, setToggleForm] = useState(false)
+  const [toggleForm, setToggleForm] = useState(false)
   const [editForm, setEditForm] = useState(false)
 
 
@@ -26,20 +26,20 @@ const Notes = (props) => {
   }
 
   // toggle NotesForm on/off
-  // const toggle = () => {
-  //   setToggleForm(!toggleForm)
+  const toggle = () => {
+    setToggleForm(!toggleForm)
 
-  //   if (toggleForm) {
-  //     setNoteEdit(null)
-  //   }
-  // }
+    if (toggleForm) {
+      setNoteEdit(null)
+    }
+  }
 
   // sets state to be passed to NotesForm, toggles the edit version of the form, toggles the component
-  // const toggleEditForm = (noteIndex) => {
-  //   setNoteEdit(notes[noteIndex])
-  //   setEditForm(!editForm)
-  //   toggle()
-  // }
+  const toggleEditForm = (noteIndex) => {
+    setNoteEdit(notes[noteIndex])
+    setEditForm(!editForm)
+    toggle()
+  }
 
   // after a record has been updated, pulls new records from db
   const handleUpdate = () => {
@@ -64,9 +64,9 @@ const Notes = (props) => {
           <button onClick={() => handleRemove(note.id)}>
             Delete
           </button>
-          {/* <button onClick={() => toggleEditForm(index)}>
+          <button onClick={() => toggleEditForm(index)}>
             Edit
-          </button> */}
+          </button>
           <br />
         </>
       ))
@@ -75,23 +75,22 @@ const Notes = (props) => {
 
   return (
     <>
-      {/* {toggleForm ? */}
+      {toggleForm ?
         <NotesForm
           id={props.id}
           add={addNote}
-          // toggle={toggle}
+          toggle={toggle}
           note={noteEdit}
           update={handleUpdate}
         />
-        {renderNotes()}
-        {/* : renderNotes()
+        : renderNotes()
       }
       <button onClick={() => toggle()}>
         {toggleForm ?
           'Cancel'
           : 'Add'
         }
-      </button> */}
+      </button>
     </>
   )
 }
