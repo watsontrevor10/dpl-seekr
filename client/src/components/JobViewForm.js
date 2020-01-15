@@ -4,14 +4,14 @@ import axios from 'axios'
 
 const JobViewForm = (props) => {
 
-  const { values, handleChange, handleSubmit, setValues} = useFormInput(submit);
+  const { values, handleChange, handleSubmit, setValues } = useFormInput(submit);
   const { company_name, job_title, status, date_applied, description, job_url, location, salary, color } = values
 
-  useEffect( () => {
+  useEffect(() => {
     if (props.job) {
       setValues({
-        company_name: props.job.company_name, 
-        job_title: props.job.job_title, 
+        company_name: props.job.company_name,
+        job_title: props.job.job_title,
         date_applied: props.job.date_applied,
         description: props.job.description,
         job_url: props.job.job_url,
@@ -22,16 +22,16 @@ const JobViewForm = (props) => {
 
       })
     };
-  }, [] );
+  }, []);
 
   function submit() {
     const newJob = { company_name, job_title, status, date_applied, description, job_url, location, salary, color }
-      if (props.job) {
-        axios.put(`/api/jobs/${props.job.id}`, newJob)
+    if (props.job) {
+      axios.put(`/api/jobs/${props.job.id}`, newJob)
         .then(res => {
           props.handleUpdate();
           setValues({})
-      })
+        })
     }
   };
 
@@ -100,13 +100,13 @@ const JobViewForm = (props) => {
           </div>
         </div>
         {/* COLOR <input type="text" name="Description"/> */}
+         <button 
+          className="jobinfo-save-btn"
+          type="submit" value="Submit"
+        > 
+          save
+        </button>
       </form>
-      <button 
-        className="jobinfo-save-btn"
-        type="submit" value="Submit"
-      > 
-        save
-      </button>
     </>
   )
 }

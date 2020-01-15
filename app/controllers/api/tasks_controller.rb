@@ -1,5 +1,6 @@
 class Api::TasksController < ApplicationController
-  before_action :set_job
+  before_action :authenticate_user!
+  before_action :set_job, :set_jobs
   before_action :set_task, only: [:update, :destroy]
   
   def index
@@ -28,6 +29,11 @@ class Api::TasksController < ApplicationController
   end
   
   private
+
+    def set_jobs
+      @jobs = Job.all
+    end
+
     def set_job
       @job = Job.find(params[:job_id])
     end

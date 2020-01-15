@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Backdrop = (props) => {
-  return(
+  return (
     props.show ? <div className="backdrop" onClick={props.hide}></div> : null
   )
 }

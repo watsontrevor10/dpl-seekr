@@ -1,6 +1,6 @@
 import React from 'react';
-import ListContainer from "./ListContainer"; 
-import Sidebar from "./Sidebar"; 
+import ListContainer from "./ListContainer";
+import Sidebar from "./Sidebar";
 import MobileMenu from "./MobileMenu"
 import Dashboard from './Dashboard';
 

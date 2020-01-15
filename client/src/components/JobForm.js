@@ -13,7 +13,7 @@ const JobForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('/api/jobs', { company_name: company.values.company_name, job_title: job.values.job_title, status: status.values.status, color: color.values.color })
-    .then(res => {
+      .then(res => {
         props.add(res.data);
         props.hide();
       })
@@ -65,7 +65,7 @@ const JobForm = (props) => {
               }
             </select>
           </div>
-          </div>
+         </div>
         <input type="submit" value="Submit" />
       </form>
     </div>
