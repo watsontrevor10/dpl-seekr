@@ -72,20 +72,12 @@ const jobStatus = [
 
 const colors = [
   { key: "a", value: "Blue", text: "#2d3a66", },
-  { key: "b", value: "Dark Blue", text: "#070059", },
-  { key: "c", value: "Dark Purple", text: "#3d1a68", },
-  { key: "d", value: "Purple", text: "#5e2d5e", },
-  { key: "e", value: "Beige", text: "#f7f8ea", },
+  { key: "b", value: "Light Blue", text: "#5b6293", },
+  { key: "c", value: "Dark Blue", text: "#070059", },
+  { key: "d", value: "Dark Purple", text: "#3d1a68", },
+  { key: "e", value: "Purple", text: "#5e2d5e", },
   { key: "f", value: "Red", text: "#da5740", }
 ];
 
-// const colors = [
-//   "#7a0d9b", purple
-//   "#cd3a50",pink
-//   "#c79106", orange
-//   "#189ad2", light blue
-//   "#d25511", red orange
-//  " #4954e6" blue 
-// ];
 
 export default JobForm
