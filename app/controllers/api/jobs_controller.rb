@@ -7,6 +7,11 @@ class Api::JobsController < ApplicationController
     render json: current_user.jobs.all
   end
 
+  def tasks_due
+    user = current_user.id
+    render json: current_user.jobs.tasks_due(user, params[:filter_date])
+  end
+
   def show
     render json: @job
   end
