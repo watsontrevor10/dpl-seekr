@@ -24,6 +24,7 @@ const Sidebar = (props) => {
           <Link to='/profile'>
             <img style={icon} src={user.image || defaultImage} />
           </Link>
+            {user.name}
         </div>
 
         <div className="logout">

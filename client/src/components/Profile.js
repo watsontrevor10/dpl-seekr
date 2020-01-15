@@ -63,52 +63,55 @@ class Profile extends React.Component {
                   <div>
                     <div>
                       <div style={drop}>
-                      <Dropzone
-                        onDrop={this.onDrop}
-                        multiple={false}
-                        disableClick
-                      >
-                        {({ getRootProps, getInputProps, isDragActive }) => {
-                          return (
-                            <div
-                              {...getRootProps()}
-                              style={styles.dropzone}
-                            >
-                              <input {...getInputProps()} />
-                              {
-                                isDragActive ?
-                                  <p>Drop files here...</p> :
-                                  <center><p>Image Goes Here</p></center>
-                              }
-                            </div>
-                          )
-                        }}
-                      </Dropzone>
+                        <Dropzone
+                          onDrop={this.onDrop}
+                          multiple={false}
+                          disableClick
+                        >
+                          {({ getRootProps, getInputProps, isDragActive }) => {
+                            return (
+                              <div
+                                {...getRootProps()}
+                                style={styles.dropzone}
+                              >
+                                <input {...getInputProps()} />
+                                {
+                                  isDragActive ?
+                                    <p>Drop files here...</p> :
+                                    <center><p>Image Goes Here</p></center>
+                                }
+                              </div>
+                            )
+                          }}
+                        </Dropzone>
                       </div>
                     </div>
-                    <div className='jobview-form'>
+
+                    <div style={edit}>
                       <input
                         label="Name"
                         name="name"
                         placeholder="Name"
                         value={name}
                         required
+                        style={{ display: 'flex', flexGrow: '1' }}
                         onChange={this.handleChange}
                       />
                     </div>
-                    <div className='jobview-form'>
+                    <div style={edit}>
                       <input
                         label="Email"
                         name="email"
                         placeholder="Email"
                         value={email}
                         required
+                        style={{ display: 'flex', flexGrow: '1' }}
                         onChange={this.handleChange}
                       />
                     </div>
                     <div style={drop}>
-                    <button style={btn}>Update</button>
-                    <button style={btn} onClick={this.toggleEdit}>Cancel</button>
+                      <button style={btn}>Update</button>
+                      <button style={btn} onClick={this.toggleEdit}>Cancel</button>
                     </div>
                   </div>
                 </form>
@@ -205,12 +208,27 @@ const profilePadding = {
   alignItems: 'center',
   height: 'fit-content',
   padding: '5rem',
-
   placeContent: 'center',
   borderRadius: '10px',
   color: 'white',
   margin: '5rem',
   backgroundColor: '#675e84'
+}
+
+const edit = {
+  backgroundColor: 'var(--gray - 4)',
+  border: 'none',
+  padding: '0.3rem',
+  borderRadius: '5px',
+  transition: 'all .2s',
+  transitionProperty: 'all',
+  transitionDuration: '0.2s',
+  transitionTimingFunction: 'ease',
+  transitionDelay: '0s',
+  margin: '0.2rem',
+  fontSize: '0.8rem',
+  maxWidth: '36rem',
+  display: 'flex',
 }
 
 const btn = {
