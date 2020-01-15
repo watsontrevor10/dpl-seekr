@@ -22,6 +22,7 @@ import JobViewForm from './components/JobViewForm';
 import Interviews from './components/Interviews';
 import ListContainer from './components/ListContainer';
 import JobGraph from "./components/JobGraph";
+import JobAppsGraph from "./components/JobAppsGraph";
 
 
 const App = () => (
@@ -44,6 +45,7 @@ const App = () => (
           <ProtectedRoute exact path="/tasks/tasks_due" component={TasksDue} />
           <ProtectedRoute exact path="/interviews/upcoming_int" component={UpcomingInt} />
           <ProtectedRoute exact path="/jobs/job_graph" component={JobGraph} />
+          <ProtectedRoute exact path="jobs/apps_over_time" component={JobGraph} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route component={NoMatch} />

@@ -5,20 +5,20 @@ import Chart from "react-google-charts";
 
 
 class JobGraph extends React.Component {
-  state = { totalJobs: [], data: [] }
+  state = { totalApps: [], data: [] }
 
   componentDidMount() {
-    axios.post('/api/jobs/job_graph', this.state)
+    axios.post('/api/jobs/apps_over_time', this.state)
       .then(res => {
-        this.setState({ totalJobs: res.data })
+        this.setState({ totalApps: res.data })
         this.loop(); 
       })
   }
 
   loop = () => {
     const dataType = []
-      this.state.totalJobs.map(j => {
-      dataType.push([j.status, j.totals])
+      this.state.totalApps.map(j => {
+      dataType.push([j.weekly, j.count])
        })
      this.setState({data: dataType})
   }
@@ -32,17 +32,26 @@ class JobGraph extends React.Component {
           <Chart
             width={'500px'}
             height={'300px'}
-            chartType="Bar"
+            chartType="LineChart"
             loader={<div>Loading Chart</div>}
             data={[
-              ['Status', 'Totals'],
+              ['Week', 'Applications'],
               ...this.state.data
+            ]}
+            formatters={[
+              {
+                type: 'DateFormat',
+                xAxis: 'Week',
+                options: {
+                  formatType: 'short',
+                },
+              }
             ]}
             options={{
               colors: ['#151E3F'],
               // Material design options
               chart: {
-                title: 'Total Applications',
+                title: 'Weekly Applications Submitted',
               },
             }}
             // For tests

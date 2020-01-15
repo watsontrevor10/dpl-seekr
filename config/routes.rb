@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     post 'tasks/tasks_due', to: 'jobs#tasks_due'
     post 'interviews/upcoming_interviews', to: 'jobs#upcoming_interviews'
     post 'jobs/job_graph', to: 'jobs#job_graph' 
+    post 'jobs/apps_over_time', to: 'jobs#apps_over_time'
   end
   
 end
