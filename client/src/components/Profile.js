@@ -39,14 +39,14 @@ class Profile extends React.Component {
           <Dropzone
             onDrop={this.onDrop}
             multiple={false}
-
+            disableClick
           >
             {({ getRootProps, getInputProps, isDragActive }) => {
               return (
                 <div
                   {...getRootProps()}
                   style={styles.dropzone}
-                >
+                  >
                   <input {...getInputProps()} />
                   {
                     isDragActive ?
@@ -88,7 +88,8 @@ class Profile extends React.Component {
         </div>
         <div width={8}>
           <h1>{user.name}</h1>
-          <h1>{user.email}</h1>
+          <br />
+          <h3>{user.email}</h3>
         </div>
       </>
     )
@@ -140,19 +141,20 @@ const ConnectedProfile = (props) => (
 const profilepic = {
   height: '300px',
   width: '300px',
-  borderRadius: '150px'
+  borderRadius: '150px',
 }
 
 const styles = {
   dropzone: {
-    height: "150px",
-    width: "150px",
+    height: "300px",
+    width: "300px",
     border: "1px dashed black",
-    borderRadius: "75px",
+    borderRadius: "150px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     padding: "10px",
+    
   },
 }
 
