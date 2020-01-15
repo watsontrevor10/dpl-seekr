@@ -13,7 +13,7 @@ const JobForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('/api/jobs', { company_name: company.values.company_name, job_title: job.values.job_title, status: status.values.status, color: color.values.color })
-    .then(res => {
+      .then(res => {
         props.add(res.data);
         props.hide();
       })
@@ -23,38 +23,49 @@ const JobForm = (props) => {
   return (
     <div className="new-job">
       <h1>Add a new job</h1>
-      <form onSubmit={handleSubmit}>
-        Company Name: <br/>
-        <input type="text" name="company_name" {...company} onChange={company.handleChange} /><br/>
-        Job Title: <br/>
-        <input type="text" name="job_title" {...job} onChange={job.handleChange}/><br/>
-        <select name="status" {...status} onChange={status.handleChange} >
-          { jobStatus.map(j => (   
-            <>
-              <option value="none" selected disabled hidden> 
-                Select an Option 
-              </option>
-              <option value={j.value}>
-                {j.value}
-              </option>
-            </>
-              )) 
-          }
-        </select>
-        <br />
-        <select name="color" {...color} onChange={color.handleChange} >
-          { colors.map(c => (   
-            <>
-              <option value="none" selected disabled hidden> 
-                Select an Option 
-              </option>
-              <option value={c.text}>
-                {c.value}
-              </option>
-            </>
-              )) 
-          }
-        </select>
+      <form onSubmit={handleSubmit} className="jobview-form">
+        <div className="all-inputs">
+          <div className="form-input">
+            Company
+            <input type="text" name="company_name" {...company} onChange={company.handleChange} />
+          </div>
+          <div className="form-input">
+          Job Title
+          <input type="text" name="job_title" {...job} onChange={job.handleChange}/>
+          </div>
+          <div className="form-input">
+            Status
+            <select name="status" {...status} onChange={status.handleChange} >
+              { jobStatus.map(j => (   
+                <>
+                  <option value="none" selected disabled hidden> 
+                    Select an Option 
+                  </option>
+                  <option value={j.value}>
+                    {j.value}
+                  </option>
+                </>
+                  )) 
+              }
+            </select>
+          </div>
+          <div className="form-input">
+            Color
+            <select name="color" {...color} onChange={color.handleChange} >
+              { colors.map(c => (   
+                <>
+                  <option value="none" selected disabled hidden> 
+                    Select an Option 
+                  </option>
+                  <option value={c.text}>
+                    {c.value}
+                  </option>
+                </>
+                  )) 
+              }
+            </select>
+          </div>
+         </div>
         <input type="submit" value="Submit" />
       </form>
     </div>
@@ -72,20 +83,12 @@ const jobStatus = [
 
 const colors = [
   { key: "a", value: "Blue", text: "#2d3a66", },
-  { key: "b", value: "Dark Blue", text: "#070059", },
-  { key: "c", value: "Dark Purple", text: "#3d1a68", },
-  { key: "d", value: "Purple", text: "#5e2d5e", },
-  { key: "e", value: "Beige", text: "#f7f8ea", },
+  { key: "b", value: "Light Blue", text: "#5b6293", },
+  { key: "c", value: "Dark Blue", text: "#070059", },
+  { key: "d", value: "Dark Purple", text: "#3d1a68", },
+  { key: "e", value: "Purple", text: "#5e2d5e", },
   { key: "f", value: "Red", text: "#da5740", }
 ];
 
-// const colors = [
-//   "#7a0d9b", purple
-//   "#cd3a50",pink
-//   "#c79106", orange
-//   "#189ad2", light blue
-//   "#d25511", red orange
-//  " #4954e6" blue 
-// ];
 
 export default JobForm

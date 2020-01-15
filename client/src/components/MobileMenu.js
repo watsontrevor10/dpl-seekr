@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 
 const MobileMenu = () => {
 
-  const [ showMenu, setShowMenu ] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
 
   const displayMenu = () => {
     setShowMenu(!showMenu);
@@ -12,7 +12,7 @@ const MobileMenu = () => {
   return (
     <>
       <div className="mobile-menu" onClick={displayMenu}>
-      {
+        {
           showMenu
             ? (
               <div className="menu">

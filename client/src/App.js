@@ -13,6 +13,7 @@ import Register from './components/Register';
 import TasksDue from './components/TasksDue';
 import FetchUser from './components/FetchUser';
 import Profile from './components/Profile';
+import UpcomingInt from './components/UpcomingInt';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Switch, Route, } from 'react-router-dom';
 import Tasks from './components/Tasks';
@@ -40,6 +41,7 @@ const App = () => (
           <ProtectedRoute exact path="/job/:id" component={Modal} />
           <ProtectedRoute exact path="/jobs/:job_id/interviews" component={Interviews} />
           <ProtectedRoute exact path="/tasks/tasks_due" component={TasksDue} />
+          <ProtectedRoute exact path="/interviews/upcoming_int" component={UpcomingInt} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route component={NoMatch} />

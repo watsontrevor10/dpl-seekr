@@ -33,6 +33,7 @@
   font-weight: 400;
   letter-spacing: 1px;
   padding: 1.7rem;
+  color: var(--blue);
 
   .render-jobs {
     width: 95%;
@@ -50,5 +51,7 @@
   border-radius: 5px;
   background-color: var(--blue-2) ;
   color: white;
+  font-size: 1rem;
+  letter-spacing: 1px;
 }
 

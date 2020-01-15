@@ -17,8 +17,8 @@ import 'moment-timezone';
 
 const JobCard = (props) => {
   // State for looping through users jobs
-  const [ openModal, setOpenModal ] = useState(false)
-  
+  const [openModal, setOpenModal] = useState(false)
+
   // axios call to get all user jobs
 
   // const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -32,31 +32,31 @@ const JobCard = (props) => {
   }
 
   const renderJob = () => {
-      
-      return <div key={props.job.id} className="card-content" 
+
+    return <div key={props.job.id} className="card-content"
       // style={{backgroundColor: `${randomColor}`}}  
-      style={{backgroundColor: `${props.job.color}`}}
-      >
-        <ul onClick={show}>
-          <li className="card-title">{props.job.job_title}</li>
-          <div className="container-card-meta">
-            <li className="card-meta">{props.job.company_name}</li>
-            <li className="card-meta">{props.job.status}</li>
-            <li className="card-meta"><Moment format="MM/DD/YYYY">{props.job.created_at}</Moment></li>
-          </div>
-        </ul>
-        <button className="job-card-delete" onClick={() => props.deleteJob(props.job.id)}>Delete</button>
-      </div>
+      style={{ backgroundColor: `${props.job.color}` }}
+    >
+      <ul onClick={show}>
+        <li className="card-title">{props.job.job_title}</li>
+        <div className="container-card-meta">
+          <li className="card-meta">{props.job.company_name}</li>
+          <li className="card-meta">{props.job.status}</li>
+          <li className="card-meta"><Moment format="MM/DD/YYYY">{props.job.created_at}</Moment></li>
+        </div>
+      </ul>
+      <button className="job-card-delete" onClick={() => props.deleteJob(props.job.id)}>Delete</button>
+    </div>
   }
 
-  
+
   // jobs Index component
   return (
     <>
       <ul >
-        { renderJob() }
+        {renderJob()}
       </ul>
-      { openModal ? <Modal handleUpdate={props.handleUpdate} job={props.job} hide={hide} show={openModal} /> : null}
+      {openModal ? <Modal handleUpdate={props.handleUpdate} job={props.job} hide={hide} show={openModal} /> : null}
     </>
   )
 }

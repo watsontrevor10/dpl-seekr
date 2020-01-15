@@ -1,7 +1,7 @@
 import React from "react";
 
 const HomeNav = () => {
-  return(
+  return (
     <h1>Jobtracker</h1>
   );
 }

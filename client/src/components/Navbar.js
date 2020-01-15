@@ -3,16 +3,16 @@ import { AuthConsumer, } from "../providers/AuthProvider";
 import { Link, withRouter, } from 'react-router-dom'
 
 class Navbar extends React.Component {
-  
+
   rightNavItems = () => {
     const { auth: { user, handleLogout, }, location, } = this.props;
-    
+
     if (user) {
       return (
-        <nav style={{display: "none"}}>
+        <nav style={{ display: "none" }}>
           <button
             name='logout'
-            onClick={ () => handleLogout(this.props.history) }
+            onClick={() => handleLogout(this.props.history)}
           >
             logout
           </button>
@@ -42,7 +42,7 @@ class Navbar extends React.Component {
       )
     }
   }
-  
+
   render() {
     return (
       <div>
@@ -54,7 +54,7 @@ class Navbar extends React.Component {
               active={this.props.location.pathname === '/'}
             />
           </Link>
-            { this.rightNavItems() }
+          {this.rightNavItems()}
         </nav>
       </div>
     )
@@ -64,9 +64,9 @@ class Navbar extends React.Component {
 export class ConnectedNavbar extends React.Component {
   render() {
     return (
-      <AuthConsumer> 
-        { auth => 
-          <Navbar { ...this.props } auth={auth} />
+      <AuthConsumer>
+        {auth =>
+          <Navbar {...this.props} auth={auth} />
         }
       </AuthConsumer>
     )

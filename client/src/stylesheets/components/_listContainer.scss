@@ -3,7 +3,7 @@
 
   --white: #fff;
   --gray-1: #faf9f9;
-  --gray-2: #c9c9c9;
+  --gray-2: #cfcdd1;
   --gray-3: #3444;
 
   --theme-blue-main: #151E3F;
@@ -46,7 +46,7 @@
   height: calc(100vh - 89px);
   box-sizing: border-box;
   overflow: auto;
-  background-color: var(--gray-3);
+  background-color: var(--gray-2);
 
   h1.job-board-heading {
     display: none;
@@ -68,6 +68,10 @@
 // }
 
 @media screen and (max-width: 550px) {
+  .home-container {
+    display: flex;
+    flex-grow: 1;
+  }
 
   .list-container {
     flex-direction: column;
@@ -77,7 +81,7 @@
 
     h1.job-board-heading {
       display: flex;
-      color: #e3d4ff;
+      color: var(--white);
       font-weight: 400;
       font-size: 1.5rem;
       letter-spacing: 2px;

@@ -3,16 +3,16 @@ import axios from 'axios'
 import NotesForm from './NotesForm'
 
 const Notes = (props) => {
-  const [ noteEdit, setNoteEdit ] = useState(null)
-  const [ notes, setNotes ] = useState([])
-  const [ toggleForm, setToggleForm ] = useState(false)
-  const [ editForm, setEditForm ] = useState(false)
+  const [noteEdit, setNoteEdit] = useState(null)
+  const [notes, setNotes] = useState([])
+  const [toggleForm, setToggleForm] = useState(false)
+  const [editForm, setEditForm] = useState(false)
 
 
   // initial get request
-  useEffect( () => {
+  useEffect(() => {
     axios.get(`/api/jobs/${props.id}/notes`)
-      .then( res => {
+      .then(res => {
         setNotes(res.data)
       })
   }, [])
@@ -20,8 +20,8 @@ const Notes = (props) => {
   // delete note function
   const handleRemove = (id) => {
     axios.delete(`/api/jobs/${props.id}/notes/${id}`)
-      .then( res => {
-        setNotes(notes.filter( n => n.id !== id))
+      .then(res => {
+        setNotes(notes.filter(n => n.id !== id))
       })
   }
 
@@ -44,30 +44,30 @@ const Notes = (props) => {
   // after a record has been updated, pulls new records from db
   const handleUpdate = () => {
     axios.get(`/api/jobs/${props.id}/notes`)
-    .then( res => {
+      .then(res => {
         setNotes(res.data);
       })
   }
 
   // adds new record to state upon NotesForm submission
-  const addNote = (note) => setNotes([ ...notes, note, ]);
+  const addNote = (note) => setNotes([...notes, note,]);
 
   // render all notes
   const renderNotes = (props) => {
     return (
-      notes.map( (note, index) => (
+      notes.map((note, index) => (
         <>
-            <p>
-              {note.body}
-            </p>
-          
+          <p>
+            {note.body}
+          </p>
+
           <button onClick={() => handleRemove(note.id)}>
             Delete
           </button>
           <button onClick={() => toggleEditForm(index)}>
             Edit
           </button>
-          <br/>
+          <br />
         </>
       ))
     )
@@ -75,19 +75,19 @@ const Notes = (props) => {
 
   return (
     <>
-      { toggleForm ? 
-        <NotesForm 
-          id={props.id} 
-          add={addNote} 
+      {toggleForm ?
+        <NotesForm
+          id={props.id}
+          add={addNote}
           toggle={toggle}
           note={noteEdit}
-          update={handleUpdate} 
-        />  
+          update={handleUpdate}
+        />
         : renderNotes()
       }
-      <button onClick={ () => toggle() }>
-        {toggleForm ? 
-          'Cancel' 
+      <button onClick={() => toggle()}>
+        {toggleForm ?
+          'Cancel'
           : 'Add'
         }
       </button>
