@@ -1,25 +1,35 @@
 :root {
-  --color-5: rgb(255, 255, 255);
+  --main-font-family: sans-serif;
+
+  --white: #fff;
+  --gray-1: #faf9f9;
+  --gray-2: #c9c9c9;
+
+  --theme-blue-main: #151E3F;
+  --theme-dark-main: #030027;
+  --theme-gray-main: #96939b;
+  --theme-purple-main: #564256;
+  --theme-yellow-main: #f2f3d9;
 }
 
 .main-home-container {
   display: flex;
   flex-direction: row;
+  height: 100vh;
+  flex-grow: 1;
   // font-family: var(--main-font-family);
 }
 
 .main-sidebar-container {
   display: flex;
-  align-items: flex-start;
   justify-content: flex-start;
   flex-grow: 0;
   flex-shrink: 0;
   flex-direction: column;
   box-sizing: border-box;
   width: 200px;
-  background-color: var(--color-5);
+  background-color: var(--gray-1);
 }
-
 
 .main-listContainer {
   flex: 1;

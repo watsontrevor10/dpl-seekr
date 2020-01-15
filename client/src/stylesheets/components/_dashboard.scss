@@ -11,18 +11,20 @@
   --theme-purple-main: #564256;
   --theme-yellow-main: #f2f3d9;
 }
-.form-container {
+
+.main-dashboard-container {
   display: flex;
-  align-content: center;
+  flex-grow: 1;
   justify-content: center;
+  align-content: center;
+  height: 100vh;
+
+  .board-link {
+    margin: 5rem;
+    width: 14rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+  }
 }
-
-
-// const colors = [
-//   "#7a0d9b", purple
-//   "#cd3a50", red
-//   "#c79106", orange
-//   "#12a9ba", teal
-//   "#d25511", red orange
-//  " #4954e6" blue 
-// ];

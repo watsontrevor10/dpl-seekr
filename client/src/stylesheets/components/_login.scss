@@ -5,8 +5,19 @@
 
 :root {
   --main-font-family: sans-serif;
-  --login-text-color: #fff;
-  --color-gray-light-2: rgb(206, 206, 206);
+
+  --white: #fff;
+  --gray-1: #faf9f9;
+  --gray-2: #c9c9c9;
+  --gray-3: #3444;
+
+  --theme-blue-main: #151E3F;
+  --theme-dark-main: #030027;
+  --theme-gray-main: #96939b;
+  --theme-purple-main: #564256;
+  --theme-yellow-main: #f2f3d9;
+
+  --blue-1: #19173a;
 }
 
 .login-main-container {
@@ -36,11 +47,11 @@
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  background-color: var(--color-main-theme);
+  background-color: var(--theme-blue-main);
   border-radius: 15px;
 
   h1 {
-    color: var(--login-text-color);
+    color: var(--white);
     padding: 0.5rem;
     letter-spacing: 1.5px;
   }
@@ -63,8 +74,8 @@
     padding: 0.2rem;
     border-style: none;
     margin-top: 1rem;
-    background-color: var(--login-back-color);
-    color: var(--login-text-color);
+    background-color: var(--theme-blue-main);
+    color: var(--white);
     font-size: 1.2rem;
     letter-spacing: 1.5px;
   }

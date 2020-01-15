@@ -1,26 +1,39 @@
 :root {
-  --color-1: #faf9f9;
-  --color-2:  #cdc5ff;
+  --main-font-family: sans-serif;
+
+  --white: #fff;
+  --gray-1: #faf9f9;
+  --gray-2: #c9c9c9;
+  --gray-3: #3444;
+
+  --theme-blue-main: #151E3F;
+  --theme-dark-main: #030027;
+  --theme-gray-main: #96939b;
+  --theme-purple-main: #564256;
+  --theme-yellow-main: #f2f3d9;
+
+  --blue-1: #19173a;
 }
 
-$blue: #3ea5ce;
-$green: #34c291;
-$purple: #6917c7;
-$red: #E53B3A;
-$yellow: rgb(235, 178, 32);
+// $blue: #3ea5ce;
+// $green: #34c291;
+// $color1: #151e3f;
+// $color2: #030027;
+// $color3: #564256;
+// $color4: #96939b;
 
-$colors: $blue, $green, $purple, $red;
+// $colors: $color1, $color2, $color3;
 
-$key: random( length($colors) );
-$nth: nth( $colors, $key );
+// $key: random( length($colors) );
+// $nth: nth( $colors, $key );
 
-$main-color: $nth !default;
+// $main-color: $nth !default;
 
 
-@mixin backgrounds($i) {
-  background: $i;
-    &:nth-child(#{$i}) { background: $i; }
-}
+// @mixin backgrounds($i) {
+//   background: $i;
+//     &:nth-child(#{$i}) { background: $i; }
+// }
 
 .list-container {
   display: flex;
@@ -30,15 +43,16 @@ $main-color: $nth !default;
   justify-content: space-between;
   padding: 10px;
   height: 100%;
-  height: calc(100vh - 65px);
+  height: calc(100vh - 89px);
   box-sizing: border-box;
-  @include backgrounds($main-color);
+  overflow: auto;
+  background-color: var(--gray-3);
 
   h1.job-board-heading {
     display: none;
   }
   .list {
-    background-color: var(--color-1);
+    background-color: var(--gray-1);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -47,6 +61,11 @@ $main-color: $nth !default;
     border-radius: 7px;
   }
 }
+
+// .home-container {
+//   display: flex;
+//   flex-direction: column;
+// }
 
 @media screen and (max-width: 550px) {
 

@@ -7,11 +7,12 @@ const JobForm = (props) => {
   const company = useFormInput('')
   const job = useFormInput('')
   const status = useFormInput('')
+  const color = useFormInput('')
 
   // submit function, axios post call.  Need to add each field name to the post request
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('/api/jobs', { company_name: company.values.company_name, job_title: job.values.job_title, status: status.values.status })
+    axios.post('/api/jobs', { company_name: company.values.company_name, job_title: job.values.job_title, status: status.values.status, color: color.values.color })
     .then(res => {
         props.add(res.data);
         props.hide();
@@ -40,6 +41,20 @@ const JobForm = (props) => {
               )) 
           }
         </select>
+        <br />
+        <select name="color" {...color} onChange={color.handleChange} >
+          { colors.map(c => (   
+            <>
+              <option value="none" selected disabled hidden> 
+                Select an Option 
+              </option>
+              <option value={c.text}>
+                {c.value}
+              </option>
+            </>
+              )) 
+          }
+        </select>
         <input type="submit" value="Submit" />
       </form>
     </div>
@@ -51,7 +66,26 @@ const jobStatus = [
   { key: "b", text: "Applied", value: "Applied", },
   { key: "c", text: "Interviewed", value: "Interviewed", },
   { key: "d", text: "Offer", value: "Offer", },
-  { key: "e", text: "Rejected", value: "Rejected", }
+  { key: "e", text: "Rejected", value: "Rejected", },
+  { key: "f", text: "Archived", value: "Archived", }
 ];
+
+const colors = [
+  { key: "a", value: "Blue", text: "#2d3a66", },
+  { key: "b", value: "Dark Blue", text: "#070059", },
+  { key: "c", value: "Dark Purple", text: "#3d1a68", },
+  { key: "d", value: "Purple", text: "#5e2d5e", },
+  { key: "e", value: "Beige", text: "#f7f8ea", },
+  { key: "f", value: "Red", text: "#da5740", }
+];
+
+// const colors = [
+//   "#7a0d9b", purple
+//   "#cd3a50",pink
+//   "#c79106", orange
+//   "#189ad2", light blue
+//   "#d25511", red orange
+//  " #4954e6" blue 
+// ];
 
 export default JobForm

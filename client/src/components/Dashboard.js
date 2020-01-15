@@ -5,33 +5,14 @@ import ListContainer from './ListContainer';
 
 const Dashboard = (props) => {
 
-  // const [ openBoard, setOpenBoard ] = useState(false)
-
-  // const showBoard = () => {
-  //   setOpenBoard(!openBoard)
-  // }
-
-  // return(
-  //   <>
-  //     <div className="main-dashboard-container">
-  //       { openBoard ?
-  //         null
-  //         :
-  //         <button onClick={showBoard} className="board-btn">Board</button>
-  //       }
-  //       { openBoard ? 
-  //         <ListContainer home={openBoard} /> 
-  //         : 
-  //         null 
-  //       }
-  //     </div>
-  //   </>
-  // )
-
   return (
     <>
-      <Link to='dashboard'>Board</Link>
-      <TasksDue />
+    <div className="main-dashboard-container">
+      <div className="board-link">
+        <Link to='/board'>Board</Link>
+        <TasksDue />
+      </div>
+    </div>
     </>
   )
 }

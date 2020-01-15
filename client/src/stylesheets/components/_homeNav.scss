@@ -1,7 +1,22 @@
+:root {
+  --main-font-family: sans-serif;
+
+  --white: #fff;
+  --gray-1: #faf9f9;
+  --gray-2: #c9c9c9;
+
+  --theme-blue-main: #151E3F;
+  --theme-dark-main: #030027;
+  --theme-gray-main: #96939b;
+  --theme-purple-main: #564256;
+  --theme-yellow-main: #f2f3d9;
+}
 .main-homeNav-container{
-  padding: 0.8rem;
+  padding: 10px;
 
   h1 {
-    font-size: 1.2rem;
+    font-size: 2.7rem;
+    font-weight: 300;
+    padding: 10px;
   }
 }

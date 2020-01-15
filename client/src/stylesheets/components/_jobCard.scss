@@ -1,7 +1,18 @@
 :root {
-  --color-card-text1: rgb(255, 255, 255);
-  --color-card-text2: rgb(255, 216, 216);
+  --main-font-family: sans-serif;
+
+  --white: #fff;
+  --gray-1: #faf9f9;
+  --gray-2: #c9c9c9;
+
+  --theme-blue-main: #151E3F;
+  --theme-dark-main: #030027;
+  --theme-gray-main: #96939b;
+  --theme-purple-main: #564256;
+  --theme-yellow-main: #f2f3d9;
 }
+
+$default-card-color: #050044 !default;
 
 // $colors1: 
 //   #7a0d9b, 
@@ -16,6 +27,8 @@
   display: flex;
   align-items: center;
   margin: 10px;
+  background-color: $default-card-color;
+  border-radius: 7px;
 
   div.card-content {
     width: 100%;
@@ -26,15 +39,15 @@
   ul {
     list-style: none;
     width: 100%;
-    color: var(--color-card-text);
+    color: var(--gray-2);
   }
   li:visited {
-    color: var(--color-card-text);
+    color: var(--gray-2);
   }
   li.card-title {
     padding: 1rem 2rem;
     font-size: 1.3rem;
-    color: var(--color-card-text1);
+    color: var(--white);
   }
 
   div.container-card-meta {
@@ -43,7 +56,7 @@
 
   li.card-meta {
     padding: 0.3rem 2rem;
-    color: var(--color-card-text2)
+    color: var(--gray-2)
   }
 
   button.job-card-delete {
@@ -55,7 +68,7 @@
     border-style: none;
     padding: 0.3rem;
     margin: 1rem 1.2rem;
-    color: var(--color-card-text1);
+    color: var(--white);
     background-color: inherit;
   }
 }

@@ -3,6 +3,7 @@ class Api::JobsController < ApplicationController
   before_action :set_job, only: [:show, :update, :destroy]
 
   def index
+    Job.archive(current_user.id)
     render json: current_user.jobs.all
   end
 

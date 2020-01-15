@@ -22,4 +22,17 @@ class Job < ApplicationRecord
         AND user_id = ?
     ", filter_date.to_i, id ])
   end
+
+  private
+
+  def self.archive(id)
+    Job.find_by_sql(["
+      UPDATE jobs
+      SET status = 'Archived'
+      WHERE user_id = ?
+        AND DATE_PART('day', CURRENT_DATE::timestamp - jobs.updated_at::timestamp) >= 90;
+      ", id])
+
+  end
+
 end

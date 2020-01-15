@@ -1,10 +1,23 @@
+:root {
+  --main-font-family: sans-serif;
+
+  --white: #fff;
+  --gray-1: #faf9f9;
+  --gray-2: #c9c9c9;
+
+  --theme-blue-main: #151E3F;
+  --theme-dark-main: #030027;
+  --theme-gray-main: #96939b;
+  --theme-purple-main: #564256;
+  --theme-yellow-main: #f2f3d9;
+}
 .new-job {
   position: fixed;
   z-index: 500;
-  background-color: #fff;
+  background-color: var(--white);
   width: 380px;
   height: 500px;
-  border: 1px solid var(--color-modal-shadow);
+  border: 1px solid var(theme-gray-main);
   box-shadow: 2px 1px 20px 0px #787878;
   padding: 16px;
   left: 38%;
