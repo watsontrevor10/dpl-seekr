@@ -13,11 +13,11 @@ class TaskClass extends React.Component {
 
   handleChange = (e) => {
     this.setState({ dueDate: e.target.value }, () => {
-      this.test()
+      this.updateTasks()
     });
   }
 
-  test = () => {
+  updateTasks = () => {
     axios.post('/api/tasks/tasks_due', { filter_date: this.state.dueDate })
       .then(res => {
         this.setState({ tasks: res.data })
