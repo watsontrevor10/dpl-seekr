@@ -28,13 +28,13 @@
   background-color: var(--white);
   // border: 1px solid var(--color-modal-shadow);
   border-radius: 7px;
-  box-shadow: 2px 1px 20px 0px var(--theme-purple-main);
-  top: 11%;
+  box-shadow: 2px 1px 20px 0px #5f5f5f94;
+  top: 5%;
   box-sizing: border-box;
   overflow: auto;
   width: 50rem;
   left: calc(50% - 25rem);
-  height: 80%;
+  height: 90%;
 
 
   animation-name: moveInBottom; /*refers to @keyframes name*/
@@ -49,8 +49,8 @@
     margin-bottom: 1rem;
     padding: 10px;
     height: 60px;
-    background-color: var(--theme-purple-main);
-    font-weight: 100;
+    background-color: var(--theme-gray-main);
+    font-weight: 400;
     letter-spacing: 2px;
   }
 
@@ -66,8 +66,8 @@
   }
 
   .react-tabs__tab--selected {
-    color: #a8b8ff;
-    border-bottom:2px solid #a8b8ff;
+    // color: var(--dark-purple);
+    border-bottom:2px solid ;
   }
   
   // @media screen and (min-width: 500px) {

@@ -4,7 +4,7 @@
   --white: #fff;
   --gray-1: #faf9f9;
   // --gray-2: #c9c9c9;
-  --gray-4: #ebebec;
+  --gray-4: #f4f4f4;
 
   --theme-blue-main: #151E3F;
   --theme-dark-main: #030027;
@@ -13,6 +13,7 @@
   --theme-yellow-main: #f2f3d9;
 
   --blue: #2d3a66;
+  --blue-3: #5e55c3;
   --dark-blue: #070059;
   --dark-purple: #3d1a68;
   --purple: #5e2d5e;
@@ -21,9 +22,9 @@
 
 }
 .job-title-heading {
-  margin: 1rem 3rem;
-  font-size: 2rem;
-  color: var(--dark-purple);
+  margin: 0.6rem 4rem;
+  font-size: 1.8rem;
+  color: var(--blue-3);
 }
 .jobview-form {
   display: flex;
@@ -34,13 +35,8 @@
   font-size: 0.8rem;
   font-weight: 200;
 
-  h2 {
-    margin: 1.5rem 0;
-    font-size: 2rem;
-  }
   div.all-inputs {
     flex-direction: column;
-    margin-left: 3rem;
     display: flex;
     flex-grow: 1;
 
@@ -48,6 +44,9 @@
       display: flex;
       flex-direction: row;
     }
+  }
+  .info {
+    margin-left: 4rem;
   }
   
   input {
@@ -85,15 +84,22 @@
 
   h3 {
     width: 140px;
-    font-weight: 400;
+    font-weight: 600;
     margin: 0.3rem 0 1rem;
+    letter-spacing: 1px;
   }
 }
 
 .desc {
-  margin-top: 1.3rem;
+  margin-top: 0.5rem;
 }
 
 .jobinfo-save-btn {
-  margin: 0 3rem;
+  margin: 1rem 4rem;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: var(--blue-3);
+  color: var(--white);
+  border-style: none;
 }
