@@ -21,32 +21,55 @@
   --red: #da5740;
 
 }
-.job-title-heading {
+.form-heading {
   margin: 0.6rem 4rem;
   font-size: 1.8rem;
   color: var(--blue-3);
 }
+
 .jobview-form {
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
   flex-wrap: wrap;
   flex-grow: 1;
-  margin: 1rem 0;
   font-size: 0.8rem;
   font-weight: 200;
 
   div.all-inputs {
     flex-direction: column;
     display: flex;
-    flex-grow: 1;
+    flex-grow: 0;
 
     div.form-input {
       display: flex;
       flex-direction: row;
     }
   }
+}
   .info {
     margin-left: 4rem;
+    h3 {
+      width: 140px;
+    }
+  }
+
+  .tasks {
+    h3 {
+      width: 150px;
+    }
+  }
+
+  .new {
+    margin-left: 0;
+    width: 100%;
+
+    input {
+      width: 50%;
+    }
+    h3 {
+      width: 100px;
+    }
   }
   
   input {
@@ -61,7 +84,8 @@
     transition-delay: 0s;
     margin: 0.2rem;
     font-size: 0.8rem;
-    width: 18rem;
+    width: 39%;
+    max-width: 18rem;
   }
 
   textarea {
@@ -81,14 +105,11 @@
     margin: 0.2rem;
     width: 7rem;
   }
-
   h3 {
-    width: 140px;
     font-weight: 600;
     margin: 0.3rem 0 1rem;
     letter-spacing: 1px;
   }
-}
 
 .desc {
   margin-top: 0.5rem;

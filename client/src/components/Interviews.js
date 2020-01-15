@@ -29,7 +29,7 @@ const Interviews = (props) => {
 
   return (
     <>
-      <h1>Interviews</h1>
+      <h2 className="form-heading">Interviews</h2>
       <InterviewForm job_id={props.id} handleUpdate={handleUpdate} />
       {interviews.map(interview => (
         <Interview interview={interview} handleUpdate={handleUpdate} handleDelete={handleDelete} />

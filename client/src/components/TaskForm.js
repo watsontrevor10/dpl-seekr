@@ -31,35 +31,42 @@ const TaskForm = (props) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        Task:
-        <input
-          type="text"
-          name="subject"
-          onChange={handleChange}
-          value={subject}
-        />
-        <br />
-        Due Date:
-        <input
-          type="date"
-          name="due_date"
-          onChange={handleChange}
-          value={due_date}
-        />
-        <br />
-        Completed Date:
-        <input
-          type="date"
-          name="completed_date"
-          onChange={handleChange}
-          value={completed_date}
-        />
-        <br />
-        <input
-          type="submit"
-          value="Submit"
-        />
+      <form onSubmit={handleSubmit} className="jobview-form">
+      <div className="all-inputs info">
+        <div className="form-input">
+            <h3>Task</h3>
+            <input
+              type="text"
+              name="subject"
+              onChange={handleChange}
+              value={subject}
+            />
+          </div>
+          <div className="form-input">
+            <h3>Due Date</h3>
+            <input
+              type="date"
+              name="due_date"
+              onChange={handleChange}
+              value={due_date}
+            />
+          </div>
+          <div className="form-input">
+            <h3>Completed Date</h3>
+            <input
+              type="date"
+              name="completed_date"
+              onChange={handleChange}
+              value={completed_date}
+            />
+          </div>
+        </div>
+        <button 
+          className="jobinfo-save-btn"
+          type="submit" value="Submit"
+        > 
+          save
+        </button>
       </form>
     </>
   )
