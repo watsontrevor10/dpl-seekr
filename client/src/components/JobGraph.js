@@ -5,16 +5,23 @@ import Chart from "react-google-charts";
 
 
 class JobGraph extends React.Component {
-  // const [totalJobs, setTotalJobs] = useState([])
-  state = { totalJobs: [] }
+  state = { totalJobs: [], data: [] }
 
   componentDidMount() {
     axios.post('/api/jobs/job_graph', this.state)
       .then(res => {
         this.setState({ totalJobs: res.data })
+        this.loop(); 
       })
   }
 
+  loop = () => {
+    const dataType = []
+      this.state.totalJobs.map(j => {
+      dataType.push([j.status, j.totals])
+       })
+     this.setState({data: dataType})
+  }
 
 
   render() {
@@ -29,11 +36,7 @@ class JobGraph extends React.Component {
             loader={<div>Loading Chart</div>}
             data={[
               ['Status', 'Totals'],
-              ['Wishlist', 1],
-              ['Applied', 3],
-              ['Interviewed', 4],
-              ['Offer', 5],
-              ['Rejected', 2],
+              ...this.state.data
             ]}
             options={{
               // Material design options

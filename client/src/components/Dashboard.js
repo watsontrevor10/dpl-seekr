@@ -12,16 +12,19 @@ const Dashboard = (props) => {
   return (
     <>
       <div className="main-dashboard-container">
-        <div className="board-link">
-          <Link to='/board'>Board</Link>
-        </div>
         <div>
-          <JobGraph />
-        </div>
-        <div>
-          <TasksDue />
-          <br/>
-          <UpcomingInt />
+          <div className="board-link">
+            <Link to="/board">
+              <JobGraph />
+            </Link>
+          </div>
+          <br />
+          <br />
+          <div className="board-link">
+            <TasksDue />
+            <br />
+            <UpcomingInt />
+          </div>
         </div>
       </div>
     </>
