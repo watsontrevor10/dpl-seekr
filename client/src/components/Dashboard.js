@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, withRouter, } from 'react-router-dom'
 import TasksDue from './TasksDue'
+import UpcomingInt from './UpcomingInt'
 import ListContainer from './ListContainer';
 
 const Dashboard = (props) => {
@@ -13,6 +14,8 @@ const Dashboard = (props) => {
         </div>
         <div>
           <TasksDue />
+          <br/>
+          <UpcomingInt />
         </div>
       </div>
     </>

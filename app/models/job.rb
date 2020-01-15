@@ -24,6 +24,20 @@ class Job < ApplicationRecord
     ", filter_date.to_i, id ])
   end
 
+  def self.upcoming_interviews(id, filter_date)
+    find_by_sql(["
+      SELECT date, subject, follow_up, interviews.description, interview_type, company_name, job_title
+      FROM jobs
+      LEFT JOIN interviews ON 
+        jobs.id = interviews.job_id
+      WHERE 
+        date >= CURRENT_DATE 
+        AND date <= (CURRENT_DATE + interval '? day')
+        AND user_id = ?
+      ORDER BY date
+    ", filter_date.to_i, id])
+  end
+
   private
 
   def self.archive(id)
