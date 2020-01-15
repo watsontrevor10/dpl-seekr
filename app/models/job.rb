@@ -38,6 +38,15 @@ class Job < ApplicationRecord
     ", filter_date.to_i, id])
   end
 
+  def self.total_jobs(id)
+    find_by_sql(["
+      SELECT status, COUNT(*) as totals
+      FROM jobs
+      WHERE user_id = ?
+      GROUP BY status
+      ORDER BY totals
+    ", id])
+  end
   private
 
   def self.archive(id)
@@ -49,5 +58,6 @@ class Job < ApplicationRecord
       ", id])
 
   end
+
 
 end

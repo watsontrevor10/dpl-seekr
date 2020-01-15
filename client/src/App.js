@@ -21,6 +21,7 @@ import "./stylesheets/App.scss";
 import JobViewForm from './components/JobViewForm';
 import Interviews from './components/Interviews';
 import ListContainer from './components/ListContainer';
+import JobGraph from "./components/JobGraph";
 
 
 const App = () => (
@@ -42,6 +43,7 @@ const App = () => (
           <ProtectedRoute exact path="/jobs/:job_id/interviews" component={Interviews} />
           <ProtectedRoute exact path="/tasks/tasks_due" component={TasksDue} />
           <ProtectedRoute exact path="/interviews/upcoming_int" component={UpcomingInt} />
+          <ProtectedRoute exact path="/jobs/job_graph" component={JobGraph} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route component={NoMatch} />
