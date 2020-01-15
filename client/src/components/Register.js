@@ -26,49 +26,53 @@ class Register extends React.Component {
     const { email, password, passwordConfirmation, name } = this.state;
 
     return (
-      <segment>
-        <h1>Sign Up</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            label="Name"
-            required
-            autoFocus
-            name='name'
-            value={name}
-            placeholder='First Last'
-            onChange={this.handleChange}
-          />
-          <input
-            label="Email"
-            required
-            autoFocus
-            name='email'
-            value={email}
-            placeholder='Email'
-            onChange={this.handleChange}
-          />
-          <input
-            label="Password"
-            required
-            name='password'
-            value={password}
-            placeholder='Password'
-            type='password'
-            onChange={this.handleChange}
-          />
-          <input
-            label="Password Confirmation"
-            required
-            name='passwordConfirmation'
-            value={passwordConfirmation}
-            placeholder='Password Confirmation'
-            type='password'
-            onChange={this.handleChange}
-          />
-          <segment textAlign='center' basic>
-            <button primary type='submit'>Submit</button>
-          </segment>
-        </form>
+      <segment className="login-main-container">
+        <div className="login-container register">
+          <h1>Sign Up</h1>
+          <form 
+            className="login-form-container" 
+            onSubmit={this.handleSubmit}>
+            <input
+              label="Name"
+              required
+              autoFocus
+              name='name'
+              value={name}
+              placeholder='Name'
+              onChange={this.handleChange}
+            />
+            <input
+              label="Email"
+              required
+              autoFocus
+              name='email'
+              value={email}
+              placeholder='Email'
+              onChange={this.handleChange}
+            />
+            <input
+              label="Password"
+              required
+              name='password'
+              value={password}
+              placeholder='Password'
+              type='password'
+              onChange={this.handleChange}
+            />
+            <input
+              label="Password Confirmation"
+              required
+              name='passwordConfirmation'
+              value={passwordConfirmation}
+              placeholder='Password Confirmation'
+              type='password'
+              onChange={this.handleChange}
+            />
+            <segment textAlign='center' basic>
+              <button primary type='submit'>Submit</button>
+            </segment>
+          </form>
+        </div>
       </segment>
     )
   }
