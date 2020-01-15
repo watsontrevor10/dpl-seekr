@@ -11,8 +11,10 @@ const Dashboard = (props) => {
         <div className="board-link">
           <Link to='/board'>Board</Link>
         </div>
+        <div>
+          <TasksDue />
+        </div>
       </div>
-      <TasksDue />
     </>
   )
 }
