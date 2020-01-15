@@ -3,16 +3,103 @@
 
   --white: #fff;
   --gray-1: #faf9f9;
-  --gray-2: #c9c9c9;
+  // --gray-2: #c9c9c9;
+  --gray-4: #f4f4f4;
 
   --theme-blue-main: #151E3F;
   --theme-dark-main: #030027;
   --theme-gray-main: #96939b;
   --theme-purple-main: #564256;
   --theme-yellow-main: #f2f3d9;
+
+  --blue: #2d3a66;
+  --blue-3: #5e55c3;
+  --dark-blue: #070059;
+  --dark-purple: #3d1a68;
+  --purple: #5e2d5e;
+  --beige: #C7C7B2;
+  --red: #da5740;
+
+}
+.job-title-heading {
+  margin: 0.6rem 4rem;
+  font-size: 1.8rem;
+  color: var(--blue-3);
 }
 .jobview-form {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
+  flex-grow: 1;
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  font-weight: 200;
+
+  div.all-inputs {
+    flex-direction: column;
+    display: flex;
+    flex-grow: 1;
+
+    div.form-input {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  .info {
+    margin-left: 4rem;
+  }
+  
+  input {
+    background-color: var(--gray-4);
+    border: none;
+    padding: 0.3rem;
+    border-radius: 5px;
+    transition: all .2s;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    margin: 0.2rem;
+    font-size: 0.8rem;
+    width: 18rem;
+  }
+
+  textarea {
+    background-color: var(--gray-4);
+    border-radius: 5px;
+    border: none;
+    padding: 0.3rem;
+    margin: 0.2rem;
+    width: 29rem;
+    height: 6rem;
+  }
+
+  select {
+    background-color: var(--gray-4);
+    border: none;
+    padding: 0.3rem;
+    margin: 0.2rem;
+    width: 7rem;
+  }
+
+  h3 {
+    width: 140px;
+    font-weight: 600;
+    margin: 0.3rem 0 1rem;
+    letter-spacing: 1px;
+  }
+}
+
+.desc {
+  margin-top: 0.5rem;
+}
+
+.jobinfo-save-btn {
+  margin: 1rem 4rem;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: var(--blue-3);
+  color: var(--white);
+  border-style: none;
 }

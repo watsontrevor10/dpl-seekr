@@ -3,13 +3,20 @@
 
   --white: #fff;
   --gray-1: #faf9f9;
-  --gray-2: #c9c9c9;
+  // --gray-2: #c9c9c9;
+  --gray-2: #cfcdd1;
 
   --theme-blue-main: #151E3F;
   --theme-dark-main: #030027;
   --theme-gray-main: #96939b;
   --theme-purple-main: #564256;
   --theme-yellow-main: #f2f3d9;
+
+  --blue: #2d3a66;
+  --dark-blue: #070059;
+  --dark-purple: #3d1a68;
+  --purple: #5e2d5e;
+  --red: #da5740;
 }
 
 .main-modal-container {
@@ -19,18 +26,15 @@
   flex-direction: column;
   z-index: 500;
   background-color: var(--white);
-  // width: 70%;
-  // height: 70%;
-  border: 1px solid var(--color-modal-shadow);
-  box-shadow: 2px 1px 20px 0px #787878;
-  padding: 16px;
-  top: 15%;
+  // border: 1px solid var(--color-modal-shadow);
+  border-radius: 7px;
+  box-shadow: 2px 1px 20px 0px #5f5f5f94;
+  top: 5%;
   box-sizing: border-box;
   overflow: auto;
-
-  width: 56rem;
-  left: calc(50% - 28rem);
-  height: 70%;
+  width: 50rem;
+  left: calc(50% - 25rem);
+  height: 90%;
 
 
   animation-name: moveInBottom; /*refers to @keyframes name*/
@@ -44,8 +48,9 @@
     justify-content: space-around;
     margin-bottom: 1rem;
     padding: 10px;
-    background-color: var(--theme-blue-main);
-    font-weight: 100;
+    height: 60px;
+    background-color: var(--theme-gray-main);
+    font-weight: 400;
     letter-spacing: 2px;
   }
 
@@ -61,21 +66,21 @@
   }
 
   .react-tabs__tab--selected {
-    color: #a8b8ff;
-    border-bottom:2px solid #a8b8ff;
+    // color: var(--dark-purple);
+    border-bottom:2px solid ;
   }
   
-  @media screen and (min-width: 500px) {
-    .main-modal-container {
-      width: 56rem;
-      left: calc(50% - 28rem);
-      height: 70%;
-      overflow: auto;
-      display: flex;
-      align-content: center;
-      flex-direction: column;
-    }
-  }
+  // @media screen and (min-width: 500px) {
+  //   .main-modal-container {
+  //     width: 56rem;
+  //     left: calc(50% - 28rem);
+  //     height: 70%;
+  //     overflow: auto;
+  //     display: flex;
+  //     align-content: center;
+  //     flex-direction: column;
+  //   }
+  // }
 
   @media screen and (max-width: 550px) {
     .main-modal-container {
