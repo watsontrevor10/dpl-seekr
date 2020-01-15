@@ -71,12 +71,12 @@ const jobStatus = [
 ];
 
 const colors = [
-  { key: "a", value: "Purple", text: "#7a0d9b", },
-  { key: "b", value: "Red", text: "#cd3a50", },
-  { key: "c", value: "Gold", text: "#c79106", },
-  { key: "d", value: "Teal", text: "#12a9ba", },
-  { key: "e", value: "Red Orange", text: "#d25511", },
-  { key: "f", value: "Blue", text: "#4954e6", }
+  { key: "a", value: "Blue", text: "#2d3a66", },
+  { key: "b", value: "Dark Blue", text: "#070059", },
+  { key: "c", value: "Dark Purple", text: "#3d1a68", },
+  { key: "d", value: "Purple", text: "#5e2d5e", },
+  { key: "e", value: "Beige", text: "#f7f8ea", },
+  { key: "f", value: "Red", text: "#da5740", }
 ];
 
 // const colors = [

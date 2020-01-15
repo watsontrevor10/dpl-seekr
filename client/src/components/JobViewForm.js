@@ -102,13 +102,22 @@ const jobStatus = [
   { key: "f", text: "Archived", value: "Archived", }
 ];
 
+// const colors = [
+//   { key: "a", text: "Purple", value: "#7a0d9b", },
+//   { key: "b", text: "Red", value: "#cd3a50", },
+//   { key: "c", text: "Gold", value: "#c79106", },
+//   { key: "d", text: "Teal", value: "#12a9ba", },
+//   { key: "e", text: "Red Orange", value: "#d25511", },
+//   { key: "f", text: "Blue", value: "#4954e6", }
+// ];
+
 const colors = [
-  { key: "a", text: "Purple", value: "#7a0d9b", },
-  { key: "b", text: "Red", value: "#cd3a50", },
-  { key: "c", text: "Gold", value: "#c79106", },
-  { key: "d", text: "Teal", value: "#12a9ba", },
-  { key: "e", text: "Red Orange", value: "#d25511", },
-  { key: "f", text: "Blue", value: "#4954e6", }
+  { key: "a", text: "Blue", value: "#2d3a66", },
+  { key: "b", text: "Dark Blue", value: "#070059", },
+  { key: "c", text: "Dark Purple", value: "#3d1a68", },
+  { key: "d", text: "Purple", value: "#5e2d5e", },
+  { key: "e", text: "Beige", value: "#f7f8ea", },
+  { key: "f", text: "Red", value: "#da5740", }
 ];
 
 export default JobViewForm
