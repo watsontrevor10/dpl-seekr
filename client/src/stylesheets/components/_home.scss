@@ -47,7 +47,7 @@
   .mobile-menu-container {
     display: flex;
     position: fixed;
-    background-color: rgb(107, 43, 210);
+    background-color: var(--blue-2);
     width: 40px;
     height: 40px;
     z-index: 20;
