@@ -4,6 +4,8 @@ import { Link, withRouter, } from 'react-router-dom';
 import home from "../images/internet.png"
 import logout from "../images/ui.png"
 
+const defaultImage = 'https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png';
+ 
 const Sidebar = (props) => {
   const { auth: { user, handleLogout, }, location, } = props;
   return (
@@ -19,7 +21,9 @@ const Sidebar = (props) => {
           <Link to='/'>
             <img src={home} className="home-icon"></img>
           </Link>
-          <div>username</div>
+          <Link to='/profile'>
+            <img style={icon} src={user.image || defaultImage} />
+          </Link>
         </div>
 
         <div className="logout">
@@ -47,4 +51,9 @@ export class ConnectedSidebar extends React.Component {
   }
 }
 
+const icon = {
+  height: '40px',
+  width: '40px',
+  borderRadius: '25px',
+}
 export default withRouter(ConnectedSidebar); 
