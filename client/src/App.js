@@ -11,7 +11,6 @@ import NotesForm from './components/NotesForm';
 import Login from './components/Login';
 import Register from './components/Register';
 import TasksDue from './components/TasksDue';
-import TaskClass from './components/TaskClass';
 import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Switch, Route, } from 'react-router-dom';
@@ -38,8 +37,7 @@ const App = () => (
           <ProtectedRoute exact path="/jobs/:id" component={JobViewForm} />
           <ProtectedRoute exact path="/job/:id" component={Modal} />
           <ProtectedRoute exact path="/jobs/:job_id/interviews" component={Interviews} />
-          {/* <ProtectedRoute exact path="/tasks/tasks_due" component={TasksDue} /> */}
-          <ProtectedRoute exact path="/tasks/tasks_due" component={TaskClass} />
+          <ProtectedRoute exact path="/tasks/tasks_due" component={TasksDue} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route component={NoMatch} />
