@@ -21,11 +21,11 @@ class Login extends React.Component {
     return (
       <segment className="login-main-container">
         <div className="login-container">
-        <h1>Login</h1>
-          <form 
+          <h1>Login</h1>
+          <form
             className="login-form-container"
             onSubmit={this.handleSubmit}
-            >
+          >
             <input
               label="Email"
               autoFocus
@@ -35,7 +35,7 @@ class Login extends React.Component {
               placeholder='Email'
               onChange={this.handleChange}
             />
-            <input 
+            <input
               label="Password"
               required
               name='password'
@@ -58,7 +58,7 @@ export default class ConnectedLogin extends React.Component {
   render() {
     return (
       <AuthConsumer>
-        { auth => <Login {...this.props} auth={auth} /> }
+        {auth => <Login {...this.props} auth={auth} />}
       </AuthConsumer>
     )
   }

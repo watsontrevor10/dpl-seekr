@@ -13,7 +13,7 @@ const JobForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('/api/jobs', { company_name: company.values.company_name, job_title: job.values.job_title, status: status.values.status, color: color.values.color })
-    .then(res => {
+      .then(res => {
         props.add(res.data);
         props.hide();
       })
@@ -24,35 +24,35 @@ const JobForm = (props) => {
     <div className="new-job">
       <h1>Add a new job</h1>
       <form onSubmit={handleSubmit}>
-        Company Name: <br/>
-        <input type="text" name="company_name" {...company} onChange={company.handleChange} /><br/>
-        Job Title: <br/>
-        <input type="text" name="job_title" {...job} onChange={job.handleChange}/><br/>
+        Company Name: <br />
+        <input type="text" name="company_name" {...company} onChange={company.handleChange} /><br />
+        Job Title: <br />
+        <input type="text" name="job_title" {...job} onChange={job.handleChange} /><br />
         <select name="status" {...status} onChange={status.handleChange} >
-          { jobStatus.map(j => (   
+          {jobStatus.map(j => (
             <>
-              <option value="none" selected disabled hidden> 
-                Select an Option 
+              <option value="none" selected disabled hidden>
+                Select an Option
               </option>
               <option value={j.value}>
                 {j.value}
               </option>
             </>
-              )) 
+          ))
           }
         </select>
         <br />
         <select name="color" {...color} onChange={color.handleChange} >
-          { colors.map(c => (   
+          {colors.map(c => (
             <>
-              <option value="none" selected disabled hidden> 
-                Select an Option 
+              <option value="none" selected disabled hidden>
+                Select an Option
               </option>
               <option value={c.text}>
                 {c.value}
               </option>
             </>
-              )) 
+          ))
           }
         </select>
         <input type="submit" value="Submit" />

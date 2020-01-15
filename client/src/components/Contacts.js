@@ -4,27 +4,27 @@ import axios from 'axios'
 
 const Contacts = (props) => {
   // State for looping contacts on page
-  const [ contacts, setContacts ] = useState([])
+  const [contacts, setContacts] = useState([])
   // State for passing props down to ContactForm when editing a contact
-  const [ editContact, setEditContact ] = useState(null)
+  const [editContact, setEditContact] = useState(null)
   // State for toggling ContactForm add/edit form
-  const [ toggleForm, setToggleForm ] = useState(false)
- 
+  const [toggleForm, setToggleForm] = useState(false)
 
-  useEffect( () => {
+
+  useEffect(() => {
     axios.get(`/api/jobs/${props.id}/contacts`)
-    .then( res => {
+      .then(res => {
         setContacts(res.data);
       })
   }, [])
 
   // function for removing contacts
   const handleRemove = (id) => {
-      axios.delete(`/api/jobs/${props.id}/contacts/${id}`)
-        .then( res => {
-          setContacts(contacts.filter( c => c.id !== id))
-        })
-    }
+    axios.delete(`/api/jobs/${props.id}/contacts/${id}`)
+      .then(res => {
+        setContacts(contacts.filter(c => c.id !== id))
+      })
+  }
 
   // toggles add/edit versions of ContactForm and resets setEditContact state
   const toggle = () => {
@@ -36,7 +36,7 @@ const Contacts = (props) => {
   }
 
   // finds a contact by index from contacts to be passed down to ContactForm and toggles form on
-  const handleEdit = (contactIndex) => { 
+  const handleEdit = (contactIndex) => {
     setEditContact(contacts[contactIndex]);
     toggle()
   }
@@ -44,17 +44,17 @@ const Contacts = (props) => {
   // re-renders component after ContactForm has updated an existing contact
   const handleUpdate = () => {
     axios.get(`/api/jobs/${props.id}/contacts`)
-    .then( res => {
+      .then(res => {
         setContacts(res.data);
       })
   }
 
   // adds new contact to state after form submission
-  const addContact = (contact) => setContacts([ ...contacts, contact, ]);
+  const addContact = (contact) => setContacts([...contacts, contact,]);
 
   // render all contacts
   const renderContacts = (props) => {
-    return contacts.map( (contact, index) => (
+    return contacts.map((contact, index) => (
       <>
         <div key={contact.id}>
           <li >
@@ -82,20 +82,20 @@ const Contacts = (props) => {
 
   return (
     <>
-      <div> 
-        <button onClick={() => toggle() }>
-          { toggleForm ? "Cancel" : "Add" }
+      <div>
+        <button onClick={() => toggle()}>
+          {toggleForm ? "Cancel" : "Add"}
         </button>
       </div>
       <div className="contacts">
-        { toggleForm ? 
-          <ContactForm 
-            toggle={toggle} 
-            add={addContact} 
-            id={props.id} 
-            contactProp={editContact} 
+        {toggleForm ?
+          <ContactForm
+            toggle={toggle}
+            add={addContact}
+            id={props.id}
+            contactProp={editContact}
             update={handleUpdate}
-          /> : renderContacts()  
+          /> : renderContacts()
         }
       </div>
     </>

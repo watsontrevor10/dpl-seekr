@@ -5,7 +5,7 @@ import JobCard from "./JobCard";
 
 const List = (props) => {
 
-  const [ openModal, setOpenModal ] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
 
   const show = () => {
     setOpenModal(true);
@@ -14,36 +14,37 @@ const List = (props) => {
     setOpenModal(!openModal);
   }
 
-    const renderJobs = (name) => {
-      return props.jobs.map( job => {
-        if ( name === job.status ) {
-          return (
+  const renderJobs = (name) => {
+    return props.jobs.map(job => {
+      if (name === job.status) {
+        return (
           <>
             <div
-            key={job.id}
-            company={job.company_name}
-            title={job.job_title}
-            status={job.status}
-            className={`job-card ${job.id}`}
+              key={job.id}
+              company={job.company_name}
+              title={job.job_title}
+              status={job.status}
+              className={`job-card ${job.id}`}
             >
-              <JobCard handleUpdate={props.handleUpdate} deleteJob={props.deleteJob} job={job}/>
+              <JobCard handleUpdate={props.handleUpdate} deleteJob={props.deleteJob} job={job} />
             </div>
           </>
-        )}
-        return (
-          <></>
         )
-      })
-    }
-  
+      }
+      return (
+        <></>
+      )
+    })
+  }
+
   return (
     <>
-    <div className="list-component-container">
-      <h1 className="list-header">{props.name}</h1>
+      <div className="list-component-container">
+        <h1 className="list-header">{props.name}</h1>
         <button className="new-job-btn" onClick={show}>Add Job</button>
-        { openModal ? <NewJobModal add={props.add} hide={hide} show={openModal}/> : null }
-        { renderJobs(props.name) }
-    </div>
+        {openModal ? <NewJobModal add={props.add} hide={hide} show={openModal} /> : null}
+        {renderJobs(props.name)}
+      </div>
     </>
   )
 }

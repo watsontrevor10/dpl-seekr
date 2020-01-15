@@ -8,7 +8,6 @@ class Job < ApplicationRecord
 
   # function to calculate tasks due within a certain timeframe
   def self.tasks_due(id, filter_date)
-    # binding.pry
     find_by_sql(["
       SELECT due_date, subject, company_name, job_title, status, user_id
       FROM jobs 
@@ -20,6 +19,8 @@ class Job < ApplicationRecord
         AND completed_date IS NULL
         AND due_date IS NOT NULL
         AND user_id = ?
+      ORDER BY 
+        due_date
     ", filter_date.to_i, id ])
   end
 
