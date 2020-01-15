@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 
 
 const Jobs = (props) => {
-  return(
-  <h1> </h1>
+  return (
+    <h1> </h1>
   )
-  }
+}
 //   // State for looping through users jobs
 //   const [ jobs, setJobs ] = useState([])
 //   const [ toggleForm, setToggleForm] = useState(false)
-  
+
 //   // axios call to get all user jobs
 //   useEffect( () => {
 //     axios.get('/api/jobs')
@@ -45,7 +45,7 @@ const Jobs = (props) => {
 
 //   // Passing this function into JobForm as a prop
 //   const addJob = (job) => setJobs([ ...jobs, job, ]);
-  
+
 //   // jobs Index component
 //   return (
 //     <div>
