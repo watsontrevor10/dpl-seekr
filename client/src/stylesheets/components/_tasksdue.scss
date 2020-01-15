@@ -1,0 +1,50 @@
+$default-card-color: #050044 !default;
+
+
+$color2: #030027;
+$color3: #564256;
+$color4: #96939B;
+
+$colors: $color4, $color2, $color3;
+
+$key: random( length($colors) );
+$nth: nth( $colors, $key );
+$main-color: $nth !default;
+@mixin backgrounds($i) {
+  background: $i;
+    &:nth-child(#{$i}) { background: $i; }
+}
+
+.task-container {
+  width: 45%; 
+}
+
+.heading-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.task-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.task-card {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  @include backgrounds($main-color);
+  // background-color: $default-card-color;
+  border-radius: 7px;
+  width: 40%;
+  color: white;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem; 
+}
