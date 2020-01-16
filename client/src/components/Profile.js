@@ -1,7 +1,7 @@
 import React, { Fragment, } from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider"
 import Dropzone from 'react-dropzone'
-// import ProfileSidebar from "./ProfileSidebar"
+import ProfileSidebar from "./ProfileSidebar"
 import MobileMenu from "./MobileMenu"
 import Sidebar from "./Sidebar"
 

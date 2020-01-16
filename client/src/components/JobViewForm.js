@@ -97,7 +97,7 @@ const JobViewForm = (props) => {
           </div>
         </div>
         {/* COLOR <input type="text" name="Description"/> */}
-         <button 
+        <button 
           className="jobinfo-save-btn info"
           type="submit" value="Submit"
         > 

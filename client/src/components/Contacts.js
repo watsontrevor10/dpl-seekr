@@ -56,25 +56,35 @@ const Contacts = (props) => {
   const renderContacts = (props) => {
     return contacts.map((contact, index) => (
       <>
-        <div key={contact.id}>
-          <li >
-            Name: {contact.first_name} {contact.last_name}
-            <br />
-            Phone: {contact.phone}
-            <br />
-            Email: {contact.email}
-            <br />
-            Position: {contact.position}
-            <br />
-            Department: {contact.department}
-            <br />
-            Description: {contact.description}
-            <br />
+        <div key={contact.id} className="contact-card">
+          <div className="contact-content">
+            <h4>Name</h4>
+            <p>{contact.first_name} {contact.last_name}</p>
+          </div>
+          <div className="contact-content">
+            <h4>Phone </h4>
+            <p>{contact.phone}</p>
+          </div>
+          <div className="contact-content">
+            <h4>Email </h4>
+            <p>{contact.email}</p>
+          </div>
+          <div className="contact-content">
+            <h4>Position</h4> 
+            <p>{contact.position}</p>
+          </div>
+          <div className="contact-content">
+            <h4>Department</h4> 
+            <p>{contact.department}</p>
+          </div>
+          <div className="contact-content desc">
+            <h4>Description</h4>
+            <p>{contact.description}</p>
+          </div>
             <div className="contact-btns">
-              <button onClick={() => handleEdit(index)}>Edit</button>
-              <button onClick={() => handleRemove(contact.id)}>Delete</button>
+              <button onClick={() => handleEdit(index)} className="jobinfo-save-btn contact-btn">Edit</button>
+              <button onClick={() => handleRemove(contact.id)}className="jobinfo-save-btn contact-btn">Delete</button>
             </div>
-          </li>
         </div>
       </>
     ))
@@ -82,22 +92,24 @@ const Contacts = (props) => {
 
   return (
     <>
-      <div>
-        <h2 className="form-heading">Contacts</h2>
-        <button onClick={() => toggle()} className="jobinfo-save-btn">
-          {toggleForm ? "Cancel" : "Add"}
-        </button>
-      </div>
-      <div className="contacts">
-        {toggleForm ?
-          <ContactForm
+      <div className="main-contact-container">
+        <div>
+          <h2 className="form-heading">Contacts</h2>
+          <button onClick={() => toggle()} className="jobinfo-save-btn">
+            {toggleForm ? "Cancel" : "Add"}
+          </button>
+        </div>
+        <div className="contacts">
+          {toggleForm ?
+            <ContactForm
             toggle={toggle}
             add={addContact}
             id={props.id}
             contactProp={editContact}
             update={handleUpdate}
-          /> : renderContacts()
-        }
+            /> : renderContacts()
+          }
+        </div>
       </div>
     </>
   )
