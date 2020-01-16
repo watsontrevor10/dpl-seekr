@@ -83,6 +83,7 @@ const Contacts = (props) => {
   return (
     <>
       <div>
+        <h2 className="form-heading">Contacts</h2>
         <button onClick={() => toggle()}>
           {toggleForm ? "Cancel" : "Add"}
         </button>

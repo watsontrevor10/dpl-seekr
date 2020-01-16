@@ -1,7 +1,7 @@
 import React, { Fragment, } from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider"
 import Dropzone from 'react-dropzone'
-import Sidebar from "./Sidebar"
+import ProfileSidebar from "./ProfileSidebar"
 import MobileMenu from "./MobileMenu"
 
 
@@ -19,10 +19,10 @@ class Profile extends React.Component {
     const { auth: { user }, } = this.props;
     return (
       <>
-        <div className="main-home-container">
-          <div style={profileContainer}>
+        <div className="new-job">
+          <div className="main-home-container">
             <div className="main-sidebar-container">
-              <Sidebar />
+              <ProfileSidebar />
             </div>
             <div style={profilePadding}>
               <div className="mobile-menu-container">
@@ -49,72 +49,73 @@ class Profile extends React.Component {
     const { formValues: { name, email } } = this.state;
     return (
       <>
-        <div className="main-home-container">
-          <div style={profileContainer}>
-            <div className="main-sidebar-container">
-              <Sidebar />
-            </div>
-            <div style={profilePadding}>
-              <div className="mobile-menu-container">
-                <MobileMenu />
+        <div className="new-job">
+          <div className="main-home-container">
+            <div style={profileContainer}>
+              <div className="main-sidebar-container">
+                <ProfileSidebar />
               </div>
-              <div>
-                <form onSubmit={this.handleSubmit}>
-                  <div>
+              <div style={profilePadding}>
+                <div className="mobile-menu-container">
+                  <MobileMenu />
+                </div>
+                <div>
+                  <form onSubmit={this.handleSubmit}>
                     <div>
+                      <div>
+                        <div style={drop}>
+                          <Dropzone
+                            onDrop={this.onDrop}
+                            multiple={false}
+                            disableClick
+                          >
+                            {({ getRootProps, getInputProps, isDragActive }) => {
+                              return (
+                                <div
+                                  {...getRootProps()}
+                                  style={styles.dropzone}
+                                >
+                                  <input {...getInputProps()} />
+                                  {
+                                    isDragActive ?
+                                      <p>Drop files here...</p> :
+                                      <center><p>Image Goes Here</p></center>
+                                  }
+                                </div>
+                              )
+                            }}
+                          </Dropzone>
+                        </div>
+                      </div>
+                      <div style={edit}>
+                        <input
+                          label="Name"
+                          name="name"
+                          placeholder="Name"
+                          value={name}
+                          required
+                          style={{ display: 'flex', flexGrow: '1' }}
+                          onChange={this.handleChange}
+                        />
+                      </div>
+                      <div style={edit}>
+                        <input
+                          label="Email"
+                          name="email"
+                          placeholder="Email"
+                          value={email}
+                          required
+                          style={{ display: 'flex', flexGrow: '1' }}
+                          onChange={this.handleChange}
+                        />
+                      </div>
                       <div style={drop}>
-                        <Dropzone
-                          onDrop={this.onDrop}
-                          multiple={false}
-                          disableClick
-                        >
-                          {({ getRootProps, getInputProps, isDragActive }) => {
-                            return (
-                              <div
-                                {...getRootProps()}
-                                style={styles.dropzone}
-                              >
-                                <input {...getInputProps()} />
-                                {
-                                  isDragActive ?
-                                    <p>Drop files here...</p> :
-                                    <center><p>Image Goes Here</p></center>
-                                }
-                              </div>
-                            )
-                          }}
-                        </Dropzone>
+                        <button>Update</button>
+                        <button onClick={this.toggleEdit}>Cancel</button>
                       </div>
                     </div>
-
-                    <div style={edit}>
-                      <input
-                        label="Name"
-                        name="name"
-                        placeholder="Name"
-                        value={name}
-                        required
-                        style={{ display: 'flex', flexGrow: '1' }}
-                        onChange={this.handleChange}
-                      />
-                    </div>
-                    <div style={edit}>
-                      <input
-                        label="Email"
-                        name="email"
-                        placeholder="Email"
-                        value={email}
-                        required
-                        style={{ display: 'flex', flexGrow: '1' }}
-                        onChange={this.handleChange}
-                      />
-                    </div>
-                    <div style={drop}>
-                      <button style={btn}>Update</button>
-                      <button style={btn} onClick={this.toggleEdit}>Cancel</button>
-                    </div>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>

@@ -66,7 +66,12 @@ const JobForm = (props) => {
             </select>
           </div>
          </div>
-        <input type="submit" value="Submit" />
+         <button 
+          className="jobinfo-save-btn info"
+          type="submit" value="Submit"
+        > 
+          save
+        </button>
       </form>
     </div>
   )

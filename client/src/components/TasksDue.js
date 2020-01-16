@@ -46,7 +46,6 @@ class TaskClass extends React.Component {
           </div>
           <hr />
           <Link to="/board" style={{ textDecoration: "none" }}>
-            <br />
             <div className="task-card-container">
               {tasks.map((task) =>
                 <>

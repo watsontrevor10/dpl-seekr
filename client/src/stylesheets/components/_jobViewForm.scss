@@ -36,6 +36,7 @@
   font-size: 0.8rem;
   font-weight: 200;
   width: calc(100% - 4rem);
+  margin-bottom: 4rem;
 
   div.all-inputs {
     flex-direction: column;
@@ -132,7 +133,7 @@
 }
 
 .jobinfo-save-btn.info {
-  
+  margin: 1rem 0;
 }
 
 @media screen and (max-width: 550px) {

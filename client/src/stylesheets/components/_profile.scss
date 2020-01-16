@@ -3,25 +3,31 @@
 
   --white: #fff;
   --gray-1: #faf9f9;
-  --gray-2: #c9c9c9;
+  // --gray-2: #c9c9c9;
+  --gray-2: #cfcdd1;
 
   --theme-blue-main: #151E3F;
   --theme-dark-main: #030027;
   --theme-gray-main: #96939b;
   --theme-purple-main: #564256;
   --theme-yellow-main: #f2f3d9;
+
+  --blue: #2d3a66;
+  --dark-blue: #070059;
+  --dark-purple: #3d1a68;
+  --purple: #5e2d5e;
+  --red: #da5740;
 }
+
 .new-job {
   position: fixed;
   z-index: 500;
   background-color: var(--white);
-  // width: 480px;
-  // height: 530px;
+  width: 480px;
+  height: 530px;
   box-shadow: 2px 1px 20px 0px #5f5f5f94;
-  border-radius: 7px;
   padding: 16px;
-  left: calc(50% - 175px);
-  min-width: 350px;
+  left: calc(50% - 225px);
   top: 8%;
   box-sizing: border-box;
   display: flex;
@@ -29,24 +35,6 @@
   animation-name: moveInBottom; /*defined*/
   animation-duration: 0.6s;
   animation-timing-function: ease-in-out;
-
-  .new-heading {
-    margin: 1rem 0 2rem 0;
-    display: flex;
-    align-self: center;
-  }
-  .new-form {
-    width: calc(100% - 1rem);
-    margin: 1rem;
-  }
 }
 
-@media screen and (max-width: 550px) {
-  .new-job {
-    left: 8%;
-    top: 15%;
-    width: 85%;
-    height: 60%;
-  }
-}
 
