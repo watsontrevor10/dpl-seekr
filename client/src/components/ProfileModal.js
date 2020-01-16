@@ -5,11 +5,11 @@ import Profile from './Profile';
 const ProfileModal = (props) => {
 
   return (
-  <>
-  <Backdrop show={props.show} hide={props.hide} />
+    <>
+      <Backdrop show={props.show} hide={props.hide} />
 
-  <Profile/>
-  </>
+      <Profile />
+    </>
   )
 }
 

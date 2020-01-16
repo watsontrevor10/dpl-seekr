@@ -11,9 +11,6 @@
   --theme-purple-main: #564256;
   --theme-yellow-main: #f2f3d9;
 }
-// .head-dashboard-container {
-//   display: flex;
-// }
 
 .main-dashboard-container {
   display: flex;
@@ -29,10 +26,9 @@
   }
 
   .board-link {
-    margin: 5rem;
+    margin: 3rem;
     display: flex;
-    height: 15rem;
-    // align-items: center;
-    justify-content: space-between;   
+    height: 22rem;
+    justify-content: space-around;   
   }
 }

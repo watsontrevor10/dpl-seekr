@@ -43,14 +43,18 @@ const NotesForm = (props) => {
     return (
       <div className="form-container-notes">
         <form onSubmit={submit} className="notesview-form info">
-          Note
-          <textarea
-            name="body"
-            value={body}
-            {...body}
-            onChange={handleChange}
-          />
-          <button type="submit" value="Submit" className="note-save-btn" >Save</button>
+          <div className="note-inputs">
+            <textarea
+              name="body"
+              value={body}
+              {...body}
+              onChange={handleChange}
+              placeholder="add a note"
+            />
+          </div>
+          <div>
+            <button type="submit" value="Submit" className="note-save-btn" >Save</button>
+        </div>        
         </form>
       </div>
     )
@@ -59,12 +63,17 @@ const NotesForm = (props) => {
     return (
       <div className="form-container-notes">
         <form onSubmit={submit} className="notesview-form info">
+        <div className="note-inputs">
           <textarea
             name="body"
             {...body}
             onChange={handleChange}
+            placeholder="add a note"
           />
+        </div>
+        <div>
           <button type="submit" value="Submit" className="note-save-btn" >Save</button>
+        </div>
         </form>
       </div>
     )

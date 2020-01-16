@@ -18,8 +18,8 @@ class JobGraph extends React.Component {
       })
   }
 
+  // formats data to be ingestable by graph
   loop = () => {
-    // let dateFormat = <Moment format='YY-MM-DD'>{this.state.totalApps.weekly}</Moment>
     const dataType = []
     this.state.totalApps.map(j => {
       dataType.push([
@@ -30,14 +30,13 @@ class JobGraph extends React.Component {
     this.setState({ data: dataType })
   }
 
-
   render() {
-
     return (
       <>
         <div>
+          {/* area chart showing total applications submitted by day for the last 180 days */}
           <Chart
-            width={'610px'}
+            width={'650px'}
             height={'400px'}
             chartType="AreaChart"
             loader={<div>Loading Chart</div>}
@@ -46,13 +45,19 @@ class JobGraph extends React.Component {
               ...this.state.data
             ]}
             options={{
-              hAxis: {
-                format: 'yyyy',
-              },
+              title: 'Applications Submitted by Day',
               colors: ['#151E3F'],
-              // Material design options
-              chart: {
-                title: 'Weekly Applications Submitted',
+              legend: { position: 'top', maxLines: 3 },
+              hAxis: {
+                title: 'Date Applied'
+              },
+              vAxis: {
+                title: 'Applications'
+              },
+              animation: {
+                startup: true,
+                easing: 'linear',
+                duration: 1500,
               },
             }}
             // For tests
