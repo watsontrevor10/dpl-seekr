@@ -1,6 +1,11 @@
+import React, {useState} from "react";
+import { AuthConsumer, } from "../providers/AuthProvider";
+import { Link, withRouter, } from 'react-router-dom';
+import logout from "../images/ui.png"
 
+const defaultImage = 'https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png';
 
-const Sidebar = (props) => {
+const ProfileSidebar = (props) => {
 
 const { auth: { user, handleLogout, }, location, } = props;
   return (
@@ -8,14 +13,11 @@ const { auth: { user, handleLogout, }, location, } = props;
       <div className="sidebar">
         <div className="home-sidebar-icons">
           <div>
-            <div onClick={show}> <img style={icon} src={user.image || defaultImage} /> </div>
+            <div> <img style={icon} src={user.image || defaultImage} /> </div>
           </div>
           
           {user.name}
         </div>
-
-        {openModal ? <ProfileModal add={props.add} hide={hide} show={openModal}
-        /> : null}
 
         <div className="logout">
           <img
@@ -30,12 +32,12 @@ const { auth: { user, handleLogout, }, location, } = props;
   );
 }
 
-export class ConnectedSidebar extends React.Component {
+export class ConnectedProfileSidebar extends React.Component {
   render() {
     return (
       <AuthConsumer>
         {auth =>
-          <Sidebar {...this.props} auth={auth} />
+          <ProfileSidebar {...this.props} auth={auth} />
         }
       </AuthConsumer>
     )
@@ -47,4 +49,8 @@ const icon = {
   width: '40px',
   borderRadius: '25px',
 }
-export default withRouter(ConnectedSidebar); 
+
+const color = {
+  color: 'rgb(89, 81, 117)'
+}
+export default withRouter(ConnectedProfileSidebar); 

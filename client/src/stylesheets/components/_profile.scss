@@ -1,4 +1,23 @@
+:root {
+  --main-font-family: sans-serif;
 
+  --white: #fff;
+  --gray-1: #faf9f9;
+  // --gray-2: #c9c9c9;
+  --gray-2: #cfcdd1;
+
+  --theme-blue-main: #151E3F;
+  --theme-dark-main: #030027;
+  --theme-gray-main: #96939b;
+  --theme-purple-main: #564256;
+  --theme-yellow-main: #f2f3d9;
+
+  --blue: #2d3a66;
+  --dark-blue: #070059;
+  --dark-purple: #3d1a68;
+  --purple: #5e2d5e;
+  --red: #da5740;
+}
 
 .new-job {
   position: fixed;
@@ -17,3 +36,5 @@
   animation-duration: 0.6s;
   animation-timing-function: ease-in-out;
 }
+
+
