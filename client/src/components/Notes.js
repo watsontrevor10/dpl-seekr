@@ -75,22 +75,28 @@ const Notes = (props) => {
 
   return (
     <>
+    <div className="main-notes-container">
+      <div className="notes-container">
+      <h2 className="notes-header">Notes</h2>
+        <button onClick={() => toggle()} className="notes-save-btn">
+          {toggleForm ?
+            'Cancel'
+            : 'Add'
+          }
+        </button>
+      </div>
+      <hr />
       {toggleForm ?
         <NotesForm
-          id={props.id}
+        id={props.id}
           add={addNote}
           toggle={toggle}
           note={noteEdit}
           update={handleUpdate}
-        />
-        : renderNotes()
-      }
-      <button onClick={() => toggle()}>
-        {toggleForm ?
-          'Cancel'
-          : 'Add'
+          />
+          : renderNotes()
         }
-      </button>
+    </div>
     </>
   )
 }
