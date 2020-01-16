@@ -40,6 +40,12 @@
   }
 }
 
+.logout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 img.logout-icon {
   width: 1.75rem;
   height: 1.75rem;

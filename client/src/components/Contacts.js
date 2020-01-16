@@ -84,7 +84,7 @@ const Contacts = (props) => {
     <>
       <div>
         <h2 className="form-heading">Contacts</h2>
-        <button onClick={() => toggle()}>
+        <button onClick={() => toggle()} className="jobinfo-save-btn">
           {toggleForm ? "Cancel" : "Add"}
         </button>
       </div>

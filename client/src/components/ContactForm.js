@@ -42,7 +42,7 @@ const ContactForm = (props) => {
     // Edit Form
     return (
       <div>
-        <form onSubmit={submit}>
+        <form onSubmit={submit} className="jobview-form">
           <p>First Name </p>
           <input
             type='text'

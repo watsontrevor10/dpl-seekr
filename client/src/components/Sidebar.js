@@ -32,16 +32,17 @@ const Sidebar = (props) => {
           <Link to='/'>
             <img src={home} className="home-icon"></img>
           </Link>
+        </div>
+
+        <div className="logout">
           <div>
             <div onClick={show}> <img style={icon} src={user.image || defaultImage} /> </div>
           </div>
-          {user.name}
-        </div>
-
-        {openModal ? <ProfileModal add={props.add} hide={hide} show={openModal}
-        /> : null}
-
-        <div className="logout">
+          <div>
+            {user.name}
+          </div>
+          {openModal ? <ProfileModal add={props.add} hide={hide} show={openModal}
+          /> : null}
           <img
             className="logout-icon"
             src={logout}
