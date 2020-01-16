@@ -3,7 +3,6 @@ import { Link, withRouter, } from 'react-router-dom'
 import axios from "axios";
 import Chart from "react-google-charts";
 
-
 class JobGraph extends React.Component {
   state = { totalJobs: [], data: [] }
 
@@ -17,6 +16,7 @@ class JobGraph extends React.Component {
       })
   }
 
+  // formats data to ingestable by bar graph
   loop = () => {
     const dataType = []
       this.state.totalJobs.map(j => {
@@ -25,14 +25,13 @@ class JobGraph extends React.Component {
      this.setState({data: dataType})
   }
 
-
   render() {
-
     return (
       <>
         <div>
+          {/* Bar graph displaying total jobs submitted by status */}
           <Chart
-            width={'610px'}
+            width={'650px'}
             height={'400px'}
             chartType="Bar"
             loader={<div>Loading Chart</div>}
@@ -41,11 +40,21 @@ class JobGraph extends React.Component {
               ...this.state.data
             ]}
             options={{
-              colors: ['#151E3F'],
-              // Material design options
-              colors: ['#3d1a68'],
               chart: {
-                title: 'Total Applications',
+                title: 'Total Jobs by Status'
+              },
+              colors: ['#3d1a68'],
+              legend: 'none',
+              hAxis: {
+                title: 'Status',
+              },
+              vAxis: {
+                title: 'Jobs'
+              },
+              animation: {
+                startup: true,
+                easing: 'linear',
+                duration: 1500,
               },
             }}
             // For tests
