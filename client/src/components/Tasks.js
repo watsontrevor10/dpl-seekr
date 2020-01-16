@@ -29,7 +29,7 @@ const Tasks = (props) => {
 
   return (
     <>
-      <h1>Tasks</h1>
+      <h2 className="form-heading">Tasks</h2>
       <TaskForm job_id={props.id} handleUpdate={handleUpdate} />
       {tasks.map(task => (
         <Task task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} />

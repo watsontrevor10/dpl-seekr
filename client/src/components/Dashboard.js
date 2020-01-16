@@ -6,33 +6,36 @@ import JobGraph from "./JobGraph"
 import JobAppsGraph from "./JobAppsGraph"
 import ListContainer from './ListContainer';
 import axios from "axios";
+import HomeNav from "./HomeNav";
 
 const Dashboard = (props) => {
 
 
   return (
     <>
+    {/* <div className="head-dashboard-container"> */}
       <div className="main-dashboard-container">
-        <div>
-          <div className="board-link">
-            <Link to="/board">
-              <JobGraph />
-            </Link>
-          </div>
-          <div className="board-link">
-            <Link to="/board">
-              <JobAppsGraph />
-            </Link>
-          </div>
-          <br />
-          <br />
-          <div className="board-link">
-            <TasksDue />
-            <br />
-            <UpcomingInt />
+        <div className="main-homeNav-container">
+          <HomeNav />
+        </div>
+          <div className="dashboard-container">
+            <div className="board-link">
+              <Link to="/board">
+                <JobGraph />
+              </Link>
+            <div className="board-link">
+              <Link to="/board">
+                <JobAppsGraph />
+              </Link>
+            </div>
+            </div>
+            <div className="board-link">
+              <TasksDue />
+              <UpcomingInt />
+            </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </>
   )
 }

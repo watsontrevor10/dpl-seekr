@@ -22,19 +22,19 @@ const JobForm = (props) => {
   // Form component
   return (
     <div className="new-job">
-      <h1>Add a new job</h1>
-      <form onSubmit={handleSubmit} className="jobview-form">
-        <div className="all-inputs">
+      <h2 className="form-heading new-heading">Add a new job</h2>
+      <form onSubmit={handleSubmit} className="jobview-form new-form">
+        <div className="all-inputs new">
           <div className="form-input">
-            Company
+            <h3>Company</h3>
             <input type="text" name="company_name" {...company} onChange={company.handleChange} />
           </div>
           <div className="form-input">
-          Job Title
+            <h3>Job Title</h3>
           <input type="text" name="job_title" {...job} onChange={job.handleChange}/>
           </div>
           <div className="form-input">
-            Status
+            <h3>Status</h3>
             <select name="status" {...status} onChange={status.handleChange} >
               { jobStatus.map(j => (   
                 <>
@@ -50,7 +50,7 @@ const JobForm = (props) => {
             </select>
           </div>
           <div className="form-input">
-            Color
+            <h3>Color</h3>
             <select name="color" {...color} onChange={color.handleChange} >
               { colors.map(c => (   
                 <>
