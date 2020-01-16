@@ -1,6 +1,7 @@
 import React from 'react';
 import { AuthConsumer, } from "../providers/AuthProvider";
 import Dropzone from 'react-dropzone';
+import Navbar from "./Navbar";
 
 
 class Register extends React.Component {
@@ -28,6 +29,7 @@ class Register extends React.Component {
     return (
       <segment className="login-main-container">
         <div className="login-container register">
+          <Navbar />
           <h1>Sign Up</h1>
           <form 
             className="login-form-container" 

@@ -5,7 +5,7 @@ import Home from './components/Home';
 import Jobs from './components/Jobs';
 import Modal from './components/Modal';
 import NoMatch from './components/NoMatch';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Notes from './components/Notes'
 import NotesForm from './components/NotesForm';
 import Login from './components/Login';
@@ -27,7 +27,7 @@ import JobAppsGraph from "./components/JobAppsGraph";
 
 const App = () => (
   <>
-    <Navbar />
+    {/* <Navbar /> */}
     <FetchUser>
       <div>
         <Switch>

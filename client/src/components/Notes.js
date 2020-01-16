@@ -57,7 +57,7 @@ const Notes = (props) => {
     return (
       notes.map((note, index) => (
         <>
-        <div className="note-card">
+        <div key={note.id} className="note-card">
           <p>
             {note.body}
           </p>

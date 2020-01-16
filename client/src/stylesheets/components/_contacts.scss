@@ -11,25 +11,66 @@
   --theme-purple-main: #564256;
   --theme-yellow-main: #f2f3d9;
 }
-.contacts {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
 
-  li {
+.main-contact-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .contacts {
     display: flex;
-    justify-content: space-between;
-    padding: 1.5rem;
-    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 2rem 4rem;
+    .contact-card {
+      display: flex;
+      padding: 1rem;
+      flex-direction: column;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 7px;
+      border-color: var(--gray-2);
+      background-color: var(--gray-1);
+
+      .contact-content {
+        display: flex;
+        align-items: center;
+
+        h4 {
+          margin-right: 10px;
+          width: 100px;
+        }
+       
+      }
+      .desc {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h3 {
+        width: 140px;
+      }
+
+      li, h4 {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.contact-form {
+  h3 {
+    width: 140px;
   }
 }
 
 .contact-btns {
   display: flex;
-  margin: 10px 0;
+  margin-top: 1rem;
 
-  button {
-    padding: 5px;
-    margin-right: 5px;
+  .contact-btn {
+    margin: 0 1rem 0 0;
   }
 }
