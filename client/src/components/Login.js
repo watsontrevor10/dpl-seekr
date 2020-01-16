@@ -1,5 +1,7 @@
 import React from 'react';
 import { AuthConsumer, } from "../providers/AuthProvider";
+import Navbar from "./Navbar";
+
 
 class Login extends React.Component {
   state = { email: '', password: '' }
@@ -19,8 +21,10 @@ class Login extends React.Component {
     const { email, password, } = this.state;
 
     return (
+      <>
       <segment className="login-main-container">
         <div className="login-container">
+          <Navbar login={this.state}/>
           <h1>Login</h1>
           <form
             className="login-form-container"
@@ -52,6 +56,7 @@ class Login extends React.Component {
           </form>
         </div>
       </segment>
+      </>
     )
   }
 }
