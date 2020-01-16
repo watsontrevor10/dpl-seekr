@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, withRouter, } from 'react-router-dom'
 import axios from "axios";
 import Chart from "react-google-charts";
+import Moment from 'react-moment';
 
 
 class JobGraph extends React.Component {
@@ -10,8 +11,9 @@ class JobGraph extends React.Component {
   componentDidMount() {
     axios.post('/api/jobs/apps_over_time', this.state)
       .then(res => {
-        this.setState({ totalApps: res.data })
-        this.loop(); 
+        this.setState({ totalApps: res.data }, () => {
+          this.loop()
+        })
       })
   }
 
@@ -37,15 +39,6 @@ class JobGraph extends React.Component {
             data={[
               ['Week', 'Applications'],
               ...this.state.data
-            ]}
-            formatters={[
-              {
-                type: 'DateFormat',
-                xAxis: 'Week',
-                options: {
-                  formatType: 'short',
-                },
-              }
             ]}
             options={{
               colors: ['#151E3F'],

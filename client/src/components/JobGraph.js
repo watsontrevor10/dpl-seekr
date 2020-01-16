@@ -10,8 +10,10 @@ class JobGraph extends React.Component {
   componentDidMount() {
     axios.post('/api/jobs/job_graph', this.state)
       .then(res => {
-        this.setState({ totalJobs: res.data })
-        this.loop(); 
+        this.setState({ totalJobs: res.data }, () => {
+          this.loop();
+        })
+         
       })
   }
 
