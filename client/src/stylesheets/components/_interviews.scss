@@ -1,0 +1,55 @@
+:root {
+  --main-font-family: sans-serif;
+
+  --white: #fff;
+  --gray-1: #faf9f9;
+  --gray-2: #c9c9c9;
+
+  --theme-blue-main: #151E3F;
+  --theme-dark-main: #030027;
+  --theme-gray-main: #96939b;
+  --theme-purple-main: #564256;
+  --theme-yellow-main: #f2f3d9;
+
+  --blue: #2d3a66;
+  --blue-3: #5e55c3;
+  --dark-blue: #070059;
+  --dark-purple: #3d1a68;
+  --purple: #5e2d5e;
+  --beige: #C7C7B2;
+  --red: #da5740;
+}
+
+div.interviews-card {
+  list-style: none;
+  display: flex;
+  align-items: left;
+  margin: 10px;
+  background-color: var(--dark-purple);
+  border-radius: 7px;
+  width: 40%;
+  color: var(--white);
+}
+
+div.interviews-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem; 
+}
+
+div.interview-card-container {
+  display: flex;
+  margin-left: 3rem;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+button.interviews-add-btn {
+  margin: .3rem;
+  padding: 5px 5px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: var(--blue-3);
+  color: var(--white);
+  border-style: none;
+}

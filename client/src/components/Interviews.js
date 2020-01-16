@@ -49,20 +49,38 @@ const Interviews = (props) => {
     <>
       <h2 className="form-heading">Interviews</h2>
       {
-        form ? 
-        <InterviewForm job_id={props.id} handleUpdate={handleUpdate} toggleForm={toggleForm} interview={currentInterview} handleCancel={handleCancel} />
-        :
-        <>
-          <button onClick={toggleForm}>Add</button>
-          {interviews.map(interview => (
-            <Interview interview={interview} handleUpdate={handleUpdate} handleDelete={handleDelete} handleEdit={handleEdit} />
-          ))
-          }
-        </>
+        form ?
+          <InterviewForm
+            job_id={props.id}
+            handleUpdate={handleUpdate}
+            toggleForm={toggleForm}
+            interview={currentInterview}
+            handleCancel={handleCancel}
+          />
+          :
+          <>
+            <button
+              className="jobinfo-save-btn"
+              onClick={toggleForm}
+            >
+              Add
+          </button>
+            <div className="interview-card-container">
+              {interviews.map(interview =>
+                <div className="interviews-card">
+                  <Interview
+                    interview={interview}
+                    handleUpdate={handleUpdate}
+                    handleDelete={handleDelete}
+                    handleEdit={handleEdit}
+                  />
+                </div>
+              )}
+            </div>
+          </>
       }
     </>
   )
 };
-
 
 export default Interviews

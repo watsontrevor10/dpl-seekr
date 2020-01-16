@@ -61,17 +61,17 @@ const InterviewForm = props => {
         </div>
       </div>
       <button 
-        className="jobinfo-save-btn"
+        className="interviews-add-btn"
         type="submit"
       >
-        save
+        Save
       </button>
       <button
-        className="jobinfo-save-btn"
+        className="interviews-add-btn"
         onClick={props.handleCancel}
         type="submit"
       >
-        cancel
+        Cancel
       </button>
       </form>
     </>
