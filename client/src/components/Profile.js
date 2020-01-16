@@ -3,6 +3,7 @@ import { AuthConsumer, } from "../providers/AuthProvider"
 import Dropzone from 'react-dropzone'
 import ProfileSidebar from "./ProfileSidebar"
 import MobileMenu from "./MobileMenu"
+import axios from 'axios'
 
 
 
@@ -83,7 +84,7 @@ class Profile extends React.Component {
                                     <center><p>Upload Image</p></center>
                                 }
                               </div>
-                            ) 
+                            )
                           }}
                         </Dropzone>
                       </div>
