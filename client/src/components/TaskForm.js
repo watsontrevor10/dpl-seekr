@@ -51,15 +51,6 @@ const TaskForm = (props) => {
               value={due_date}
             />
           </div>
-          <div className="form-input">
-            <h3>Completed Date</h3>
-            <input
-              type="date"
-              name="completed_date"
-              onChange={handleChange}
-              value={completed_date}
-            />
-          </div>
         </div>
         <button 
           className="jobinfo-save-btn"
