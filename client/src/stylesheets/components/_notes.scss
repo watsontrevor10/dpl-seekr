@@ -37,15 +37,11 @@
   color: var(--white);
   border-style: none;
 }
-.form-container-notes {
+.notesview-form.info {
+  margin: 2rem;
+  width: inherit;
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  font-size: 0.8rem;
-  font-weight: 200;
-  width: calc(100% - 4rem);
 }
 
 textarea {
@@ -58,4 +54,45 @@ textarea {
   height: 6rem;
   display: flex;
   flex-grow: 1;
+}
+.note-inputs {
+  display: flex;
+}
+.note-card {
+  background-color: var(--gray-2);
+  color: black;
+  list-style: none;
+  align-items: center;
+  margin: 2rem;
+  border-radius: 5px;
+  width: 25%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.notes-render-container {
+  display: flex; 
+  flex-wrap: wrap;
+}
+.note-card-btn-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1rem;
+  width: inherit;
+}
+.note-card-button {
+  padding: 5px 5px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: var(--blue-3);
+  color: var(--white);
+  border-style: none;
+}
+.notes-card-btns-flex {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
 }
