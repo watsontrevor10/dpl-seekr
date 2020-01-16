@@ -37,7 +37,7 @@ class TaskClass extends React.Component {
       <>
       <div className="task-container">
         <div className="heading-container">
-          <h2>Interviews Due</h2>
+          <h2>Upcoming Interviews</h2>
             <select onChange={this.handleChange} value={dueDate}>
               <option value='1'>Today</option>
               <option value='7'>7 Days</option>
@@ -50,8 +50,8 @@ class TaskClass extends React.Component {
               <div className="task-card" style={{backgroundColor: `${this.random()}`}}>
                 <div className="task-content" key={interview.id}>
                   <h3>{interview.job_title}</h3>
-                  <p>{interview.subject}</p>
                   <p>{interview.date}</p>
+                  <p>{interview.subject}</p>
                   <p>{interview.company_name}</p>
                 </div>
               </div>

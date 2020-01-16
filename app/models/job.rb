@@ -50,11 +50,12 @@ class Job < ApplicationRecord
 
   def self.apps_over_time(id)
     find_by_sql(["
-      SELECT date_trunc('week', date_applied::date) AS weekly,
-      COUNT(date_applied)           
+      SELECT date_applied AS date,
+      COUNT(created_at)           
       FROM jobs
-      GROUP BY weekly
-      ORDER BY weekly
+      WHERE status <> 'archived'
+      GROUP BY date
+      ORDER BY date
     ", id])
   end
 

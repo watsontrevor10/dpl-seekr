@@ -23,11 +23,9 @@ const Dashboard = (props) => {
               <Link to="/board">
                 <JobGraph />
               </Link>
-            <div className="board-link">
               <Link to="/board">
                 <JobAppsGraph />
               </Link>
-            </div>
             </div>
             <div className="board-link">
               <TasksDue />
