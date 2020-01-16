@@ -57,17 +57,21 @@ const Notes = (props) => {
     return (
       notes.map((note, index) => (
         <>
+        <div className="note-card">
           <p>
             {note.body}
           </p>
-
-          <button onClick={() => handleRemove(note.id)}>
-            Delete
-          </button>
-          <button onClick={() => toggleEditForm(index)}>
-            Edit
-          </button>
-          <br />
+          <div className="notes-card-btns-flex">
+            <div className="note-card-btn-div">
+              <button onClick={() => handleRemove(note.id)} className="note-card-button">
+                Delete
+              </button>
+              <button onClick={() => toggleEditForm(index)} className="note-card-button">
+                Edit
+              </button>
+            </div>
+          </div>
+        </div>
         </>
       ))
     )
@@ -94,7 +98,7 @@ const Notes = (props) => {
           note={noteEdit}
           update={handleUpdate}
           />
-          : renderNotes()
+          :<div className="notes-render-container">{renderNotes()}</div>
         }
     </div>
     </>
