@@ -4,7 +4,9 @@ import Task from './Task';
 import TaskForm from './TaskForm';
 
 const Tasks = (props) => {
+  const [currentTask, setCurrentTask] = useState(null);
   const [tasks, setTasks] = useState([]);
+  const [form, setForm] = useState(false);
 
   useEffect(() => {
     axios.get(`/api/jobs/${props.id}/tasks/`)
@@ -17,7 +19,14 @@ const Tasks = (props) => {
     axios.get(`/api/jobs/${props.id}/tasks`)
       .then(res => {
         setTasks(res.data);
+        setCurrentTask(null);
+        setForm(false);
       })
+  };
+
+  const handleEdit = (task) => {
+    setCurrentTask(task);
+    toggleForm();
   };
 
   const handleDelete = (id) => {
@@ -27,13 +36,29 @@ const Tasks = (props) => {
       })
   };
 
+  const handleCancel = () => {
+    setForm(false);
+    setCurrentTask(null);
+  }
+
+  const toggleForm = () => {
+    setForm(!form);
+  };
+
   return (
     <>
       <h2 className="form-heading">Tasks</h2>
-      <TaskForm job_id={props.id} handleUpdate={handleUpdate} />
-      {tasks.map(task => (
-        <Task task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} />
-      ))
+      {
+        form ?
+        <TaskForm job_id={props.id} handleUpdate={handleUpdate} toggleForm={toggleForm} task={currentTask} handleCancel={handleCancel} />
+        :
+        <>
+        <button onClick={toggleForm}>Add</button>
+        {tasks.map(task => (
+          <Task task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} handleEdit={handleEdit}/>
+        ))
+        }
+        </>
       }
     </>
   )
