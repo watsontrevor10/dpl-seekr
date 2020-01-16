@@ -1,7 +1,7 @@
 class Api::JobsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_job, only: [:show, :update, :destroy]
-  before_action :set_user_id, only: [:tasks_due, :upcoming_interviews, :index, :job_graph]
+  before_action :set_user_id, only: [:tasks_due, :upcoming_interviews, :index, :job_graph, :apps_over_time]
   
   
   def index
@@ -17,6 +17,10 @@ class Api::JobsController < ApplicationController
     render json: current_user.jobs.total_jobs(@user_id)
   end
   
+  def apps_over_time
+    render json: current_user.jobs.apps_over_time(@user_id)
+  end
+
   def upcoming_interviews
     render json: current_user.jobs.upcoming_interviews(@user_id, params[:filter_date])
   end

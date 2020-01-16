@@ -2,27 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { Link, withRouter, } from 'react-router-dom'
 import axios from "axios";
 import Chart from "react-google-charts";
+import Moment from 'react-moment';
 
 
 class JobGraph extends React.Component {
-  state = { totalJobs: [], data: [] }
+  state = { totalApps: [], data: [] }
 
   componentDidMount() {
-    axios.post('/api/jobs/job_graph', this.state)
+    axios.post('/api/jobs/apps_over_time', this.state)
       .then(res => {
-        this.setState({ totalJobs: res.data }, () => {
-          this.loop();
+        this.setState({ totalApps: res.data }, () => {
+          this.loop()
         })
-         
       })
   }
 
   loop = () => {
+    // let dateFormat = <Moment format='YY-MM-DD'>{this.state.totalApps.weekly}</Moment>
     const dataType = []
-      this.state.totalJobs.map(j => {
-      dataType.push([j.status, j.totals])
-       })
-     this.setState({data: dataType})
+    this.state.totalApps.map(j => {
+      dataType.push([
+        j.weekly,
+        j.count])
+    })
+    this.setState({ data: dataType })
   }
 
 
@@ -32,20 +35,22 @@ class JobGraph extends React.Component {
       <>
         <div>
           <Chart
-            width={'610px'}
-            height={'400px'}
-            chartType="Bar"
+            width={'500px'}
+            height={'300px'}
+            chartType="AreaChart"
             loader={<div>Loading Chart</div>}
             data={[
-              ['Status', 'Totals'],
+              ['Week', 'Applications'],
               ...this.state.data
             ]}
             options={{
+              hAxis: {
+                format: 'mm',
+              },
               colors: ['#151E3F'],
               // Material design options
-              colors: ['#3d1a68'],
               chart: {
-                title: 'Total Applications',
+                title: 'Weekly Applications Submitted',
               },
             }}
             // For tests

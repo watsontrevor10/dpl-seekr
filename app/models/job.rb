@@ -47,6 +47,24 @@ class Job < ApplicationRecord
       ORDER BY totals
     ", id])
   end
+
+  def self.apps_over_time(id)
+    find_by_sql(["
+      SELECT date_trunc('week', date_applied::date) AS weekly,
+      COUNT(date_applied)           
+      FROM jobs
+      GROUP BY weekly
+      ORDER BY weekly
+    ", id])
+  end
+
+  # SELECT date_applied, COUNT(*) as totals
+  #     FROM jobs 
+  #     WHERE 
+  #       user_id = ? 
+  #       AND status <> 'archived'
+  #     GROUP BY date_applied
+
   private
 
   def self.archive(id)

@@ -1,8 +1,12 @@
-import React, { Fragment, } from 'react';
-import { AuthConsumer, } from "../providers/AuthProvider";
-import Dropzone from 'react-dropzone';
+import React, { Fragment, } from 'react'
+import { AuthConsumer, } from "../providers/AuthProvider"
+import Dropzone from 'react-dropzone'
+import Sidebar from "./Sidebar"
+import MobileMenu from "./MobileMenu"
 
-const defaultImage = 'https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png';
+
+
+const defaultImage = 'https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png'
 
 class Profile extends React.Component {
   state = { editing: false, formValues: { name: '', email: '', }, };
@@ -11,55 +15,111 @@ class Profile extends React.Component {
     this.setState({ formValues: { ...this.state.formValues, file: files[0], } });
   }
 
+  profileView = () => {
+    const { auth: { user }, } = this.props;
+    return (
+      <>
+        <div className="main-home-container">
+          <div style={profileContainer}>
+            <div className="main-sidebar-container">
+              <Sidebar />
+            </div>
+            <div style={profilePadding}>
+              <div className="mobile-menu-container">
+                <MobileMenu />
+              </div>
+              <div>
+                <img style={profilepic} src={user.image || defaultImage} />
+              </div>
+              <div style={namePad}>
+                <h1>{user.name}</h1>
+                <br />
+                <h4>{user.email}</h4>
+                <button style={btn} onClick={this.toggleEdit}>Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    )
+  }
+
   editView = () => {
     const { auth: { user }, } = this.props;
     const { formValues: { name, email } } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div width={4}>
-        </div>
-        <div width={8}>
-          <input
-            label="Name"
-            name="name"
-            placeholder="Name"
-            value={name}
-            required
-            onChange={this.handleChange}
-          />
-          <br />
-          <input
-            label="Email"
-            name="email"
-            placeholder="Email"
-            value={email}
-            required
-            onChange={this.handleChange}
-          />
-          <Dropzone
-            onDrop={this.onDrop}
-            multiple={false}
+      <>
+        <div className="main-home-container">
+          <div style={profileContainer}>
+            <div className="main-sidebar-container">
+              <Sidebar />
+            </div>
+            <div style={profilePadding}>
+              <div className="mobile-menu-container">
+                <MobileMenu />
+              </div>
+              <div>
+                <form onSubmit={this.handleSubmit}>
+                  <div>
+                    <div>
+                      <div style={drop}>
+                        <Dropzone
+                          onDrop={this.onDrop}
+                          multiple={false}
+                          disableClick
+                        >
+                          {({ getRootProps, getInputProps, isDragActive }) => {
+                            return (
+                              <div
+                                {...getRootProps()}
+                                style={styles.dropzone}
+                              >
+                                <input {...getInputProps()} />
+                                {
+                                  isDragActive ?
+                                    <p>Drop files here...</p> :
+                                    <center><p>Image Goes Here</p></center>
+                                }
+                              </div>
+                            )
+                          }}
+                        </Dropzone>
+                      </div>
+                    </div>
 
-          >
-            {({ getRootProps, getInputProps, isDragActive }) => {
-              return (
-                <div
-                  {...getRootProps()}
-                  style={styles.dropzone}
-                >
-                  <input {...getInputProps()} />
-                  {
-                    isDragActive ?
-                      <p>Drop files here...</p> :
-                      <center><p>Image Goes Here (MAX 10 MB)</p></center>
-                  }
-                </div>
-              )
-            }}
-          </Dropzone>
-          <button>Update</button>
+                    <div style={edit}>
+                      <input
+                        label="Name"
+                        name="name"
+                        placeholder="Name"
+                        value={name}
+                        required
+                        style={{ display: 'flex', flexGrow: '1' }}
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                    <div style={edit}>
+                      <input
+                        label="Email"
+                        name="email"
+                        placeholder="Email"
+                        value={email}
+                        required
+                        style={{ display: 'flex', flexGrow: '1' }}
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                    <div style={drop}>
+                      <button style={btn}>Update</button>
+                      <button style={btn} onClick={this.toggleEdit}>Cancel</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-      </form>
+      </>
     )
   }
 
@@ -79,16 +139,12 @@ class Profile extends React.Component {
     })
   }
 
-  profileView = () => {
-    const { auth: { user }, } = this.props;
+  render() {
+    const { editing, } = this.state;
     return (
       <>
-        <div width={4}>
-          <img style={profilepic} src={user.image || defaultImage} />
-        </div>
-        <div width={8}>
-          <h1>{user.name}</h1>
-          <h1>{user.email}</h1>
+        <div style={profileContainer}>
+          {editing ? this.editView() : this.profileView()}
         </div>
       </>
     )
@@ -113,46 +169,94 @@ class Profile extends React.Component {
     });
   }
 
-  render() {
-    const { editing, } = this.state;
-    return (
-      <>
-        <br />
-        <div>
-          {editing ? this.editView() : this.profileView()}
-          <div>
-            <button onClick={this.toggleEdit}>{editing ? 'Cancel' : 'Edit'}</button>
-          </div>
-        </div>
-      </>
-    )
-  }
+
 }
 
 const ConnectedProfile = (props) => (
-  <AuthConsumer>
-    {auth =>
-      <Profile {...props} auth={auth} />
-    }
-  </AuthConsumer>
+  <>
+    <AuthConsumer>
+      {auth =>
+        <Profile {...props} auth={auth} />
+      }
+    </AuthConsumer>
+  </>
 )
 
 const profilepic = {
-  height: '300px',
-  width: '300px',
-  borderRadius: '150px'
+  height: '200px',
+  width: '200px',
+  borderRadius: '150px',
+}
+
+const namePad = {
+  margin: '1.5rem'
+}
+
+const drop = {
+  margin: '2.5rem',
+}
+
+const profileContainer = {
+  display: 'flex',
+}
+
+const profilePadding = {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignContent: 'center',
+  alignItems: 'center',
+  height: 'fit-content',
+  padding: '5rem',
+  placeContent: 'center',
+  borderRadius: '10px',
+  color: 'white',
+  margin: '5rem',
+  backgroundColor: '#675e84'
+}
+
+const edit = {
+  backgroundColor: 'var(--gray - 4)',
+  border: 'none',
+  padding: '0.3rem',
+  borderRadius: '5px',
+  transition: 'all .2s',
+  transitionProperty: 'all',
+  transitionDuration: '0.2s',
+  transitionTimingFunction: 'ease',
+  transitionDelay: '0s',
+  margin: '0.2rem',
+  fontSize: '0.8rem',
+  maxWidth: '36rem',
+  display: 'flex',
+}
+
+const btn = {
+  backgroundColor: 'var(--gray-4)',
+  border: 'none',
+  padding: '0.3rem',
+  borderRadius: '5px',
+  transition: 'all .2s',
+  transitionProperty: 'all',
+  transitionDuration: '0.2s',
+  transitionTimingFunction: 'ease',
+  transitionDelay: '0s',
+  margin: '0.2rem',
+  fontSize: '0.8rem',
+  width: '6rem',
 }
 
 const styles = {
   dropzone: {
-    height: "150px",
-    width: "150px",
-    border: "1px dashed black",
-    borderRadius: "75px",
+    height: "200px",
+    width: "200px",
+    border: "2px dashed black",
+    borderRadius: "150px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     padding: "10px",
+
   },
 }
 

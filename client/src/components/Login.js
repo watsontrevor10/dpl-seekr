@@ -34,6 +34,7 @@ class Login extends React.Component {
               value={email}
               placeholder='Email'
               onChange={this.handleChange}
+              className="login-input"
             />
             <input
               label="Password"
@@ -43,6 +44,7 @@ class Login extends React.Component {
               placeholder='Password'
               type='password'
               onChange={this.handleChange}
+              className="login-input"
             />
             <segment textAlign='center' basic>
               <button primary type='submit'>Continue</button>
