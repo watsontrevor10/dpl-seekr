@@ -3,6 +3,7 @@ import { Link, withRouter, } from 'react-router-dom'
 import TasksDue from './TasksDue'
 import UpcomingInt from './UpcomingInt'
 import JobGraph from "./JobGraph"
+import JobAppsGraph from "./JobAppsGraph"
 import ListContainer from './ListContainer';
 import axios from "axios";
 import HomeNav from "./HomeNav";
@@ -22,6 +23,11 @@ const Dashboard = (props) => {
               <Link to="/board">
                 <JobGraph />
               </Link>
+            <div className="board-link">
+              <Link to="/board">
+                <JobAppsGraph />
+              </Link>
+            </div>
             </div>
             <div className="board-link">
               <TasksDue />
