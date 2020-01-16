@@ -18,27 +18,33 @@ class Navbar extends React.Component {
           </button>
         </nav>
       )
-    } else {
+    } else if (this.props.login) {
       return (
         <nav>
-          <Link to='/login'>
-            <button
-              className='nav-login-btn'
-              id='login'
-              name='login'
-              active={location.pathname === '/login'}
-            >
-              login
-            </button>
-          </Link>
           <Link to='/register'>
             <button
               id='register'
               name='register'
               active={location.pathname === '/register'}
-            >sign up</button>
+              > sign up</button>
           </Link>
         </nav>
+      )
+    }
+    else {
+      return(
+        <nav>
+        <Link to='/login'>
+          <button
+            className='nav-login-btn'
+            id='login'
+            name='login'
+            active={location.pathname === '/login'}
+          >
+            login
+          </button>
+        </Link>
+      </nav>
       )
     }
   }
