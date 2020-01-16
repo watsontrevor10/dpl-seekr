@@ -83,7 +83,7 @@ const ContactForm = (props) => {
               type='text'
               name='email'
               label='Email'
-              value={contact.email}
+              value={email}
               {...email}
               onChange={handleChange}
             />
@@ -94,7 +94,7 @@ const ContactForm = (props) => {
               type='text'
               name='position'
               label='position'
-              value={contact.position}
+              value={position}
               {...position}
               onChange={handleChange}
             />
@@ -105,7 +105,7 @@ const ContactForm = (props) => {
               type='text'
               name='department'
               label='department'
-              value={contact.department}
+              value={department}
               {...department}
               onChange={handleChange}
             />
@@ -116,7 +116,7 @@ const ContactForm = (props) => {
               type='text'
               name='description'
               label='description'
-              value={contact.description}
+              value={description}
               {...description}
               onChange={handleChange}
             />
