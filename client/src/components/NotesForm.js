@@ -41,32 +41,30 @@ const NotesForm = (props) => {
   if (note) {
     // edit form
     return (
-      <div className="form-container">
-        <form onSubmit={submit}>
+      <div className="form-container-notes">
+        <form onSubmit={submit} className="notesview-form info">
           Note
-          <input
-            type="textarea"
+          <textarea
             name="body"
             value={body}
             {...body}
             onChange={handleChange}
           />
-          <input type="submit" value='Save' />
+          <button type="submit" value="Submit" className="note-save-btn" >Save</button>
         </form>
       </div>
     )
   } else {
     // add form
     return (
-      <div className="form-container">
-        <form onSubmit={submit}>
-          <input
-            type="textarea"
+      <div className="form-container-notes">
+        <form onSubmit={submit} className="notesview-form info">
+          <textarea
             name="body"
             {...body}
             onChange={handleChange}
           />
-          <input type="submit" value="Save" />
+          <button type="submit" value="Submit" className="note-save-btn" >Save</button>
         </form>
       </div>
     )
