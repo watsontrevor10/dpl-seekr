@@ -43,7 +43,7 @@ const ContactForm = (props) => {
     return (
       <div>
         <form onSubmit={submit}>
-          <p>First Name: </p>
+          <p>First Name </p>
           <input
             type='text'
             name='first_name'
@@ -52,7 +52,7 @@ const ContactForm = (props) => {
             {...first_name}
             onChange={handleChange}
           />
-          <p>Last Name: </p>
+          <p>Last Name </p>
           <input
             type='text'
             name='last_name'
@@ -61,7 +61,7 @@ const ContactForm = (props) => {
             {...last_name}
             onChange={handleChange}
           />
-          <p>Phone: </p>
+          <p>Phone </p>
           <input
             type='text'
             name='phone'
@@ -70,7 +70,7 @@ const ContactForm = (props) => {
             {...phone}
             onChange={handleChange}
           />
-          <p>Email: </p>
+          <p>Email </p>
           <input
             type='text'
             name='email'
@@ -79,7 +79,7 @@ const ContactForm = (props) => {
             {...email}
             onChange={handleChange}
           />
-          <p>Position: </p>
+          <p>Position </p>
           <input
             type='text'
             name='position'
@@ -88,7 +88,7 @@ const ContactForm = (props) => {
             {...position}
             onChange={handleChange}
           />
-          <p>Department: </p>
+          <p>Department </p>
           <input
             type='text'
             name='department'
@@ -97,7 +97,7 @@ const ContactForm = (props) => {
             {...department}
             onChange={handleChange}
           />
-          <p>Description: </p>
+          <p>Description </p>
           <input
             type='text'
             name='description'
