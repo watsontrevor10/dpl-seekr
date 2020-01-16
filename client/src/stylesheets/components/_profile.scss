@@ -35,6 +35,49 @@
   animation-name: moveInBottom; /*defined*/
   animation-duration: 0.6s;
   animation-timing-function: ease-in-out;
+
+}
+.profile-sidebar {
+  padding:0;
 }
 
+.profile {
+    place-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 4rem;
+    color: #252424;
+    background-color: faf9f9;
+}
 
+.profileedit {
+  place-content: center;
+  align-items: center;
+  height: fit-content;
+  padding: 1.75rem;
+  color: #252424;
+  background-color: #faf9f9;
+}
+
+.btn {
+  background-color: #564256;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 5px;
+  transition: all 0.2s ease 0s;
+  margin: 0.2rem;
+  font-size: 0.8rem;
+  width: 6rem;
+  color: #faf9f9;
+}
+
+.edit {
+    border: none;
+    padding: 0.3rem;
+    border-radius: 5px;
+    transition: all 0.2s ease 0s;
+    margin: 0.2rem;
+    font-size: 0.8rem;
+    max-width: 36rem;
+    display: flex;
+}
