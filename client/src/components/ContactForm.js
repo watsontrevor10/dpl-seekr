@@ -41,139 +41,190 @@ const ContactForm = (props) => {
   if (contact) {
     // Edit Form
     return (
-      <div>
-        <form onSubmit={submit}>
-          <p>First Name </p>
-          <input
-            type='text'
-            name='first_name'
-            label='First Name'
-            value={first_name}
-            {...first_name}
-            onChange={handleChange}
-          />
-          <p>Last Name </p>
-          <input
-            type='text'
-            name='last_name'
-            label='Last Name'
-            value={last_name}
-            {...last_name}
-            onChange={handleChange}
-          />
-          <p>Phone </p>
-          <input
-            type='text'
-            name='phone'
-            label='Phone'
-            value={phone}
-            {...phone}
-            onChange={handleChange}
-          />
-          <p>Email </p>
-          <input
-            type='text'
-            name='email'
-            label='Email'
-            value={contact.email}
-            {...email}
-            onChange={handleChange}
-          />
-          <p>Position </p>
-          <input
-            type='text'
-            name='position'
-            label='position'
-            value={contact.position}
-            {...position}
-            onChange={handleChange}
-          />
-          <p>Department </p>
-          <input
-            type='text'
-            name='department'
-            label='department'
-            value={contact.department}
-            {...department}
-            onChange={handleChange}
-          />
-          <p>Description </p>
-          <input
-            type='text'
-            name='description'
-            label='description'
-            value={contact.description}
-            {...description}
-            onChange={handleChange}
-          />
-          <input type='submit' name='Update' />
+      <>
+        <form onSubmit={submit} className="jobview-form contact-form">
+        <div className="all-inputs">
+          <div className="form-input">
+            <h3>First Name</h3>
+            <input
+              type='text'
+              name='first_name'
+              label='First Name'
+              value={first_name}
+              {...first_name}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-input">
+            <h3>Last Name</h3>
+            <input
+              type='text'
+              name='last_name'
+              label='Last Name'
+              value={last_name}
+              {...last_name}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-input">
+            <h3>Phone</h3>
+            <input
+              type='text'
+              name='phone'
+              label='Phone'
+              value={phone}
+              {...phone}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-input">
+            <h3>Email</h3>
+            <input
+              type='text'
+              name='email'
+              label='Email'
+              value={contact.email}
+              {...email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-input">
+            <h3>Position</h3>
+            <input
+              type='text'
+              name='position'
+              label='position'
+              value={contact.position}
+              {...position}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-input">
+            <h3>Department</h3>
+            <input
+              type='text'
+              name='department'
+              label='department'
+              value={contact.department}
+              {...department}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-input">
+            <h3>Description</h3>
+            <input
+              type='text'
+              name='description'
+              label='description'
+              value={contact.description}
+              {...description}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <button 
+              className="jobinfo-save-btn info"
+              type="submit" value="Submit"
+            > 
+              save
+            </button>
+          </div>
+          </div>
         </form>
-      </div>
+      </>
     )
   } else {
     // Add Form
     return (
-      <div>
-        <form onSubmit={submit}>
-          <input
-            type='text'
-            name='first_name'
-            label='First Name'
-            placeholder='First Name'
-            {...first_name}
-            onChange={handleChange}
-          />
-          <input
-            type='text'
-            name='last_name'
-            label='Last Name'
-            placeholder='Last Name'
-            {...last_name}
-            onChange={handleChange}
-          />
-          <input
-            type='text'
-            name='phone'
-            label='Phone'
-            placeholder='Phone'
-            {...phone}
-            onChange={handleChange}
-          />
-          <input
-            type='text'
-            name='email'
-            label='Email'
-            placeholder='Email'
-            {...email}
-            onChange={handleChange}
-          />
-          <input
-            type='text'
-            name='position'
-            label='position'
-            placeholder='position'
-            {...position}
-            onChange={handleChange}
-          />
-          <input
-            type='text'
-            name='department'
-            label='department'
-            placeholder='department'
-            {...department}
-            onChange={handleChange}
-          />
-          <input
-            type='text'
-            name='description'
-            label='description'
-            placeholder='description'
-            {...description}
-            onChange={handleChange}
-          />
-          <input type='submit' name='Submit' />
+      <>
+        <form onSubmit={submit} className="jobview-form contact-form">
+          <div className="all-inputs">
+            <div className="form-input">
+              <h3>First Name </h3>
+              <input
+                type='text'
+                name='first_name'
+                label='First Name'
+                placeholder='First Name'
+                {...first_name}
+                onChange={handleChange}
+              />
+            </div> 
+            <div className="form-input"> 
+              <h3>Last Name </h3>
+              <input
+                type='text'
+                name='last_name'
+                label='Last Name'
+                placeholder='Last Name'
+                {...last_name}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <h3>Phone</h3>
+              <input
+                type='text'
+                name='phone'
+                label='Phone'
+                placeholder='Phone'
+                {...phone}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <h3>Email</h3>
+              <input
+                type='text'
+                name='email'
+                label='Email'
+                placeholder='Email'
+                {...email}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <h3>Position</h3>
+              <input
+                type='text'
+                name='position'
+                label='position'
+                placeholder='position'
+                {...position}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <h3>Department</h3>
+              <input
+                type='text'
+                name='department'
+                label='department'
+                placeholder='department'
+                {...department}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <h3>Description</h3>
+              <input
+                type='text'
+                name='description'
+                label='description'
+                placeholder='description'
+                {...description}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <button 
+            className="jobinfo-save-btn info"
+            type="submit" value="Submit"
+          > 
+            save
+          </button>
         </form>
-      </div>
+      </>
     )
   }
 }

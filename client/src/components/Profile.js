@@ -3,7 +3,7 @@ import { AuthConsumer, } from "../providers/AuthProvider"
 import Dropzone from 'react-dropzone'
 import ProfileSidebar from "./ProfileSidebar"
 import MobileMenu from "./MobileMenu"
-
+import Sidebar from "./Sidebar"
 
 
 const defaultImage = 'https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png'
@@ -41,7 +41,7 @@ class Profile extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </>
     )
   }
