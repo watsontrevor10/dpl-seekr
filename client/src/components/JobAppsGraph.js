@@ -18,11 +18,14 @@ class JobGraph extends React.Component {
   }
 
   loop = () => {
+    // let dateFormat = <Moment format='YY-MM-DD'>{this.state.totalApps.weekly}</Moment>
     const dataType = []
-      this.state.totalApps.map(j => {
-      dataType.push([j.weekly, j.count])
-       })
-     this.setState({data: dataType})
+    this.state.totalApps.map(j => {
+      dataType.push([
+        j.weekly,
+        j.count])
+    })
+    this.setState({ data: dataType })
   }
 
 
@@ -34,13 +37,16 @@ class JobGraph extends React.Component {
           <Chart
             width={'500px'}
             height={'300px'}
-            chartType="LineChart"
+            chartType="AreaChart"
             loader={<div>Loading Chart</div>}
             data={[
               ['Week', 'Applications'],
               ...this.state.data
             ]}
             options={{
+              hAxis: {
+                format: 'mm',
+              },
               colors: ['#151E3F'],
               // Material design options
               chart: {
