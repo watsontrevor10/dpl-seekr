@@ -1,7 +1,7 @@
 import React, { Fragment, } from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider"
 import Dropzone from 'react-dropzone'
-import Sidebar from "./Sidebar"
+import ProfileSidebar from "./ProfileSidebar"
 import MobileMenu from "./MobileMenu"
 
 
@@ -19,25 +19,25 @@ class Profile extends React.Component {
     const { auth: { user }, } = this.props;
     return (
       <>
-        <div className="main-home-container">
-          <div style={profileContainer}>
-            <div className="main-sidebar-container">
-              <Sidebar />
-            </div>
-            <div style={profilePadding}>
-              <div className="mobile-menu-container">
-                <MobileMenu />
+        <div className="new-job">
+          <div className="main-home-container">
+              <div className="main-sidebar-container">
+                <ProfileSidebar />
               </div>
-              <div>
-                <img style={profilepic} src={user.image || defaultImage} />
+              <div style={profilePadding}>
+                <div className="mobile-menu-container">
+                  <MobileMenu />
+                </div>
+                <div>
+                  <img style={profilepic} src={user.image || defaultImage} />
+                </div>
+                <div style={namePad}>
+                  <h1>{user.name}</h1>
+                  <br />
+                  <h4>{user.email}</h4>
+                  <button style={btn} onClick={this.toggleEdit}>Edit</button>
+                </div>
               </div>
-              <div style={namePad}>
-                <h1>{user.name}</h1>
-                <br />
-                <h4>{user.email}</h4>
-                <button style={btn} onClick={this.toggleEdit}>Edit</button>
-              </div>
-            </div>
           </div>
         </div>
       </>

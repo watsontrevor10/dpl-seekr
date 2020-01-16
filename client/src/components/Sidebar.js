@@ -1,12 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import { AuthConsumer, } from "../providers/AuthProvider";
 import { Link, withRouter, } from 'react-router-dom';
 import home from "../images/internet.png"
 import logout from "../images/ui.png"
+import ProfileModal from "./ProfileModal"
 
 const defaultImage = 'https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png';
- 
+
 const Sidebar = (props) => {
+
+  const [openModal, setOpenModal] = useState(false)
+
+  const show = () => {
+    setOpenModal(true);
+  }
+  const hide = () => {
+    setOpenModal(!openModal);
+  }
+
   const { auth: { user, handleLogout, }, location, } = props;
   return (
     <>
@@ -21,11 +32,14 @@ const Sidebar = (props) => {
           <Link to='/'>
             <img src={home} className="home-icon"></img>
           </Link>
-          <Link to='/profile'>
-            <img style={icon} src={user.image || defaultImage} />
-          </Link>
-            {user.name}
+          <div>
+            <div onClick={show}> <img style={icon} src={user.image || defaultImage} /> </div>
+          </div>
+          {user.name}
         </div>
+
+        {openModal ? <ProfileModal add={props.add} hide={hide} show={openModal}
+        /> : null}
 
         <div className="logout">
           <img
