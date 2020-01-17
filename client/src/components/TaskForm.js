@@ -4,23 +4,24 @@ import useFormInput from '../hooks/useFormInput';
 
 const TaskForm = (props) => {
   const { values, handleChange, handleSubmit, setValues } = useFormInput(submit);
-  const { subject, due_date, completed_date, } = values
+  const { subject, due_date, completed_date, completed} = values
 
   useEffect(() => {
     if (props.task) {
-      setValues({ subject: props.task.subject, due_date: props.task.due_date, completed_date: props.task.completed_date })
+      setValues({ subject: props.task.subject, due_date: props.task.due_date, completed_date: props.task.completed_date, completed: props.task.completed })
     };
   }, []);
 
   function submit() {
-    const newTask = { due_date, subject, completed_date }
     if (props.task) {
+      const newTask = { due_date, subject, completed_date, completed: props.task.completed, }
       axios.put(`/api/jobs/${props.task.job_id}/tasks/${props.task.id}`, newTask)
-        .then(res => {
-          props.handleUpdate();
-          setValues({})
-        })
+      .then(res => {
+        props.handleUpdate();
+        setValues({})
+      })
     } else {
+      const newTask = { due_date, subject, completed_date, completed: false, }
       axios.post(`/api/jobs/${props.job_id}/tasks/`, newTask)
         .then(res => {
           props.handleUpdate();
