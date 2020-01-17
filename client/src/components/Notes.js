@@ -65,12 +65,16 @@ const Notes = (props) => {
           </div>
           <div className="card-btns-flex">
             <div className="card-btn-div">
-              <button onClick={() => handleRemove(note.id)} className="note-card-button">
-                Delete
-              </button>
-              <button onClick={() => toggleEditForm(index)} className="note-card-button">
-                Edit
-              </button>
+              <div className="notes-padding-btn">
+                <button onClick={() => toggleEditForm(index)} className="note-card-button">
+                  Edit
+                </button>
+              </div>
+              <div className="notes-padding-btn">
+                <button onClick={() => handleRemove(note.id)} className="note-card-button">
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
         </div>
