@@ -22,6 +22,7 @@ class Api::TasksController < ApplicationController
     else
       render json: @task.errors
     end
+    # binding.pry
   end
   
   def destroy
@@ -43,6 +44,6 @@ class Api::TasksController < ApplicationController
     end
   
     def task_params
-      params.require(:task).permit(:due_date, :completed_date, :subject)
+      params.require(:task).permit(:due_date, :completed_date, :subject, :completed)
     end
 end
