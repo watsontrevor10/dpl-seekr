@@ -28,15 +28,16 @@
   border-style: none;
 }
 
-.notes-save-btn {
-  margin: 0.6rem 2.3rem;
-  padding: 0px 35px 0px 35px;
-  font-size: 1rem;
-  border-radius: 5px;
-  background-color: var(--blue-3);
-  color: var(--white);
-  border-style: none;
-}
+// .notes-save-btn {
+//   margin: 0.6rem 2.3rem;
+//   padding: 0px 35px 0px 35px;
+//   font-size: 1rem;
+//   border-radius: 5px;
+//   background-color: var(--blue-3);
+//   color: var(--white);
+//   border-style: none;
+// }
+
 .notesview-form.info {
   margin: 2rem;
   width: inherit;
@@ -59,7 +60,11 @@ textarea {
   display: flex;
 }
 .note-card {
-  background-color: var(--gray-2);
+  border-color: var(--gray-5);
+  background-color: var(--gray-1);
+  box-shadow: 3px 4px 20px 0px #e0e0e094;
+  border-style: solid;
+  border-width: 1px;
   color: black;
   list-style: none;
   align-items: center;
@@ -70,18 +75,28 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+   
+  .note-content {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 .notes-render-container {
   display: flex; 
   flex-wrap: wrap;
 }
-.note-card-btn-div {
+.card-btn-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-top: 1rem;
   width: inherit;
+}
+.card-btns-flex {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
 }
 .note-card-button {
   padding: 5px 5px;
@@ -91,8 +106,12 @@ textarea {
   color: var(--white);
   border-style: none;
 }
-.notes-card-btns-flex {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
+
+@media screen and (max-width: 550px) {
+  .notes-container {
+    justify-content: space-around;
+    h2.notes-header, button.jobinfo-save-btn {
+      margin: 1rem;
+    }
+  }
 }

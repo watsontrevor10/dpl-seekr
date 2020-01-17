@@ -32,9 +32,9 @@
   top: 5%;
   box-sizing: border-box;
   overflow: auto;
-  width: 50rem;
+  width: 70%;
   min-height: 15rem;
-  left: calc(50% - 25rem);
+  left: calc(50% - 35%);
 
   animation-name: moveInBottom; /*refers to @keyframes name*/
   animation-duration: 0.6s;

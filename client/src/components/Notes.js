@@ -58,11 +58,13 @@ const Notes = (props) => {
       notes.map((note, index) => (
         <>
         <div key={note.id} className="note-card">
-          <p>
-            {note.body}
-          </p>
-          <div className="notes-card-btns-flex">
-            <div className="note-card-btn-div">
+          <div className="note-content">
+            <p>
+              {note.body}
+            </p>
+          </div>
+          <div className="card-btns-flex">
+            <div className="card-btn-div">
               <button onClick={() => handleRemove(note.id)} className="note-card-button">
                 Delete
               </button>
@@ -82,7 +84,7 @@ const Notes = (props) => {
     <div className="main-notes-container">
       <div className="notes-container">
       <h2 className="notes-header">Notes</h2>
-        <button onClick={() => toggle()} className="notes-save-btn">
+        <button onClick={() => toggle()} className="jobinfo-save-btn">
           {toggleForm ?
             'Cancel'
             : 'Add'

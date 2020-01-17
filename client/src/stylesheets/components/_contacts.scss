@@ -28,8 +28,9 @@
       border-style: solid;
       border-width: 1px;
       border-radius: 7px;
-      border-color: var(--gray-2);
+      border-color: var(--gray-5);
       background-color: var(--gray-1);
+      box-shadow: 3px 4px 20px 0px #e0e0e094;
 
       .contact-content {
         display: flex;
@@ -72,5 +73,21 @@
 
   .contact-btn {
     margin: 0 1rem 0 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .contact-container {
+    justify-content: space-around;
+    display: flex;
+
+    h2.form-heading, button.jobinfo-save-btn {
+      margin: 1rem;
+    }
+  } 
+
+  .contacts {
+    margin: 1rem;
+    justify-content: center;
   }
 }

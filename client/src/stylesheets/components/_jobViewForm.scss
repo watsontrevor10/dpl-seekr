@@ -90,7 +90,7 @@
     // width: 39%;
     display: flex;
     flex-grow: 1;
-    max-width: 18rem;
+    max-width: 20rem;
   }
 
   textarea {
@@ -141,12 +141,28 @@
     display: flex;
     align-self: center;
   }
- 
+  .jobview-form {
+    width: calc(100% - 2rem);
+  }
   .info {
-    margin: 0.5rem;  
+    margin: 1rem;  
   } 
 
-  .jobview-form div.all-inputs div.form-input {
-    flex-direction: column;
+  h3 {
+    margin: 0.5rem;
+  }
+
+  input {
+    margin: 0.2rem 0.2rem 0.6rem 0.2rem;
+  }
+  .jobview-form div.all-inputs {
+    width: 100%;
+
+    div.form-input {
+      flex-direction: column;
+    }
+  }
+  .jobinfo-save-btn {
+    align-self: center;
   }
 }
