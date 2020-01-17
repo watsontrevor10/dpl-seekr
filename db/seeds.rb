@@ -28,6 +28,15 @@ task_verbs = [
   'Email',
 ]
 
+card_colors = [
+  "#2d3a66", 
+  "#5b6293",
+  "#070059", 
+  "#3d1a68", 
+  "#5e2d5e", 
+  "#da5740",
+]
+
 
 1.times do
   User.create(
@@ -45,6 +54,7 @@ end
     company_name: Faker::Company.name,
     date_applied: Faker::Date.between(from: 30.days.ago, to: Date.today),
     location: Faker::Address.city,
+    color: card_colors.sample,
     user_id: 1, 
   )
   
