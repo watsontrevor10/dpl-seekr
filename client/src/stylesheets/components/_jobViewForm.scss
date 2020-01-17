@@ -35,8 +35,8 @@
   flex-grow: 1;
   font-size: 0.8rem;
   font-weight: 200;
-  width: calc(100% - 4rem);
-  margin-bottom: 4rem;
+  width: calc(100% - 8rem);
+  margin: 1rem 4rem;
 
   div.all-inputs {
     flex-direction: column;
@@ -127,13 +127,15 @@
   padding: 5px 10px;
   font-size: 1rem;
   border-radius: 5px;
-  background-color: var(--blue-3);
-  color: var(--white);
+  background-color: var(--grey-6);
+  color: var(--blue-3);
   border-style: none;
 }
 
 .jobinfo-save-btn.info {
   margin: 1rem 0;
+  // background-color: var(--blue-3);
+  // color: var(--white);
 }
 
 @media screen and (max-width: 550px) {
