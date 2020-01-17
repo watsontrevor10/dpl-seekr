@@ -47,24 +47,30 @@ const Interviews = (props) => {
 
   return (
     <>
-      <h2 className="form-heading">Interviews</h2>
       {
         form ?
+        <>
+          <h2 className="form-heading">Interviews</h2>
           <InterviewForm
-            job_id={props.id}
-            handleUpdate={handleUpdate}
-            toggleForm={toggleForm}
-            interview={currentInterview}
-            handleCancel={handleCancel}
+          job_id={props.id}
+          handleUpdate={handleUpdate}
+          toggleForm={toggleForm}
+          interview={currentInterview}
+          handleCancel={handleCancel}
           />
-          :
-          <>
+        </>
+        :
+        <>
+        <div className="interview-heading-container">
+          <h2 className="form-heading">Interviews</h2>
             <button
               className="jobinfo-save-btn"
               onClick={toggleForm}
-            >
+              >
               Add
-          </button>
+            </button>
+          </div>
+          <div className="interview-cards-container">
             <div className="interview-card-container">
               {interviews.map(interview =>
                 <div className="interviews-card">
@@ -73,9 +79,10 @@ const Interviews = (props) => {
                     handleUpdate={handleUpdate}
                     handleDelete={handleDelete}
                     handleEdit={handleEdit}
-                  />
+                    />
                 </div>
               )}
+              </div>
             </div>
           </>
       }

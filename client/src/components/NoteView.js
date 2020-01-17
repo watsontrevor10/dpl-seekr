@@ -16,9 +16,11 @@ const NoteView = () => {
               <button type='submit'>Save</button>
             </form>
             :
-            <p>
-              {note.body}
-            </p>
+            <div>
+              <p>
+                {note.body}
+              </p>
+            </div>
           }
 
           <button onClick={() => handleRemove(note.id)}>

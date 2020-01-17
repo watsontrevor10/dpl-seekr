@@ -93,7 +93,7 @@ const Contacts = (props) => {
   return (
     <>
       <div className="main-contact-container">
-        <div>
+        <div className="contact-container">
           <h2 className="form-heading">Contacts</h2>
           <button onClick={() => toggle()} className="jobinfo-save-btn">
             {toggleForm ? "Cancel" : "Add"}
