@@ -46,7 +46,7 @@ card_colors = [
   )
 end
 
-20.times do
+10.times do
   j = Job.create(
     job_title: Faker::Job.title,
     salary: Faker::Number.between(from: 30000, to: 120000),

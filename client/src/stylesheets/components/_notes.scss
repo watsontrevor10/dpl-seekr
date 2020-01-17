@@ -8,7 +8,7 @@
 }
 
 .main-notes-container {
-  width: 100%
+  width: 100%;
 }
 
 .notes-container {
@@ -27,16 +27,6 @@
   color: var(--white);
   border-style: none;
 }
-
-// .notes-save-btn {
-//   margin: 0.6rem 2.3rem;
-//   padding: 0px 35px 0px 35px;
-//   font-size: 1rem;
-//   border-radius: 5px;
-//   background-color: var(--blue-3);
-//   color: var(--white);
-//   border-style: none;
-// }
 
 .notesview-form.info {
   margin: 2rem;
@@ -89,7 +79,7 @@ textarea {
 .card-btn-div {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-top: 1rem;
   width: inherit;
 }
@@ -99,12 +89,15 @@ textarea {
   flex-direction: row;
 }
 .note-card-button {
-  padding: 5px 5px;
-  font-size: 1rem;
+  padding: 5px;
+  font-size: .75rem;
   border-radius: 5px;
   background-color: var(--blue-3);
   color: var(--white);
   border-style: none;
+}
+.notes-padding-btn {
+  padding: 3px;
 }
 
 @media screen and (max-width: 550px) {
