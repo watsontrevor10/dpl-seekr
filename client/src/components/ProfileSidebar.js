@@ -13,7 +13,7 @@ const ProfileSidebar = (props) => {
       <div className="psidebar">
         <div className="home-sidebar-icons">
           <div>
-            <div> <img style={icon} src={user.image || defaultImage} /> </div>
+            <Link to="/"><div> <img style={icon} src={user.image || defaultImage} /> </div> </Link>
           </div>
           {user.name}
           <br />
