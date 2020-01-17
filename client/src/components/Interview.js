@@ -10,22 +10,22 @@ const Interview = (props) => {
         <p>{props.interview.interview_type}</p>
         <p>{props.interview.description}</p>
         <p>{props.interview.follow_up}</p>
-        <div className="card-btns-flex">
-          <div className="card-btn-div"> 
-            <button
-              className="interviews-add-btn"
-              onClick={() => props.handleDelete(props.interview.id)}
-              >
-              Delete
-            </button>
+        </div>
+          <div className="card-btns-flex">
+          <div className="card-btns-div"> 
             <button
               className="interviews-add-btn"
               onClick={() => props.handleEdit(props.interview)}
               >
               Edit
             </button>
+            <button
+              className="interviews-add-btn"
+              onClick={() => props.handleDelete(props.interview.id)}
+              >
+              Delete
+            </button>
           </div>
-        </div>
       </div>
     </>
 
@@ -33,3 +33,4 @@ const Interview = (props) => {
 };
 
 export default Interview;
+

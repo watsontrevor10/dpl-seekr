@@ -64,7 +64,7 @@ const Notes = (props) => {
             </p>
           </div>
           <div className="card-btns-flex">
-            <div className="card-btn-div">
+            <div className="card-btns-div">
               <div className="notes-padding-btn">
                 <button onClick={() => toggleEditForm(index)} className="note-card-button">
                   Edit
@@ -95,7 +95,6 @@ const Notes = (props) => {
           }
         </button>
       </div>
-      <hr />
       {toggleForm ?
         <NotesForm
         id={props.id}
