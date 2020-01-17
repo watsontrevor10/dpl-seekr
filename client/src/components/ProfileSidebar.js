@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { AuthConsumer, } from "../providers/AuthProvider";
 import { Link, withRouter, } from 'react-router-dom';
-import logout from "../images/ui.png"
-
-const defaultImage = 'https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png';
+import logout from "../images/uiWhite.png"
+import defaultImage from "../images/userWhite.png"
+import board from "../images/clipboardsWhite.png"
 
 const ProfileSidebar = (props) => {
 
@@ -15,8 +15,13 @@ const ProfileSidebar = (props) => {
           <div>
             <div> <img style={icon} src={user.image || defaultImage} /> </div>
           </div>
-
           {user.name}
+          <br />
+          <br />
+          <br />
+        <Link to='/board'>
+          <img src={board}/>
+        </Link>
         </div>
         <div className="logout">
           <img
