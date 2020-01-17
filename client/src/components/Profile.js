@@ -13,7 +13,10 @@ class Profile extends React.Component {
   state = { editing: false, formValues: { name: '', email: '', }, };
 
   onDrop = (files) => {
-    this.setState({ formValues: { ...this.state.formValues, file: files[0], } });
+    let data = files.map(file => Object.assign(file, {
+      preview: URL.createObjectURL(file)
+    }))
+    this.setState({ formValues: { ...this.state.formValues, file: files[0], file_thumbnail: data }, isDragActive: true });
   }
 
   profileView = () => {
@@ -47,6 +50,15 @@ class Profile extends React.Component {
     )
   }
 
+  showPreview = () => {
+    return (
+      <img
+        alt='thumbnail'
+        style={{ width: '100%', borderRadius: '150px', height: '100%'}}
+        src={this.state.formValues.file_thumbnail[0].preview}></img>
+    )
+  }
+
   editView = () => {
     const { auth: { user }, } = this.props;
     const { formValues: { name, email } } = this.state;
@@ -71,7 +83,7 @@ class Profile extends React.Component {
                           multiple={false}
                           disableClick
                         >
-                          {({ getRootProps, getInputProps, isDragActive }) => {
+                          {({ getRootProps, getInputProps, }) => {
                             return (
                               <div
                                 {...getRootProps()}
@@ -79,9 +91,12 @@ class Profile extends React.Component {
                               >
                                 <input {...getInputProps()} />
                                 {
-                                  isDragActive ?
-                                    <p>Drop files here...</p> :
-                                    <center><p>Upload Image</p></center>
+                                  this.state.isDragActive ?
+                                    (
+                                      this.showPreview()
+                                    ) : (
+                                      <center><p>Upload Image</p></center>
+                                    )
                                 }
                               </div>
                             )
