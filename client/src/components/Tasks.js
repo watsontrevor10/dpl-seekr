@@ -53,7 +53,7 @@ const Tasks = (props) => {
         <TaskForm job_id={props.id} handleUpdate={handleUpdate} toggleForm={toggleForm} task={currentTask} handleCancel={handleCancel} />
         :
         <>
-        <button onClick={toggleForm}>Add</button>
+        <button className="jobinfo-save-btn" onClick={toggleForm}>Add</button>
         {tasks.map(task => (
           <Task task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} handleEdit={handleEdit}/>
         ))

@@ -17,6 +17,9 @@ $main-color: $nth !default;
 
 .task-container {
   width: 45%; 
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .heading-container {
@@ -29,6 +32,7 @@ $main-color: $nth !default;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
+  margin:  1rem 0;
 }
 
 .task-card {
@@ -47,4 +51,10 @@ $main-color: $nth !default;
   display: flex;
   flex-direction: column;
   padding: 1.5rem; 
+}
+
+@media screen and (max-width: 550px) {
+  .task-container {
+    width: 90%;
+  }
 }

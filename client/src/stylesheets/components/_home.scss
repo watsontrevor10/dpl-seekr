@@ -15,8 +15,9 @@
 .main-home-container {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  min-height: 100vh;
   flex-grow: 1;
+  flex-shrink: 1;
   // font-family: var(--main-font-family);
 }
 
@@ -52,7 +53,8 @@
     height: 40px;
     z-index: 20;
     left: 2.6rem;
-    top: 85%;
+    // top: 85%;
+    top: 70px;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
