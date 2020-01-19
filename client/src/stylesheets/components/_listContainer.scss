@@ -4,7 +4,6 @@
   --white: #fff;
   --gray-1: #faf9f9;
   --gray-2: #cfcdd1;
-  --gray-3: #3444;
 
   --theme-blue-main: #151E3F;
   --theme-dark-main: #030027;
@@ -13,6 +12,7 @@
   --theme-yellow-main: #f2f3d9;
 
   --blue-1: #19173a;
+  --blue-4: #b4bfdf;
 }
 
 // $blue: #3ea5ce;
@@ -48,7 +48,7 @@
   overflow: auto;
   background-color: var(--gray-2);
 
-  h1 {
+  h1.job-board-heading-mobile {
     display: none;
   }
   .list {
@@ -78,8 +78,9 @@
     justify-content: flex-start;
     align-items: center;
     height: 100%;
+    background-color: var(--blue-4);
 
-    h1.job-board-heading {
+    h1.job-board-heading-mobile {
       display: flex;
       color: var(--white);
       font-weight: 400;
