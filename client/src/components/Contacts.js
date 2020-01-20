@@ -95,7 +95,7 @@ const Contacts = (props) => {
           </div>
             <div className="contact-btns">
               <button onClick={() => handleEdit(index)} className="jobinfo-save-btn contact-btn">Edit</button>
-              <button onClick={() => toggleDelete()} className="jobinfo-save-btn contact-btn">Delete</button>
+              <button onClick={() => toggleDelete()} className="contact-delete-btn">Delete</button>
             </div>
             { deleteModal ? <DeleteModal show={toggleDelete} hide={hideDelete} delete={handleRemove} id={contact.id} />: null }
         </div>

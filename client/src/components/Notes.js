@@ -84,7 +84,7 @@ const Notes = (props) => {
                 </button>
               </div>
               <div className="notes-padding-btn">
-                <button onClick={() => toggleDelete()} className="note-card-button">
+                <button onClick={() => toggleDelete()} className="note-card-delete">
                   Delete
                 </button>
               </div>

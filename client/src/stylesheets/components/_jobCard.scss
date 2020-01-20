@@ -69,7 +69,9 @@ $default-card-color: #050044 !default;
     padding: 0.3rem;
     margin: 1rem 1.2rem;
     color: var(--white);
-    background-color: inherit;
+    color: white;
+    background-color: #c12020;
+    border-radius: 7px;
   }
 }
 

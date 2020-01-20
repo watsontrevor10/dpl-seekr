@@ -84,6 +84,18 @@ button.interviews-add-btn {
   justify-content: flex-end;
 }
 
+button.interviews-delete-btn {
+  padding: 5px 5px;
+  margin: 0.3rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: white;
+  background-color: #c12020;
+  border-radius: 7px;
+  justify-content: flex-end;
+}
+
+
 
 @media screen and (max-width: 550px) {
   .interview-heading-container {

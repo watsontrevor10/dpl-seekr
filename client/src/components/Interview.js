@@ -22,7 +22,7 @@ const Interview = (props) => {
               Edit
             </button>
             <button
-              className="interviews-add-btn"
+              className="interviews-delete-btn"
               onClick={() => props.show()}
               >
               Delete

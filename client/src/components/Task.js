@@ -34,12 +34,14 @@ const Task = (props) => {
         </div>
         <div className="task-btns-container">
           <button onClick={() => props.handleEdit(props.task)}>Edit</button>
-          <button onClick={() => props.handleDelete(props.task.id)}>Delete</button>
+          <button style={{color: "white", borderRadius: "7px", backgroundColor: "#c12020", width: "50px"}}onClick={() => props.handleDelete(props.task.id)}>Delete</button>
         </div>
       </div>
     </>
 
   );
 };
+
+
 
 export default Task;
