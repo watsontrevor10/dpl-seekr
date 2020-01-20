@@ -7,6 +7,7 @@ const Tasks = (props) => {
   const [currentTask, setCurrentTask] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [form, setForm] = useState(false);
+  const [completedFilter, setCompletedFilter] = useState(false)
   const key = 0
 
   // Initial API request for tasks
@@ -52,6 +53,18 @@ const Tasks = (props) => {
     setForm(!form);
   };
 
+  const handleFilter = (e) => {
+    setCompletedFilter(e.target.value)
+    axios.get(`/api/jobs/${props.id}/tasks/`, {
+      params: {
+        filter: !completedFilter
+      }
+    })
+    .then( res => {
+      setTasks(res.data)
+    })
+  }
+
   return (
     <>
       <div className="main-notes-container main-tasks">
@@ -64,6 +77,14 @@ const Tasks = (props) => {
             }
           </button>
         </div>
+        <select
+          className="dash-select"
+          value={completedFilter}
+          onChange={handleFilter}
+        >
+          <option value={false}>Incomplete</option>
+          <option value={true}>Complete</option>
+        </select>
         <div className="tasks">
           {
             form ?

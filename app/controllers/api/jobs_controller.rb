@@ -44,11 +44,7 @@ class Api::JobsController < ApplicationController
   end
 
   def tasks_due
-    render json: current_user.jobs.tasks_due(@user_id, params[:filter_date, :complete_filter])
-  end
-
-  def tasks_filter
-    render json: current_user.jobs.tasks_filter(@user_id, params[:filter_param])
+    render json: current_user.jobs.tasks_due(@user_id, params[:filter_date])
   end
   
   def upcoming_interviews

@@ -7,7 +7,7 @@ class Job < ApplicationRecord
   has_many :contacts, dependent: :destroy
 
   # calculate tasks due within a certain timeframe for dashboard
-  def self.tasks_due(id, filter_date, complete_filter)
+  def self.tasks_due(id, filter_date)
     find_by_sql(["
       SELECT due_date, subject, company_name, job_title, status, user_id
       FROM jobs 
