@@ -88,7 +88,7 @@ const jobStatus = [
 
 const colors = [
   { key: "a", value: "Blue", text: "#2d3a66", },
-  { key: "b", value: "Light Blue", text: "#5b6293", },
+  { key: "b", value: "Light Blue", text: "#505995", },
   { key: "c", value: "Dark Blue", text: "#070059", },
   { key: "d", value: "Dark Purple", text: "#3d1a68", },
   { key: "e", value: "Purple", text: "#5e2d5e", },

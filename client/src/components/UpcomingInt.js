@@ -38,12 +38,12 @@ class TaskClass extends React.Component {
       <div className="task-container">
         <div className="heading-container">
           <h2>Upcoming Interviews</h2>
-            <select onChange={this.handleChange} value={dueDate}>
+            <select className="dash-select" onChange={this.handleChange} value={dueDate}>
               <option value='1'>Today</option>
               <option value='7'>7 Days</option>
             </select>
         </div>
-        <hr />
+        {/* <hr /> */}
         <Link to="/board" style={{textDecoration: "none"}}>
             <div className="task-card-container">
               {interviews.map((interview) =>

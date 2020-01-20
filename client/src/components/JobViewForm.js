@@ -39,7 +39,7 @@ const JobViewForm = (props) => {
     <>
       <h2 className="form-heading">{props.job.job_title}</h2>
       <form onSubmit={handleSubmit} className="jobview-form info">
-        <div className="all-inputs">
+        <div className="all-inputs info-input">
           <div className="form-input">
             <h3>Company</h3>
             <input type="text" name="company_name" onChange={handleChange} value={company_name} />
@@ -96,7 +96,6 @@ const JobViewForm = (props) => {
             <textarea name="description" onChange={handleChange} value={description} />
           </div>
         </div>
-        {/* COLOR <input type="text" name="Description"/> */}
         <button 
           className="jobinfo-save-btn info"
           type="submit" value="Submit"
@@ -119,7 +118,7 @@ const jobStatus = [
 
 const colors = [
   { key: "a", text: "Blue", value: "#2d3a66", },
-  { key: "b", text: "Light Blue", value: "#5b6293", },
+  { key: "b", text: "Light Blue", value: "#505995", },
   { key: "c", text: "Dark Blue", value: "#070059", },
   { key: "d", text: "Dark Purple", value: "#3d1a68", },
   { key: "e", text: "Purple", value: "#5e2d5e", },

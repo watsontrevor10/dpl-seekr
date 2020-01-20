@@ -87,14 +87,28 @@
 }
 
 @media screen and (max-width: 550px) {
-  .contact-container {
-    justify-content: space-around;
-    display: flex;
+  .main-contact-container {
+    margin: 0;
+    width: 100%;
+    .contact-container {
+      justify-content: space-around;
+      display: flex;  
 
-    h2.form-heading, button.jobinfo-save-btn {
-      margin: 1rem;
+      h2.form-heading, button.jobinfo-save-btn {
+        margin: 1rem;
+      }
+    } 
+    .contacts {
+      margin: 0;
+      width: 100%;
+
+      .contact-card {
+        min-width: 8rem;
+        max-width: 10rem;
+        max-width: 320px;
+      }
     }
-  } 
+}
 
   .contacts {
     margin: 1rem;

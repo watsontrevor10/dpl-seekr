@@ -59,13 +59,13 @@ const TaskForm = (props) => {
         > 
           save
         </button>
-        <button
+        {/* <button
           className="jobinfo-save-btn"
           onClick={props.handleCancel}
           type="submit"
         >
           cancel
-        </button>
+        </button> */}
       </form>
     </>
   )

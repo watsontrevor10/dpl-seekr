@@ -28,7 +28,32 @@
   .board-link {
     margin: 3rem;
     display: flex;
-    height: 22rem;
     justify-content: space-around;   
   }
 }
+
+.dashboard-heading {
+  display: none;
+}
+
+  @media screen and (max-width: 550px) {
+    .main-dashboard-container {
+      .board-link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+      }
+    }
+    .dashboard-heading {
+      display: flex;
+      color: var(--white);
+      font-weight: 400;
+      font-size: 25px;
+      letter-spacing: 2px;
+      padding: 20px;
+      text-transform: uppercase;
+      background-color: var(--gray-2);
+      justify-content: center;
+    }
+  } 

@@ -1,0 +1,30 @@
+.graph {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 30rem;
+  height: 20rem;
+
+  div {
+    display: flex; 
+
+    // text:nth-of-child(1) {
+    //   font-size: 1.5rem !important;
+    // }  
+    span {
+      background-color: transparent !important ;
+      color: var(--theme-gray-main) !important;
+      padding: 2px;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  // g, rect {
+  //   width: 90% !important;
+  // }
+  .task-card-container {
+    justify-content: center;
+  }
+}
