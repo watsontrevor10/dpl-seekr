@@ -24,7 +24,6 @@ class Login extends React.Component {
       <>
       <segment className="login-main-container">
         <div className="login-container">
-          <Navbar login={this.state}/>
           <h1>Login</h1>
           <form
             className="login-form-container"
@@ -54,6 +53,7 @@ class Login extends React.Component {
               <button primary type='submit'>Continue</button>
             </segment>
           </form>
+          <Navbar login={this.state}/>
         </div>
       </segment>
       </>
