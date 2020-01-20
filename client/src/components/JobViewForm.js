@@ -122,7 +122,6 @@ const colors = [
   { key: "c", text: "Dark Blue", value: "#070059", },
   { key: "d", text: "Dark Purple", value: "#3d1a68", },
   { key: "e", text: "Purple", value: "#5e2d5e", },
-  { key: "f", text: "Red", value: "#da5740", }
 ];
 
 export default JobViewForm

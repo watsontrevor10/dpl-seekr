@@ -92,7 +92,6 @@ const colors = [
   { key: "c", value: "Dark Blue", text: "#070059", },
   { key: "d", value: "Dark Purple", text: "#3d1a68", },
   { key: "e", value: "Purple", text: "#5e2d5e", },
-  { key: "f", value: "Red", text: "#da5740", }
 ];
 
 
