@@ -104,4 +104,10 @@
       align-content: center;
       flex-direction: column;
     } 
+
+    .modal-info-icon{
+      p {
+        display: none;
+      }
+    }
   }
