@@ -7,6 +7,7 @@ const Tasks = (props) => {
   const [currentTask, setCurrentTask] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [form, setForm] = useState(false);
+  const key = 0
 
   useEffect(() => {
     axios.get(`/api/jobs/${props.id}/tasks/`)
@@ -64,7 +65,7 @@ const Tasks = (props) => {
             :
             <>
             {tasks.map(task => (
-              <Task task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} handleEdit={handleEdit}/>
+              <Task key={key + 1} task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} handleEdit={handleEdit}/>
               ))
             }
             </>
