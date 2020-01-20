@@ -20,12 +20,15 @@ const Task = (props) => {
 
   return (
     <>
-      <input type="checkbox" name="completed" onChange={handleCompleted} checked={props.task.completed}/>
-      <p>{props.task.completed ? "True" : "False"}</p>
-      <p>{props.task.subject}</p>
-      <p>{props.task.due_date}</p>
-      <button onClick={() => props.handleEdit(props.task)}>Edit</button>
-      <button onClick={() => props.handleDelete(props.task.id)}>Delete</button>
+      <div className="task">
+        <input type="checkbox" name="completed" onChange={handleCompleted} checked={props.task.completed}/>
+          <div className={ props.task.completed ? "true" : "false"}>
+            <p>{props.task.subject}</p>
+            <p>{props.task.due_date}</p>
+          <button onClick={() => props.handleEdit(props.task)}>Edit</button>
+          <button onClick={() => props.handleDelete(props.task.id)}>Delete</button>
+        </div>
+      </div>
     </>
 
   );

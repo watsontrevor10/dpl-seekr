@@ -95,13 +95,14 @@ const Notes = (props) => {
           }
         </button>
       </div>
-      {toggleForm ?
-        <NotesForm
-        id={props.id}
-          add={addNote}
-          toggle={toggle}
-          note={noteEdit}
-          update={handleUpdate}
+      {
+        toggleForm ?
+          <NotesForm
+            id={props.id}
+            add={addNote}
+            toggle={toggle}
+            note={noteEdit}
+            update={handleUpdate}
           />
           :<div className="notes-render-container">{renderNotes()}</div>
         }

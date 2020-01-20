@@ -47,19 +47,30 @@ const Tasks = (props) => {
 
   return (
     <>
-      <h2 className="form-heading">Tasks</h2>
-      {
-        form ?
-        <TaskForm job_id={props.id} handleUpdate={handleUpdate} toggleForm={toggleForm} task={currentTask} handleCancel={handleCancel} />
-        :
-        <>
-        <button className="jobinfo-save-btn" onClick={toggleForm}>Add</button>
-        {tasks.map(task => (
-          <Task task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} handleEdit={handleEdit}/>
-        ))
-        }
-        </>
-      }
+    <div className="main-notes-container main-tasks">
+      <div className="notes-container">
+        <h2 className="notes-header">Tasks</h2>
+          <button onClick={() => toggleForm()} className="jobinfo-save-btn">
+            {form ? 
+              'Cancel'
+              : 'Add'
+            }
+          </button>
+          </div>
+          <div className="tasks">
+          {
+            form ?
+            <TaskForm job_id={props.id} handleUpdate={handleUpdate} toggleForm={toggleForm} task={currentTask} handleCancel={handleCancel} />
+            :
+            <>
+            {tasks.map(task => (
+              <Task task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} handleEdit={handleEdit}/>
+              ))
+            }
+            </>
+          }
+          </div>
+      </div>
     </>
   )
 };
