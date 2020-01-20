@@ -51,15 +51,15 @@ const Tasks = (props) => {
       <h2 className="form-heading">Tasks</h2>
       {
         form ?
-        <TaskForm job_id={props.id} handleUpdate={handleUpdate} toggleForm={toggleForm} task={currentTask} handleCancel={handleCancel} />
-        :
-        <>
-        <button onClick={toggleForm}>Add</button>
-        {tasks.map(task => (
-          <Task key={key + 1} task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} handleEdit={handleEdit}/>
-        ))
-        }
-        </>
+          <TaskForm job_id={props.id} handleUpdate={handleUpdate} toggleForm={toggleForm} task={currentTask} handleCancel={handleCancel} />
+          :
+          <>
+            <button onClick={toggleForm}>Add</button>
+            {tasks.map(task => (
+              <Task key={key + 1} task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} handleEdit={handleEdit} />
+            ))
+            }
+          </>
       }
     </>
   )
