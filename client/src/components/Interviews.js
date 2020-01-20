@@ -7,6 +7,15 @@ const Interviews = (props) => {
   const [currentInterview, setCurrentInterview] = useState(null);
   const [interviews, setInterviews] = useState([]);
   const [form, setForm] = useState(false);
+     // State for toggling delete confirmation modal 
+     const [deleteModal, setDeleteModal] = useState(false)
+
+     const toggleDelete = () => {
+      setDeleteModal(true)
+    }
+    const hideDelete = () => {
+      setDeleteModal(!deleteModal)
+    }
 
   useEffect(() => {
     axios.get(`/api/jobs/${props.id}/interviews`)
@@ -33,6 +42,7 @@ const Interviews = (props) => {
     axios.delete(`/api/jobs/${props.id}/interviews/${id}`)
       .then(res => {
         setInterviews(interviews.filter(interview => interview.id !== id))
+        hideDelete()
       })
   }
 
@@ -80,6 +90,9 @@ const Interviews = (props) => {
                     handleUpdate={handleUpdate}
                     handleDelete={handleDelete}
                     handleEdit={handleEdit}
+                    hide={hideDelete}
+                    show={toggleDelete}
+                    deleteModal={deleteModal}
                     />
                 </div>
               )}
