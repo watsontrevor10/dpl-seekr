@@ -5,6 +5,7 @@
   --gray-1: #faf9f9;
   --gray-6: #ececec;
   --gray-2: #cfcdd1;
+  --gray-7: #5a5a5a;
 
   --theme-blue-main: #151E3F;
   --theme-dark-main: #030027;
@@ -26,7 +27,6 @@
   flex-direction: column;
   z-index: 500;
   background-color: var(--white);
-  // border: 1px solid var(--color-modal-shadow);
   border-radius: 7px;
   box-shadow: 2px 1px 20px 0px #5f5f5f94;
   top: 5%;
@@ -34,7 +34,7 @@
   overflow: auto;
   width: 70%;
   max-height: 90%;
-  min-height: 15rem;
+  min-height: 370px;
   left: calc(50% - 35%);
 
   animation-name: moveInBottom; /*refers to @keyframes name*/
@@ -44,12 +44,13 @@
 
   .tab-list {
     display:flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 1rem;
     padding: 10px;
     height: 60px;
-    background-color: var(--theme-gray-main);
+    background-color: var(--blue);
     font-weight: 400;
     letter-spacing: 2px;
   }
@@ -59,6 +60,7 @@
     justify-content: space-around;
     align-items: flex-start;
     flex-direction: column;
+    color: var(--gray-7);
   }
 
   .react-tabs__tab{

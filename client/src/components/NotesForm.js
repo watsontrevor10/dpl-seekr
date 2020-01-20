@@ -52,9 +52,7 @@ const NotesForm = (props) => {
               placeholder="add a note"
             />
           </div>
-          <div>
-            <button type="submit" value="Submit" className="note-save-btn" >Save</button>
-        </div>        
+            <button type="submit" value="Submit" className="jobinfo-save-btn" >Save</button>       
         </form>
       </div>
     )
@@ -71,9 +69,7 @@ const NotesForm = (props) => {
             placeholder="add a note"
           />
         </div>
-        <div>
-          <button type="submit" value="Submit" className="note-save-btn" >Save</button>
-        </div>
+          <button type="submit" value="Submit" className="jobinfo-save-btn" >Save</button>
         </form>
       </div>
     )
