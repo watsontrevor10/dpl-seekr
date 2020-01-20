@@ -83,6 +83,15 @@
   //     flex-direction: column;
   //   }
   // }
+  .modal-info-icon{
+    display: flex;
+    align-items: center;
+  }
+  .modal-svg {
+    margin: 0 .3rem;
+    width: 20px;
+    height: 20px;
+  }
 
   @media screen and (max-width: 550px) {
     .main-modal-container {
