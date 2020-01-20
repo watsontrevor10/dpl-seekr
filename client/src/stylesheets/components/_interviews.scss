@@ -20,14 +20,14 @@
   --beige: #C7C7B2;
   --red: #da5740;
 }
-.interview-heading-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  h2, button {
-    margin: 0.6rem 4rem;
-  }
-}
+// .interview-heading-container {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+//   h2, button {
+//     margin: 0.6rem 4rem;
+//   }
+// }
 
 div.interviews-card {
   list-style: none;
@@ -44,6 +44,7 @@ div.interviews-card {
   background-color: var(--gray-6);
   box-shadow: 3px 4px 20px 0px #e0e0e094;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 div.interviews-content {
@@ -74,6 +75,7 @@ div.interviews-content {
 
 button.interviews-add-btn {
   padding: 5px 5px;
+  margin: 0.3rem;
   font-size: 1rem;
   border-radius: 5px;
   background-color: var(--grey-6);

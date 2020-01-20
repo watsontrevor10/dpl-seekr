@@ -16,24 +16,33 @@
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 2rem 4rem;
   justify-content: space-between;
   align-content: center;
+
   .contact-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    .form-heading {
+      margin: 1rem 4rem;
+      padding: 5px 10px;
+
+    }
   }
   .contacts {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
     margin: 2rem 4rem;
+    width: 100%;
+
     .contact-card {
       display: flex;
       padding: 1rem;
       flex-direction: column;
-      min-width: 25rem;
+      min-width: 15rem;
+      max-width: 20rem;
       margin: 1.5rem 1rem;
       border-style: solid;
       border-width: 1px;
@@ -79,10 +88,11 @@
 
 .contact-btns {
   display: flex;
+  align-self: flex-end;
   margin-top: 1rem;
 
   .contact-btn {
-    margin: 0 1rem 0 0;
+    margin: 0.3rem;
   }
 }
 
@@ -104,8 +114,7 @@
 
       .contact-card {
         min-width: 8rem;
-        max-width: 10rem;
-        max-width: 320px;
+        max-width: 80%;
       }
     }
 }
