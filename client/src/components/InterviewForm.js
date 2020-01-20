@@ -37,8 +37,8 @@ const InterviewForm = props => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="jobview-form">
-      <div className="all-inputs info">
+      <form onSubmit={handleSubmit} className="jobview-form interview-form">
+      <div className="all-inputs interview-input">
         <div className="form-input">
           <h3>Subject</h3>
           <input type="text" name="subject" onChange={handleChange} value={subject} />

@@ -28,11 +28,9 @@ class JobGraph extends React.Component {
   render() {
     return (
       <>
-        <div>
           {/* Bar graph displaying total jobs submitted by status */}
           <Chart
-            width={'650px'}
-            height={'400px'}
+            className="graph"
             chartType="Bar"
             loader={<div>Loading Chart</div>}
             data={[
@@ -60,7 +58,6 @@ class JobGraph extends React.Component {
             // For tests
             rootProps={{ 'data-testid': '2' }}
           />
-        </div>
       </>
     )
   }

@@ -1,0 +1,52 @@
+.main-tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.tasks {
+  .task {
+    display: flex;
+    flex-grow: 1;
+    min-width: 160px;
+    margin: 1rem 4rem;
+    align-content: center;
+    align-items: center;
+
+    p, button {
+      margin-right: 10px;
+    }
+
+    input {
+      max-width: 5px;
+      margin: 5px;
+    }
+    .true {
+      display: flex;
+      p {
+        text-decoration: line-through;
+      }
+      color: var(--gray-2);
+      margin: 5px;
+
+      button {
+        border-style: none;
+        background-color: transparent;
+      }
+    }
+    .false {
+      display: flex;
+      margin: 5px;
+
+      button {
+        border-style: none;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  
+}
