@@ -21,9 +21,9 @@ const MobileMenu = () => {
               </svg>
                 <ul className="dropdown">
                 <div className="arrow-up"></div>
-                  <Link>home</Link>
-                  <Link>board</Link>
-                  <Link>profile</Link>
+                  <Link to="/">home</Link>
+                  <Link to="/board">board</Link>
+                  <Link to="profile">profile</Link>
                 </ul>
               </div>
               </>

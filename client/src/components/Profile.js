@@ -162,7 +162,7 @@ class Profile extends React.Component {
     const { editing, } = this.state;
     return (
       <>
-        <div style={profileContainer}>
+        <div className="profile-container">
           {editing ? this.editView() : this.profileView()}
         </div>
       </>
@@ -207,10 +207,6 @@ const profilepic = {
 
 const drop = {
   margin: '2.5rem',
-}
-
-const profileContainer = {
-  display: 'flex',
 }
 
 const zone = {

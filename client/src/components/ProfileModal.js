@@ -7,7 +7,6 @@ const ProfileModal = (props) => {
   return (
     <>
       <Backdrop show={props.show} hide={props.hide} />
-
       <Profile />
     </>
   )

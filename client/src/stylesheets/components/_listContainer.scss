@@ -47,6 +47,7 @@
   box-sizing: border-box;
   overflow: auto;
   background-color: var(--gray-2);
+  
 
   h1.job-board-heading-mobile {
     display: none;
@@ -88,6 +89,13 @@
       letter-spacing: 2px;
       margin: 10px;
       text-transform: uppercase;
+    }
+
+    .list {
+      width: 90%;
+      .list-component-container {
+        width: 95%;
+      }
     }
   }
 

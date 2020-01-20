@@ -19,6 +19,10 @@
   --red: #da5740;
 }
 
+.profile-container {
+  display: flex;
+  align-content: center;
+}
 .new-profile {
   position: fixed;
   z-index: 500;
@@ -64,7 +68,7 @@
   padding: 0.3rem;
   border-radius: 5px;
   transition: all 0.2s ease 0s;
-  margin: 0.2rem;
+  margin: 0.5rem;
   font-size: 0.8rem;
   width: 6rem;
   color: #faf9f9;
@@ -79,4 +83,23 @@
     font-size: 0.8rem;
     max-width: 36rem;
     display: flex;
+}
+
+@media screen and (max-width: 550px) { 
+
+  .profile {
+    align-self: center;
+    margin: 0 auto;
+
+    h1 {
+      margin-top: 0.5rem;
+    }
+  }
+  .new-profile {
+    max-width: 350px;
+    left: calc(50% - 175px);
+  }
+  .profileedit {
+    margin: 0 auto;
+  }
 }
