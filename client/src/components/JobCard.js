@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import JobForm from '../components/JobForm';
 import { Link } from 'react-router-dom';
+import DeleteConfirmation from "./DeleteConfirmationModal";
 import Modal from "./Modal"
 import Moment from 'react-moment';
 import 'moment-timezone';
+import DeleteConfirmationModal from './DeleteConfirmationModal';
 
 // const colors = [
 //   "#7a0d9b", 
@@ -18,6 +20,7 @@ import 'moment-timezone';
 const JobCard = (props) => {
   // State for looping through users jobs
   const [openModal, setOpenModal] = useState(false)
+  const [deleteModal, setDeleteModal] = useState(false)
 
   // axios call to get all user jobs
 
@@ -29,6 +32,12 @@ const JobCard = (props) => {
   }
   const hide = () => {
     setOpenModal(!openModal);
+  }
+  const toggleDelete = () => {
+    setDeleteModal(true)
+  }
+  const hideDelete = () => {
+    setDeleteModal(!deleteModal)
   }
 
   const renderJob = () => {
@@ -45,7 +54,8 @@ const JobCard = (props) => {
           <li className="card-meta"><Moment format="MM/DD/YYYY">{props.job.created_at}</Moment></li>
         </div>
       </ul>
-      <button className="job-card-delete" onClick={() => props.deleteJob(props.job.id)}>Delete</button>
+      <button className="job-card-delete" onClick={() => toggleDelete() }>Delete</button>
+      {deleteModal ? <DeleteConfirmationModal show={toggleDelete} hide={hideDelete} delete={props.deleteJob} id={props.job.id} /> : null }
     </div>
   }
 
