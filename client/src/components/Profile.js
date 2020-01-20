@@ -24,7 +24,7 @@ class Profile extends React.Component {
     return (
       <>
         <div className="new-profile profile-sidebar">
-          <div className="main-home-container">
+          {/* <div className="main-home-conatiner"> */}
             <div className="main-sidebar-container sidebar-radius">
               <ProfileSidebar />
             </div>
@@ -44,7 +44,7 @@ class Profile extends React.Component {
                 </center>
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </>
     )
@@ -65,7 +65,7 @@ class Profile extends React.Component {
     return (
       <>
         <div className="new-profile profile-sidebar">
-          <div className="main-home-container">
+          {/* <div className="main-home-container"> */}
             <div className="main-sidebar-container sidebar-radius">
               <ProfileSidebar />
             </div>
@@ -136,7 +136,7 @@ class Profile extends React.Component {
                 </form>
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </>
     )

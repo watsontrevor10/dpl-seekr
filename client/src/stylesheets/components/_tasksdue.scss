@@ -68,7 +68,19 @@ $main-color: $nth !default;
 }
 
 @media screen and (max-width: 550px) {
+  .task-card-container {
+    width: 100%;
+    display: flex;
+
+    .task-card {
+      width: 90%;
+    }
+  }
   .task-container {
     width: 90%;
+  }
+
+  .heading-container h2 {
+    font-size: 1rem;
   }
 }
