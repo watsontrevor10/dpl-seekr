@@ -112,7 +112,7 @@ const ContactForm = (props) => {
           </div>
           <div className="form-input">
             <h3>Description</h3>
-            <input
+            <textarea
               type='text'
               name='description'
               label='description'
@@ -207,7 +207,7 @@ const ContactForm = (props) => {
             </div>
             <div className="form-input">
               <h3>Description</h3>
-              <input
+              <textarea
                 type='text'
                 name='description'
                 label='description'

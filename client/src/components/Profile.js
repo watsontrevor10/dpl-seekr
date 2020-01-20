@@ -64,7 +64,7 @@ class Profile extends React.Component {
     const { formValues: { name, email } } = this.state;
     return (
       <>
-        <div className="new-job profile-sidebar">
+        <div className="new-profile profile-sidebar">
           <div className="main-home-container">
             <div className="main-sidebar-container sidebar-radius">
               <ProfileSidebar />

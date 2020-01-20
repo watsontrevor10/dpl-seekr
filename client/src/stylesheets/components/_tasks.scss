@@ -13,13 +13,26 @@
     margin: 1rem 4rem;
     align-content: center;
     align-items: center;
+    justify-content: space-between;
+    .modal-task-content {
+      display: flex;
+      align-items: center;
+    }
+    .task-btns-container {
+      display: flex;
+
+      button {
+        border-style: none;
+        background-color: transparent;
+        color: var(--blue-3);
+      }
+    }
 
     p, button {
       margin-right: 10px;
     }
 
     input {
-      max-width: 5px;
       margin: 5px;
     }
     .true {
@@ -29,11 +42,6 @@
       }
       color: var(--gray-2);
       margin: 5px;
-
-      button {
-        border-style: none;
-        background-color: transparent;
-      }
     }
     .false {
       display: flex;
@@ -48,5 +56,14 @@
 }
 
 @media screen and (max-width: 550px) {
-  
+  .tasks {
+    .task {
+      margin: 1rem 2rem;
+    }
+    .jobview-form {
+      .info {
+        margin: 0;
+      }
+    }
+  }
 }

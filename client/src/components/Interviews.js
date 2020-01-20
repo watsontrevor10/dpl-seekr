@@ -61,7 +61,8 @@ const Interviews = (props) => {
         </>
         :
         <>
-        <div className="interview-heading-container">
+        <div className="main-notes-container">
+        <div className="notes-container">
           <h2 className="form-heading">Interviews</h2>
             <button
               className="jobinfo-save-btn"
@@ -83,6 +84,7 @@ const Interviews = (props) => {
                 </div>
               )}
               </div>
+            </div>
             </div>
           </>
       }
