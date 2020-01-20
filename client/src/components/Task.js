@@ -2,19 +2,23 @@ import React, { useState, useEffect, } from 'react';
 import axios from "axios";
 
 const Task = (props) => {
-  const [completed, setCompleted] = useState()
-  const {due_date, subject, completed_date,} = props.task
+  const {due_date, subject, completed_date, completed} = props.task
 
   useEffect( () => {
-    setCompleted(props.task.completed)
+    console.log(completed)
   },[])
   
+  const handleChange = (e) => {
+    e.preventDefault();
+    handleCompleted();
+  }
+  
   const handleCompleted = () => {
-    setCompleted(!completed);
-    const newTask = { due_date, subject, completed_date, completed: completed }
+    const newTask = { due_date, subject, completed_date, completed: !completed }
     axios.put(`/api/jobs/${props.task.job_id}/tasks/${props.task.id}`, newTask)
     .then(res => {
       props.handleUpdate();
+      
     })
   }
 
