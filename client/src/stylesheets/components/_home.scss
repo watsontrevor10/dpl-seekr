@@ -16,11 +16,17 @@
 .main-home-container {
   display: flex;
   flex-direction: row;
-  // min-height: 100vh;
+  min-height: 100vh;
   flex-grow: 1;
   flex-shrink: 1;
   // font-family: var(--main-font-family);
 }
+// .main-phome-container {
+//   display: flex;
+//   flex-direction: row;
+//   flex-grow: 1;
+//   flex-shrink: 1;
+// }
 
 .main-sidebar-container {
   display: flex;
