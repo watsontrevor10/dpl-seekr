@@ -7,7 +7,7 @@ class Job < ApplicationRecord
   has_many :contacts, dependent: :destroy
 
   # calculate tasks due within a certain timeframe for dashboard
-  def self.tasks_due(id, filter_date)
+  def self.tasks_due(id, filter_date, complete_filter)
     find_by_sql(["
       SELECT due_date, subject, company_name, job_title, status, user_id
       FROM jobs 
@@ -60,7 +60,7 @@ class Job < ApplicationRecord
     ", id])
   end
 
-  # calculate applications submitted over a 180-day time frame
+  # calculate applications submitted over a 180-day time frame for graphs on dashboard
   def self.apps_over_time(id)
     find_by_sql(["
       SELECT date_applied AS date,

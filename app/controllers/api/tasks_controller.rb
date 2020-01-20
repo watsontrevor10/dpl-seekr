@@ -4,7 +4,7 @@ class Api::TasksController < ApplicationController
   before_action :set_task, only: [:update, :destroy]
   
   def index
-    render json: @job.tasks.all
+    render json: @job.tasks.all.order(:completed, created_at: :desc,)
   end
 
   def create

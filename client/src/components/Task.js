@@ -26,15 +26,24 @@ const Task = (props) => {
     <>
       <div className="task">
         <div className="modal-task-content">
-          <input type="checkbox" name="completed" onChange={handleCompleted} checked={props.task.completed}/>
+          <input 
+            type="checkbox" 
+            name="completed" 
+            onChange={handleCompleted} 
+            checked={completed}
+          />
             <div className={ props.task.completed ? "true" : "false"}>
               <p>{props.task.subject}</p>
               <p>{props.task.due_date}</p>
             </div>
         </div>
         <div className="task-btns-container">
-          <button onClick={() => props.handleEdit(props.task)}>Edit</button>
-          <button onClick={() => props.handleDelete(props.task.id)}>Delete</button>
+          <button onClick={() => props.handleEdit(props.task)}>
+            Edit
+          </button>
+          <button onClick={() => props.handleDelete(props.task.id)}>
+            Delete
+          </button>
         </div>
       </div>
     </>

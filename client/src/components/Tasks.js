@@ -9,6 +9,7 @@ const Tasks = (props) => {
   const [form, setForm] = useState(false);
   const key = 0
 
+  // Initial API request for tasks
   useEffect(() => {
     axios.get(`/api/jobs/${props.id}/tasks/`)
       .then(res => {
@@ -16,6 +17,7 @@ const Tasks = (props) => {
       })
   }, []);
 
+  // Update function
   const handleUpdate = () => {
     axios.get(`/api/jobs/${props.id}/tasks`)
       .then(res => {
@@ -25,11 +27,13 @@ const Tasks = (props) => {
       })
   };
 
+  // Set tasks and toggles form
   const handleEdit = (task) => {
     setCurrentTask(task);
     toggleForm();
   };
 
+  // Delete function
   const handleDelete = (id) => {
     axios.delete(`/api/jobs/${props.id}/tasks/${id}`)
       .then(res => {
@@ -37,40 +41,54 @@ const Tasks = (props) => {
       })
   };
 
+  // Toggles form
   const handleCancel = () => {
     setForm(false);
     setCurrentTask(null);
   }
 
+  // Toggles form
   const toggleForm = () => {
     setForm(!form);
   };
 
   return (
     <>
-    <div className="main-notes-container main-tasks">
-      <div className="notes-container">
-        <h2 className="notes-header">Tasks</h2>
+      <div className="main-notes-container main-tasks">
+        <div className="notes-container">
+          <h2 className="notes-header">Tasks</h2>
           <button onClick={() => toggleForm()} className="jobinfo-save-btn">
-            {form ? 
+            {form ?
               'Cancel'
               : 'Add'
             }
           </button>
-          </div>
-          <div className="tasks">
+        </div>
+        <div className="tasks">
           {
             form ?
-            <TaskForm job_id={props.id} handleUpdate={handleUpdate} toggleForm={toggleForm} task={currentTask} handleCancel={handleCancel} />
-            :
-            <>
-            {tasks.map(task => (
-              <Task key={key + 1} task={task} handleUpdate={handleUpdate} handleDelete={handleDelete} handleEdit={handleEdit}/>
-              ))
-            }
-            </>
+              <TaskForm
+                job_id={props.id}
+                handleUpdate={handleUpdate}
+                toggleForm={toggleForm}
+                task={currentTask}
+                handleCancel={handleCancel}
+              />
+              :
+              <>
+                {tasks.map(task => (
+                  <Task
+                    key={key + 1}
+                    task={task}
+                    handleUpdate={handleUpdate}
+                    handleDelete={handleDelete}
+                    handleEdit={handleEdit}
+                  />
+                ))
+                }
+              </>
           }
-          </div>
+        </div>
       </div>
     </>
   )

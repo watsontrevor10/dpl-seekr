@@ -76,7 +76,8 @@ end
   5.times do
     t = j.tasks.create(
       due_date: Faker::Date.forward(days: 30),
-      subject: task_verbs.sample + ' ' + Faker::Name.first_name + ' ' + 'about' + ' ' + Faker::Hacker.adjective, 
+      subject: task_verbs.sample + ' ' + Faker::Name.first_name + ' ' + 'about' + ' ' + Faker::Hacker.adjective,
+      completed: false, 
     )
   end
 

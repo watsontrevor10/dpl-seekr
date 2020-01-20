@@ -9,22 +9,6 @@ class Api::JobsController < ApplicationController
     render json: current_user.jobs.all
   end
   
-  def tasks_due
-    render json: current_user.jobs.tasks_due(@user_id, params[:filter_date])
-  end
-  
-  def job_graph
-    render json: current_user.jobs.total_jobs(@user_id)
-  end
-  
-  def apps_over_time
-    render json: current_user.jobs.apps_over_time(@user_id)
-  end
-
-  def upcoming_interviews
-    render json: current_user.jobs.upcoming_interviews(@user_id, params[:filter_date])
-  end
-
   def show
     render json: @job
   end
@@ -48,6 +32,27 @@ class Api::JobsController < ApplicationController
 
   def destroy
     @job.destroy
+  end
+
+  # Custom methods
+  def apps_over_time
+    render json: current_user.jobs.apps_over_time(@user_id)
+  end
+
+  def job_graph
+    render json: current_user.jobs.total_jobs(@user_id)
+  end
+
+  def tasks_due
+    render json: current_user.jobs.tasks_due(@user_id, params[:filter_date, :complete_filter])
+  end
+
+  def tasks_filter
+    render json: current_user.jobs.tasks_filter(@user_id, params[:filter_param])
+  end
+  
+  def upcoming_interviews
+    render json: current_user.jobs.upcoming_interviews(@user_id, params[:filter_date])
   end
 
   private
