@@ -79,7 +79,8 @@ class Job < ApplicationRecord
   def self.archive(id)
     Job.find_by_sql(["
       UPDATE jobs
-      SET status = 'Archived'
+      SET status = 'Archived', 
+      color = '#da5740'
       WHERE user_id = ?
         AND DATE_PART('day', CURRENT_DATE::timestamp - jobs.updated_at::timestamp) >= 90;
       ", id])
