@@ -71,7 +71,7 @@ const Notes = (props) => {
                 </button>
               </div>
               <div className="notes-padding-btn">
-                <button onClick={() => handleRemove(note.id)} className="note-card-button">
+                <button onClick={() => handleRemove(note.id)} className="note-card-delete">
                   Delete
                 </button>
               </div>

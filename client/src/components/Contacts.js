@@ -83,7 +83,7 @@ const Contacts = (props) => {
           </div>
             <div className="contact-btns">
               <button onClick={() => handleEdit(index)} className="jobinfo-save-btn contact-btn">Edit</button>
-              <button onClick={() => handleRemove(contact.id)}className="jobinfo-save-btn contact-btn">Delete</button>
+              <button onClick={() => handleRemove(contact.id)}className="contact-delete-btn">Delete</button>
             </div>
         </div>
       </>
