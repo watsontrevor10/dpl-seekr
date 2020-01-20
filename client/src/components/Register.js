@@ -29,7 +29,6 @@ class Register extends React.Component {
     return (
       <segment className="login-main-container">
         <div className="login-container register">
-          <Navbar />
           <h1>Sign Up</h1>
           <form 
             className="login-form-container" 
@@ -42,6 +41,7 @@ class Register extends React.Component {
               value={name}
               placeholder='Name'
               onChange={this.handleChange}
+              className="register-input"
             />
             <input
               label="Email"
@@ -51,6 +51,7 @@ class Register extends React.Component {
               value={email}
               placeholder='Email'
               onChange={this.handleChange}
+              className="register-input"
             />
             <input
               label="Password"
@@ -60,6 +61,7 @@ class Register extends React.Component {
               placeholder='Password'
               type='password'
               onChange={this.handleChange}
+              className="register-input"
             />
             <input
               label="Password Confirmation"
@@ -69,11 +71,13 @@ class Register extends React.Component {
               placeholder='Password Confirmation'
               type='password'
               onChange={this.handleChange}
+              className="register-input"
             />
             <segment textAlign='center' basic>
               <button primary type='submit'>Submit</button>
             </segment>
           </form>
+          <Navbar />
         </div>
       </segment>
     )
