@@ -85,7 +85,8 @@ textarea {
 
 @media screen and (max-width: 550px) {
   .notes-container {
-    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
     h2.form-heading, button.jobinfo-save-btn {
       margin: 1rem;
     }
@@ -97,9 +98,13 @@ textarea {
     }
   }
 
+  .notes-render-container {
+    margin: 1rem;
+  }
+
   .note-card {
     width: 100%;
-    margin: 0;
+    margin: 1rem;
     max-width: 275px;
   }
 }
