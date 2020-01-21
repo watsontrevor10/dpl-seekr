@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import useFormInput from '../hooks/useFormInput'
 import axios from 'axios'
+import DeleteConfirmationModal from './DeleteConfirmationModal';
 
 const JobViewForm = (props) => {
 
@@ -111,6 +112,8 @@ const JobViewForm = (props) => {
           save
         </button>
       </form>
+      <button className="job-card-delete" onClick={() => props.showDelete() }>Delete</button>
+      {props.deleteModal ? <DeleteConfirmationModal show={props.showDelete} hide={props.hideDelete} delete={props.deleteJob} id={props.job.id} /> : null }
     </>
   )
 }

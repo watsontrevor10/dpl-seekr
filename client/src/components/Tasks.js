@@ -61,6 +61,7 @@ const Tasks = (props) => {
     axios.delete(`/api/jobs/${props.id}/tasks/${id}`)
       .then(res => {
         setTasks(tasks.filter(task => task.id !== id))
+        hideDelete()
       })
   };
 

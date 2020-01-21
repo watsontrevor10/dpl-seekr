@@ -45,7 +45,7 @@ const JobCard = (props) => {
           <li className="card-meta"><Moment format="MM/DD/YYYY">{props.job.created_at}</Moment></li>
         </div>
       </ul>
-      <button className="job-card-delete" onClick={() => toggleDelete() }>Delete</button>
+      {/* <button className="job-card-delete" onClick={() => toggleDelete() }>Delete</button> */}
       {deleteModal ? <DeleteConfirmationModal show={toggleDelete} hide={hideDelete} delete={props.deleteJob} id={props.job.id} /> : null }
     </div>
   }
@@ -57,7 +57,7 @@ const JobCard = (props) => {
       <ul >
         {renderJob()}
       </ul>
-      {openModal ? <Modal handleUpdate={props.handleUpdate} job={props.job} hide={hide} show={openModal} /> : null}
+      {openModal ? <Modal handleUpdate={props.handleUpdate} job={props.job} hide={hide} show={openModal} showDelete={toggleDelete} hideDelete={hideDelete} delete={props.deleteJob} deleteModal={deleteModal} /> : null}
     </>
   )
 }
