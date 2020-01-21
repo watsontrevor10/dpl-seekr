@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import {
-  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
+  AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer,
 } from 'recharts';
 
 
@@ -29,12 +29,14 @@ class JobGraph extends React.Component {
     this.setState({ data: dataType })
   }
 
+
   render() {
     return (
       <>
         <div>
           <h3>Applications Submitted by Day</h3>
         </div>
+        {/* Area chart displaying number of applications by day */}
         <AreaChart
           width={500}
           height={400}
@@ -43,7 +45,6 @@ class JobGraph extends React.Component {
             top: 10, right: 30, left: 0, bottom: 0,
           }}
         >
-          {/* <CartesianGrid strokeDasharray="3 3" /> */}
           <XAxis dataKey="0" />
           <YAxis />
           <Tooltip />
