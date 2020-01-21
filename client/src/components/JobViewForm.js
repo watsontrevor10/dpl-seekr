@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import useFormInput from '../hooks/useFormInput'
 import axios from 'axios'
 
@@ -6,6 +6,7 @@ const JobViewForm = (props) => {
 
   const { values, handleChange, handleSubmit, setValues } = useFormInput(submit);
   const { company_name, job_title, status, date_applied, description, job_url, location, salary, color } = values
+  const [success, setSuccess] = useState(false)
 
   useEffect(() => {
     if (props.job) {
@@ -24,6 +25,10 @@ const JobViewForm = (props) => {
     };
   }, []);
 
+  const toggleSuccess = () => {
+    setSuccess(false)
+  }
+
   function submit() {
     const newJob = { company_name, job_title, status, date_applied, description, job_url, location, salary, color }
     if (props.job) {
@@ -31,12 +36,15 @@ const JobViewForm = (props) => {
         .then(res => {
           props.handleUpdate();
           setValues({})
+          setSuccess(true)
+          setInterval(toggleSuccess, 3000)
         })
     }
   };
 
   return (
     <>
+    {success ? <div className="message"><h3 className="success">Successful!</h3></div> : null }
       <h2 className="form-heading">{props.job.job_title}</h2>
       <form onSubmit={handleSubmit} className="jobview-form info">
         <div className="all-inputs info-input">
