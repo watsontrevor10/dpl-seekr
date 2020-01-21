@@ -4,20 +4,24 @@ import Backdrop from './Backdrop';
 const DeleteConfirmationModal = (props) => {
 
 const [doubleConfirmation, setDoubleConfirmation] = useState(false)
+const [confirm, setConfirm] = useState(true)
 
 const toggleSecondConfirmation = () => {
   setDoubleConfirmation(true)
+  setConfirm(false)
 }
 
   return(
     <>
     <Backdrop show={props.show} hide={props.hide} />
     <div className="delete-confirmation-container">
+      { confirm ?
       <div className="delete-header">
         <h3>Are you sure you would like to delete this Job?</h3>
         <button onClick={() => toggleSecondConfirmation() }>Yes</button>
         <button onClick={() => props.hide()}>No</button>
       </div>
+      :
       <div className="second-confirmation-container">
         {doubleConfirmation ? 
         <>
@@ -27,6 +31,7 @@ const toggleSecondConfirmation = () => {
         </>
         : null }
       </div>
+      }
     </div>
     </>
   );

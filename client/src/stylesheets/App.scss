@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import "./base/base";
 @import "./components/notesForm";
 @import "./components/login";
@@ -24,6 +25,7 @@
 @import "./components/tasks";
 @import "./components/deleteconfirmationmodal"; 
 @import "./components/deletemodal";
+
 
 $colors: 
   #5e2d5e,

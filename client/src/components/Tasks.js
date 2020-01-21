@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Task from './Task';
 import TaskForm from './TaskForm';
+import DeleteModal from "./DeleteModal";
 
 const Tasks = (props) => {
   const [currentTask, setCurrentTask] = useState(null);
@@ -9,6 +10,14 @@ const Tasks = (props) => {
   const [form, setForm] = useState(false);
   const [completedFilter, setCompletedFilter] = useState("false")
   // const key = 0
+  const [deleteModal, setDeleteModal] = useState(false)
+
+  const toggleDelete = () => {
+    setDeleteModal(true)
+  }
+  const hideDelete = () => {
+    setDeleteModal(!deleteModal)
+  }
 
   // Initial API request for tasks
   useEffect(() => {
@@ -110,6 +119,9 @@ const Tasks = (props) => {
                     handleDelete={handleDelete}
                     handleEdit={handleEdit}
                     filter={completedFilter}
+                    show={toggleDelete}
+                    hide={hideDelete}
+                    deleteModal={deleteModal}
                   />
                 ))
                 }
