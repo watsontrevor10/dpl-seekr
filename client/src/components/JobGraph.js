@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import {
-  BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  BarChart, Bar, Cell, XAxis, YAxis, Tooltip,
 } from 'recharts';
 
 class JobGraph extends React.Component {
@@ -41,11 +41,9 @@ class JobGraph extends React.Component {
             top: 10, right: 30, left: 0, bottom: 0,
           }}
         >
-          {/* <CartesianGrid strokeDasharray="3 3" /> */}
           <XAxis dataKey="0" />
           <YAxis />
           <Tooltip />
-          {/* <Legend /> */}
           <Bar dataKey="1" fill="#3d1a68" />
         </BarChart>
       </>
