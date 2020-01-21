@@ -1,4 +1,4 @@
-import React, { useState, useEffect, } from 'react';
+import React from 'react';
 import axios from "axios";
 
 const Task = (props) => {
@@ -10,6 +10,7 @@ const Task = (props) => {
 
     axios.put(`/api/jobs/${props.task.job_id}/tasks/${props.task.id}`, newTask)
     .then(res => {
+      // function exists on Tasks.js
       props.handleUpdate();
     })
   }

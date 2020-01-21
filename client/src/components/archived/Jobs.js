@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import JobForm from '../components/JobForm';
-import { Link } from 'react-router-dom';
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import JobForm from '../components/JobForm';
+// import { Link } from 'react-router-dom';
 
 
-const Jobs = (props) => {
-  return (
-    <h1> </h1>
-  )
-}
+// const Jobs = (props) => {
+//   return (
+//     <h1> </h1>
+//   )
+// }
 //   // State for looping through users jobs
 //   const [ jobs, setJobs ] = useState([])
 //   const [ toggleForm, setToggleForm] = useState(false)
@@ -61,4 +61,4 @@ const Jobs = (props) => {
 
 
 
-export default Jobs
+// export default Jobs

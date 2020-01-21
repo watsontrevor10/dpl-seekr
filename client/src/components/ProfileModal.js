@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Backdrop from './Backdrop';
 import Profile from './Profile';
 

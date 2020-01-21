@@ -1,4 +1,4 @@
-import React, { useState, useEffect, usePrevious, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Task from './Task';
 import TaskForm from './TaskForm';
@@ -8,8 +8,7 @@ const Tasks = (props) => {
   const [tasks, setTasks] = useState([]);
   const [form, setForm] = useState(false);
   const [completedFilter, setCompletedFilter] = useState("false")
-  const prevFilterRef = useRef(completedFilter)
-  const key = 0
+  // const key = 0
 
   // Initial API request for tasks
   useEffect(() => {
@@ -19,18 +18,17 @@ const Tasks = (props) => {
       })
   }, []);
 
-  // Update function
+  // Update function, triggered from Task component
   const handleUpdate = () => {
     axios.get(`/api/jobs/${props.id}/tasks`)
       .then(res => {
         setTasks(res.data);
         setCurrentTask(null);
         setForm(false);
-        setCompletedFilter(prevFilterRef.current)
       })
   };
 
-  // filters task results by complete/incomplete
+  // filters task results by complete/incomplete dropdown
   const handleFilter = (e) => {
     setCompletedFilter(e.target.value)
     axios.get(`/api/jobs/${props.id}/tasks/`, {

@@ -5,9 +5,9 @@ class Api::TasksController < ApplicationController
   
   def index
     if (params[:filter] == "false") 
-      render json: @job.tasks.all.where(completed: true).order(created_at: :desc)
+      render json: @job.tasks.all.where(completed: true).order(:due_date)
     else 
-      render json: @job.tasks.all.where(completed: false).order(created_at: :desc)
+      render json: @job.tasks.all.where(completed: false).order(:due_date)
     end
   end
 

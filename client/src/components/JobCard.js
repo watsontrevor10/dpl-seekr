@@ -1,21 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import JobForm from '../components/JobForm';
-import { Link } from 'react-router-dom';
-import DeleteConfirmation from "./DeleteConfirmationModal";
+import React, { useState } from 'react';
+// import axios from 'axios';
+// import JobForm from '../components/JobForm';
+// import { Link } from 'react-router-dom';
+// import DeleteConfirmation from "./DeleteConfirmationModal";
 import Modal from "./Modal"
 import Moment from 'react-moment';
 import 'moment-timezone';
 import DeleteConfirmationModal from './DeleteConfirmationModal';
-
-// const colors = [
-//   "#7a0d9b", 
-//   "#cd3a50",
-//   "#c79106", 
-//   "#189ad2", 
-//   "#d25511", 
-//  " #4954e6"
-// ];
 
 const JobCard = (props) => {
   // State for looping through users jobs
