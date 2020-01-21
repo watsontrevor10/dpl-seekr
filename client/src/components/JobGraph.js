@@ -11,52 +11,38 @@ class JobGraph extends React.Component {
         this.setState({ totalJobs: res.data }, () => {
           this.loop();
         })
-         
+
       })
   }
 
   // formats data to ingestable by bar graph
   loop = () => {
     const dataType = []
-      this.state.totalJobs.map(j => {
+    this.state.totalJobs.map(j => {
       dataType.push([j.status, j.totals])
-       })
-     this.setState({data: dataType})
+    })
+    this.setState({ data: dataType })
   }
 
   render() {
     return (
       <>
-          {/* Bar graph displaying total jobs submitted by status */}
-          <Chart
-            className="graph"
-            chartType="Bar"
-            loader={<div>Loading Chart</div>}
-            data={[
-              ['Status', 'Totals'],
-              ...this.state.data
-            ]}
-            options={{
-              chart: {
-                title: 'Total Jobs by Status'
-              },
-              colors: ['#3d1a68'],
-              legend: 'none',
-              hAxis: {
-                title: 'Status',
-              },
-              vAxis: {
-                title: 'Jobs'
-              },
-              animation: {
-                startup: true,
-                easing: 'linear',
-                duration: 1500,
-              },
-            }}
-            // For tests
-            rootProps={{ 'data-testid': '2' }}
-          />
+        <div>
+          <h3>Total Jobs by Status</h3>
+        </div>
+        {/* Bar graph displaying total jobs submitted by status */}
+        <Chart
+          className="graph"
+          chartType="Bar"
+          loader={<div>Loading Chart</div>}
+          data={[
+            ['Status', 'Totals'],
+            ...this.state.data
+          ]}
+          options={{
+            colors: ['#3d1a68'],
+          }}
+        />
       </>
     )
   }
