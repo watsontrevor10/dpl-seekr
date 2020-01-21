@@ -23,9 +23,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--main-font-family);
-  &:hover {
-    border-color: var(--gray-2);
-  }
 
   &:focus {
     outline: var(--gray-2);
@@ -57,7 +54,8 @@
 
 // MAIN ADD BUTTON
 .add-btn {
-  
+  background-color: transparent;
+  border-style: none;
 }
 
 @keyframes moveInBottom {
