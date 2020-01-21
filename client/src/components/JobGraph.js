@@ -41,6 +41,7 @@ class JobGraph extends React.Component {
           ]}
           options={{
             colors: ['#3d1a68'],
+            legend: { position: 'none' },
           }}
         />
       </>
