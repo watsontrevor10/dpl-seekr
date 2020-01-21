@@ -9,7 +9,13 @@
     display: flex; 
     flex-direction: column;
     width: inherit !important;
-    
+    // text:nth-of-child(1) {
+    //   font-size: 1.5rem !important;
+    // }  
+    a {
+      text-decoration: none !important;
+    }
+
     span {
       background-color: transparent !important ;
       color: var(--theme-gray-main) !important;

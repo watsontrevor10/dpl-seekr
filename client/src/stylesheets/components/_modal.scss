@@ -1,5 +1,5 @@
 :root {
-  --main-font-family: sans-serif;
+  --main-font-family: 'Open Sans', sans-serif;
 
   --white: #fff;
   --gray-1: #faf9f9;
@@ -52,7 +52,7 @@
     height: 60px;
     background-color: var(--blue);
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 
   .tab-container{
