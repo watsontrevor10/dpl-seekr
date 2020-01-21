@@ -31,33 +31,21 @@ class JobGraph extends React.Component {
   render() {
     return (
       <>
+        <div>
+          <h3>Applications Submitted by Day</h3>
+        </div>
         {/* area chart showing total applications submitted by day for the last 180 days */}
         <Chart
           className="graph"
-          chartType="AreaChart"
+          chartType="Bar"
           loader={<div>Loading Chart</div>}
           data={[
-            ['Week', 'Applications'],
+            ['Date', 'Applications'],
             ...this.state.data
           ]}
           options={{
-            title: 'Applications Submitted by Day',
-            colors: ['#151E3F'],
-            legend: { position: 'top', maxLines: 3 },
-            hAxis: {
-              title: 'Date Applied'
-            },
-            vAxis: {
-              title: 'Applications'
-            },
-            animation: {
-              startup: true,
-              easing: 'linear',
-              duration: 1500,
-            },
+            colors: ['#3d1a68'],
           }}
-          // For tests
-          rootProps={{ 'data-testid': '2' }}
         />
       </>
     )
