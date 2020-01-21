@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from "axios";
-import Chart from "react-google-charts";
-import 'moment-timezone'
+import {
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
+} from 'recharts';
 
 
 class JobGraph extends React.Component {
@@ -34,23 +35,23 @@ class JobGraph extends React.Component {
         <div>
           <h3>Applications Submitted by Day</h3>
         </div>
-        {/* area chart showing total applications submitted by day for the last 180 days */}
-        <Chart
-          className="graph"
-          chartType="Bar"
-          loader={<div>Loading Chart</div>}
-          data={[
-            ['Date', 'Applications'],
-            ...this.state.data
-          ]}
-          options={{
-            colors: ['#3d1a68'],
+        <AreaChart
+          width={500}
+          height={400}
+          data={this.state.data}
+          margin={{
+            top: 10, right: 30, left: 0, bottom: 0,
           }}
-        />
+        >
+          {/* <CartesianGrid strokeDasharray="3 3" /> */}
+          <XAxis dataKey="0" />
+          <YAxis />
+          <Tooltip />
+          <Area type="monotone" dataKey="1" stroke='black' fill="#3d1a68" />
+        </AreaChart>
       </>
-    )
+    );
   }
 }
-
 
 export default JobGraph;

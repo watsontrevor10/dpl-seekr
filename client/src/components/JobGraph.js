@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from "axios";
-import Chart from "react-google-charts";
+import {
+  BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+} from 'recharts';
 
 class JobGraph extends React.Component {
   state = { totalJobs: [], data: [] }
@@ -31,18 +33,21 @@ class JobGraph extends React.Component {
           <h3>Total Jobs by Status</h3>
         </div>
         {/* Bar graph displaying total jobs submitted by status */}
-        <Chart
-          className="graph"
-          chartType="Bar"
-          loader={<div>Loading Chart</div>}
-          data={[
-            ['Status', 'Totals'],
-            ...this.state.data
-          ]}
-          options={{
-            colors: ['#3d1a68'],
+        <BarChart
+          width={500}
+          height={400}
+          data={this.state.data}
+          margin={{
+            top: 10, right: 30, left: 0, bottom: 0,
           }}
-        />
+        >
+          {/* <CartesianGrid strokeDasharray="3 3" /> */}
+          <XAxis dataKey="0" />
+          <YAxis />
+          <Tooltip />
+          {/* <Legend /> */}
+          <Bar dataKey="1" fill="#3d1a68" />
+        </BarChart>
       </>
     )
   }
