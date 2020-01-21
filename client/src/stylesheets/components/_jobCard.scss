@@ -1,5 +1,5 @@
 :root {
-  --main-font-family: sans-serif;
+  --main-font-family: 'Open Sans', sans-serif;
 
   --white: #fff;
   --gray-1: #faf9f9;
@@ -52,6 +52,7 @@ $default-card-color: #050044 !default;
 
   div.container-card-meta {
     padding-bottom: 1rem;
+    letter-spacing: 1px;
   }
 
   li.card-meta {
@@ -72,6 +73,7 @@ $default-card-color: #050044 !default;
     color: white;
     background-color: #c12020;
     border-radius: 7px;
+    letter-spacing: 1px;
   }
 }
 
