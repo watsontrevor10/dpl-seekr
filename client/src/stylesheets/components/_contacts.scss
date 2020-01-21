@@ -112,6 +112,11 @@
       .contact-card {
         min-width: 8rem;
         max-width: 80%;
+
+        .contact-content {
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
     }
 }
