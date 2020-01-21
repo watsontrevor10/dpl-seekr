@@ -26,7 +26,7 @@
   margin: 1rem 4rem;
   padding: 5px 10px;
   font-size: 1.8rem;
-  color: var(--blue-3);
+  color: var(--blue);
 }
 
 .jobview-form {
@@ -120,8 +120,9 @@
     border: none;
     padding: 0.3rem;
     margin: 0.2rem;
-    width: 7rem;
+    width: 8rem;
   }
+
   h3 {
     font-weight: 600;
     margin: 0.3rem 0 1rem;
@@ -138,14 +139,12 @@
   font-size: 1rem;
   border-radius: 5px;
   background-color: var(--grey-6);
-  color: var(--blue-3);
+  color: var(--blue);
   border-style: none;
 }
 
-.jobinfo-save-btn.info {
+.jobinfo-save-btn.info, .jobinfo-save-btn.note {
   margin: 1rem 0;
-  // background-color: var(--blue-3);
-  // color: var(--white);
 }
 
 @media screen and (max-width: 550px) {

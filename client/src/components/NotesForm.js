@@ -52,7 +52,7 @@ const NotesForm = (props) => {
               placeholder="add a note"
             />
           </div>
-            <button type="submit" value="Submit" className="jobinfo-save-btn" >Save</button>       
+            <button type="submit" value="Submit" className="jobinfo-save-btn note">Save</button>      
         </form>
       </div>
     )
