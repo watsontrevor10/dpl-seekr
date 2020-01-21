@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import NumberFormat from 'react-number-format';
 import useFormInput from '../hooks/useFormInput'
 
 const ContactForm = (props) => {
@@ -43,92 +44,93 @@ const ContactForm = (props) => {
     return (
       <>
         <form onSubmit={submit} className="jobview-form contact-form">
-        <div className="all-inputs">
-          <div className="form-input">
-            <h3>First Name</h3>
-            <input
-              type='text'
-              name='first_name'
-              label='First Name'
-              value={first_name}
-              {...first_name}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-input">
-            <h3>Last Name</h3>
-            <input
-              type='text'
-              name='last_name'
-              label='Last Name'
-              value={last_name}
-              {...last_name}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-input">
-            <h3>Phone</h3>
-            <input
-              type='text'
-              name='phone'
-              label='Phone'
-              value={phone}
-              {...phone}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-input">
-            <h3>Email</h3>
-            <input
-              type='text'
-              name='email'
-              label='Email'
-              value={email}
-              {...email}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-input">
-            <h3>Position</h3>
-            <input
-              type='text'
-              name='position'
-              label='position'
-              value={position}
-              {...position}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-input">
-            <h3>Department</h3>
-            <input
-              type='text'
-              name='department'
-              label='department'
-              value={department}
-              {...department}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-input">
-            <h3>Description</h3>
-            <textarea
-              type='text'
-              name='description'
-              label='description'
-              value={description}
-              {...description}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <button 
-              className="jobinfo-save-btn info"
-              type="submit" value="Submit"
-            > 
-              save
+          <div className="all-inputs">
+            <div className="form-input">
+              <h3>First Name</h3>
+              <input
+                type='text'
+                name='first_name'
+                label='First Name'
+                value={first_name}
+                {...first_name}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <h3>Last Name</h3>
+              <input
+                type='text'
+                name='last_name'
+                label='Last Name'
+                value={last_name}
+                {...last_name}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <h3>Phone</h3>
+              <NumberFormat
+                format="(###) ###-####" mask="_"
+                type='text'
+                name='phone'
+                label='Phone'
+                value={phone}
+                {...phone}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <h3>Email</h3>
+              <input
+                type='text'
+                name='email'
+                label='Email'
+                value={email}
+                {...email}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <h3>Job Title</h3>
+              <input
+                type='text'
+                name='position'
+                label='position'
+                value={position}
+                {...position}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <h3>Department</h3>
+              <input
+                type='text'
+                name='department'
+                label='department'
+                value={department}
+                {...department}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <h3>Description</h3>
+              <textarea
+                type='text'
+                name='description'
+                label='description'
+                value={description}
+                {...description}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <button
+                className="jobinfo-save-btn info"
+                type="submit" value="Submit"
+              >
+                save
             </button>
-          </div>
+            </div>
           </div>
         </form>
       </>
@@ -149,8 +151,8 @@ const ContactForm = (props) => {
                 {...first_name}
                 onChange={handleChange}
               />
-            </div> 
-            <div className="form-input"> 
+            </div>
+            <div className="form-input">
               <h3>Last Name </h3>
               <input
                 type='text'
@@ -163,11 +165,12 @@ const ContactForm = (props) => {
             </div>
             <div className="form-input">
               <h3>Phone</h3>
-              <input
+              <NumberFormat
+                format="(###) ###-####" mask="_"
                 type='text'
                 name='phone'
                 label='Phone'
-                placeholder='Phone'
+                value={phone}
                 {...phone}
                 onChange={handleChange}
               />
@@ -217,10 +220,10 @@ const ContactForm = (props) => {
               />
             </div>
           </div>
-          <button 
+          <button
             className="jobinfo-save-btn info"
             type="submit" value="Submit"
-          > 
+          >
             save
           </button>
         </form>
