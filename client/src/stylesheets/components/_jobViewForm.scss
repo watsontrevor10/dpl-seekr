@@ -170,6 +170,27 @@
 .jobinfo-save-btn.info, .jobinfo-save-btn.note {
   margin: 1rem 0;
 }
+.message {
+  text-align: center;
+  width: 100%;
+}
+.success {
+  color: var(--theme-blue-main);
+  opacity: 1;
+  animation: fadeOut 2.5s ease-in both;
+}
+
+@keyframes fadeOut {
+  from {
+		opacity: 1;
+    transform: translate3d(0, -20%, 0);
+	}
+	to {
+		opacity: 0;
+    transform: translate3d(0, 0, 0);
+    visibility: hidden;
+	}
+}
 
 @media screen and (max-width: 550px) {
   .form-heading {
