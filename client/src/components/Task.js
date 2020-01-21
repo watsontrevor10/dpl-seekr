@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import DeleteModal from "./DeleteModal";
 
 const Task = (props) => {
   const {due_date, subject, completed_date, completed} = props.task
@@ -38,11 +39,12 @@ const Task = (props) => {
           </button>
           <button 
             className="modal-info-delete-btn"
-            onClick={() => props.handleDelete(props.task.id)}
+            onClick={() => props.show()}
           >
             Delete
           </button>
         </div>
+        { props.deleteModal ? <DeleteModal show={props.show} hide={props.hide} delete={props.handleDelete} id={props.task.id} />: null }
       </div>
     </>
 
