@@ -57,10 +57,22 @@ const Interviews = (props) => {
 
   return (
     <>
+    <div className="notes-container">
+      <h2 className="form-heading">Interviews</h2>
+      <div className="btn-toggle" onClick={toggleForm}
+        >
+        { form ?
+          <button className="jobinfo-save-btn">Cancel</button>
+          : 
+          <svg className="add-btn" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+          <path d="M16 10c0 0.553-0.048 1-0.601 1h-4.399v4.399c0 0.552-0.447 0.601-1 0.601s-1-0.049-1-0.601v-4.399h-4.399c-0.552 0-0.601-0.447-0.601-1s0.049-1 0.601-1h4.399v-4.399c0-0.553 0.447-0.601 1-0.601s1 0.048 1 0.601v4.399h4.399c0.553 0 0.601 0.447 0.601 1z"></path>
+          </svg>
+        }
+      </div>
+    </div>
       {
         form ?
         <>
-          <h2 className="form-heading">Interviews</h2>
           <InterviewForm
           job_id={props.id}
           handleUpdate={handleUpdate}
@@ -72,16 +84,7 @@ const Interviews = (props) => {
         :
         <>
         <div className="main-notes-container">
-        <div className="notes-container">
-          <h2 className="form-heading">Interviews</h2>
-            <button
-              className="add-btn"
-              onClick={toggleForm}
-              >
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-              <path d="M16 10c0 0.553-0.048 1-0.601 1h-4.399v4.399c0 0.552-0.447 0.601-1 0.601s-1-0.049-1-0.601v-4.399h-4.399c-0.552 0-0.601-0.447-0.601-1s0.049-1 0.601-1h4.399v-4.399c0-0.553 0.447-0.601 1-0.601s1 0.048 1 0.601v4.399h4.399c0.553 0 0.601 0.447 0.601 1z"></path>
-              </svg>
-            </button>
+            
           </div>
           <div className="interview-cards-container">
             <div className="interview-card-container">
@@ -99,7 +102,6 @@ const Interviews = (props) => {
                 </div>
               )}
               </div>
-            </div>
             </div>
           </>
       }
