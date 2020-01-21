@@ -18,17 +18,17 @@ const toggleSecondConfirmation = () => {
       { confirm ?
       <div className="delete-header">
         <h3>Are you sure you would like to delete this Job?</h3>
-        <button onClick={() => toggleSecondConfirmation() }>Yes</button>
-        <button onClick={() => props.hide()}>No</button>
+        <button className="modal-yes" onClick={() => props.hide()}>No</button>
+        <button className="modal-info-delete-btn" onClick={() => toggleSecondConfirmation() }>Delete</button>
       </div>
       :
-      <div className="second-confirmation-container">
+      <div className="delete-confirmation-container">
         {doubleConfirmation ? 
-        <>
-          <h3 className="delete-header">This will delete the job along with the contents that go with it, <br />are you positive you would like to delete?</h3> 
-          <button onClick={() => props.delete(props.id)}>Yes</button>
-          <button onClick={() => props.hide()}>No</button>
-        </>
+        <div className="delete-header">
+          <h3>This will delete the job along with the contents that go with it, are you positive you would like to delete?</h3> 
+          <button className="modal-yes" onClick={() => props.hide()}>No</button>
+          <button className="modal-info-delete-btn" onClick={() => props.delete(props.id)}>Delete</button>
+        </div>
         : null }
       </div>
       }
@@ -36,5 +36,7 @@ const toggleSecondConfirmation = () => {
     </>
   );
 };
+
+// This will delete the job along with the contents that go with it, are you positive you would like to delete?
 
 export default DeleteConfirmationModal; 
