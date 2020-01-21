@@ -59,7 +59,7 @@ const Modal = (props) => {
           </Tab>
         </TabList>
         <TabPanel className="tab-container">
-          <JobViewForm job={props.job} handleUpdate={props.handleUpdate} />
+          <JobViewForm job={props.job} showDelete={props.showDelete} hideDelete={props.hideDelete} delete={props.delete} handleUpdate={props.handleUpdate} deleteModal={props.deleteModal}/>
         </TabPanel>
         <TabPanel className="tab-container">
           <Interviews id={props.job.id} />
