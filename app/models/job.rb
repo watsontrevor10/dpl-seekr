@@ -60,7 +60,7 @@ class Job < ApplicationRecord
     ", id])
   end
 
-  # calculate applications submitted over a 180-day time frame
+  # calculate applications submitted over a 180-day time frame for graphs on dashboard
   def self.apps_over_time(id)
     find_by_sql(["
       SELECT date_applied AS date,

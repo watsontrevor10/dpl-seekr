@@ -49,27 +49,74 @@ const ListContainer = () => {
           <div className="list-container">
             <h1 className="job-board-heading-mobile">Job Board</h1>
             <div className="list">
-              <List name="Wishlist" className="list-component-container" key={1} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob} />
+              <List 
+                name="Wishlist" 
+                className="list-component-container" 
+                key={1} 
+                jobs={jobs} 
+                handleUpdate={handleUpdate} 
+                deleteJob={deleteJob} 
+                add={addJob} 
+              />
             </div>
             <div className="list">
-              <List name="Applied" className="list-component-container" key={2} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob} />
+              <List 
+                name="Applied" 
+                className="list-component-container" 
+                key={2} 
+                jobs={jobs} 
+                handleUpdate={handleUpdate} 
+                deleteJob={deleteJob} 
+                add={addJob} 
+              />
             </div>
             <div className="list">
-              <List name="Interviewed" className="list-component-container" key={3} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob} />
+              <List 
+                name="Interviewed" 
+                className="list-component-container" 
+                key={3} 
+                jobs={jobs} 
+                handleUpdate={handleUpdate} 
+                deleteJob={deleteJob} 
+                add={addJob} 
+              />
             </div>
             <div className="list">
-              <List name="Offer" className="list-component-container" key={4} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob} />
+              <List 
+                name="Offer"
+                className="list-component-container" 
+                key={4} 
+                jobs={jobs} 
+                handleUpdate={handleUpdate} 
+                deleteJob={deleteJob} 
+                add={addJob} 
+              />
             </div>
             <div className="list">
-              <List name="Rejected" className="list-component-container" key={5} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob} />
+              <List 
+                name="Rejected" 
+                className="list-component-container" 
+                key={5} 
+                jobs={jobs} 
+                handleUpdate={handleUpdate} 
+                deleteJob={deleteJob} 
+                add={addJob} 
+              />
             </div>
             <div className="list">
-              <List name="Archived" className="list-component-container" key={6} jobs={jobs} handleUpdate={handleUpdate} deleteJob={deleteJob} add={addJob} />
+              <List 
+                name="Archived" 
+                className="list-component-container" 
+                key={6} 
+                jobs={jobs} 
+                handleUpdate={handleUpdate} 
+                deleteJob={deleteJob} 
+                add={addJob} 
+              />
             </div>
           </div>
         </div>
       </div>
-
     </>
   )
 }

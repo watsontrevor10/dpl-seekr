@@ -4,7 +4,11 @@ class Api::TasksController < ApplicationController
   before_action :set_task, only: [:update, :destroy]
   
   def index
-    render json: @job.tasks.all
+    if (params[:filter] == "false") 
+      render json: @job.tasks.all.where(completed: true).order(created_at: :desc)
+    else 
+      render json: @job.tasks.all.where(completed: false).order(created_at: :desc)
+    end
   end
 
   def create
@@ -22,7 +26,6 @@ class Api::TasksController < ApplicationController
     else
       render json: @task.errors
     end
-    # binding.pry
   end
   
   def destroy
