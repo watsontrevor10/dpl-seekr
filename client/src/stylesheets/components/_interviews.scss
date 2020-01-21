@@ -20,14 +20,7 @@
   --beige: #C7C7B2;
   --red: #da5740;
 }
-// .interview-heading-container {
-//   display: flex;
-//   justify-content: space-between;
-//   width: 100%;
-//   h2, button {
-//     margin: 0.6rem 4rem;
-//   }
-// }
+
 
 div.interviews-card {
   list-style: none;
@@ -84,16 +77,17 @@ button.interviews-add-btn {
   justify-content: flex-end;
 }
 
-button.interviews-delete-btn {
-  padding: 5px 5px;
-  margin: 0.3rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  color: white;
-  background-color: #c12020;
-  border-radius: 7px;
-  justify-content: flex-end;
-}
+// button.interviews-delete-btn {
+//   padding: 5px 5px;
+//   margin: 0.3rem;
+//   font-size: 1rem;
+//   border-radius: 5px;
+//   color: white;
+//   background-color: #c12020;
+//   border-radius: 7px;
+//   justify-content: flex-end;
+// }
+
 
 
 

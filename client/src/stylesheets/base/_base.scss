@@ -6,6 +6,8 @@
   --gray-2: #c9c9c9;
   --gray-3: #a2a2a2;
 
+  --delete-color: #c12020;
+
   --theme-blue-main: #151E3F;
   --theme-dark-main: #030027;
   --theme-gray-main: #96939b;
@@ -28,6 +30,34 @@
   &:focus {
     outline: var(--gray-2);
   }
+}
+
+// MAIN DELETE BUTTON
+.modal-info-delete-btn {
+  padding: 5px;
+  margin: 0.3rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: var(--delete-color);
+  background-color: inherit;
+  border-radius: 7px;
+  justify-content: flex-end;
+  border-style: none;
+}
+
+// MAIN EDIT BUTTON
+.edit-btn {
+  border-style: none;
+  background-color: inherit;
+
+  svg {
+    color: var(--gray-7);
+  }
+}
+
+// MAIN ADD BUTTON
+.add-btn {
+  
 }
 
 @keyframes moveInBottom {

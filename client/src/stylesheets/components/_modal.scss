@@ -32,10 +32,10 @@
   top: 5%;
   box-sizing: border-box;
   overflow: auto;
-  width: 70%;
+  width: 75%;
   max-height: 90%;
   min-height: 370px;
-  left: calc(50% - 35%);
+  left: calc(50% - 37.5%);
 
   animation-name: moveInBottom; /*refers to @keyframes name*/
   animation-duration: 0.6s;
@@ -65,25 +65,17 @@
 
   .react-tabs__tab{
     color: #fff;
+
+
   }
 
   .react-tabs__tab--selected {
-    // color: var(--dark-purple);
-    border-bottom:2px solid ;
+    border-bottom: 2px solid;
+    line-height: 2;
   }
-  
-  // @media screen and (min-width: 500px) {
-  //   .main-modal-container {
-  //     width: 56rem;
-  //     left: calc(50% - 28rem);
-  //     height: 70%;
-  //     overflow: auto;
-  //     display: flex;
-  //     align-content: center;
-  //     flex-direction: column;
-  //   }
-  // }
+
   .modal-info-icon{
+    padding-left: 5px;
     display: flex;
     align-items: center;
   }
