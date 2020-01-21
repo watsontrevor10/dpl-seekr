@@ -1,4 +1,4 @@
-import React, { useState, useEffect, } from "react";
+import React, { useState, useEffect, usePrevious, useRef } from "react";
 import axios from "axios";
 import Task from './Task';
 import TaskForm from './TaskForm';
@@ -7,7 +7,8 @@ const Tasks = (props) => {
   const [currentTask, setCurrentTask] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [form, setForm] = useState(false);
-  const [completedFilter, setCompletedFilter] = useState(false)
+  const [completedFilter, setCompletedFilter] = useState("false")
+  const prevFilterRef = useRef(completedFilter)
   const key = 0
 
   // Initial API request for tasks
@@ -25,8 +26,22 @@ const Tasks = (props) => {
         setTasks(res.data);
         setCurrentTask(null);
         setForm(false);
+        setCompletedFilter(prevFilterRef.current)
       })
   };
+
+  // filters task results by complete/incomplete
+  const handleFilter = (e) => {
+    setCompletedFilter(e.target.value)
+    axios.get(`/api/jobs/${props.id}/tasks/`, {
+      params: {
+        filter: completedFilter
+      }
+    })
+      .then(res => {
+        setTasks(res.data)
+      })
+  }
 
   // Set tasks and toggles form
   const handleEdit = (task) => {
@@ -53,18 +68,6 @@ const Tasks = (props) => {
     setForm(!form);
   };
 
-  const handleFilter = (e) => {
-    setCompletedFilter(e.target.value)
-    axios.get(`/api/jobs/${props.id}/tasks/`, {
-      params: {
-        filter: !completedFilter
-      }
-    })
-    .then( res => {
-      setTasks(res.data)
-    })
-  }
-
   return (
     <>
       <div className="main-notes-container main-tasks">
@@ -82,8 +85,8 @@ const Tasks = (props) => {
           value={completedFilter}
           onChange={handleFilter}
         >
-          <option value={false}>Incomplete</option>
-          <option value={true}>Complete</option>
+          <option value="false">Incomplete</option>
+          <option value="true">Complete</option>
         </select>
         <div className="tasks">
           {
@@ -99,11 +102,13 @@ const Tasks = (props) => {
               <>
                 {tasks.map(task => (
                   <Task
-                    key={key + 1}
+                    key={task.id}
                     task={task}
                     handleUpdate={handleUpdate}
+                    handleFilter={handleFilter}
                     handleDelete={handleDelete}
                     handleEdit={handleEdit}
+                    filter={completedFilter}
                   />
                 ))
                 }
