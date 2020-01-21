@@ -2,7 +2,6 @@
   position: fixed;
   z-index: 500;
   background-color: var(--white);
-  // width: 480px;
   border-radius: 7px;
   height: 200px;
   box-shadow: 2px 1px 20px 0px #5f5f5f94;
@@ -19,4 +18,24 @@
   .delete-confirmation-text {
     width: 100%;
   }
+}
+
+@media screen and (max-width: 550px) {
+.delete-container {
+  position: fixed;
+  z-index: 500;
+  background-color: var(--white);
+  height: 200px;
+  width: 120%;
+  box-shadow: 2px 1px 20px 0px #5f5f5f94;
+  padding: 16px;
+  left: calc(50% - 225px);
+  top: 30%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  animation-name: moveInBottom; /*defined*/
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+}
 }
