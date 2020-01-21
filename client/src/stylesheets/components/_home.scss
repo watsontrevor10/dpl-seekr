@@ -16,11 +16,17 @@
 .main-home-container {
   display: flex;
   flex-direction: row;
-  // min-height: 100vh;
+  min-height: 100vh;
   flex-grow: 1;
   flex-shrink: 1;
   // font-family: var(--main-font-family);
 }
+// .main-phome-container {
+//   display: flex;
+//   flex-direction: row;
+//   flex-grow: 1;
+//   flex-shrink: 1;
+// }
 
 .main-sidebar-container {
   display: flex;
@@ -53,9 +59,8 @@
     width: 40px;
     height: 40px;
     z-index: 20;
-    left: 2.6rem;
-    // top: 85%;
-    top: 75px;
+    left: 25px;
+    top: 10px;
     align-items: center;
     justify-content: center;
     border-radius: 50px;

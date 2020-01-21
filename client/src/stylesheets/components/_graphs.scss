@@ -7,7 +7,7 @@
 
   div {
     display: flex; 
-
+    width: inherit !important;
     // text:nth-of-child(1) {
     //   font-size: 1.5rem !important;
     // }  
@@ -24,7 +24,12 @@
   // g, rect {
   //   width: 90% !important;
   // }
+
+  .graph {
+    width: 300px;
+    height: 240px;
+  }
   .task-card-container {
-    justify-content: center;
+    justify-content: space-between;
   }
 }

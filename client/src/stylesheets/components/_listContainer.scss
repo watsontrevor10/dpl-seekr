@@ -63,11 +63,6 @@
   }
 }
 
-// .home-container {
-//   display: flex;
-//   flex-direction: column;
-// }
-
 @media screen and (max-width: 550px) {
   .home-container {
     display: flex;
@@ -87,14 +82,14 @@
       font-weight: 400;
       font-size: 25px;
       letter-spacing: 2px;
-      margin: 10px;
+      margin: 15px 10px;
       text-transform: uppercase;
     }
 
     .list {
-      width: 90%;
+      width: 85%;
       .list-component-container {
-        width: 95%;
+        width: 100%;
       }
     }
   }
@@ -103,9 +98,3 @@
     display: none;
   }
 }
-
-// @media screen and (min-width: 550px) and (min-height: 500px) {
-//   .list {
-//     height: 80rem;
-//   }
-// }

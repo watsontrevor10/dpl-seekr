@@ -1,12 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import NotesForm from './NotesForm'
+import DeleteModal from "./DeleteModal";
+
 
 const Notes = (props) => {
   const [noteEdit, setNoteEdit] = useState(null)
   const [notes, setNotes] = useState([])
   const [toggleForm, setToggleForm] = useState(false)
   const [editForm, setEditForm] = useState(false)
+    // State for toggling delete confirmation modal 
+    const [deleteModal, setDeleteModal] = useState(false)
+
+
+    const toggleDelete = () => {
+      setDeleteModal(true)
+    }
+    const hideDelete = () => {
+      setDeleteModal(!deleteModal)
+    }
 
 
   // initial get request
@@ -22,6 +34,7 @@ const Notes = (props) => {
     axios.delete(`/api/jobs/${props.id}/notes/${id}`)
       .then(res => {
         setNotes(notes.filter(n => n.id !== id))
+        hideDelete()
       })
   }
 
@@ -71,12 +84,13 @@ const Notes = (props) => {
                 </button>
               </div>
               <div className="notes-padding-btn">
-                <button onClick={() => handleRemove(note.id)} className="note-card-button">
+                <button onClick={() => toggleDelete()} className="note-card-delete">
                   Delete
                 </button>
               </div>
             </div>
           </div>
+          { deleteModal ? <DeleteModal show={toggleDelete} hide={hideDelete} delete={handleRemove} id={note.id} />: null }
         </div>
         </>
       ))

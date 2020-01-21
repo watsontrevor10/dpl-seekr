@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ContactForm from './ContactForm'
 import axios from 'axios'
+import DeleteModal from "./DeleteModal";
 
 const Contacts = (props) => {
   // State for looping contacts on page
@@ -9,6 +10,16 @@ const Contacts = (props) => {
   const [editContact, setEditContact] = useState(null)
   // State for toggling ContactForm add/edit form
   const [toggleForm, setToggleForm] = useState(false)
+  // State for toggling delete confirmation modal 
+  const [deleteModal, setDeleteModal] = useState(false)
+
+
+  const toggleDelete = () => {
+    setDeleteModal(true)
+  }
+  const hideDelete = () => {
+    setDeleteModal(!deleteModal)
+  }
 
 
   useEffect(() => {
@@ -23,6 +34,7 @@ const Contacts = (props) => {
     axios.delete(`/api/jobs/${props.id}/contacts/${id}`)
       .then(res => {
         setContacts(contacts.filter(c => c.id !== id))
+        hideDelete()
       })
   }
 
@@ -83,8 +95,9 @@ const Contacts = (props) => {
           </div>
             <div className="contact-btns">
               <button onClick={() => handleEdit(index)} className="jobinfo-save-btn contact-btn">Edit</button>
-              <button onClick={() => handleRemove(contact.id)}className="jobinfo-save-btn contact-btn">Delete</button>
+              <button onClick={() => toggleDelete()} className="contact-delete-btn">Delete</button>
             </div>
+            { deleteModal ? <DeleteModal show={toggleDelete} hide={hideDelete} delete={handleRemove} id={contact.id} />: null }
         </div>
       </>
     ))

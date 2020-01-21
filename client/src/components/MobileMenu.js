@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link, withRouter, } from 'react-router-dom';
+import home from "../images/internet-white.png";
+import clipboard from "../images/clipboardsWhite.png";
+import user from "../images/userWhite.png";
 
 const MobileMenu = () => {
 
@@ -33,9 +36,18 @@ const MobileMenu = () => {
               </svg>
                 <ul className="dropdown">
                 <div className="arrow-up"></div>
-                  <Link to="/">Home</Link>
-                  <Link to="/board">Board</Link>
-                  <Link to="profile">Profile</Link>
+                  <Link to="/">
+                    <img src={home} className="mobile-home-icon"/>
+                    home
+                  </Link>
+                  <Link to="/board">
+                   <img src={clipboard} className="mobile-clipboard-icon"/>
+                    board
+                  </Link>
+                  <Link to="profile">
+                    <img src={user} className="mobile-user-icon"/>
+                    profile
+                  </Link>
                 </ul>
               </div>
               </>

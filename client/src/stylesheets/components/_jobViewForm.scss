@@ -77,6 +77,13 @@
       width: 100px;
     }
   }
+
+  .interview-form {
+    margin-left: 4rem;
+    h3 {
+      width: 140px;
+    }
+  }
   
   input {
     background-color: var(--gray-4);
@@ -159,6 +166,18 @@
 
   input {
     margin: 0.2rem 0.2rem 0.6rem 0.2rem;
+  }
+
+  .new {
+    margin-left: 0;
+    width: 100%;
+
+    input {
+      width: 90%;
+    }
+    h3 {
+      width: 100px;
+    }
   }
 
   .jobview-form div.all-inputs {

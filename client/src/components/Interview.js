@@ -1,6 +1,8 @@
 import React, { useState, } from 'react';
+import DeleteModal from "./DeleteModal";
 
 const Interview = (props) => {
+
 
   return (
     <>
@@ -20,12 +22,13 @@ const Interview = (props) => {
               Edit
             </button>
             <button
-              className="interviews-add-btn"
-              onClick={() => props.handleDelete(props.interview.id)}
+              className="interviews-delete-btn"
+              onClick={() => props.show()}
               >
               Delete
             </button>
           </div>
+          { props.deleteModal ? <DeleteModal show={props.show} hide={props.hide} delete={props.handleDelete} id={props.interview.id}/> : null }
       </div>
     </>
 

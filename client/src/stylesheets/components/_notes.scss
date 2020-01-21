@@ -101,6 +101,16 @@ textarea {
   border-style: none;
 }
 
+.note-card-delete {
+  padding: 5px;
+  margin: 0.3rem;
+  border-radius: 5px;
+  color: white;
+  background-color: #c12020;
+  border-radius: 7px;
+  border-style: none;
+}
+
 @media screen and (max-width: 550px) {
   .notes-container {
     justify-content: space-around;
