@@ -66,16 +66,22 @@ div.interviews-content {
   }
 }
 
-button.interviews-add-btn {
-  padding: 5px 5px;
-  margin: 0.3rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  background-color: var(--grey-6);
-  color: var(--blue-3);
-  border-style: none;
-  justify-content: flex-end;
+.notes-container {
+  width: 100%;
+  .add-btn {
+    margin: 1rem 4rem;
+  }
 }
+// button.interviews-add-btn {
+//   padding: 5px 5px;
+//   margin: 0.3rem;
+//   font-size: 1rem;
+//   border-radius: 5px;
+//   background-color: var(--grey-6);
+//   color: var(--blue-3);
+//   border-style: none;
+//   justify-content: flex-end;
+// }
 
 // button.interviews-delete-btn {
 //   padding: 5px 5px;

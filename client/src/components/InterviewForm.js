@@ -37,7 +37,7 @@ const InterviewForm = props => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="jobview-form interview-form">
+      <form onSubmit={handleSubmit} className="jobview-form">
       <div className="all-inputs interview-input">
         <div className="form-input">
           <h3>Subject</h3>
@@ -61,17 +61,10 @@ const InterviewForm = props => {
         </div>
       </div>
       <button 
-        className="interviews-add-btn"
+        className="jobinfo-save-btn"
         type="submit"
       >
         Save
-      </button>
-      <button
-        className="interviews-add-btn"
-        onClick={props.handleCancel}
-        type="submit"
-      >
-        Cancel
       </button>
       </form>
     </>

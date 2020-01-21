@@ -65,8 +65,6 @@
 
   .react-tabs__tab{
     color: #fff;
-
-
   }
 
   .react-tabs__tab--selected {
@@ -75,7 +73,7 @@
   }
 
   .modal-info-icon{
-    padding-left: 5px;
+    padding-right: 5px;
     display: flex;
     align-items: center;
   }
@@ -98,8 +96,13 @@
     } 
 
     .modal-info-icon{
+      padding: 0;
       p {
         display: none;
       }
+    }
+
+    .modal-svg {
+      margin: 0.3rem;
     }
   }

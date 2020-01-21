@@ -7,7 +7,7 @@ import DeleteModal from "./DeleteModal";
 const Notes = (props) => {
   const [noteEdit, setNoteEdit] = useState(null)
   const [notes, setNotes] = useState([])
-  const [toggleForm, setToggleForm] = useState(false)
+  const [form, setForm] = useState(false)
   const [editForm, setEditForm] = useState(false)
     // State for toggling delete confirmation modal 
     const [deleteModal, setDeleteModal] = useState(false)
@@ -40,9 +40,9 @@ const Notes = (props) => {
 
   // toggle NotesForm on/off
   const toggle = () => {
-    setToggleForm(!toggleForm)
+    setForm(!form)
 
-    if (toggleForm) {
+    if (form) {
       setNoteEdit(null)
     }
   }
@@ -102,15 +102,19 @@ const Notes = (props) => {
     <div className="main-notes-container">
       <div className="notes-container">
       <h2 className="form-heading">Notes</h2>
-        <button onClick={() => toggle()} className="jobinfo-save-btn">
-          {toggleForm ?
-            'Cancel'
-            : 'Add'
+        <div className="btn-toggle" onClick={toggle}
+          >
+          { form ?
+            <button className="jobinfo-save-btn">Cancel</button>
+            : 
+            <svg className="add-btn" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+            <path d="M16 10c0 0.553-0.048 1-0.601 1h-4.399v4.399c0 0.552-0.447 0.601-1 0.601s-1-0.049-1-0.601v-4.399h-4.399c-0.552 0-0.601-0.447-0.601-1s0.049-1 0.601-1h4.399v-4.399c0-0.553 0.447-0.601 1-0.601s1 0.048 1 0.601v4.399h4.399c0.553 0 0.601 0.447 0.601 1z"></path>
+            </svg>
           }
-        </button>
+        </div>
       </div>
       {
-        toggleForm ?
+        form ?
           <NotesForm
             id={props.id}
             add={addNote}
