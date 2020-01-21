@@ -1,4 +1,3 @@
-
 import React, { useState, } from 'react';
 import NewJobModal from "./NewJobModal";
 import JobCard from "./JobCard";
@@ -26,7 +25,11 @@ const List = (props) => {
               status={job.status}
               className={`job-card ${job.id}`}
             >
-              <JobCard handleUpdate={props.handleUpdate} deleteJob={props.deleteJob} job={job} />
+              <JobCard 
+                handleUpdate={props.handleUpdate} 
+                deleteJob={props.deleteJob} 
+                job={job} 
+              />
             </div>
           </>
         )
@@ -40,9 +43,21 @@ const List = (props) => {
   return (
     <>
       <div className="list-component-container">
-        <h1 className="list-header">{props.name}</h1>
-        <button className="new-job-btn" onClick={show}>Add Job</button>
-        {openModal ? <NewJobModal add={props.add} hide={hide} show={openModal} /> : null}
+        <h1 className="list-header">
+          {props.name}
+        </h1>
+        <button 
+          className="new-job-btn" 
+          onClick={show}>
+            Add Job
+          </button>
+        {openModal ? 
+          <NewJobModal 
+            add={props.add} 
+            hide={hide} 
+            show={openModal} 
+          /> 
+          : null}
         {renderJobs(props.name)}
       </div>
     </>

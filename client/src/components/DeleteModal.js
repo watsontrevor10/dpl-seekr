@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Backdrop from './Backdrop';
+import React from 'react';
+// import Backdrop from './Backdrop';
 
 const DeleteModal = (props) => {
 

@@ -8,7 +8,7 @@ const ContactForm = (props) => {
     props.contactProp
     : null
   )
-  const { values, setValues, handleChange, handleSubmit } = useFormInput(submit)
+  const { values, setValues, handleChange } = useFormInput(submit)
   const { first_name, last_name, phone, email, position, department, description } = values
 
   useEffect(() => {

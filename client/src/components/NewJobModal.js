@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import JobForm from './JobForm';
 import Backdrop from './Backdrop';
 
 const NewJobModal = (props) => {
-  const { add, toggle, show, hide } = props
+  const { add, show, hide } = props
 
   return (
     <>

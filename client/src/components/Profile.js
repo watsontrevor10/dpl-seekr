@@ -1,9 +1,8 @@
-import React, { Fragment, } from 'react'
+import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider"
 import Dropzone from 'react-dropzone'
 import ProfileSidebar from "./ProfileSidebar"
 import MobileMenu from "./MobileMenu"
-import axios from 'axios'
 
 
 
@@ -16,7 +15,14 @@ class Profile extends React.Component {
     let data = files.map(file => Object.assign(file, {
       preview: URL.createObjectURL(file)
     }))
-    this.setState({ formValues: { ...this.state.formValues, file: files[0], file_thumbnail: data }, isDragActive: true });
+    this.setState({
+      formValues: {
+        ...this.state.formValues,
+        file: files[0],
+        file_thumbnail: data
+      },
+      isDragActive: true
+    });
   }
 
   profileView = () => {
@@ -24,27 +30,25 @@ class Profile extends React.Component {
     return (
       <>
         <div className="new-profile profile-sidebar">
-          {/* <div className="main-home-conatiner"> */}
-            <div className="main-sidebar-container sidebar-radius">
-              <ProfileSidebar />
+          <div className="main-sidebar-container sidebar-radius">
+            <ProfileSidebar />
+          </div>
+          <div className="profile">
+            <div className="mobile-menu-container">
+              <MobileMenu />
             </div>
-            <div className="profile">
-              <div className="mobile-menu-container">
-                <MobileMenu />
-              </div>
-              <div>
-                <img style={profilepic} src={user.image || defaultImage} />
-              </div>
-              <div>
-                <center>
-                  <h1>{user.name}</h1>
-                  <br />
-                  <h4>{user.email}</h4>
-                  <button className="btn" onClick={this.toggleEdit}>Edit</button>
-                </center>
-              </div>
+            <div>
+              <img style={profilepic} src={user.image || defaultImage} />
             </div>
-          {/* </div> */}
+            <div>
+              <center>
+                <h1>{user.name}</h1>
+                <br />
+                <h4>{user.email}</h4>
+                <button className="btn" onClick={this.toggleEdit}>Edit</button>
+              </center>
+            </div>
+          </div>
         </div>
       </>
     )
@@ -54,7 +58,7 @@ class Profile extends React.Component {
     return (
       <img
         alt='thumbnail'
-        style={{ width: '100%', borderRadius: '150px', height: '100%'}}
+        style={{ width: '100%', borderRadius: '150px', height: '100%' }}
         src={this.state.formValues.file_thumbnail[0].preview}></img>
     )
   }
@@ -65,78 +69,76 @@ class Profile extends React.Component {
     return (
       <>
         <div className="new-profile profile-sidebar">
-          {/* <div className="main-home-container"> */}
-            <div className="main-sidebar-container sidebar-radius">
-              <ProfileSidebar />
+          <div className="main-sidebar-container sidebar-radius">
+            <ProfileSidebar />
+          </div>
+          <div className="profileedit">
+            <div className="mobile-menu-container">
+              <MobileMenu />
             </div>
-            <div className="profileedit">
-              <div className="mobile-menu-container">
-                <MobileMenu />
-              </div>
-              <div>
-                <form onSubmit={this.handleSubmit}>
+            <div>
+              <form onSubmit={this.handleSubmit}>
+                <div>
                   <div>
-                    <div>
-                      <div style={drop}>
-                        <Dropzone
-                          onDrop={this.onDrop}
-                          multiple={false}
-                          disableClick
-                        >
-                          {({ getRootProps, getInputProps, }) => {
-                            return (
-                              <div
-                                {...getRootProps()}
-                                style={zone.dropzone}
-                              >
-                                <input {...getInputProps()} />
-                                {
-                                  this.state.isDragActive ?
-                                    (
-                                      this.showPreview()
-                                    ) : (
-                                      <center><p>Upload Image</p></center>
-                                    )
-                                }
-                              </div>
-                            )
-                          }}
-                        </Dropzone>
-                      </div>
+                    <div style={drop}>
+                      <Dropzone
+                        onDrop={this.onDrop}
+                        multiple={false}
+                        disableClick
+                      >
+                        {({ getRootProps, getInputProps, }) => {
+                          return (
+                            <div
+                              {...getRootProps()}
+                              style={zone.dropzone}
+                            >
+                              <input {...getInputProps()} />
+                              {
+                                this.state.isDragActive ?
+                                  (
+                                    this.showPreview()
+                                  ) : (
+                                    <center><p>Upload Image</p></center>
+                                  )
+                              }
+                            </div>
+                          )
+                        }}
+                      </Dropzone>
                     </div>
-                    <div className="edit">
-                      <input
-                        label="Name"
-                        name="name"
-                        placeholder="Name"
-                        value={name}
-                        required
-                        style={{ display: 'flex', flexGrow: '1' }}
-                        onChange={this.handleChange}
-                      />
-                    </div>
-                    <div className="edit">
-                      <input
-                        label="Email"
-                        name="email"
-                        placeholder="Email"
-                        value={email}
-                        required
-                        style={{ display: 'flex', flexGrow: '1' }}
-                        onChange={this.handleChange}
-                      />
-                    </div>
-                    <center>
-                      <div>
-                        <button className="btn">Save</button>
-                        <button className="btn" onClick={this.toggleEdit}>Cancel</button>
-                      </div>
-                    </center>
                   </div>
-                </form>
-              </div>
+                  <div className="edit">
+                    <input
+                      label="Name"
+                      name="name"
+                      placeholder="Name"
+                      value={name}
+                      required
+                      style={{ display: 'flex', flexGrow: '1' }}
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                  <div className="edit">
+                    <input
+                      label="Email"
+                      name="email"
+                      placeholder="Email"
+                      value={email}
+                      required
+                      style={{ display: 'flex', flexGrow: '1' }}
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                  <center>
+                    <div>
+                      <button className="btn">Save</button>
+                      <button className="btn" onClick={this.toggleEdit}>Cancel</button>
+                    </div>
+                  </center>
+                </div>
+              </form>
             </div>
-          {/* </div> */}
+          </div>
         </div>
       </>
     )

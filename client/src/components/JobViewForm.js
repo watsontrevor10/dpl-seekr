@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import useFormInput from '../hooks/useFormInput'
 import axios from 'axios'
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import axios from 'axios'
 import useFormInput from '../hooks/useFormInput'
 
@@ -31,45 +31,45 @@ const JobForm = (props) => {
           </div>
           <div className="form-input">
             <h3>Job Title</h3>
-          <input type="text" name="job_title" {...job} onChange={job.handleChange}/>
+            <input type="text" name="job_title" {...job} onChange={job.handleChange} />
           </div>
           <div className="form-input">
             <h3>Status</h3>
             <select name="status" {...status} onChange={status.handleChange} >
-              { jobStatus.map(j => (   
+              {jobStatus.map(j => (
                 <>
-                  <option value="none" selected disabled hidden> 
-                    Select an Option 
+                  <option value="none" selected disabled hidden>
+                    Select an Option
                   </option>
                   <option value={j.value}>
                     {j.value}
                   </option>
                 </>
-                  )) 
+              ))
               }
             </select>
           </div>
           <div className="form-input">
             <h3>Color</h3>
             <select name="color" {...color} onChange={color.handleChange} >
-              { colors.map(c => (   
+              {colors.map(c => (
                 <>
-                  <option value="none" selected disabled hidden> 
-                    Select an Option 
+                  <option value="none" selected disabled hidden>
+                    Select an Option
                   </option>
                   <option value={c.text}>
                     {c.value}
                   </option>
                 </>
-                  )) 
+              ))
               }
             </select>
           </div>
-         </div>
-         <button 
+        </div>
+        <button
           className="jobinfo-save-btn info"
           type="submit" value="Submit"
-        > 
+        >
           save
         </button>
       </form>
