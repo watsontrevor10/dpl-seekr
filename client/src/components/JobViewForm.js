@@ -113,7 +113,7 @@ const JobViewForm = (props) => {
         </button>
       </form>
       <button className="job-card-delete" onClick={() => props.showDelete() }>Delete</button>
-      {props.deleteModal ? <DeleteConfirmationModal show={props.showDelete} hide={props.hideDelete} delete={props.deleteJob} id={props.job.id} /> : null }
+      {props.deleteModal ? <DeleteConfirmationModal show={props.showDelete} hide={props.hideDelete} delete={props.delete} id={props.job.id} /> : null }
     </>
   )
 }
