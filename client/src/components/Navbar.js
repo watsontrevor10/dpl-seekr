@@ -14,7 +14,7 @@ class Navbar extends React.Component {
             name='logout'
             onClick={() => handleLogout(this.props.history)}
           >
-            logout
+            Logout
           </button>
         </nav>
       )
@@ -26,7 +26,7 @@ class Navbar extends React.Component {
               id='register'
               name='register'
               active={location.pathname === '/register'}
-              > sign up</button>
+              > Sign Up</button>
           </Link>
         </nav>
       )
@@ -41,7 +41,7 @@ class Navbar extends React.Component {
             name='login'
             active={location.pathname === '/login'}
           >
-            login
+            Login
           </button>
         </Link>
       </nav>
