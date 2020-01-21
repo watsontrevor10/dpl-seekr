@@ -52,6 +52,7 @@ const ContactForm = (props) => {
                 name='first_name'
                 label='First Name'
                 value={first_name}
+                required
                 {...first_name}
                 onChange={handleChange}
               />
@@ -82,7 +83,7 @@ const ContactForm = (props) => {
             <div className="form-input">
               <h3>Email</h3>
               <input
-                type='text'
+                type='email'
                 name='email'
                 label='Email'
                 value={email}
@@ -148,6 +149,7 @@ const ContactForm = (props) => {
                 name='first_name'
                 label='First Name'
                 placeholder='First Name'
+                required
                 {...first_name}
                 onChange={handleChange}
               />
@@ -178,7 +180,7 @@ const ContactForm = (props) => {
             <div className="form-input">
               <h3>Email</h3>
               <input
-                type='text'
+                type='email'
                 name='email'
                 label='Email'
                 placeholder='Email'
