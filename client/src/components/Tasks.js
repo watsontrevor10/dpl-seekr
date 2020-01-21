@@ -19,7 +19,7 @@ const Tasks = (props) => {
       })
   }, []);
 
-  // Update function
+  // Update function, triggered from Task component
   const handleUpdate = () => {
     axios.get(`/api/jobs/${props.id}/tasks`)
       .then(res => {
@@ -30,7 +30,7 @@ const Tasks = (props) => {
       })
   };
 
-  // filters task results by complete/incomplete
+  // filters task results by complete/incomplete dropdown
   const handleFilter = (e) => {
     setCompletedFilter(e.target.value)
     axios.get(`/api/jobs/${props.id}/tasks/`, {
