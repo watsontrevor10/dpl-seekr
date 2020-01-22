@@ -28,9 +28,19 @@
   .board-link {
     margin: 3rem;
     display: flex;
-    justify-content: space-around;   
+    justify-content: space-around;  
+    
+    a {
+      text-decoration: none;
+      margin: 2rem 0;
+    }
   }
 }
+
+// svg.recharts-surface {
+//   width: 500px;
+//   height: 400px;
+// }
 
 .dashboard-heading {
   display: none;
@@ -55,5 +65,10 @@
       text-transform: uppercase;
       background-color: var(--gray-7);
       justify-content: center;
+    }
+
+    .recharts-wrapper, svg.recharts-surface {
+      width: 300px !important;
+      height: 200px !important;
     }
   } 

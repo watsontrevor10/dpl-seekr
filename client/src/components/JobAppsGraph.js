@@ -40,6 +40,7 @@ class JobGraph extends React.Component {
         <AreaChart
           width={500}
           height={400}
+          // className="graph"
           data={this.state.data}
           margin={{
             top: 10, right: 30, left: 0, bottom: 0,

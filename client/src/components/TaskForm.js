@@ -33,7 +33,7 @@ const TaskForm = (props) => {
   return (
     <>
       <form onSubmit={handleSubmit} className="jobview-form">
-      <div className="all-inputs info">
+      <div className="all-inputs">
         <div className="form-input">
             <h3>Task</h3>
             <input
@@ -54,7 +54,7 @@ const TaskForm = (props) => {
           </div>
         </div>
         <button 
-          className="jobinfo-save-btn"
+          className="jobinfo-save-btn task-save"
           type="submit" value="Submit"
         > 
           save

@@ -36,6 +36,10 @@ $default-card-color: #050044 !default;
     border-radius: 5px;
   }
 
+  div.card-content:hover {
+    cursor: pointer;
+  }
+
   ul {
     list-style: none;
     width: 100%;
@@ -68,20 +72,44 @@ $default-card-color: #050044 !default;
     align-self: flex-end;
     border-style: none;
     padding: 0.3rem;
-    margin: 1rem 1.2rem;
-    color: var(--white);
-    color: white;
-    background-color: #c12020;
+    font-size: 1rem;
+    margin: 1rem 4rem;
+    color: var(--delete-color);
+    background-color: var(--white);
     border-radius: 7px;
     letter-spacing: 1px;
+    border-style: solid;
+    border-color:var(--delete-color);
+    border-width: 2px;
   }
 }
 
+.job-card-delete-mobile {
+  display: none;
+}
+
 @media screen and (max-width: 550px) {
-
   .job-card {
-    ul {
-
+    button.job-card-delete {
+      display: none;
     }
+  }
+  .job-card-delete-mobile {
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: center;
+    border-style: none;
+    padding: 0.3rem;
+    font-size: 1rem;
+    margin: 1rem 4rem;
+    color: var(--delete-color);
+    background-color: var(--white);
+    border-radius: 7px;
+    letter-spacing: 1px;
+    border-style: solid;
+    border-color:var(--delete-color);
+    border-width: 2px;
   }
 }

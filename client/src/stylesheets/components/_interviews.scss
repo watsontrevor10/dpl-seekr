@@ -53,7 +53,7 @@ div.interviews-content {
 
 .interview-cards-container {
   display: flex;
-  margin: 1rem 4rem;
+  margin: 2rem 4rem;
   width: calc(100% - 8rem);
   justify-content: center;
 
@@ -61,8 +61,8 @@ div.interviews-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 2rem 1rem;
-    width: inherit;
+    margin: 0 1rem;
+    width: 100%;
   }
 }
 

@@ -27,6 +27,15 @@
   &:focus {
     outline: var(--gray-2);
   }
+  button:hover, img:hover {
+    cursor: pointer;
+  }
+
+  ::-webkit-datetime-edit { padding: 0.3rem; }
+  ::-webkit-clear-button, 
+  ::-webkit-clear-button{right:1.54em;}
+  ::-webkit-inner-spin-button{-webkit-appearance: none; margin:0;}
+  ::-webkit-calendar-picker-indicator{right:0; padding: 0.539em 0.34em;}
 }
 
 // MAIN DELETE BUTTON
@@ -56,6 +65,9 @@
 .add-btn {
   background-color: transparent;
   border-style: none;
+}
+.add-btn:hover {
+  cursor: pointer;
 }
 
 @keyframes moveInBottom {

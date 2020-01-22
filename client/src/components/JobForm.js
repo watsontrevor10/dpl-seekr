@@ -35,13 +35,13 @@ const JobForm = (props) => {
           </div>
           <div className="form-input">
             <h3>Status</h3>
-            <select name="status" {...status} onChange={status.handleChange} >
+            <select name="status" {...status} onChange={status.handleChange}>
               {jobStatus.map(j => (
                 <>
                   <option value="none" selected disabled hidden>
                     Select an Option
                   </option>
-                  <option value={j.value}>
+                  <option value={j.value} >
                     {j.value}
                   </option>
                 </>
@@ -67,7 +67,7 @@ const JobForm = (props) => {
           </div>
         </div>
         <button
-          className="jobinfo-save-btn info"
+          className="jobinfo-save-btn task-save"
           type="submit" value="Submit"
         >
           save
