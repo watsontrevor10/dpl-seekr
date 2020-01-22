@@ -15,6 +15,13 @@
 }
 
 .tasks {
+  width: calc(100% - 8rem);
+  margin: 2rem 4rem 1rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  flex-direction: column;
+
   .task {
     display: flex;
     flex-grow: 1;
@@ -23,6 +30,10 @@
     align-content: center;
     align-items: center;
     justify-content: space-between;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #dcdcdc;
+
     .modal-task-content {
       display: flex;
       align-items: center;
@@ -65,7 +76,9 @@
     }
   }
   .tasks {
-    margin-top: 1rem;
+    width: 100%;
+    margin: 1rem 0;
+    align-self: center;
     
     .task {
       margin: 1rem 2rem;

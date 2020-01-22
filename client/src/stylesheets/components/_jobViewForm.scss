@@ -38,6 +38,7 @@
   font-size: 0.8rem;
   font-weight: 200;
   width: calc(100% - 8rem);
+  margin-bottom: 1rem;
 
   div.all-inputs {
     flex-direction: column;
@@ -75,10 +76,6 @@
     h3 {
       width: 100px;
     }
-  }
-
-  .interview-form {
-   
   }
 
   .interview-input {
@@ -153,6 +150,10 @@
   background-color: transparent;
 }
 
+.task-save {
+  margin: 1rem 10px;
+}
+
 .add-btn {
   border-style: solid;
   border-radius: 50px;
@@ -170,6 +171,7 @@
 
 .jobinfo-save-btn.info, .jobinfo-save-btn.note {
   margin: 1rem 0;
+  height: fit-content;
 }
 .message {
   text-align: center;
@@ -201,6 +203,9 @@
   .jobview-form {
     width: calc(100% - 2rem);
     margin: 1rem;
+  }
+  .job-card button.job-card-delete {
+    align-self: center;
   }
   .info {
     margin: 1rem;  
