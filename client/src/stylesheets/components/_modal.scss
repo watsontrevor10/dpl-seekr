@@ -29,11 +29,11 @@
   background-color: var(--white);
   border-radius: 7px;
   box-shadow: 2px 1px 20px 0px #5f5f5f94;
-  top: 5%;
+  top: 2%;
   box-sizing: border-box;
   overflow: auto;
   width: 75%;
-  max-height: 90%;
+  max-height: 95%;
   min-height: 370px;
   left: calc(50% - 37.5%);
 
@@ -77,6 +77,11 @@
     display: flex;
     align-items: center;
   }
+
+  .modal-info-icon:hover {
+    cursor: pointer;
+  }
+
   .modal-svg {
     margin: 0 .3rem;
     width: 20px;
@@ -87,8 +92,8 @@
     .main-modal-container {
       width: 90%;
       left: 5%;
-      height: 90%;
-      top: 5%;
+      height: 80%;
+      top: 8%;
       // overflow: auto;
       display: flex;
       align-content: center;
@@ -104,5 +109,18 @@
 
     .modal-svg {
       margin: 0.3rem;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .main-modal-container {
+      max-width: 950px;
+      left: calc(50% - 475px);
+    }
+  }
+
+  @media screen and (min-width: 1280px) and (min-height: 560px) {
+    .main-modal-container {
+      top: 7%;
     }
   }
