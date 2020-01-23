@@ -196,6 +196,9 @@
 }
 
 @media screen and (max-width: 550px) {
+  .container {
+    -webkit-overflow-scrolling: touch;
+  }
   .form-heading {
     display: flex;
     align-self: center;
@@ -237,6 +240,8 @@
     div.form-input {
       flex-direction: column;
       width: 100%;
+      height: fit-content;
+      flex-wrap: nowrap;
     }
   }
   .jobinfo-save-btn {
