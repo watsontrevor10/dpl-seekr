@@ -29,6 +29,7 @@ const List = (props) => {
                 handleUpdate={props.handleUpdate} 
                 deleteJob={props.deleteJob} 
                 job={job} 
+                name={name}
               />
             </div>
           </>
