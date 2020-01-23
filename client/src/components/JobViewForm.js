@@ -110,17 +110,17 @@ const JobViewForm = (props) => {
             <h3>Description</h3>
             <textarea name="description" onChange={handleChange} value={description} />
           </div>
-        </div>
-        <div className="btns">
-          <button 
-            className="jobinfo-save-btn info"
-            type="submit" value="Submit"
-            > 
-            save
-          </button>
-          <button className="job-card-delete-mobile" onClick={() => props.showDelete() }>
-              Delete this job
-          </button>
+          <div className="btns">
+            <button 
+              className="jobinfo-save-btn info"
+              type="submit" value="Submit"
+              > 
+              save
+            </button>
+            <button className="job-card-delete-mobile" onClick={() => props.showDelete() }>
+                Delete this job
+            </button>
+          </div>
         </div>
       </form>
       </div>
