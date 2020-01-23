@@ -59,13 +59,15 @@ const InterviewForm = props => {
           <h3>Followed Up</h3>
           <input type="checkbox" name="follow_up" onChange={handleCheckBox} value={follow_up} />
         </div>
+        <div className="btns">
+          <button 
+            className="jobinfo-save-btn"
+            type="submit"
+          >
+            Save
+          </button>
+        </div>
       </div>
-      <button 
-        className="jobinfo-save-btn"
-        type="submit"
-      >
-        Save
-      </button>
       </form>
     </>
   )

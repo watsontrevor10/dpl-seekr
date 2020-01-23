@@ -206,6 +206,7 @@
   .form-heading {
     display: flex;
     align-self: center;
+    min-height: 80px;
   }
   .jobview-form {
     width: calc(100% - 2rem);
