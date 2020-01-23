@@ -37,6 +37,7 @@ const InterviewForm = props => {
 
   return (
     <>
+    <div className="container">
       <form onSubmit={handleSubmit} className="jobview-form">
       <div className="all-inputs interview-input">
         <div className="form-input">
@@ -70,6 +71,7 @@ const InterviewForm = props => {
         </div>
       </div>
       </form>
+      </div>
     </>
   )
 };
