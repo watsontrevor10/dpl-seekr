@@ -109,6 +109,8 @@
 
       h2.form-heading {
         margin: 1rem;
+        align-items: center;
+        min-height: 80px;
       }
     } 
     .contacts {
@@ -116,8 +118,8 @@
       width: 100%;
 
       .contact-card {
-        min-width: 8rem;
-        max-width: 80%;
+        min-width: 300px;
+        max-width: 100%;
 
         .contact-content {
           flex-direction: column;

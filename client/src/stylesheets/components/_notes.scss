@@ -88,8 +88,14 @@ textarea {
     align-items: center;
     flex-direction: column;
     
-    h2.form-heading, button.jobinfo-save-btn {
+    h2.form-heading {
       margin: 1rem;
+      align-items: center;
+      min-height: 80px;
+    }
+
+    button.jobinfo-save-btn {
+      margin: 1rem; 
     }
   }
 
@@ -101,6 +107,7 @@ textarea {
 
   .notes-render-container {
     margin: 1rem;
+    justify-content: center;
   }
 
   .note-card {
