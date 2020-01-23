@@ -57,7 +57,6 @@ const Interviews = (props) => {
 
   return (
     <>
-    <div className="container">
       <div className="notes-container">
         <h2 className="form-heading">Interviews</h2>
         <div className="btn-toggle" onClick={toggleForm}
@@ -106,7 +105,6 @@ const Interviews = (props) => {
               </div>
             </>
         }
-      </div>
     </>
   )
 };
