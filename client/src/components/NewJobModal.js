@@ -3,12 +3,12 @@ import JobForm from './JobForm';
 import Backdrop from './Backdrop';
 
 const NewJobModal = (props) => {
-  const { add, show, hide } = props
+  const { add, show, hide, name } = props
 
   return (
     <>
       <Backdrop show={show} hide={hide} />
-      <JobForm add={add} hide={hide} />
+      <JobForm add={add} hide={hide} name={name} />
     </>
   )
 }

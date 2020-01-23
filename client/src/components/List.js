@@ -57,6 +57,7 @@ const List = (props) => {
             add={props.add} 
             hide={hide} 
             show={openModal} 
+            name={props.name}
           /> 
           : null}
         {renderJobs(props.name)}

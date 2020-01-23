@@ -196,6 +196,13 @@
 }
 
 @media screen and (max-width: 550px) {
+  .container {
+    -webkit-overflow-scrolling: touch;
+    max-width: 360px;
+    flex-wrap: nowrap;
+    overflow: auto;
+    align-self: center;
+  }
   .form-heading {
     display: flex;
     align-self: center;
@@ -232,9 +239,14 @@
 
   .jobview-form div.all-inputs {
       width: 100%;
+      margin: 0;
+      
     div.form-input {
       flex-direction: column;
       width: 100%;
+      height: fit-content;
+      flex-wrap: nowrap;
+      min-height: 80px
     }
   }
   .jobinfo-save-btn {
@@ -246,5 +258,11 @@
   }
   .interview-input {
     width: 95%;
+  }
+  .btns {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

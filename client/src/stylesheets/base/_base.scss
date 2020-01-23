@@ -36,6 +36,7 @@
   ::-webkit-clear-button{right:1.54em;}
   ::-webkit-inner-spin-button{-webkit-appearance: none; margin:0;}
   ::-webkit-calendar-picker-indicator{right:0; padding: 0.539em 0.34em;}
+
 }
 
 // MAIN DELETE BUTTON
@@ -69,6 +70,14 @@
 .add-btn:hover {
   cursor: pointer;
 }
+
+// MAIN FORM CONTENT CONTAINER
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 
 @keyframes moveInBottom {
   0% {
