@@ -199,6 +199,7 @@
   .container {
     -webkit-overflow-scrolling: touch;
     max-width: 360px;
+    flex-wrap: nowrap;
     overflow: auto;
     align-self: center;
   }
