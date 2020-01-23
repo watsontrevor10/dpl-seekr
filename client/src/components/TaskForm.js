@@ -32,6 +32,7 @@ const TaskForm = (props) => {
 
   return (
     <>
+    <div className="container">
       <form onSubmit={handleSubmit} className="jobview-form">
       <div className="all-inputs">
         <div className="form-input">
@@ -60,6 +61,7 @@ const TaskForm = (props) => {
           save
         </button>
       </form>
+      </div>
     </>
   )
 };
