@@ -6,7 +6,7 @@ const JobForm = (props) => {
   // State for fields in the form, using a custom hook (useFormInput) to simplify state a bit
   const company = useFormInput('')
   const job = useFormInput('')
-  const status = useFormInput('')
+  const status = useFormInput(props.name)
   const color = useFormInput('')
 
   // submit function, axios post call.  Need to add each field name to the post request
@@ -35,7 +35,7 @@ const JobForm = (props) => {
           </div>
           <div className="form-input">
             <h3>Status</h3>
-            <select name="status" {...status} onChange={status.handleChange}>
+            <select name="status" {...status} onChange={status.handleChange} defaultValue={props.name}>
               {jobStatus.map(j => (
                 <>
                   <option value="none" selected disabled hidden>
