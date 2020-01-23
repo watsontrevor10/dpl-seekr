@@ -21,6 +21,7 @@ class Login extends React.Component {
   render() {
     const { email, password, } = this.state;
     const toggleLoginError = this.props.auth.loginError;
+    const toggleRegisterError = this.props.auth.registerError;
 
     return (
       <>
@@ -59,6 +60,7 @@ class Login extends React.Component {
         </div>
       </segment>
       { toggleLoginError ? <LoginModal toggleLoginError={this.props.auth.toggleLoginError} message="Incorrect username or password." /> : null }
+      { toggleRegisterError ? <LoginModal toggleLoginError={this.props.auth.toggleRegisterError} message="Email already in use." /> : null }
       </>
     )
   }
