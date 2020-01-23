@@ -124,13 +124,13 @@ const ContactForm = (props) => {
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className="btns">
               <button
                 className="jobinfo-save-btn info"
                 type="submit" value="Submit"
               >
                 save
-            </button>
+              </button>
             </div>
           </div>
         </form>

@@ -96,8 +96,13 @@
 
 @media screen and (max-width: 550px) {
   .main-contact-container {
-    margin: 0;
     width: 100%;
+    max-width: 360px;
+    flex-wrap: nowrap;
+    overflow: auto;
+    align-self: center;
+    flex-direction: column;
+    
     .contact-container {
       justify-content: space-around;
       display: flex;  
