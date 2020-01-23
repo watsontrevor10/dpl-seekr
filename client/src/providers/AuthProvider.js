@@ -1,11 +1,15 @@
 import React from "react";
 import axios from "axios";
+import LoginModal from "../components/LoginModal";
 
 const AuthContext = React.createContext();
 export const AuthConsumer = AuthContext.Consumer;
 
 export class AuthProvider extends React.Component {
-  state = { user: null, };
+  state = { 
+    user: null,
+    loginError: false,
+  };
 
   handleRegister = (user, history) => {
     axios.post("/api/auth", user)
@@ -26,6 +30,7 @@ export class AuthProvider extends React.Component {
       })
       .catch( res => {
         console.log(res);
+        this.setState({ loginError: true})
       })
   }
 
@@ -47,6 +52,10 @@ export class AuthProvider extends React.Component {
       .then( res => this.setState({ user: res.data, }) )
   }
 
+  toggleLoginError = () => {
+    this.setState({loginError: !this.state.loginError})
+  }
+
   render() {
     return (
       <AuthContext.Provider value={{
@@ -57,6 +66,7 @@ export class AuthProvider extends React.Component {
         handleLogout: this.handleLogout,
         setUser: (user) => this.setState({ user, }),
         updateUser: this.updateUser,
+        toggleLoginError: this.toggleLoginError,
       }}>
         { this.props.children }
       </AuthContext.Provider>
