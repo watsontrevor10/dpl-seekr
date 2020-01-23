@@ -129,7 +129,7 @@ const ContactForm = (props) => {
                 className="jobinfo-save-btn info"
                 type="submit" value="Submit"
               >
-                save
+                Save
               </button>
             </div>
           </div>
@@ -226,7 +226,7 @@ const ContactForm = (props) => {
                 className="jobinfo-save-btn info"
                 type="submit" value="Submit"
                 >
-                save
+                Save
               </button>
             </div>
           </div>

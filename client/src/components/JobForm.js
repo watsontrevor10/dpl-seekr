@@ -38,11 +38,23 @@ const JobForm = (props) => {
         <div className="all-inputs new">
           <div className="form-input">
             <h3>Company</h3>
-            <input type="text" name="company_name" {...company} onChange={handleChange} />
+            <input 
+              type="text" 
+              name="company"
+              required 
+              {...company} 
+              onChange={handleChange} 
+            />
           </div>
           <div className="form-input">
             <h3>Job Title</h3>
-            <input type="text" name="job_title" {...job_title} onChange={handleChange} />
+            <input 
+              type="text" 
+              name="job_title" 
+              required
+              {...job_title} 
+              onChange={handleChange} 
+            />
           </div>
           <div className="form-input">
             <h3>Status</h3>
@@ -87,7 +99,7 @@ const JobForm = (props) => {
           className="jobinfo-save-btn task-save"
           type="submit" value="Submit"
         >
-          save
+          Save
         </button>
       </form>
     </div>

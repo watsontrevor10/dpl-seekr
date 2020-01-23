@@ -115,7 +115,7 @@ const JobViewForm = (props) => {
               className="jobinfo-save-btn info"
               type="submit" value="Submit"
               > 
-              save
+              Save
             </button>
             <button className="job-card-delete-mobile" onClick={() => props.showDelete() }>
                 Delete this job
