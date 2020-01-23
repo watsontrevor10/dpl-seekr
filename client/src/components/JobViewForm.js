@@ -111,15 +111,17 @@ const JobViewForm = (props) => {
             <textarea name="description" onChange={handleChange} value={description} />
           </div>
         </div>
+        <div className="btns">
           <button 
             className="jobinfo-save-btn info"
             type="submit" value="Submit"
             > 
             save
           </button>
-            <button className="job-card-delete-mobile" onClick={() => props.showDelete() }>
+          <button className="job-card-delete-mobile" onClick={() => props.showDelete() }>
               Delete this job
-            </button>
+          </button>
+        </div>
       </form>
       </div>
       {props.deleteModal ? <DeleteConfirmationModal show={props.showDelete} hide={props.hideDelete} delete={props.delete} id={props.job.id} /> : null }
