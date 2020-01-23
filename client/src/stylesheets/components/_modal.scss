@@ -91,6 +91,7 @@
   @media screen and (max-width: 550px) {
     .main-modal-container {
       width: 90%;
+      max-width: 350px;
       left: 5%;
       height: 80%;
       top: 8%;
@@ -119,7 +120,7 @@
     }
   }
 
-  @media screen and (min-width: 1280px) and (min-height: 560px) {
+  @media screen and (min-width: 1280px) and (min-height: 760px) {
     .main-modal-container {
       top: 7%;
     }
