@@ -14,7 +14,7 @@ const Dashboard = (props) => {
         <div className="main-homeNav-container">
           <HomeNav />
         </div>
-        <h1 className="dashboard-heading">Dashboard</h1>
+        <h1 className="dashboard-heading">Seeker</h1>
         <div className="dashboard-container">
           <div className="board-link">
             <Link to="/board">
