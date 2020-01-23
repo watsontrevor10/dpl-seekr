@@ -1,10 +1,11 @@
 import React from 'react';
 import { AuthConsumer, } from "../providers/AuthProvider";
 import Navbar from "./Navbar";
+import LoginModal from './LoginModal';
 
 
 class Login extends React.Component {
-  state = { email: '', password: '' }
+  state = { email: '', password: '', };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +20,7 @@ class Login extends React.Component {
 
   render() {
     const { email, password, } = this.state;
+    const toggleLoginError = this.props.auth.loginError;
 
     return (
       <>
@@ -56,6 +58,7 @@ class Login extends React.Component {
           <Navbar login={this.state}/>
         </div>
       </segment>
+      { toggleLoginError ? <LoginModal toggleLoginError={this.props.auth.toggleLoginError} message="Incorrect username or password." /> : null }
       </>
     )
   }
