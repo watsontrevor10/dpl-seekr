@@ -213,6 +213,7 @@
   }
   .job-card button.job-card-delete {
     align-self: center;
+    min-height: fit-content;
   }
   .info {
     margin: 1rem;  
@@ -251,6 +252,7 @@
   }
   .jobinfo-save-btn {
     align-self: center;
+    min-height: fit-content;
   }
 
   .interview-form {
