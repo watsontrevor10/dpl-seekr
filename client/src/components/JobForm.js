@@ -1,23 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import useFormInput from '../hooks/useFormInput'
 
 const JobForm = (props) => {
   // State for fields in the form, using a custom hook (useFormInput) to simplify state a bit
-  const company = useFormInput('')
-  const job = useFormInput('')
-  const status = useFormInput(props.name)
-  const color = useFormInput('')
+  const { values, handleSubmit, handleChange, setValues } = useFormInput(submit)
+  const { company, job_title, status, color } = values
+  const [defaultStatus, setDefaultStatus] = useState(jobStatus.find(status => status.value === props.name).value)
 
-  // submit function, axios post call.  Need to add each field name to the post request
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post('/api/jobs', { company_name: company.values.company_name, job_title: job.values.job_title, status: status.values.status, color: color.values.color })
+  // sets default state for jobStatus
+  useEffect(() => {
+    setValues({
+      status: defaultStatus
+    })
+  }, [])
+
+  // submit function, axios post call. 
+  function submit() {
+    axios.post('/api/jobs', {
+      company_name: company,
+      job_title: job_title,
+      status: status,
+      color: color
+    })
       .then(res => {
         props.add(res.data);
         props.hide();
       })
   };
+
 
   // Form component
   return (
@@ -27,21 +38,27 @@ const JobForm = (props) => {
         <div className="all-inputs new">
           <div className="form-input">
             <h3>Company</h3>
-            <input type="text" name="company_name" {...company} onChange={company.handleChange} />
+            <input type="text" name="company_name" {...company} onChange={handleChange} />
           </div>
           <div className="form-input">
             <h3>Job Title</h3>
-            <input type="text" name="job_title" {...job} onChange={job.handleChange} />
+            <input type="text" name="job_title" {...job_title} onChange={handleChange} />
           </div>
           <div className="form-input">
             <h3>Status</h3>
-            <select name="status" {...status} onChange={status.handleChange} defaultValue={props.name}>
+            <select name="status"
+              {...status}
+              onChange={handleChange}
+              defaultValue={defaultStatus}
+              selected
+              required
+            >
               {jobStatus.map(j => (
                 <>
-                  <option value="none" selected disabled hidden>
-                    Select an Option
-                  </option>
-                  <option value={j.value} >
+                  <option
+                    value={j.value}
+
+                  >
                     {j.value}
                   </option>
                 </>
@@ -51,7 +68,7 @@ const JobForm = (props) => {
           </div>
           <div className="form-input">
             <h3>Color</h3>
-            <select name="color" {...color} onChange={color.handleChange} >
+            <select name="color" {...color} onChange={handleChange} >
               {colors.map(c => (
                 <>
                   <option value="none" selected disabled hidden>

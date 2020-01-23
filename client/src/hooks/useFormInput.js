@@ -26,11 +26,6 @@ const useFormInput = callback => {
     setValues(values => ({ ...values, [name]: value }))
   }
 
-  // const handleChange = (e) => {
-  //   e.persist();
-  //   setValue(values => ({...values, [e.target.name]: e.target.value}))
-  // }
-
   return {
     handleChange,
     handleCheckBox,
