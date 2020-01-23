@@ -15,7 +15,7 @@ const JobForm = (props) => {
     })
   }, [])
 
-  // submit function, axios post call.  Need to add each field name to the post request
+  // submit function, axios post call. 
   function submit() {
     axios.post('/api/jobs', {
       company_name: company,
