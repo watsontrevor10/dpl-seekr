@@ -111,5 +111,6 @@ $default-card-color: #050044 !default;
     border-style: solid;
     border-color:var(--delete-color);
     border-width: 2px;
+    min-height: fit-content;
   }
 }
