@@ -61,6 +61,7 @@ const InterviewForm = props => {
         </div>
         <div className="btns">
           <button 
+            style={{margin: "1rem 0"}}
             className="jobinfo-save-btn"
             type="submit"
           >
