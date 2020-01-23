@@ -198,6 +198,9 @@
 @media screen and (max-width: 550px) {
   .container {
     -webkit-overflow-scrolling: touch;
+    max-width: 360px;
+    overflow: auto;
+    align-self: center;
   }
   .form-heading {
     display: flex;
