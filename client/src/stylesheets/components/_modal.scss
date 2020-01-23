@@ -53,6 +53,7 @@
     background-color: var(--blue);
     font-weight: 400;
     letter-spacing: 1px;
+    z-index: 99;
   }
 
   .tab-container{
@@ -89,12 +90,16 @@
   }
 
   @media screen and (max-width: 550px) {
+    body {
+      position: fixed;
+      width: 100%;
+    }
     .main-modal-container {
       width: 90%;
       left: 5%;
-      height: 80%;
-      top: 8%;
-      // overflow: auto;
+      top: 5%;
+      height: 90%;
+      overflow-y: auto;
       display: flex;
       align-content: center;
       flex-direction: column;
@@ -119,7 +124,7 @@
     }
   }
 
-  @media screen and (min-width: 1280px) and (min-height: 560px) {
+  @media screen and (min-width: 1280px) and (min-height: 760px) {
     .main-modal-container {
       top: 7%;
     }
