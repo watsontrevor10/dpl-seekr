@@ -84,7 +84,7 @@ class Register extends React.Component {
             <Navbar />
           </div>
         </segment>
-        { registerError ? <LoginModal toggleError={toggleRegister} message="Email already in use." /> : null }
+        <center> { registerError ? <LoginModal toggleError={toggleRegister} message="Email already in use." /> : null } </center>
       </>
     )
   }
