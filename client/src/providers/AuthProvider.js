@@ -60,7 +60,7 @@ export class AuthProvider extends React.Component {
   }
 
   toggleRegisterError = () => {
-    this.setState({registerError: !this.setState.registerError})
+    this.setState({registerError: !this.state.registerError})
   }
 
   render() {
@@ -74,9 +74,11 @@ export class AuthProvider extends React.Component {
         setUser: (user) => this.setState({ user, }),
         updateUser: this.updateUser,
         toggleLoginError: this.toggleLoginError,
+        toggleRegister: this.toggleRegisterError,
       }}>
         { this.props.children }
       </AuthContext.Provider>
     )
   }
 };
+
