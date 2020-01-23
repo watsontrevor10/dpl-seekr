@@ -39,6 +39,7 @@ export class AuthProvider extends React.Component {
       .then( res => {
         this.setState({ user: null, });
         history.push('/login');
+        this.setState({loginError: false})
       })
       .catch( res => {
         console.log(res);
