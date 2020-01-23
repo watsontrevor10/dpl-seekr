@@ -35,7 +35,7 @@ const JobCard = (props) => {
 
     return <div key={props.job.id} className="card-content"
       // style={{backgroundColor: `${randomColor}`}}  
-      style={{ backgroundColor: `${props.job.color}` }}
+      style={props.name === "Archived" ? { backgroundColor: `#da5740` } : { backgroundColor: `${props.job.color}` }}
     >
       <ul onClick={show}>
         <li className="card-title">{props.job.job_title}</li>
