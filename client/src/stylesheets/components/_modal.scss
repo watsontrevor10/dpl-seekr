@@ -93,8 +93,9 @@
     .main-modal-container {
       width: 90%;
       left: 5%;
-      height: 95%;
-      overflow: auto;
+      top: 5%;
+      height: 90%;
+      overflow-y: auto;
       display: flex;
       align-content: center;
       flex-direction: column;
