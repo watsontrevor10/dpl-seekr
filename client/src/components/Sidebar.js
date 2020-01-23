@@ -17,7 +17,7 @@ const Sidebar = (props) => {
     setOpenModal(!openModal);
   }
 
-  const { auth: { user, handleLogout, } } = props;
+  const { auth: {user, handleLogout, } } = props;
   return (
     <>
       <div className="sidebar">
