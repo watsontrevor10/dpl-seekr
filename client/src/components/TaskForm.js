@@ -58,7 +58,7 @@ const TaskForm = (props) => {
           className="jobinfo-save-btn task-save"
           type="submit" value="Submit"
         > 
-          save
+          Save
         </button>
       </form>
       </div>
