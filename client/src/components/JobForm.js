@@ -7,11 +7,8 @@ const JobForm = (props) => {
   const { values, handleSubmit, handleChange, setValues } = useFormInput(submit)
   const { company, job_title, status, color } = values
   const [defaultStatus, setDefaultStatus] = useState(jobStatus.find(status => status.value === props.name).value)
-  // const company = useFormInput('')
-  // const job = useFormInput('')
-  // const status = useFormInput('')
-  // const color = useFormInput('')
 
+  // sets default state for jobStatus
   useEffect(() => {
     setValues({
       status: defaultStatus
@@ -20,7 +17,6 @@ const JobForm = (props) => {
 
   // submit function, axios post call.  Need to add each field name to the post request
   function submit() {
-    // e.preventDefault();
     axios.post('/api/jobs', {
       company_name: company,
       job_title: job_title,
@@ -59,12 +55,9 @@ const JobForm = (props) => {
             >
               {jobStatus.map(j => (
                 <>
-                  {/* <option value='default' selected>
-                    {defaultStatus}
-                  </option> */}
                   <option
                     value={j.value}
-                    
+
                   >
                     {j.value}
                   </option>
