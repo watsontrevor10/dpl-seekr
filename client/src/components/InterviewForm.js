@@ -37,40 +37,42 @@ const InterviewForm = props => {
 
   return (
     <>
-    <div className="container">
-      <form onSubmit={handleSubmit} className="jobview-form">
-      <div className="all-inputs interview-input">
-        <div className="form-input">
-          <h3>Subject</h3>
-          <input type="text" name="subject" onChange={handleChange} value={subject} />
+    <div className="block">
+      <div className="container">
+        <form onSubmit={handleSubmit} className="jobview-form">
+        <div className="all-inputs interview-input">
+          <div className="form-input">
+            <h3>Subject</h3>
+            <input type="text" name="subject" onChange={handleChange} value={subject} />
+          </div>
+          <div className="form-input">
+            <h3>Date</h3> 
+            <input type="date" name="date" onChange={handleChange} value={date} />
+          </div>
+          <div className="form-input">
+            <h3>Description</h3>
+            <textarea name="description" onChange={handleChange} value={description} />
+          </div>
+          <div className="form-input">
+            <h3>Type</h3>
+            <input type="text" name="interview_type" onChange={handleChange} value={interview_type} />
+          </div>
+          <div className="form-input">
+            <h3>Followed Up</h3>
+            <input type="checkbox" name="follow_up" onChange={handleCheckBox} value={follow_up} />
+          </div>
+          <div className="btns">
+            <button 
+              style={{margin: "1rem 0"}}
+              className="jobinfo-save-btn"
+              type="submit"
+            >
+              Save
+            </button>
+          </div>
         </div>
-        <div className="form-input">
-          <h3>Date</h3> 
-          <input type="date" name="date" onChange={handleChange} value={date} />
+        </form>
         </div>
-        <div className="form-input">
-          <h3>Description</h3>
-          <textarea name="description" onChange={handleChange} value={description} />
-        </div>
-        <div className="form-input">
-          <h3>Type</h3>
-          <input type="text" name="interview_type" onChange={handleChange} value={interview_type} />
-        </div>
-        <div className="form-input">
-          <h3>Followed Up</h3>
-          <input type="checkbox" name="follow_up" onChange={handleCheckBox} value={follow_up} />
-        </div>
-        <div className="btns">
-          <button 
-            style={{margin: "1rem 0"}}
-            className="jobinfo-save-btn"
-            type="submit"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-      </form>
       </div>
     </>
   )
