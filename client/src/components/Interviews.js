@@ -57,7 +57,7 @@ const Interviews = (props) => {
 
   return (
     <>
-    <div className="main-contact-container">
+    <div className="main-form-container">
       <div className="block">
         <div className="notes-container">
           <h2 className="form-heading">Interviews</h2>
