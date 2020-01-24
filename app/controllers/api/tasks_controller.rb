@@ -4,11 +4,7 @@ class Api::TasksController < ApplicationController
   before_action :set_task, only: [:update, :destroy]
   
   def index
-    if (params[:filter] == "false") 
-      render json: @job.tasks.all.where(completed: true).order(:due_date)
-    else 
-      render json: @job.tasks.all.where(completed: false).order(:due_date)
-    end
+    render json: @job.tasks.all
   end
 
   def create

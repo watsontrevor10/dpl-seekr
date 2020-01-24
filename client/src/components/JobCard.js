@@ -44,7 +44,8 @@ const JobCard = (props) => {
           </li>
           {/* Date Created */}
           <li className="card-meta">
-            Date Created: <Moment format="MM/DD/YYYY">{props.job.created_at}</Moment>
+            <p>Date Created: </p> 
+            <Moment format="MM/DD/YYYY">{props.job.created_at}</Moment>
           </li>
           {/* Date Applied */}
           <li className="card-meta">
