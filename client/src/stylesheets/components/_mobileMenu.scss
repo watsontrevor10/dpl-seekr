@@ -74,8 +74,9 @@ svg.menu-svg {
   display: flex;
 }
 
-.mobile-home-icon, .mobile-clipboard-icon, .mobile-user-icon, .mobile-logout-icon {
+.mobile-icon {
   width: 25px;
   height: 25px;
   margin-right: 15px;
+  fill: var(--white);
 }
