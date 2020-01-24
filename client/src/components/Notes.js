@@ -60,7 +60,6 @@ const Notes = (props) => {
           <NoteView
             key={note.id}
             addNote={addNote}
-            handleRemove={handleUpdate}
             handleRemove={handleRemove}
             toggleEditForm={toggleEditForm}
             note={note}
