@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DeleteModal from "./DeleteModal";
 
 const Interview = (props) => {
+
+const [deleteModal, setDeleteModal] = useState(false)
+
+  const toggleDelete = () => {
+   setDeleteModal(true)
+ }
+ const hideDelete = () => {
+   setDeleteModal(!deleteModal)
+ }
 
 
   return (
@@ -28,7 +37,7 @@ const Interview = (props) => {
               Delete
             </button>
           </div>
-          { props.deleteModal ? <DeleteModal show={props.show} hide={props.hide} delete={props.handleDelete} id={props.interview.id}/> : null }
+          { deleteModal ? <DeleteModal show={toggleDelete} hide={hideDelete} delete={props.handleDelete} id={props.interview.id}/> : null }
       </div>
     </>
 
