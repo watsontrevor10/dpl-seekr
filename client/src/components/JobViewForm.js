@@ -67,9 +67,11 @@ const JobViewForm = (props) => {
             <h3>Location</h3>
             <input type="text" name="location" onChange={handleChange} value={location} />
           </div>
-          <div className="form-input">
+          <div className="form-input salary-input">
             <h3>Salary</h3>
-            <input type="number" name="salary" onChange={handleChange} value={salary} />
+            <div className="salary">
+              <input type="number" name="salary" onChange={handleChange} value={salary} />
+            </div>
           </div>  
           <div className="form-input">
             <h3>Date Applied</h3>

@@ -12,7 +12,7 @@
   --theme-yellow-main: #f2f3d9;
 }
 
-.main-contact-container {
+.main-form-container {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -100,14 +100,12 @@
 }
 
 @media screen and (max-width: 550px) {
-  .main-contact-container {
+  .main-form-container {
     width: 100%;
     max-width: 360px;
-    // flex-wrap: nowrap;
     overflow: auto;
-    // align-self: center;
-    // flex-direction: column;
     display: block;
+    margin: 0 auto;
     
     .contact-container {
       justify-content: space-around;
