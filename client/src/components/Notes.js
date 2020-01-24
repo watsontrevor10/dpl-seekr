@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import NoteView from './NoteView'
 import NotesForm from './NotesForm'
-import DeleteModal from "./DeleteModal";
 
 const Notes = (props) => {
   const [noteEdit, setNoteEdit] = useState(null)
   const [notes, setNotes] = useState([])
   const [form, setForm] = useState(false)
   const [editForm, setEditForm] = useState(false)
-
 
   // initial get request
   useEffect(() => {
@@ -24,7 +22,14 @@ const Notes = (props) => {
     axios.delete(`/api/jobs/${props.id}/notes/${id}`)
       .then(res => {
         setNotes(notes.filter(n => n.id !== id))
-        // hideDelete()
+      })
+  }
+
+  // after a record has been updated, pulls new records from db
+  const handleUpdate = () => {
+    axios.get(`/api/jobs/${props.id}/notes`)
+      .then(res => {
+        setNotes(res.data);
       })
   }
 
@@ -42,14 +47,6 @@ const Notes = (props) => {
     setNoteEdit(note)
     setEditForm(!editForm)
     toggle()
-  }
-
-  // after a record has been updated, pulls new records from db
-  const handleUpdate = () => {
-    axios.get(`/api/jobs/${props.id}/notes`)
-      .then(res => {
-        setNotes(res.data);
-      })
   }
 
   // adds new record to state upon NotesForm submission
@@ -78,9 +75,14 @@ const Notes = (props) => {
     <>
       <div className="main-notes-container">
         <div className="notes-container">
-          <h2 className="form-heading">Notes</h2>
-          <div className="btn-toggle" onClick={toggle}
+          <h2 className="form-heading">
+            Notes
+          </h2>
+          <div
+            className="btn-toggle"
+            onClick={toggle}
           >
+            {/* Displays the add icon or Cancel button depending on if NotesForm is rendered */}
             {form ?
               <button className="jobinfo-save-btn">
                 Cancel
@@ -102,6 +104,7 @@ const Notes = (props) => {
             }
           </div>
         </div>
+        {/* Displays NotesForm or NoteView */}
         {
           form ?
             <NotesForm

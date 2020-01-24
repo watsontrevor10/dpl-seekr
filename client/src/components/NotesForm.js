@@ -10,6 +10,7 @@ const NotesForm = (props) => {
   const { values, setValues, handleChange } = useFormInput(submit)
   const { body } = values
 
+  // Sets state to either be blank for addNote or passes note to state if editNote
   useEffect(() => {
     if (note) {
       setValues({ ...note })
@@ -91,7 +92,4 @@ const NotesForm = (props) => {
   }
 }
 
-
 export default NotesForm
-
-

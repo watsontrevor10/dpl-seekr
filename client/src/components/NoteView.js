@@ -5,10 +5,11 @@ const NoteView = (props) => {
   const { body, id } = props.note
   // State for toggling delete confirmation modal 
   const [deleteModal, setDeleteModal] = useState(false)
-
+  // Enables DeleteModal
   const toggleDelete = () => {
     setDeleteModal(true)
   }
+  // Hides DeleteModal
   const hideDelete = () => {
     setDeleteModal(!deleteModal)
   }
@@ -16,6 +17,7 @@ const NoteView = (props) => {
   // render all notes
   return (
     <>
+      {/* displays body of note */}
       <div key={id} className="note-card">
         <div className="note-content">
           <p>
@@ -49,7 +51,7 @@ const NoteView = (props) => {
                 </svg>
               </button>
             </div>
-            {/* Delete button */}
+            {/* Delete button, toggles DeleteModal on */}
             <div className="notes-padding-btn">
               <button
                 onClick={() => toggleDelete()}
