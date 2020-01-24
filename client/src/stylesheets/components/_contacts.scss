@@ -137,12 +137,13 @@
   }
 
   .contact-form {
-    justify-content: center;
-    min-height: 830px;
+    min-height: fit-content;
   }
 
   .block {
     display: block;
+    width: 100%;
+    position: relative;
   }
 
 }
