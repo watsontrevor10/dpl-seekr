@@ -32,7 +32,7 @@ const [deleteModal, setDeleteModal] = useState(false)
             </button>
             <button
               className="modal-info-delete-btn"
-              onClick={() => props.show()}
+              onClick={() => toggleDelete()}
               >
               Delete
             </button>
