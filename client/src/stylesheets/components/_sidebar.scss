@@ -50,10 +50,11 @@
 //   border-radius: 7px;
 // }
 
-img.logout-icon {
+.logout-icon {
   width: 1.75rem;
   height: 1.75rem;
   margin: calc(60%) 0 0 0;
+  fill: var(--white);
 }
 
 .sidebar-mobile {
