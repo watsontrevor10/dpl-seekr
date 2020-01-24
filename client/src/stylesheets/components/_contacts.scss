@@ -98,14 +98,15 @@
   .main-contact-container {
     width: 100%;
     max-width: 360px;
-    flex-wrap: nowrap;
+    // flex-wrap: nowrap;
     overflow: auto;
-    align-self: center;
-    flex-direction: column;
+    // align-self: center;
+    // flex-direction: column;
+    display: block;
     
     .contact-container {
       justify-content: space-around;
-      display: flex;  
+      display: block;  
 
       h2.form-heading {
         margin: 1rem;
@@ -139,4 +140,9 @@
     justify-content: center;
     min-height: 830px;
   }
+
+  .block {
+    display: block;
+  }
+
 }
