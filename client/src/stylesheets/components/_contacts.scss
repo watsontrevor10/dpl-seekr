@@ -114,7 +114,7 @@
       }
     } 
     .contacts {
-      margin: 3rem 0 0 0;
+      margin: 1rem 0 0 0;
       width: 100%;
       position: relative;
 
@@ -133,5 +133,10 @@
   .contacts {
     margin: 1rem;
     justify-content: center;
+  }
+
+  .contact-form {
+    justify-content: center;
+    min-height: 830px;
   }
 }
