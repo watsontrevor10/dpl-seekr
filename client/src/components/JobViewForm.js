@@ -49,7 +49,7 @@ const JobViewForm = (props) => {
     <div className="container">
     <div className="notes-container">
       <h2 className="form-heading">{props.job.job_title}</h2>
-      <button className="job-card-delete" onClick={() => props.showDelete() }>
+      <button className="job-card-delete fill3" onClick={() => props.showDelete() }>
         Delete this job
       </button>
       </div>
@@ -114,12 +114,12 @@ const JobViewForm = (props) => {
           </div>
           <div className="btns">
             <button 
-              className="jobinfo-save-btn info"
+              className="jobinfo-save-btn info fill2"
               type="submit" value="Submit"
               > 
               Save
             </button>
-            <button className="job-card-delete-mobile" onClick={() => props.showDelete() }>
+            <button className="job-card-delete-mobile fill3" onClick={() => props.showDelete() }>
                 Delete this job
             </button>
           </div>

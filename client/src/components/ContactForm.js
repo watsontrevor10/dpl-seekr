@@ -126,7 +126,7 @@ const ContactForm = (props) => {
             </div>
             <div className="btns">
               <button
-                className="jobinfo-save-btn info"
+                className="jobinfo-save-btn info fill2"
                 type="submit" value="Submit"
               >
                 Save
@@ -223,7 +223,7 @@ const ContactForm = (props) => {
             </div>
             <div className="btns">
               <button
-                className="jobinfo-save-btn info"
+                className="jobinfo-save-btn info fill2"
                 type="submit" value="Submit"
                 >
                 Save

@@ -64,23 +64,27 @@ $default-card-color: #050044 !default;
     color: var(--gray-2)
   }
 
-  button.job-card-delete {
+  .job-card-delete {
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     align-self: flex-end;
-    border-style: none;
     padding: 0.3rem;
     font-size: 1rem;
     margin: 1rem 4rem;
     color: var(--delete-color);
-    background-color: var(--white);
+    background-color: transparent;
     border-radius: 7px;
     letter-spacing: 1px;
     border-style: solid;
     border-color:var(--delete-color);
     border-width: 2px;
+  }
+
+  .job-card-delete:hover {
+    color: #fff;
+    background-color: var(--delete-color);
   }
 }
 

@@ -45,7 +45,7 @@ class Profile extends React.Component {
                 <h1>{user.name}</h1>
                 <br />
                 <h4>{user.email}</h4>
-                <button className="jobinfo-save-btn" onClick={this.toggleEdit}>Edit</button>
+                <button className="jobinfo-save-btn fill2" onClick={this.toggleEdit}>Edit</button>
               </center>
             </div>
           </div>
@@ -131,8 +131,8 @@ class Profile extends React.Component {
                   </div>
                   <center>
                     <div>
-                      <button className="jobinfo-save-btn task-save">Save</button>
-                      <button className="jobinfo-save-btn task-save" onClick={this.toggleEdit}>Cancel</button>
+                      <button className="jobinfo-save-btn task-save fill2">Save</button>
+                      <button className="jobinfo-save-btn task-save fill2" onClick={this.toggleEdit}>Cancel</button>
                     </div>
                   </center>
                 </div>

@@ -56,7 +56,7 @@ const NotesForm = (props) => {
           <button
             type="submit"
             value="Submit"
-            className="jobinfo-save-btn note"
+            className="jobinfo-save-btn note fill2"
           >
             Save
           </button>
@@ -82,7 +82,7 @@ const NotesForm = (props) => {
           <button
             type="submit"
             value="Submit"
-            className="jobinfo-save-btn"
+            className="jobinfo-save-btn fill2"
           >
             Save
           </button>
