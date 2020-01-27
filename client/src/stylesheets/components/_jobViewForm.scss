@@ -35,8 +35,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   flex-grow: 1;
-  font-size: 0.8rem;
-  font-weight: 200;
+  font-weight: 300;
   width: calc(100% - 8rem);
   margin-bottom: 1rem;
 
@@ -114,8 +113,6 @@
     transition-timing-function: ease;
     transition-delay: 0s;
     margin: 0.2rem;
-    font-size: 0.8rem;
-    // width: 39%;
     display: flex;
     flex-grow: 1;
     max-width: 22rem;
