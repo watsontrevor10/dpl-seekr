@@ -43,6 +43,7 @@ const TaskForm = (props) => {
                 name="subject"
                 onChange={handleChange}
                 value={subject}
+                required
               />
             </div>
             <div className="form-input">
