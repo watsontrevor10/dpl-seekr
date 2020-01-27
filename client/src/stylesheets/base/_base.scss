@@ -23,6 +23,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--main-font-family);
+  overflow-wrap: break-word;
+  word-wrap: break-word; 
+  word-break: break-word;
 
   &:focus {
     outline: var(--gray-2);
@@ -31,6 +34,9 @@
     cursor: pointer;
   }
 
+  input, h3, textarea, select, li, p {
+    font-size: 16px;
+  }
   ::-webkit-datetime-edit { padding: 0.3rem; }
   ::-webkit-clear-button, 
   ::-webkit-clear-button{right:1.54em;}

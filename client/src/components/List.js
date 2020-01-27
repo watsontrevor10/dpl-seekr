@@ -44,9 +44,9 @@ const List = (props) => {
   return (
     <>
       <div className="list-component-container">
-        <h1 className="list-header">
+        <h3 className="list-header">
           {props.name}
-        </h1>
+        </h3>
         <button 
           className="new-job-btn" 
           onClick={show}>
