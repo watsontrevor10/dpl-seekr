@@ -21,7 +21,7 @@
 .menu {
   width: inherit;
   ul.dropdown {
-    width: 160px;
+    min-width: 170px;
     position: relative;
     top: 13px;
     background-color: var(--gray-3);
