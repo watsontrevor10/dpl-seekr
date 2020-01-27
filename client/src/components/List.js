@@ -48,7 +48,7 @@ const List = (props) => {
           {props.name}
         </h3>
         <button 
-          className="new-job-btn" 
+          className="new-job-btn fill" 
           onClick={show}>
             Add Job
           </button>

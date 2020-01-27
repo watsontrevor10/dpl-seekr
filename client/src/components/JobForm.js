@@ -96,7 +96,7 @@ const JobForm = (props) => {
           </div>
         </div>
         <button
-          className="jobinfo-save-btn task-save"
+          className="jobinfo-save-btn task-save fill2"
           type="submit" value="Submit"
         >
           Save

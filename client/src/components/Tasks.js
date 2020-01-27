@@ -63,7 +63,7 @@ const Tasks = (props) => {
           <div className="btn-toggle" onClick={toggleForm}
           >
             {form ?
-              <button className="jobinfo-save-btn">Cancel</button>
+              <button className="jobinfo-save-btn fill2">Cancel</button>
               :
               <svg
                 className="add-btn"

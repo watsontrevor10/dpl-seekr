@@ -83,7 +83,7 @@ const Notes = (props) => {
           >
             {/* Displays the add icon or Cancel button depending on if NotesForm is rendered */}
             {form ?
-              <button className="jobinfo-save-btn">
+              <button className="jobinfo-save-btn fill2">
                 Cancel
               </button>
               :
