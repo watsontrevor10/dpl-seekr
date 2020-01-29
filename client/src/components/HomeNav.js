@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeNav = () => {
   return (
-    <h1>DevPoint SEEKER</h1>
+    <h1>DevPoint SEEKR</h1>
   );
 }
 
