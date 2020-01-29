@@ -37,11 +37,17 @@
   }
 }
 
-// svg.recharts-surface {
-//   width: 500px;
-//   height: 400px;
-// }
-
+.main-logo-img {
+  height: 30px;
+  // position: fixed;
+  //   left: 85%;
+  //   bottom: 93%;
+}
+.main-logo-text {
+  width: 185px;
+  margin-left: 18%;
+  
+}
 .dashboard-heading {
   display: none;
 }
@@ -57,14 +63,30 @@
     }
     .dashboard-heading {
       display: flex;
-      color: var(--blue-4);
-      font-weight: 700;
+      color: var(--gray-7);
+      font-weight: 600;
       font-size: 2rem;
       letter-spacing: 2px;
       padding: 15px;
-      text-transform: uppercase;
-      background-color: var(--gray-7);
-      justify-content: center;
+      background-color: var(--blue-4);
+      justify-content: space-around;
+      align-items: center;
+
+      .heading-container {
+        margin-right: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h4 {
+          font-size: 1rem;;
+        }
+      }
+     
+    }
+
+    .dashboard-img {
+      
     }
 
     .recharts-wrapper, svg.recharts-surface {

@@ -77,9 +77,9 @@ class Register extends React.Component {
                 onChange={this.handleChange}
                 className="register-input"
               />
-              <segment textAlign='center' basic>
-                <button primary type='submit'>Submit</button>
-              </segment>
+              <div textAlign='center' basic>
+                <button className="submit" primary type='submit'>Submit</button>
+              </div>
             </form>
             <Navbar />
           </div>

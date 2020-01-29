@@ -15,26 +15,6 @@
   --blue-4: #b4bfdf;
 }
 
-// $blue: #3ea5ce;
-// $green: #34c291;
-// $color1: #151e3f;
-// $color2: #030027;
-// $color3: #564256;
-// $color4: #96939b;
-
-// $colors: $color1, $color2, $color3;
-
-// $key: random( length($colors) );
-// $nth: nth( $colors, $key );
-
-// $main-color: $nth !default;
-
-
-// @mixin backgrounds($i) {
-//   background: $i;
-//     &:nth-child(#{$i}) { background: $i; }
-// }
-
 .list-container {
   display: flex;
   position: relative;
@@ -43,7 +23,7 @@
   justify-content: space-between;
   padding: 10px;
   height: 100%;
-  height: calc(100vh - 67px);
+  min-height: 100vh;
   box-sizing: border-box;
   overflow: auto;
   background-color: var(--gray-2);
@@ -77,13 +57,12 @@
     background-color: var(--blue-4);
 
     h1.job-board-heading-mobile {
-      display: flex;
-      color: var(--white);
+      display: none;
+      color: var(--gray-7);
       font-weight: 600;
       font-size: 2rem;
       letter-spacing: 2px;
       margin: 15px 10px;
-      text-transform: uppercase;
     }
 
     .list {

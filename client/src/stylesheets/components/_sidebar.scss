@@ -13,9 +13,7 @@
 }
 
 .sidebar {
-  margin: 0 0 6rem 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   flex-grow: 1;
@@ -36,7 +34,14 @@
     img.board-icon {
       width: 2.5rem;
       height: 2.5rem;
-      margin: 1rem 0;
+      margin-top: 1rem;
+      margin-bottom: 40vh;
+    }
+
+    img.main-logo-img {
+      width: 7.5rem;
+      height: 7.5rem;
+      margin-top: 1rem;
     }
   }
 }

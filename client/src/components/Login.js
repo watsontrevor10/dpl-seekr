@@ -52,7 +52,7 @@ class Login extends React.Component {
               className="login-input"
             />
             <segment textAlign='center' basic>
-              <button primary type='submit'>Continue</button>
+              <button className="submit" primary type='submit'>Continue</button>
             </segment>
           </form>
           <Navbar login={this.state}/>
