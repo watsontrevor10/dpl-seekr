@@ -40,7 +40,7 @@
 
 .login-container {
   width: 17rem;
-  height: 21rem;
+  min-height: 21rem;
   padding-top: 2.6rem;
   display: flex;
   flex-direction: column;
@@ -54,6 +54,7 @@
     font-weight: 400;
     padding: 0.5rem;
     letter-spacing: 1.5px;
+    margin-bottom: 1rem;
   }
 
   .login-input, .register-input {
@@ -71,16 +72,24 @@
   button {
     padding: 0.2rem;
     border-style: none;
-    margin-top: 1rem;
+    margin: 1rem;
     background-color: var(--theme-blue-main);
     color: var(--white);
     font-size: 1.2rem;
     letter-spacing: 1.5px;
   }
+
+  button.submit {
+    margin-bottom: 0;
+  }
+
 }
 
 .register {
-  height: 27rem;
+  min-height: 27rem;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
 }
 
 .try-again {
