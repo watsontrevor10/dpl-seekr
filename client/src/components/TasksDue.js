@@ -82,9 +82,10 @@ class TaskClass extends React.Component {
 // Available colors from color palette
 const colors = [
   "#2d3a66",
+  "#505995",
   "#070059",
   "#3d1a68",
-  "#5e2d5e",
+  "#5c4e8c",
 ];
 
 export default TaskClass
